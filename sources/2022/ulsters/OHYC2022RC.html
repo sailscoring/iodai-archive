@@ -1,0 +1,900 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for IODAI Regatta Coaching Ulsters 2022 at HYC 10/11 September 2022 2022</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2022/08/653EBABE-5BEF-4427-8FBA-F4199BCF4752.jpeg" alt="event burgee" />
+<img class="hardleft"  src="https://iodai.com/wp-content/uploads/2021/08/iodai-logo-2018-192x300-1.png" alt="venue burgee" />
+
+<h1>IODAI Regatta Coaching Ulsters 2022</h1>
+<h2>HYC 10/11 September 2022</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of  7:47 on September 11, 2022</h3>
+<h3 class="summarytitle">Overall</h3>
+<div class="caption summarycaption">Sailed: 0, Discards: 0, To count: 0, Entries: 45, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="14">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+<col class="crewagegroup" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>R1</th>
+<th>Total</th>
+<th>Nett</th>
+<th>Age</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>0</td>
+<td>Jamie keogh</td>
+<td>M</td>
+<td>Howth Yacht Club / Howth yacht club</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>0</td>
+<td>Sasha Murphy</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1</td>
+<td>Andrea Houlihan</td>
+<td>F</td>
+<td>Howth Yacht Club / HYC</td>
+<td>IRL</td>
+<td>14</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>2</td>
+<td>Laura Houlihan</td>
+<td>F</td>
+<td>Howth Yacht Club / HYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>2</td>
+<td>Siofra Hughes</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>12</td>
+<td>Max McKenna</td>
+<td>M</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>598</td>
+<td>Darragh Baynes</td>
+<td>M</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>687</td>
+<td>Edward Fitzmaurice</td>
+<td>M</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>950</td>
+<td>Sadie Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>981</td>
+<td>Alanna whelan</td>
+<td>F</td>
+<td>National Yacht Club / Brading Haven Yach</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1019</td>
+<td>Beth</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1060</td>
+<td>Charles Richard</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1071</td>
+<td>Joséphine Dion</td>
+<td>F</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1087</td>
+<td>Addison Carmody</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1087</td>
+<td>Adeson Carmody</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>IRL</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1158</td>
+<td>Max Jones</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1234</td>
+<td>Eoin O'Sullivan</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1276</td>
+<td>Ben Smyth</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1281</td>
+<td>Dan Cullen</td>
+<td>M</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>F</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1316</td>
+<td>Rebecca Murdock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1332</td>
+<td>Aishling Ratcliffe</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1343</td>
+<td>Leo Smyth</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1374</td>
+<td>Astrid Sheridan</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>IRL</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1381</td>
+<td>Eddie O'Neill</td>
+<td>&nbsp;</td>
+<td>Rush</td>
+<td>IRL</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1393</td>
+<td>Zoe OHare</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1408</td>
+<td>Megan Foley</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club / Royal St.</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>F</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>F</td>
+<td>Other / SUTTON</td>
+<td>IRL</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1473</td>
+<td>Hugo Murphy</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>IRL</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1475</td>
+<td>Finn Jones</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1482</td>
+<td>Zara de Neve</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1487</td>
+<td>Rhys Cobbe</td>
+<td>M</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1492</td>
+<td>Christine Mahony</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1506</td>
+<td>Jessica Walsh</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1559</td>
+<td>Adam Scott</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>7</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>M</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>F</td>
+<td>National Yacht Club / NYC</td>
+<td>IRL</td>
+<td>9</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>4864</td>
+<td>Luca Blessing</td>
+<td>M</td>
+<td>Malahide Yacht Club / None</td>
+<td>GBR</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>12345</td>
+<td>Jessica O’Donnell</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>12345</td>
+<td>Ronán Dennis</td>
+<td>M</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="even summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1234567</td>
+<td>Amy ODonnell</td>
+<td>F</td>
+<td>Howth Yacht Club / HYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="odd summaryrow">
+<td>&nbsp;</td>
+<td>Regatta</td>
+<td>-</td>
+<td>Bronze</td>
+<td>1234567</td>
+<td>Lucy O’Donnell</td>
+<td>F</td>
+<td>Howth Yacht Club / HYC</td>
+<td>IRL</td>
+<td>13</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.29.0<br /><a href="http://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

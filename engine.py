@@ -32,9 +32,9 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # Non-race meta columns. Some pages title the sail column 'Sail Number' and the
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
-META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo', 'Nat',
-        'Helm Name', 'HelmName', 'Helm', 'Name', 'Club', 'Division', 'Gender',
-        'Age', 'HelmAge', 'Rating'}
+META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo', 'Sail no.',
+        'Nat', 'Helm Name', 'HelmName', 'Helmname', 'Helm', 'Name', 'Club',
+        'Division', 'Divison', 'Gender', 'Age', 'HelmAge', 'Helmage', 'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -73,7 +73,10 @@ def load_adopted():
 
 def cellize(tr):
     cs = re.findall(r'<t[hd][^>]*>(.*?)</t[hd]>', tr, flags=re.S | re.I)
-    return [re.sub(r'<[^>]*>', '', html.unescape(c)).strip() for c in cs]
+    # Strip a leading BOM (some pages emit a UTF-8 BOM, read back as 'ï»¿' under
+    # cp1252) so a header like 'Helmname' isn't mistaken for a race column.
+    return [re.sub(r'^(?:﻿|ï»¿)', '', re.sub(r'<[^>]*>', '', html.unescape(c)).strip())
+            for c in cs]
 
 
 def parse_file(fname):
@@ -135,7 +138,8 @@ def round_tenth(x):
 
 def _sail(row):
     """The sail number, however the page titled its column."""
-    return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo') or '').strip()
+    return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo')
+            or row.get('Sail no.') or '').strip()
 
 
 def norm_gender(g):
@@ -164,7 +168,7 @@ def load_competitors(cfg):
             fleet = (row.get(src.get('fleet_col', 'Fleet'))
                      if src.get('fleet_from_col') else src['fleet'])
             name = (row.get('Helm Name') or row.get('HelmName')
-                    or row.get('Helm') or row.get('Name') or '')
+                    or row.get('Helmname') or row.get('Helm') or row.get('Name') or '')
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
@@ -176,8 +180,12 @@ def load_competitors(cfg):
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or '').strip(),
                 gender=norm_gender(row.get('Gender')),
-                age=norm_age(row.get('Age') or row.get('HelmAge')),
-                subdivision=(row.get('Division') or '').strip() if cfg['subdivision'] else '',
+                age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')),
+                # The prize division (Gold/Silver/Bronze) is in 'Rating' on pages
+                # that also carry a Senior/Junior 'Division' column, else in
+                # 'Division'/'Divison' itself.
+                subdivision=((row.get('Rating') or row.get('Division') or row.get('Divison') or '').strip()
+                             if cfg['subdivision'] else ''),
                 boat_class=(row.get('Class') or '').strip() if cfg['boat_class'] else '',
                 cells=cells,
                 published_nett=row['Nett'],
@@ -406,7 +414,10 @@ def validate(series):
             mism = 0
             sus = 0
             for c in group:
-                want = float(c['published_nett'].strip())
+                nett_str = c['published_nett'].strip()
+                if not nett_str:
+                    continue  # roster row (participation fleet, no score published)
+                want = float(nett_str)
                 got = scored[c['id']][1]
                 if abs(got - want) <= 0.01:
                     continue
