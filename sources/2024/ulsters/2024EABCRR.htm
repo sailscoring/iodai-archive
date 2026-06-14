@@ -1,0 +1,506 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for Optimist Ulsters - 2024 at East Antrim Boat Club - Larne 2024</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+
+<h1>Optimist Ulsters - 2024</h1>
+<h2>East Antrim Boat Club - Larne</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 17:45 on September  8, 2024</h3>
+<h3 class="summarytitle" id="summaryregatta_racing">Regatta Racing Fleet</h3>
+<div class="caption summarycaption">Sailed: 8, Discards: 1, To count: 7, Entries: 16, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="18">
+<col class="rank" />
+<col class="fleet" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="helmagegroup" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+<th>R4</th>
+<th>R5</th>
+<th>R6</th>
+<th>R7</th>
+<th>R8</th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1600</td>
+<td>Leo Smyth</td>
+<td>Royal St. George Yacht Club</td>
+<td>M</td>
+<td>10</td>
+<td class="rank1">1.0</td>
+<td class="rank2">(2.0)</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td>13.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>977</td>
+<td>Oliver Gundersen</td>
+<td>Strangford Lough Yacht Club</td>
+<td>M</td>
+<td>10</td>
+<td>5.0</td>
+<td class="rank1">1.0</td>
+<td>5.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td>7.0</td>
+<td class="rank3">3.0</td>
+<td>(17.0 DNF)</td>
+<td>40.0</td>
+<td>23.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Regatta Racing</td>
+<td>GBR</td>
+<td>5500</td>
+<td>Tom Brownlees</td>
+<td>East Antrim Boat Club</td>
+<td>M</td>
+<td>13</td>
+<td class="rank3">3.0</td>
+<td>(9.0)</td>
+<td class="rank3">3.0</td>
+<td>9.0</td>
+<td class="rank3">3.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>41.0</td>
+<td>32.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Regatta Racing</td>
+<td>GBR</td>
+<td>6522</td>
+<td>Charlotte McGaughey</td>
+<td>Prestwick Sailing Club</td>
+<td>F</td>
+<td>11</td>
+<td>(9.0)</td>
+<td>8.0</td>
+<td>7.0</td>
+<td class="rank3">3.0</td>
+<td>9.0</td>
+<td>4.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td>42.0</td>
+<td>33.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Regatta Racing</td>
+<td>GBR</td>
+<td>5190</td>
+<td>Anna Williams</td>
+<td>Strangford Lough Yacht Club</td>
+<td>F</td>
+<td>13</td>
+<td class="rank2">2.0</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>(11.0)</td>
+<td class="rank3">3.0</td>
+<td>5.0</td>
+<td>7.0</td>
+<td>46.0</td>
+<td>35.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>Sutton Dinghy Club</td>
+<td>M</td>
+<td>11</td>
+<td>(16.0)</td>
+<td>4.0</td>
+<td class="rank2">2.0</td>
+<td>8.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>4.0</td>
+<td>51.0</td>
+<td>35.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>6375</td>
+<td>Max Dinneen</td>
+<td>Skerries Sailing Club</td>
+<td>M</td>
+<td>10</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>(10.0)</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>8.0</td>
+<td>62.0</td>
+<td>52.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Darragh Baynes</td>
+<td>Galway Bay Sailing Club</td>
+<td>M</td>
+<td>11</td>
+<td>4.0</td>
+<td>11.0</td>
+<td>9.0</td>
+<td>6.0</td>
+<td>(13.0)</td>
+<td>8.0</td>
+<td>9.0</td>
+<td>6.0</td>
+<td>66.0</td>
+<td>53.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>6371</td>
+<td>Rory Barron</td>
+<td>Sutton Dinghy Club</td>
+<td>M</td>
+<td>10</td>
+<td>(14.0)</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>4.0</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>8.0</td>
+<td>9.0</td>
+<td>68.0</td>
+<td>54.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>Royal St. George Yacht Club</td>
+<td>M</td>
+<td>10</td>
+<td>11.0</td>
+<td>(15.0)</td>
+<td>11.0</td>
+<td>13.0</td>
+<td>5.0</td>
+<td class="rank2">2.0</td>
+<td>11.0</td>
+<td class="rank3">3.0</td>
+<td>71.0</td>
+<td>56.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>Sutton Dinghy Club</td>
+<td>F</td>
+<td>10</td>
+<td>8.0</td>
+<td>12.0</td>
+<td>(13.0)</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>9.0</td>
+<td>6.0</td>
+<td>10.0</td>
+<td>75.0</td>
+<td>62.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1356</td>
+<td>Marcus Kieran</td>
+<td>Royal St. George Yacht Club</td>
+<td>M</td>
+<td>11</td>
+<td>10.0</td>
+<td class="rank3">3.0</td>
+<td>4.0</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>(17.0 DNC)</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>92.0</td>
+<td>75.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1672</td>
+<td>Alanna Whelan</td>
+<td>National Yacht Club</td>
+<td>F</td>
+<td>12</td>
+<td>12.0</td>
+<td>13.0</td>
+<td>(14.0)</td>
+<td>11.0</td>
+<td>10.0</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>11.0</td>
+<td>95.0</td>
+<td>81.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1597</td>
+<td>Cian Spain</td>
+<td>Royal St. George Yacht Club</td>
+<td>M</td>
+<td>11</td>
+<td>7.0</td>
+<td>10.0</td>
+<td>(17.0 DNC)</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>119.0</td>
+<td>102.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1433</td>
+<td>Zoe Russell</td>
+<td>Royal St. George Yacht Club</td>
+<td>F</td>
+<td>10</td>
+<td>13.0</td>
+<td>14.0</td>
+<td>12.0</td>
+<td>14.0</td>
+<td>(17.0 DNC)</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>17.0 DNC</td>
+<td>121.0</td>
+<td>104.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Regatta Racing</td>
+<td>IRL</td>
+<td>1072</td>
+<td>Theodore Crinion</td>
+<td>Royal St. George Yacht Club</td>
+<td>M</td>
+<td>10</td>
+<td>15.0</td>
+<td>16.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>14.0</td>
+<td>13.0</td>
+<td>(17.0 DNC)</td>
+<td>17.0 DNC</td>
+<td>122.0</td>
+<td>105.0</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="https://www.eabc.club">www.eabc.club</a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="https://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.33.02<br /><a href="https://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

@@ -30,7 +30,7 @@ IODAI runs ~7 events a season. For each past year we want:
 | **4 regional championships** — Leinsters, Ulsters, Connachts, Munsters | 3 each: Main (Senior + Junior fleets), Regatta Racing, Regatta Coached |
 | **National championship** | 3: Main, Regatta Racing, Regatta Coached |
 | **National Training Week** — final-day racing (Crosbie Cup) | 1+ |
-| **Sprint Series** (introduced 2025/2026) | 1: Main, Senior + Junior scored separately |
+| **Sprint Series** (runs from 2024) | 1: Main, Senior + Junior scored separately |
 
 A "series" here is **one group sharing a finish line** (the app's rule): an event
 with Main + two regatta fleets is *three* independent series, not one. Main Fleet
@@ -45,6 +45,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 |-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:-----------:|:------:|
 | 2026 | ◻️ | ✅ | ◻️ | ✅ | ◻️ | ◻️ | ✅ |
 | 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
+| 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
 
 Earlier years to be worked back through. Also sourced: **Irish Sailing Youth
 Nationals 2026 (Optimist)** — not IODAI-run, but IODAI republishes its Optimist

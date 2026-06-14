@@ -79,10 +79,22 @@ def main_fleet(out, name, venue, days, nslots, senior=None, junior=None,
 def solo(out, name, venue, days, nslots, file, fleet, subdivision=False,
          discards=DISCARDS, **venuekw):
     """A single-fleet series (Regatta Racing, Regatta Coached, Crosbie Cup, …)."""
+    return combined(out, name, venue, days, nslots, [file], fleet=fleet,
+                    subdivision=subdivision, discards=discards, **venuekw)
+
+
+def combined(out, name, venue, days, nslots, files, fleet='Main',
+             subdivision=True, discards=DISCARDS, **venuekw):
+    """One scratch fleet assembled from one or more pages. Used when a Main fleet
+    that was actually scored as a *single combined* start was published split
+    across senior/junior view pages (e.g. 2024 Ulsters @ EABC): loading both
+    pages into one fleet restores the contiguous 1..N positions the page scored.
+    For such pages the 'Division' column holds Senior/Junior (the prize Gold/
+    Silver/Bronze sits in a separate 'Rating' column the engine ignores)."""
     return dict(
         out=out, name=name, venue=venue, start=days[0], end=days[-1],
         discards=discards, nslots=nslots,
-        sources=[dict(file=file, fleet=fleet, slot0=0)],
+        sources=[dict(file=f, fleet=fleet, slot0=0) for f in files],
         fleet_order=[fleet], date=_date_fn(days),
         subdivision=subdivision, boat_class=False, primary='helm',
         **IODAI, **venuekw)

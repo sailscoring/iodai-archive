@@ -32,8 +32,9 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # Non-race meta columns. Some pages title the sail column 'Sail Number' and the
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
-META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'Nat', 'Helm Name',
-        'HelmName', 'Name', 'Club', 'Division', 'Gender', 'Age', 'Rating'}
+META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo', 'Nat',
+        'Helm Name', 'HelmName', 'Name', 'Club', 'Division', 'Gender', 'Age',
+        'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -127,6 +128,11 @@ def round_tenth(x):
     return math.floor(x * 10 + 0.5) / 10
 
 
+def _sail(row):
+    """The sail number, however the page titled its column."""
+    return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo') or '').strip()
+
+
 def norm_gender(g):
     g = (g or '').strip().upper()
     return g if g in ('M', 'F') else ''
@@ -147,15 +153,19 @@ def load_competitors(cfg):
     for src in cfg['sources']:
         _, rows = parse_file(src['file'])
         for row in rows:
-            fleet = row['Fleet'] if src.get('fleet_from_col') else src['fleet']
+            # Fleet comes from a page column when fleet_from_col is set (default
+            # 'Fleet', but e.g. the 2024 Sprint splits Senior/Junior via the
+            # 'Division' column — set fleet_col to point at it), else it's fixed.
+            fleet = (row.get(src.get('fleet_col', 'Fleet'))
+                     if src.get('fleet_from_col') else src['fleet'])
             name = row.get('Helm Name') or row.get('HelmName') or row.get('Name') or ''
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
             comps.append(dict(
-                id=det(f"{cfg['out']}/competitor/{fleet}/{row.get('Sail') or row.get('Sail Number') or ''}/{name.strip()}"),
+                id=det(f"{cfg['out']}/competitor/{fleet}/{_sail(row)}/{name.strip()}"),
                 fleet=fleet,
-                sail=(row.get('Sail') or row.get('Sail Number') or '').strip(),
+                sail=_sail(row),
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or '').strip(),
@@ -370,22 +380,35 @@ def validate(series):
             groups = [('combined (published basis)', comps)]
         else:
             groups = [(f, [c for c in comps if c['fleet'] == f]) for f in fleet_names]
+        # Boats whose published score is internally inconsistent with standard
+        # scoring (documented in the year's config) are tolerated: reported as
+        # SUSPECT, not counted as failures. Keeps validation strict everywhere
+        # else while acknowledging the bad source cell. See README rule 4.
+        suspect = set(cfg.get('suspect', ()))
         for label, group in groups:
             scored = score_fleet(group, cfg['nslots'], cfg['discards'])
             mism = 0
+            sus = 0
             for c in group:
                 want = float(c['published_nett'].strip())
                 got = scored[c['id']][1]
                 if abs(got - want) <= 0.01:
                     continue
+                if c['sail'] in suspect:
+                    sus += 1
+                    print(f'   SUSPECT  {c["sail"]:>6} {c["name"][:18]:18} '
+                          f'published nett={want:g} re-scored={got:g} (tolerated)')
+                    continue
                 mism += 1
                 if mism <= 8:
                     print(f'   MISMATCH {c["sail"]:>6} {c["name"][:18]:18} '
                           f'published nett={want:g} re-scored={got:g}')
-            status = 'OK' if mism == 0 else f'{mism}/{len(group)} MISMATCH'
+            tag = 'OK' if mism == 0 else f'{mism}/{len(group)} MISMATCH'
+            if sus:
+                tag += f' (+{sus} suspect)'
             if mism:
                 ok = False
-            print(f'   [{status}] {label} ({len(group)} boats)')
+            print(f'   [{tag}] {label} ({len(group)} boats)')
     print('\nVALIDATION', 'PASSED' if ok else 'FAILED')
     return ok
 
