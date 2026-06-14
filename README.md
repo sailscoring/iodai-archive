@@ -44,10 +44,17 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Crosbie Cup | Sprint |
 |-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:-----------:|:------:|
 | 2026 | ◻️ | ✅ | ◻️ | ✅ | ◻️ | ◻️ | ✅ |
+| 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
 
 Earlier years to be worked back through. Also sourced: **Irish Sailing Youth
 Nationals 2026 (Optimist)** — not IODAI-run, but IODAI republishes its Optimist
 results and the same sailors appear, so it's useful for the identity work.
+
+The **Crosbie Cup** (National Training Week final day) is not reconstructable by
+this pipeline: its published page carries each boat's finishing position from the
+*combined* Halloween-regatta start rather than a position within the Crosbie
+group, so the race cells aren't a contiguous scratch result. Left unsourced until
+the engine can model carried scores. See the note in `events/y2025.py`.
 
 ## Layout
 

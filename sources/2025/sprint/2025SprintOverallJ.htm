@@ -1,0 +1,3697 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for Sprint Series 2025 at RCYC / MYC / WHSC 2025</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+//
+//  name=HighlightDiscards
+//  dependencies=jQuery
+//  description=Highlight discard scores in summary tables where discards are in ().
+//  author=Jon Eskdale
+//  date=2018-11-11
+//  version=1.1
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var discardSelector = '.summaryrace';
+var discardText     = /\b\)/;
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var discardColour   = '#f2f2f2';
+
+// create array of race column numbers for first table (summarytable)
+var ths = document.getElementsByTagName('col');
+var column =[];
+for (var i=0; i<ths.length; i++) {
+        if (ths[i].classList[0] === "race") {
+                column.push(i);
+        } else {
+                if (column.length !=0) {
+                        break;
+                }
+        }
+}
+//console.log(column);
+
+//  Set a class of summaryrace for all race cells in summary table body
+//
+for (var i=0; i<column.length; i++) {
+        $(".summarytable tbody tr td:nth-child(" + (column[i]+1) +")").addClass("summaryrace");
+}
+
+// Change the background color for cells with class of summaryrace and that match regular expression text
+$(function () {
+
+  $(discardSelector).filter(function() {
+    return discardText.test($(this).text());
+  }).css("background", discardColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2025/02/IODAI-Sprint-Series-2025-e1740833929609.jpg" alt="event burgee" />
+
+<h1>Sprint Series 2025</h1>
+<h2>RCYC / MYC / WHSC</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 12:03 on May  3, 2025</h3>
+<h3 class="summarytitle" id="summaryjunior">Junior Division</h3>
+<div class="caption summarycaption">Sailed: 12, Discards: 3, To count: 9, Entries: 23, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="24">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th><a class="racelink" href="#r1junior">RCYC 1</a></th>
+<th><a class="racelink" href="#r2junior">RCYC 2</a></th>
+<th><a class="racelink" href="#r3junior">RCYC 3</a></th>
+<th><a class="racelink" href="#r4junior">RCYC 4</a></th>
+<th><a class="racelink" href="#r5junior">MYC 1</a></th>
+<th><a class="racelink" href="#r6junior">MYC 2</a></th>
+<th><a class="racelink" href="#r7junior">MYC 3</a></th>
+<th><a class="racelink" href="#r8junior">MYC 4</a></th>
+<th><a class="racelink" href="#r9junior">WHSC 1</a></th>
+<th><a class="racelink" href="#r10junior">WHSC 2</a></th>
+<th><a class="racelink" href="#r11junior">WHSC 3</a></th>
+<th><a class="racelink" href="#r12junior">WHSC 4</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td class="rank2">(2.0)</td>
+<td class="rank2">(2.0)</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td class="rank3">(3.0)</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td>20.0</td>
+<td>13.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>5.0</td>
+<td>(8.0)</td>
+<td class="rank3">3.0</td>
+<td>(6.0)</td>
+<td class="rank3">3.0</td>
+<td>4.0</td>
+<td>(6.0)</td>
+<td>4.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td>45.0</td>
+<td>25.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>(6.0)</td>
+<td class="rank3">3.0</td>
+<td>(5.0)</td>
+<td class="rank3">3.0</td>
+<td>5.0</td>
+<td class="rank2">2.0</td>
+<td>4.0</td>
+<td>(6.0)</td>
+<td class="rank2">2.0</td>
+<td class="rank3">3.0</td>
+<td class="rank2">2.0</td>
+<td>5.0</td>
+<td>46.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td class="rank3">3.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>(24.0 UFD)</td>
+<td class="rank3">3.0</td>
+<td>(11.0)</td>
+<td>(6.0)</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td>77.0</td>
+<td>36.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>(8.0)</td>
+<td>5.0</td>
+<td>(7.0)</td>
+<td>5.0</td>
+<td>(7.0)</td>
+<td class="rank3">3.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td class="rank3">3.0</td>
+<td>62.0</td>
+<td>40.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td class="rank2">2.0</td>
+<td>(11.0)</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>11.0</td>
+<td>10.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>121.0</td>
+<td>62.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>8.0</td>
+<td>10.0</td>
+<td>9.0</td>
+<td>7.0</td>
+<td>(12.0)</td>
+<td>9.0</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td>10.0</td>
+<td>8.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>124.0</td>
+<td>64.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>11.0</td>
+<td>12.0</td>
+<td>(14.0)</td>
+<td>(14.0)</td>
+<td>14.0</td>
+<td>12.0</td>
+<td>10.0</td>
+<td>9.0</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>4.0</td>
+<td>(24.0 DNC)</td>
+<td>137.0</td>
+<td>85.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>11.0</td>
+<td>(13.0)</td>
+<td>11.0</td>
+<td>(13.0)</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>9.0</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>(24.0 DNC)</td>
+<td>138.0</td>
+<td>88.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>12.0</td>
+<td>11.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>10.0</td>
+<td>8.0</td>
+<td>12.0</td>
+<td>13.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>182.0</td>
+<td>110.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>13.0</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>12.0</td>
+<td>(16.0)</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>8.0</td>
+<td>9.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>175.0</td>
+<td>111.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1686</td>
+<td>IRL</td>
+<td>Dylan O'Sullivan</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>197.0</td>
+<td>125.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>14.0</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>11.0</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>197.0</td>
+<td>125.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>15.0</td>
+<td>14.0</td>
+<td>13.0</td>
+<td>16.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>17.0</td>
+<td>14.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>215.0</td>
+<td>143.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1606</td>
+<td>IRL</td>
+<td>Max Mullane</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>8.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>7.0</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>221.0</td>
+<td>149.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1530</td>
+<td>IRL</td>
+<td>Sadie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>9.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>222.0</td>
+<td>150.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>11.0</td>
+<td>18.0</td>
+<td>(24.0 UFD)</td>
+<td>16.0</td>
+<td>17.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>226.0</td>
+<td>154.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1493</td>
+<td>IRL</td>
+<td>Zoe OHare</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>9.0</td>
+<td>8.0</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>228.0</td>
+<td>156.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>53</td>
+<td>IRL</td>
+<td>Tom Kingston</td>
+<td>KYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>13.0</td>
+<td class="rank3">3.0</td>
+<td>11.0</td>
+<td>16.0</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>235.0</td>
+<td>163.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>15.0</td>
+<td>17.0</td>
+<td>(24.0 UFD)</td>
+<td>18.0</td>
+<td>18.0</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>236.0</td>
+<td>164.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1594</td>
+<td>IRL</td>
+<td>Alex Hoban</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>288.0</td>
+<td>216.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>21st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1524</td>
+<td>IRL</td>
+<td>George Creighton</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>288.0</td>
+<td>216.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1600</td>
+<td>IRL</td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>(24.0 DNC)</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>24.0 DNC</td>
+<td>288.0</td>
+<td>216.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1junior">RCYC 1 - Junior Division&nbsp;-&nbsp;01/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1686</td>
+<td>IRL</td>
+<td>Dylan O'Sullivan</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>3</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>12</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>14</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>15</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>22</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>24</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1530</td>
+<td>IRL</td>
+<td>Sadie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>30</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>34</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>35</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>38</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>39</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>41</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>45</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>46</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>47</td>
+<td>16.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2junior">RCYC 2 - Junior Division&nbsp;-&nbsp;01/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1686</td>
+<td>IRL</td>
+<td>Dylan O'Sullivan</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>3</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>13</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>14</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>22</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>25</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>29</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1530</td>
+<td>IRL</td>
+<td>Sadie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>31</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>34</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>39</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>40</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>42</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>43</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>44</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>45</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>46</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>47</td>
+<td>16.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3junior">RCYC 3 - Junior Division&nbsp;-&nbsp;01/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>3</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1686</td>
+<td>IRL</td>
+<td>Dylan O'Sullivan</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>8</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>9</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>12</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>29</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>31</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1530</td>
+<td>IRL</td>
+<td>Sadie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>32</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>33</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>35</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>39</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>40</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>43</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>45</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>46</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>47</td>
+<td>16.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4junior">RCYC 4 - Junior Division&nbsp;-&nbsp;01/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1686</td>
+<td>IRL</td>
+<td>Dylan O'Sullivan</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>2</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>5</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>8</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>12</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>21</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>27</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>33</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>34</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1530</td>
+<td>IRL</td>
+<td>Sadie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>35</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>36</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>38</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>41</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>42</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>44</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>46</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>47</td>
+<td>16.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r5junior">MYC 1 - Junior Division&nbsp;-&nbsp;22/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>6</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>12</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>19</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>23</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>25</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>28</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>30</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1606</td>
+<td>IRL</td>
+<td>Max Mullane</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>32</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1493</td>
+<td>IRL</td>
+<td>Zoe OHare</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>35</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>36</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>39</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>40</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>53</td>
+<td>IRL</td>
+<td>Tom Kingston</td>
+<td>KYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>41</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>42</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>43</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>44</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>45</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>46</td>
+<td>18.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r6junior">MYC 2 - Junior Division&nbsp;-&nbsp;22/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>5</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>13</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>53</td>
+<td>IRL</td>
+<td>Tom Kingston</td>
+<td>KYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>14</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>18</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>21</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1606</td>
+<td>IRL</td>
+<td>Max Mullane</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>25</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>27</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>28</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>31</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1493</td>
+<td>IRL</td>
+<td>Zoe OHare</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>32</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>37</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>39</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>40</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>44</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>46</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>UFD</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>UFD</td>
+<td>24.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>UFD</td>
+<td>24.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r7junior">MYC 3 - Junior Division&nbsp;-&nbsp;22/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>5</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>11</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>14</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>20</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>22</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>23</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>26</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1606</td>
+<td>IRL</td>
+<td>Max Mullane</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>27</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1493</td>
+<td>IRL</td>
+<td>Zoe OHare</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>28</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>31</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>53</td>
+<td>IRL</td>
+<td>Tom Kingston</td>
+<td>KYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>36</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>38</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>40</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>41</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>43</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>44</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>45</td>
+<td>18.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r8junior">MYC 4 - Junior Division&nbsp;-&nbsp;22/03/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>5</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>7</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>10</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>12</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>16</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>22</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1606</td>
+<td>IRL</td>
+<td>Max Mullane</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>24</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1493</td>
+<td>IRL</td>
+<td>Zoe OHare</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>31</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>33</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>34</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>35</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>36</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1640</td>
+<td>IRL</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>38</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1607</td>
+<td>IRL</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>10</td>
+<td>40</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>41</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>53</td>
+<td>IRL</td>
+<td>Tom Kingston</td>
+<td>KYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>10</td>
+<td>45</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>6506</td>
+<td>IRL</td>
+<td>Cormac Whelan</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>9</td>
+<td>46</td>
+<td>18.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r9junior">WHSC 1 - Junior Division&nbsp;-&nbsp;13/04/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>4</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>8</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>9</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>20</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>21</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>24</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>29</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>32</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>33</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>34</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>37</td>
+<td>11.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r10junior">WHSC 2 - Junior Division&nbsp;-&nbsp;13/04/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>9</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>11</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>15</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>20</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>24</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>28</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>33</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>646</td>
+<td>IRL</td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>34</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1570</td>
+<td>IRL</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>35</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1509</td>
+<td>IRL</td>
+<td>Oran Collins</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>36</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1495</td>
+<td>AHO</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>37</td>
+<td>11.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r11junior">WHSC 3 - Junior Division&nbsp;-&nbsp;13/04/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>8</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>13</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>14</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1536</td>
+<td>IRL</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>20</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>23</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>24</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1390</td>
+<td>IRL</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>29</td>
+<td>7.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r12junior">WHSC 4 - Junior Division&nbsp;-&nbsp;13/04/25</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="rating" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>HelmName</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1391</td>
+<td>IRL</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>6</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1687</td>
+<td>IRL</td>
+<td>Oliver Ryan</td>
+<td>RSGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>M</td>
+<td>12</td>
+<td>11</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1455</td>
+<td>IRL</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>12</td>
+<td>16</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1576</td>
+<td>IRL</td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>M</td>
+<td>11</td>
+<td>17</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>1506</td>
+<td>IRL</td>
+<td>Jess Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>F</td>
+<td>12</td>
+<td>19</td>
+<td>5.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="codestitle">Scoring codes used</h3>
+<table class="codestable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="3"><col class="code" /><col class="description" />
+<col class="points" />
+</colgroup>
+<tr class="titlerow"><th>Code</th><th>Description</th>
+<th>Points</th>
+</tr>
+<tr class="odd coderow"><td>DNC</td><td>Did not come to the starting area</td>
+<td>24</td>
+</tr>
+<tr class="even coderow"><td>UFD</td><td>U flag disqualification under rule 30.3</td>
+<td>24</td>
+</tr>
+</table>
+
+<p class="hardleft"><a href="https://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="https://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.33.02<br /><a href="https://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

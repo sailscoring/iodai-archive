@@ -1,0 +1,101 @@
+"""2025 IODAI events.
+
+Sourced from the official iodai.com event pages (the canonical record of which
+Sailwave files are real results) and the Sailwave IODAI directory. Each dict is
+one Sail Scoring series (one group sharing a finish line). See README.md for the
+per-event process and the year×event status tracker; see events/helpers.py for
+the `main_fleet`/`solo` factories and the standard `DISCARDS` scheme.
+
+Coverage: Leinsters (NYC), Ulsters (EABC), Connachts (LDYC), Munsters (KYC),
+Nationals (LRYC), Sprint Series, and the National Training Week Crosbie Cup.
+
+Notes on suspect/edge data (carried as-is, best effort):
+- Munsters Regatta Coached published with zero races scored — a participation
+  roster (all boats nett 0). Kept as a 0-race series.
+- The Sprint published per-fleet Overall pages (OverallS/OverallJ) in 2025, so
+  each fleet validates against its own page (unlike 2026's combined page).
+"""
+from .helpers import main_fleet, solo, NYC, LDYC, KYC, LRYC
+
+L = '2025/leinsters/'
+U = '2025/ulsters/'
+C = '2025/connachts/'
+M = '2025/munsters/'
+N = '2025/nationals/'
+S = '2025/sprint/'
+
+SERIES = [
+    # --- Leinsters @ National YC (17–18 May) ---------------------------------
+    main_fleet('iodai-leinsters-2025-main-fleet', 'IODAI Leinsters 2025 — Main Fleet',
+               'National Yacht Club', ['2025-05-17', '2025-05-18'], nslots=8,
+               senior=L + '2025LeinstersNYCS.htm', junior=L + '2025LeinstersNYCJ.htm', **NYC),
+    solo('iodai-leinsters-2025-regatta-racing', 'IODAI Leinsters 2025 — Regatta Racing',
+         'National Yacht Club', ['2025-05-17', '2025-05-18'], nslots=10,
+         file=L + '2025LeinstersRR.htm', fleet='Regatta Racing', **NYC),
+    solo('iodai-leinsters-2025-regatta-coached', 'IODAI Leinsters 2025 — Regatta Coached',
+         'National Yacht Club', ['2025-05-17', '2025-05-18'], nslots=10,
+         file=L + '2025LeinstersRC.htm', fleet='Regatta Coached', **NYC),
+
+    # --- Ulsters @ East Antrim Boat Club (14–15 Jun) -------------------------
+    main_fleet('iodai-ulsters-2025-main-fleet', 'IODAI Ulsters 2025 — Main Fleet',
+               'East Antrim Boat Club', ['2025-06-14', '2025-06-15'], nslots=5,
+               senior=U + '2025UlstersEABCS.htm', junior=U + '2025UlstersEABCJ.htm'),
+    solo('iodai-ulsters-2025-regatta-racing', 'IODAI Ulsters 2025 — Regatta Racing',
+         'East Antrim Boat Club', ['2025-06-14', '2025-06-15'], nslots=8,
+         file=U + '2025UlstersEABCRR.htm', fleet='Regatta Racing'),
+    solo('iodai-ulsters-2025-regatta-coached', 'IODAI Ulsters 2025 — Regatta Coached',
+         'East Antrim Boat Club', ['2025-06-14', '2025-06-15'], nslots=8,
+         file=U + '2025UlstersEABCRC.htm', fleet='Regatta Coached'),
+
+    # --- Connachts @ Lough Derg YC (19–20 Jul) -------------------------------
+    main_fleet('iodai-connachts-2025-main-fleet', 'IODAI Connachts 2025 — Main Fleet',
+               'Lough Derg Yacht Club', ['2025-07-19', '2025-07-20'], nslots=7,
+               senior=C + '2025ConnachtsLDYCSM.htm', junior=C + '2025ConnachtsLDYCJM.htm', **LDYC),
+    solo('iodai-connachts-2025-regatta-racing', 'IODAI Connachts 2025 — Regatta Racing',
+         'Lough Derg Yacht Club', ['2025-07-19', '2025-07-20'], nslots=7,
+         file=C + '2025ConnachtsLDYCRR.htm', fleet='Regatta Racing', **LDYC),
+    solo('iodai-connachts-2025-regatta-coached', 'IODAI Connachts 2025 — Regatta Coached',
+         'Lough Derg Yacht Club', ['2025-07-19', '2025-07-20'], nslots=8,
+         file=C + '2025ConnachtsLDYCRC.htm', fleet='Regatta Coached', **LDYC),
+
+    # --- Munsters @ Kinsale YC (13–14 Sep) -----------------------------------
+    main_fleet('iodai-munsters-2025-main-fleet', 'IODAI Munsters 2025 — Main Fleet',
+               'Kinsale Yacht Club', ['2025-09-13', '2025-09-14'], nslots=4,
+               senior=M + '2025MunstersKYCSM.htm', junior=M + '2025MunstersKYCJM.htm', **KYC),
+    solo('iodai-munsters-2025-regatta-racing', 'IODAI Munsters 2025 — Regatta Racing',
+         'Kinsale Yacht Club', ['2025-09-13', '2025-09-14'], nslots=4,
+         file=M + '2025MunstersKYCRR.htm', fleet='Regatta Racing', **KYC),
+    solo('iodai-munsters-2025-regatta-coached', 'IODAI Munsters 2025 — Regatta Coached',
+         'Kinsale Yacht Club', ['2025-09-13', '2025-09-14'], nslots=0,
+         file=M + '2025MunstersKYCRC.htm', fleet='Regatta Coached', **KYC),
+
+    # --- Nationals @ Lough Ree YC (14–17 Aug) --------------------------------
+    main_fleet('iodai-nationals-2025-main-fleet', 'IODAI Nationals 2025 — Main Fleet',
+               'Lough Ree Yacht Club',
+               ['2025-08-14', '2025-08-15', '2025-08-16', '2025-08-17'], nslots=8,
+               senior=N + '2025NationalsLRYCSM.htm', junior=N + '2025NationalsLRYCJM.htm', **LRYC),
+    solo('iodai-nationals-2025-regatta-racing', 'IODAI Nationals 2025 — Regatta Racing',
+         'Lough Ree Yacht Club',
+         ['2025-08-14', '2025-08-15', '2025-08-16', '2025-08-17'], nslots=10,
+         file=N + '2025NationalsLRYCRR.htm', fleet='Regatta Racing',
+         discards=[(4, 1), (10, 2)], **LRYC),
+    solo('iodai-nationals-2025-regatta-coached', 'IODAI Nationals 2025 — Regatta Coached',
+         'Lough Ree Yacht Club',
+         ['2025-08-14', '2025-08-15', '2025-08-16', '2025-08-17'], nslots=12,
+         file=N + '2025NationalsLRYCRC.htm', fleet='Regatta Coached',
+         discards=[(4, 1), (12, 2)], **LRYC),
+
+    # --- Sprint Series (RCYC → MYC → WHSC), per-fleet Overall pages -----------
+    # 14 races, 3 discards (matching the published parentheses).
+    main_fleet('iodai-sprint-series-2025', 'IODAI Sprint Series 2025',
+               'RCYC / MYC / WHSC', ['2025-03-01', '2025-03-22', '2025-04-13'], nslots=14,
+               senior=S + '2025SprintOverallS.htm', junior=S + '2025SprintOverallJ.htm',
+               discards=[(4, 1), (8, 2), (12, 3)]),
+
+    # NOTE: National Training Week (Lough Derg) Crosbie Cup is deliberately NOT
+    # built. Its published page carries each boat's finishing position from the
+    # *combined* Halloween-regatta start (gold+silver+bronze together), not a
+    # position within the Crosbie group, so the race cells aren't a contiguous
+    # 1..N scratch result and can't be reconstructed by the position-based engine
+    # without re-scoring wrongly. Left unsourced (◻️) rather than committed wrong.
+]

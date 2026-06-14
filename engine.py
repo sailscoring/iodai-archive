@@ -16,6 +16,7 @@ collected by `build.py`, which is the CLI entry point (build / validate / adopt)
 """
 import os
 import re
+import math
 import html
 import json
 import sys
@@ -28,8 +29,11 @@ SOURCES_DIR = os.path.join(HERE, 'sources')
 SERIES_DIR = os.path.join(HERE, 'series')
 ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 
-META = {'Rank', 'Fleet', 'Class', 'Sail', 'Nat', 'Helm Name', 'Name',
-        'Club', 'Division', 'Gender', 'Age'}
+# Non-race meta columns. Some pages title the sail column 'Sail Number' and the
+# helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
+# excluded from the race columns (and read back via the fallbacks below).
+META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'Nat', 'Helm Name',
+        'HelmName', 'Name', 'Club', 'Division', 'Gender', 'Age', 'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -117,6 +121,12 @@ def classify(raw):
     return dict(discarded=discarded, kind='blank', score=None, code=None, penalty=None)
 
 
+def round_tenth(x):
+    """Round to the nearest tenth, 0.05 up — RRS Appendix A9 (and the app's
+    roundToTenth in lib/scoring.ts). Avoids Python's banker's rounding."""
+    return math.floor(x * 10 + 0.5) / 10
+
+
 def norm_gender(g):
     g = (g or '').strip().upper()
     return g if g in ('M', 'F') else ''
@@ -138,14 +148,14 @@ def load_competitors(cfg):
         _, rows = parse_file(src['file'])
         for row in rows:
             fleet = row['Fleet'] if src.get('fleet_from_col') else src['fleet']
-            name = row.get('Helm Name') or row.get('Name') or ''
+            name = row.get('Helm Name') or row.get('HelmName') or row.get('Name') or ''
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
             comps.append(dict(
-                id=det(f"{cfg['out']}/competitor/{fleet}/{row.get('Sail', '')}/{name.strip()}"),
+                id=det(f"{cfg['out']}/competitor/{fleet}/{row.get('Sail') or row.get('Sail Number') or ''}/{name.strip()}"),
                 fleet=fleet,
-                sail=row.get('Sail', '').strip(),
+                sail=(row.get('Sail') or row.get('Sail Number') or '').strip(),
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or '').strip(),
@@ -315,8 +325,12 @@ def score_fleet(comps, nslots, discards):
                 codes[c['id']][slot] = cell['code']
             else:
                 base = rank_pts[c['id']]
-                if cell['penalty'] == 'ZFP':
-                    base = min(base + round(0.20 * penalty), penalty)
+                # Additive percentage penalty (ZFP/SCP): 20% of the DNF score
+                # (here `penalty`), rounded to a tenth, capped at DNF — mirrors
+                # applyScoringPenalty in lib/scoring.ts.
+                if cell['penalty'] in ('ZFP', 'SCP'):
+                    pen = round(20 * penalty / 10) / 10
+                    base = min(round_tenth(base + pen), penalty)
                 pts[c['id']][slot] = base
                 codes[c['id']][slot] = None
     sailed = sum(1 for e in excluded if not e)
@@ -338,7 +352,7 @@ def score_fleet(comps, nslots, discards):
         # drop worst `ndisc` discardable scores
         discardable = sorted([p for p, code in scores if code not in NON_DISCARDABLE], reverse=True)
         nett = total - sum(discardable[:ndisc])
-        out[c['id']] = (round(total, 1), round(nett, 1))
+        out[c['id']] = (round_tenth(total), round_tenth(nett))
     return out
 
 
@@ -348,9 +362,11 @@ def validate(series):
         _, comps, fleet_names = build_series_file(cfg)
         print(f'\n=== {cfg["name"]} ===')
         # Validate per natively-scored fleet (published page == that fleet's own
-        # scoring), except the Sprint, whose published page scored all boats as
-        # ONE fleet.
-        if cfg['out'].startswith('iodai-sprint'):
+        # scoring). Exception: a Sprint whose published page scored all boats as
+        # ONE combined fleet (set validate_combined=True). When IODAI instead
+        # publishes per-fleet Sprint pages (2025-style OverallS/OverallJ), leave
+        # the flag off and each fleet validates against its own page.
+        if cfg.get('validate_combined'):
             groups = [('combined (published basis)', comps)]
         else:
             groups = [(f, [c for c in comps if c['fleet'] == f]) for f in fleet_names]

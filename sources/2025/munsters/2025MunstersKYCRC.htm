@@ -1,0 +1,635 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>Sailwave results for IODAI 2025 Munsters at Kinsale Yacht Club 2025</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightDiscards
+//  dependencies=jQuery
+//  description=Highlight discard scores in summary tables where discards are in ().
+//  author=Jon Eskdale
+//  date=2018-11-11
+//  version=1.1
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var discardSelector = '.summaryrace';
+var discardText     = /\b\)/;
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var discardColour   = '#f2f2f2';
+
+// create array of race column numbers for first table (summarytable)
+var ths = document.getElementsByTagName('col');
+var column =[];
+for (var i=0; i<ths.length; i++) {
+        if (ths[i].classList[0] === "race") {
+                column.push(i);
+        } else {
+                if (column.length !=0) {
+                        break;
+                }
+        }
+}
+//console.log(column);
+
+//  Set a class of summaryrace for all race cells in summary table body
+//
+for (var i=0; i<column.length; i++) {
+        $(".summarytable tbody tr td:nth-child(" + (column[i]+1) +")").addClass("summaryrace");
+}
+
+// Change the background color for cells with class of summaryrace and that match regular expression text
+$(function () {
+
+  $(discardSelector).filter(function() {
+    return discardText.test($(this).text());
+  }).css("background", discardColour);
+
+});
+});
+//
+//  name=HighlightWins3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2015-08-18
+//  version=1.6 2018-11-15
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var winsSelector = '.summaryrace';
+var winsText     = /\b1\.0/;
+var twoText              = /\b2\.0/;
+var threeText    = /\b3\.0/;
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+//var twoColour  = '#ffe768';
+//var threeColour  = '#fff0a1';
+
+// create array of race column numbers for first table (summarytable)
+var ths = document.getElementsByTagName('col');
+var column =[];
+for (var i=0; i<ths.length; i++) {
+        if (ths[i].classList[0] === "race") {
+                column.push(i);
+        } else {
+                if (column.length !=0) {
+                        break;
+                }
+        }
+}
+//console.log(column);
+
+//  Set a class of summaryrace for all race cells in summary table body
+//
+for (var i=0; i<column.length; i++) {
+        $(".summarytable tbody tr td:nth-child(" + (column[i]+1) +")").addClass("summaryrace");
+}
+
+// Change the background color for cells with class of summaryrace and that match regular expression text
+$(function () {
+
+  $(winsSelector).filter(function() {
+    return winsText.test($(this).text());
+  }).css("background", winsColour);
+  $(winsSelector).filter(function() {
+        return twoText.test($(this).text());
+  }).css("background", twoColour);
+  $(winsSelector).filter(function() {
+        return threeText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+<link rel="shortcut icon" type="image/ico" href="https://www.sailwave.com/favicon.ico"/>
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img id="eventburgee" class="hardright" src="https://iodai.com/wp-content/uploads/2014/06/KYC-Flag-e1755789126836.png" alt="event burgee" />
+<img id="venueburgee" class="hardleft"  src="https://www.sailwave.com/results/swlogo30.jpg" alt="venue burgee" />
+
+<h1>IODAI 2025 Munsters</h1>
+<h2>Kinsale Yacht Club</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 11:48 on September 19, 2025</h3>
+<h3 class="summarytitle" id="summaryregatta_coached">Regatta Coached Fleet</h3>
+<div class="caption summarycaption">Sailed: 0, Discards: 0, To count: 0, Entries: 33, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="10">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="helmagegroup" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1153</td>
+<td>IRL</td>
+<td>Allden</td>
+<td>MYC</td>
+<td>M</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1566</td>
+<td>IRL</td>
+<td>Ally ORiordan</td>
+<td>KYC</td>
+<td>F</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>670</td>
+<td>IRL</td>
+<td>Aoibhe Baynes</td>
+<td>GBSC</td>
+<td>F</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1097</td>
+<td>IRL</td>
+<td>Avice Foley</td>
+<td>RSGYC</td>
+<td>F</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1243</td>
+<td>IRL</td>
+<td>Beatrice O'Sullivan</td>
+<td>MBSC</td>
+<td>F</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>126</td>
+<td>IRL</td>
+<td>Camille Harney</td>
+<td>KYC</td>
+<td>F</td>
+<td>7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1495</td>
+<td>IRL</td>
+<td>Ciara Macnamara</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1211</td>
+<td>IRL</td>
+<td>Darragh Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1290</td>
+<td>IRL</td>
+<td>Darragh Travers</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1004</td>
+<td>IRL</td>
+<td>Dillon Rosenkowitz</td>
+<td>WHSC</td>
+<td>M</td>
+<td>11</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>347</td>
+<td>IRL</td>
+<td>Dylan Fahy</td>
+<td>NYC</td>
+<td>M</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>950</td>
+<td>IRL</td>
+<td>Edie Bruen</td>
+<td>RCYC / MBSC</td>
+<td>F</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>4</td>
+<td>IRL</td>
+<td>Elsie Craig</td>
+<td>LDYC</td>
+<td>F</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1152</td>
+<td>IRL</td>
+<td>Eoin Barry</td>
+<td>SDC</td>
+<td>M</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1166</td>
+<td>IRL</td>
+<td>Fiach O Byrne</td>
+<td>SDC / HYC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1458</td>
+<td>IRL</td>
+<td>Florrie Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1217</td>
+<td>IRL</td>
+<td>George How</td>
+<td>RCYC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>11</td>
+<td>IRL</td>
+<td>Grace Collins</td>
+<td>GBSC</td>
+<td>F</td>
+<td>12</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>902</td>
+<td>IRL</td>
+<td>Heidi Murray</td>
+<td>SDC / HYC</td>
+<td>F</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1316</td>
+<td>IRL</td>
+<td>Hugo Murdock</td>
+<td>RSGYC</td>
+<td>M</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1527</td>
+<td>IRL</td>
+<td>Jimmy O'Riordan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>907</td>
+<td>IRL</td>
+<td>Joan Jeffers</td>
+<td>MBSC</td>
+<td>F</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1532</td>
+<td>IRL</td>
+<td>Matthew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>M</td>
+<td>7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>605</td>
+<td>IRL</td>
+<td>Meadhbh O'Hanlon</td>
+<td>KYC</td>
+<td>F</td>
+<td>13</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>547</td>
+<td>IRL</td>
+<td>Michael Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1647</td>
+<td>IRL</td>
+<td>Molly Hofler</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1246</td>
+<td>IRL</td>
+<td>Olaf Sorensen</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1537</td>
+<td>IRL</td>
+<td>Paddy Fitzgerald</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>310</td>
+<td>IRL</td>
+<td>Rossa Smith</td>
+<td>GBSC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1072</td>
+<td>IRL</td>
+<td>Rowan Crinion</td>
+<td>RSGYC</td>
+<td>M</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>407</td>
+<td>IRL</td>
+<td>Seb Harris</td>
+<td>WHSC</td>
+<td>M</td>
+<td>9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1113</td>
+<td>IRL</td>
+<td>ThomasOLeary</td>
+<td>KYC</td>
+<td>M</td>
+<td>10</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta Coached</td>
+<td>1060</td>
+<td>IRL</td>
+<td>Timothee Richard</td>
+<td>NYC</td>
+<td>M</td>
+<td>8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="https://www.kyc.ie/axiom-private-clients-optimist-munster-championships-13th-14th-sept-2025/">www.kyc.ie/axiom-private-clients-optimist-munster-championships-13th-14th-sept-2025/</a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="https://iodai.com/2025-munster-championships/">iodai.com/2025-munster-championships/</a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.38.01<br /><a href="https://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

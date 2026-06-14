@@ -25,6 +25,7 @@ SERIES = [
         subdivision=True, boat_class=False, primary='helm',
         discards=[(4, 1), (8, 2), (12, 3)],
         nslots=12,
+        validate_combined=True,  # 2026 publishes ONE combined-fleet page
         sources=[dict(file='2026/sprint-series/2026Sprint SeriesOverall.htm',
                       fleet_from_col=True, slot0=0)],
         fleet_order=['Senior', 'Junior'],
