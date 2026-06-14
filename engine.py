@@ -33,8 +33,8 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
 META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo', 'Nat',
-        'Helm Name', 'HelmName', 'Name', 'Club', 'Division', 'Gender', 'Age',
-        'Rating'}
+        'Helm Name', 'HelmName', 'Helm', 'Name', 'Club', 'Division', 'Gender',
+        'Age', 'HelmAge', 'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -109,10 +109,15 @@ def classify(raw):
         code: str|None, penalty: str|None}."""
     discarded = raw.startswith('(') and raw.endswith(')')
     t = raw[1:-1].strip() if discarded else raw.strip()
-    m = re.match(r'^([\d.]+)\s+([A-Z]{2,4})$', t)
+    m = re.match(r'^([\d.]+)\s+([A-Za-z]{2,5})$', t)
     if m:
         score = float(m.group(1))
-        tok = m.group(2)
+        tok = m.group(2).upper()
+        if tok.startswith('RDG'):
+            # Redress given (RDGa = A9 average): the displayed number IS the
+            # awarded points, not a finishing position. Carried through as a
+            # stated-redress finish so the app reproduces it exactly.
+            return dict(discarded=discarded, kind='redress', score=score, code='RDG', penalty=None)
         if tok in RESULT_CODES:
             return dict(discarded=discarded, kind='code', score=score, code=tok, penalty=None)
         # additive penalty (ZFP/SCP/DPI) sits on top of a real finish
@@ -158,7 +163,8 @@ def load_competitors(cfg):
             # 'Division' column — set fleet_col to point at it), else it's fixed.
             fleet = (row.get(src.get('fleet_col', 'Fleet'))
                      if src.get('fleet_from_col') else src['fleet'])
-            name = row.get('Helm Name') or row.get('HelmName') or row.get('Name') or ''
+            name = (row.get('Helm Name') or row.get('HelmName')
+                    or row.get('Helm') or row.get('Name') or '')
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
@@ -170,7 +176,7 @@ def load_competitors(cfg):
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or '').strip(),
                 gender=norm_gender(row.get('Gender')),
-                age=norm_age(row.get('Age')),
+                age=norm_age(row.get('Age') or row.get('HelmAge')),
                 subdivision=(row.get('Division') or '').strip() if cfg['subdivision'] else '',
                 boat_class=(row.get('Class') or '').strip() if cfg['boat_class'] else '',
                 cells=cells,
@@ -221,6 +227,12 @@ def build_finishes(comps, fleet_names, nslots):
                         id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'], sortOrder=None,
                         resultCode=cell['code'], startPresent=None,
                         penaltyCode=None, penaltyOverride=None))
+                elif cell and cell['kind'] == 'redress':
+                    by_slot[slot].append(dict(
+                        id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'], sortOrder=None,
+                        resultCode='RDG', startPresent=None, penaltyCode=None,
+                        penaltyOverride=None, redressMethod='stated',
+                        redressPoints=cell['score']))
             offset = fi * 10000
             prev_pos = None
             for k, (pos, c, cell) in enumerate(race_finishers(group, slot)):
@@ -333,6 +345,10 @@ def score_fleet(comps, nslots, discards):
             if cell['kind'] == 'code':
                 pts[c['id']][slot] = penalty
                 codes[c['id']][slot] = cell['code']
+            elif cell['kind'] == 'redress':
+                # Stated redress: the awarded average points, discardable as normal.
+                pts[c['id']][slot] = cell['score']
+                codes[c['id']][slot] = None
             else:
                 base = rank_pts[c['id']]
                 # Additive percentage penalty (ZFP/SCP): 20% of the DNF score

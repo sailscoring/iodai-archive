@@ -1,0 +1,4120 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for 2023 IODAI Connaught Championships at Lough Ree Yacht Club 2023</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2021/08/iodai-logo-2018-192x300-1.png" alt="event burgee" />
+<img class="hardleft"  src="https://iodai.com/wp-content/uploads/2014/06/Lough-Ree-e1694472313601.png" alt="venue burgee" />
+
+<h1>2023 IODAI Connaught Championships</h1>
+<h2>Lough Ree Yacht Club</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 15:41 on September 17, 2023</h3>
+<h3 class="summarytitle" id="summaryracing">Racing Division</h3>
+<div class="caption summarycaption">Sailed: 4, Discards: 1, To count: 3, Entries: 58, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="15">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th><a class="racelink" href="#r1racing">R1</a></th>
+<th><a class="racelink" href="#r2racing">R2</a></th>
+<th><a class="racelink" href="#r3racing">R3</a></th>
+<th><a class="racelink" href="#r4racing">R4</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>3423</td>
+<td>Michael Malone</td>
+<td>LRYC</td>
+<td>M</td>
+<td>12</td>
+<td class="rank1">1.0</td>
+<td>(5.0)</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td>10.0</td>
+<td>5.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1082</td>
+<td>Lucille Mullett</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>12</td>
+<td>(10.0)</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td>16.0</td>
+<td>6.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Harry Coole</td>
+<td>MBSC</td>
+<td>M</td>
+<td>13</td>
+<td class="rank2">2.0</td>
+<td>(25.0)</td>
+<td>11.0</td>
+<td>4.0</td>
+<td>42.0</td>
+<td>17.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1506</td>
+<td>Jess Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>(24.0)</td>
+<td>9.0</td>
+<td>41.0</td>
+<td>17.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>600</td>
+<td>Jess Tottenham</td>
+<td>LDYC</td>
+<td>F</td>
+<td>11</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td>(17.0)</td>
+<td>14.0</td>
+<td>35.0</td>
+<td>18.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1269</td>
+<td>Conor Groarke</td>
+<td>LRYC</td>
+<td>M</td>
+<td>11</td>
+<td>(12.0)</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>30.0</td>
+<td>18.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1608</td>
+<td>Robbie Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>(9.0)</td>
+<td>6.0</td>
+<td>28.0</td>
+<td>19.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1521</td>
+<td>Cian Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>5.0</td>
+<td>10.0</td>
+<td>12.0</td>
+<td>(13.0)</td>
+<td>40.0</td>
+<td>27.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1513</td>
+<td>Eabha Brennan-Hobbs</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>15.0</td>
+<td class="rank3">3.0</td>
+<td>(25.0)</td>
+<td>10.0</td>
+<td>53.0</td>
+<td>28.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>693</td>
+<td>Sadie Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>14.0</td>
+<td>(24.0)</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>52.0</td>
+<td>28.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1344</td>
+<td>Síofra Buckley</td>
+<td>KYC</td>
+<td>F</td>
+<td>12</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>(31.0)</td>
+<td>12.0</td>
+<td>61.0</td>
+<td>30.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1610</td>
+<td>Sofia Hayes</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>26.0</td>
+<td>(29.0)</td>
+<td>5.0</td>
+<td class="rank3">3.0</td>
+<td>63.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1391</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>27.0</td>
+<td>(34.0)</td>
+<td class="rank1">1.0</td>
+<td>8.0</td>
+<td>70.0</td>
+<td>36.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1149</td>
+<td>Joe Kingston</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>8.0</td>
+<td>(21.0)</td>
+<td>18.0</td>
+<td>11.0</td>
+<td>58.0</td>
+<td>37.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1300</td>
+<td>Milo Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>10</td>
+<td>(33.0)</td>
+<td>12.0</td>
+<td>8.0</td>
+<td>22.0</td>
+<td>75.0</td>
+<td>42.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>(26.0)</td>
+<td>71.0</td>
+<td>45.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1244</td>
+<td>George Creighton</td>
+<td>MBSC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>13.0</td>
+<td>13.0</td>
+<td>21.0</td>
+<td>(24.0)</td>
+<td>71.0</td>
+<td>47.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1282</td>
+<td>Eli Dullea</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>18.0</td>
+<td>14.0</td>
+<td>(41.0)</td>
+<td>17.0</td>
+<td>90.0</td>
+<td>49.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1154</td>
+<td>Summer Harris</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>20.0</td>
+<td>11.0</td>
+<td>19.0</td>
+<td>(36.0)</td>
+<td>86.0</td>
+<td>50.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1669</td>
+<td>Iris Egar Keane</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>22.0</td>
+<td>19.0</td>
+<td>10.0</td>
+<td>(28.0)</td>
+<td>79.0</td>
+<td>51.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1493</td>
+<td>Zoe O Hare</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>11.0</td>
+<td>(32.0)</td>
+<td>26.0</td>
+<td>16.0</td>
+<td>85.0</td>
+<td>53.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>22nd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1576</td>
+<td>Ben Chaix</td>
+<td>TBSC / NYC</td>
+<td>M</td>
+<td>9</td>
+<td>6.0</td>
+<td>15.0</td>
+<td>(35.0)</td>
+<td>35.0</td>
+<td>91.0</td>
+<td>56.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>23rd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>898</td>
+<td>Max Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>23.0</td>
+<td>(28.0)</td>
+<td>14.0</td>
+<td>19.0</td>
+<td>84.0</td>
+<td>56.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>24th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>11608</td>
+<td>Dan Brereton</td>
+<td>SDC</td>
+<td>M</td>
+<td>13</td>
+<td>19.0</td>
+<td>26.0</td>
+<td>(30.0)</td>
+<td>15.0</td>
+<td>90.0</td>
+<td>60.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>25th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>13</td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>M</td>
+<td>9</td>
+<td>(50.0)</td>
+<td>8.0</td>
+<td>16.0</td>
+<td>37.0</td>
+<td>111.0</td>
+<td>61.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>26th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1538</td>
+<td>Aisling Morrin</td>
+<td>GBSC</td>
+<td>F</td>
+<td>11</td>
+<td>17.0</td>
+<td>18.0</td>
+<td>27.0</td>
+<td>(31.0)</td>
+<td>93.0</td>
+<td>62.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>27th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>25.0</td>
+<td>22.0</td>
+<td>20.0</td>
+<td>(43.0)</td>
+<td>110.0</td>
+<td>67.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>28th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>943</td>
+<td>Maximilian Mullane</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>29.0</td>
+<td>(30.0)</td>
+<td>23.0</td>
+<td>18.0</td>
+<td>100.0</td>
+<td>70.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>29th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>RStGYC / HYC</td>
+<td>M</td>
+<td>10</td>
+<td>(32.0)</td>
+<td>27.0</td>
+<td>22.0</td>
+<td>21.0</td>
+<td>102.0</td>
+<td>70.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>30th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Alex Hoban</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>24.0</td>
+<td>17.0</td>
+<td>(36.0)</td>
+<td>30.0</td>
+<td>107.0</td>
+<td>71.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>31st</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>40.0</td>
+<td>(41.0)</td>
+<td>4.0</td>
+<td>33.0</td>
+<td>118.0</td>
+<td>77.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>32nd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1258</td>
+<td>Fionn MacNamara</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>21.0</td>
+<td>(37.0)</td>
+<td>29.0</td>
+<td>27.0</td>
+<td>114.0</td>
+<td>77.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>33rd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>SDC</td>
+<td>F</td>
+<td>13</td>
+<td>(38.0)</td>
+<td>23.0</td>
+<td>34.0</td>
+<td>23.0</td>
+<td>118.0</td>
+<td>80.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>34th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1567</td>
+<td>Charlie Noone</td>
+<td>MYC</td>
+<td>M</td>
+<td>10</td>
+<td>28.0</td>
+<td>31.0</td>
+<td>(40.0)</td>
+<td>25.0</td>
+<td>124.0</td>
+<td>84.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>35th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1405</td>
+<td>Oliver Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>37.0</td>
+<td>20.0</td>
+<td>28.0</td>
+<td>(40.0)</td>
+<td>125.0</td>
+<td>85.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1175</td>
+<td>Oliver Cooke</td>
+<td>SLYC</td>
+<td>M</td>
+<td>10</td>
+<td>35.0</td>
+<td>43.0</td>
+<td>15.0</td>
+<td>(44.0)</td>
+<td>137.0</td>
+<td>93.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>37th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>646</td>
+<td>Ben Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>31.0</td>
+<td>(33.0)</td>
+<td>33.0</td>
+<td>29.0</td>
+<td>126.0</td>
+<td>93.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>38th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>MYC</td>
+<td>F</td>
+<td>11</td>
+<td>36.0</td>
+<td>40.0</td>
+<td>(44.0)</td>
+<td>20.0</td>
+<td>140.0</td>
+<td>96.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>39th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1309</td>
+<td>David Judge</td>
+<td>SDC</td>
+<td>M</td>
+<td>11</td>
+<td>30.0</td>
+<td>35.0</td>
+<td>32.0</td>
+<td>(38.0)</td>
+<td>135.0</td>
+<td>97.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>40th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>NED</td>
+<td>2964</td>
+<td>Leo Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>34.0</td>
+<td>39.0</td>
+<td>37.0</td>
+<td>(41.0)</td>
+<td>151.0</td>
+<td>110.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>41st</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1336</td>
+<td>Jack Ryan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>42.0</td>
+<td>(44.0)</td>
+<td>38.0</td>
+<td>34.0</td>
+<td>158.0</td>
+<td>114.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>42nd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1487</td>
+<td>Wills Harnett</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>(43.0)</td>
+<td>36.0</td>
+<td>43.0</td>
+<td>39.0</td>
+<td>161.0</td>
+<td>118.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>43rd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1243</td>
+<td>Max O'Sullivan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>11</td>
+<td>45.0</td>
+<td>45.0</td>
+<td>(49.0)</td>
+<td>32.0</td>
+<td>171.0</td>
+<td>122.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>44th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1238</td>
+<td>Rory Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>12</td>
+<td>41.0</td>
+<td>(49.0)</td>
+<td>39.0</td>
+<td>42.0</td>
+<td>171.0</td>
+<td>122.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>45th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1595</td>
+<td>Jamie McGee</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>39.0</td>
+<td>42.0</td>
+<td>(48.0)</td>
+<td>45.0</td>
+<td>174.0</td>
+<td>126.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>46th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Aisling Kinsella</td>
+<td>GBSC</td>
+<td>M</td>
+<td>12</td>
+<td>(47.0)</td>
+<td>38.0</td>
+<td>45.0</td>
+<td>47.0</td>
+<td>177.0</td>
+<td>130.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>47th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>6136</td>
+<td>Alanna Whelan</td>
+<td>NYC / BHYC</td>
+<td>F</td>
+<td>11</td>
+<td>44.0</td>
+<td>(46.0)</td>
+<td>42.0</td>
+<td>46.0</td>
+<td>178.0</td>
+<td>132.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>48th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1577</td>
+<td>Darragh Baynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>10</td>
+<td>(48.0)</td>
+<td>47.0</td>
+<td>46.0</td>
+<td>48.0</td>
+<td>189.0</td>
+<td>141.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>49th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1452</td>
+<td>Brody Hayes</td>
+<td>MBSC</td>
+<td>M</td>
+<td>8</td>
+<td>(52.0)</td>
+<td>50.0</td>
+<td>47.0</td>
+<td>50.0</td>
+<td>199.0</td>
+<td>147.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>50th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1040</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>49.0</td>
+<td>48.0</td>
+<td>(52.0)</td>
+<td>51.0</td>
+<td>200.0</td>
+<td>148.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>51st</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1390</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>F</td>
+<td>10</td>
+<td>51.0</td>
+<td>(52.0)</td>
+<td>51.0</td>
+<td>49.0</td>
+<td>203.0</td>
+<td>151.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>52nd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1553</td>
+<td>Mark Cunningham</td>
+<td>SSC</td>
+<td>M</td>
+<td>10</td>
+<td>(53.0)</td>
+<td>51.0</td>
+<td>50.0</td>
+<td>52.0</td>
+<td>206.0</td>
+<td>153.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>53rd</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>(54.0)</td>
+<td>53.0</td>
+<td>53.0</td>
+<td>53.0</td>
+<td>213.0</td>
+<td>159.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>54th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1153</td>
+<td>NoahJohn</td>
+<td>MYC</td>
+<td>M</td>
+<td>9</td>
+<td>46.0</td>
+<td>(59.0 DNS)</td>
+<td>59.0 DNS</td>
+<td>59.0 DNS</td>
+<td>223.0</td>
+<td>164.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>55th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1497</td>
+<td>Arthur Fegan</td>
+<td>MYC / RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>(59.0 DNC)</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>236.0</td>
+<td>177.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>55th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1071</td>
+<td>Josephine Dion</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>(59.0 DNC)</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>236.0</td>
+<td>177.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>55th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1611</td>
+<td>Caroline Byrne</td>
+<td>SLYC/RCYC/BYC/QYC</td>
+<td>F</td>
+<td>11</td>
+<td>(59.0 DNC)</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>236.0</td>
+<td>177.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>55th</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1448</td>
+<td>Donnovan Gaffney</td>
+<td>NYC</td>
+<td>M</td>
+<td>11</td>
+<td>(59.0 DNC)</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>59.0 DNC</td>
+<td>236.0</td>
+<td>177.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1racing">R1 - Racing Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>3423</td>
+<td>Michael Malone</td>
+<td>LRYC</td>
+<td>M</td>
+<td>12</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Harry Coole</td>
+<td>MBSC</td>
+<td>M</td>
+<td>13</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>600</td>
+<td>Jess Tottenham</td>
+<td>LDYC</td>
+<td>F</td>
+<td>11</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1506</td>
+<td>Jess Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1521</td>
+<td>Cian Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1576</td>
+<td>Ben Chaix</td>
+<td>TBSC / NYC</td>
+<td>M</td>
+<td>9</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1608</td>
+<td>Robbie Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1149</td>
+<td>Joe Kingston</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1344</td>
+<td>Síofra Buckley</td>
+<td>KYC</td>
+<td>F</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1082</td>
+<td>Lucille Mullett</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>12</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1493</td>
+<td>Zoe O Hare</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1269</td>
+<td>Conor Groarke</td>
+<td>LRYC</td>
+<td>M</td>
+<td>11</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1244</td>
+<td>George Creighton</td>
+<td>MBSC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>693</td>
+<td>Sadie Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1513</td>
+<td>Eabha Brennan-Hobbs</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1538</td>
+<td>Aisling Morrin</td>
+<td>GBSC</td>
+<td>F</td>
+<td>11</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1282</td>
+<td>Eli Dullea</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>11608</td>
+<td>Dan Brereton</td>
+<td>SDC</td>
+<td>M</td>
+<td>13</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1154</td>
+<td>Summer Harris</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1258</td>
+<td>Fionn MacNamara</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1669</td>
+<td>Iris Egar Keane</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>898</td>
+<td>Max Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Alex Hoban</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1610</td>
+<td>Sofia Hayes</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1391</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1567</td>
+<td>Charlie Noone</td>
+<td>MYC</td>
+<td>M</td>
+<td>10</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>943</td>
+<td>Maximilian Mullane</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1309</td>
+<td>David Judge</td>
+<td>SDC</td>
+<td>M</td>
+<td>11</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>646</td>
+<td>Ben Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>RStGYC / HYC</td>
+<td>M</td>
+<td>10</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1300</td>
+<td>Milo Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>10</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>NED</td>
+<td>2964</td>
+<td>Leo Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1175</td>
+<td>Oliver Cooke</td>
+<td>SLYC</td>
+<td>M</td>
+<td>10</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>MYC</td>
+<td>F</td>
+<td>11</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1405</td>
+<td>Oliver Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>SDC</td>
+<td>F</td>
+<td>13</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1595</td>
+<td>Jamie McGee</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1238</td>
+<td>Rory Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>12</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1336</td>
+<td>Jack Ryan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1487</td>
+<td>Wills Harnett</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>44</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>6136</td>
+<td>Alanna Whelan</td>
+<td>NYC / BHYC</td>
+<td>F</td>
+<td>11</td>
+<td>44</td>
+<td>44.0</td>
+</tr>
+<tr class="odd racerow">
+<td>45</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1243</td>
+<td>Max O'Sullivan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>11</td>
+<td>45</td>
+<td>45.0</td>
+</tr>
+<tr class="even racerow">
+<td>46</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1153</td>
+<td>NoahJohn</td>
+<td>MYC</td>
+<td>M</td>
+<td>9</td>
+<td>46</td>
+<td>46.0</td>
+</tr>
+<tr class="odd racerow">
+<td>47</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Aisling Kinsella</td>
+<td>GBSC</td>
+<td>M</td>
+<td>12</td>
+<td>47</td>
+<td>47.0</td>
+</tr>
+<tr class="even racerow">
+<td>48</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1577</td>
+<td>Darragh Baynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>10</td>
+<td>48</td>
+<td>48.0</td>
+</tr>
+<tr class="odd racerow">
+<td>49</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1040</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>49</td>
+<td>49.0</td>
+</tr>
+<tr class="even racerow">
+<td>50</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>13</td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>M</td>
+<td>9</td>
+<td>50</td>
+<td>50.0</td>
+</tr>
+<tr class="odd racerow">
+<td>51</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1390</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>F</td>
+<td>10</td>
+<td>51</td>
+<td>51.0</td>
+</tr>
+<tr class="even racerow">
+<td>52</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1452</td>
+<td>Brody Hayes</td>
+<td>MBSC</td>
+<td>M</td>
+<td>8</td>
+<td>52</td>
+<td>52.0</td>
+</tr>
+<tr class="odd racerow">
+<td>53</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1553</td>
+<td>Mark Cunningham</td>
+<td>SSC</td>
+<td>M</td>
+<td>10</td>
+<td>53</td>
+<td>53.0</td>
+</tr>
+<tr class="even racerow">
+<td>54</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>73</td>
+<td>54.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2racing">R2 - Racing Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>600</td>
+<td>Jess Tottenham</td>
+<td>LDYC</td>
+<td>F</td>
+<td>11</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1082</td>
+<td>Lucille Mullett</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>12</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1513</td>
+<td>Eabha Brennan-Hobbs</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1506</td>
+<td>Jess Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>3423</td>
+<td>Michael Malone</td>
+<td>LRYC</td>
+<td>M</td>
+<td>12</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1608</td>
+<td>Robbie Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1269</td>
+<td>Conor Groarke</td>
+<td>LRYC</td>
+<td>M</td>
+<td>11</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>13</td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>M</td>
+<td>9</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1344</td>
+<td>Síofra Buckley</td>
+<td>KYC</td>
+<td>F</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1521</td>
+<td>Cian Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1154</td>
+<td>Summer Harris</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1300</td>
+<td>Milo Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>10</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1244</td>
+<td>George Creighton</td>
+<td>MBSC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1282</td>
+<td>Eli Dullea</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1576</td>
+<td>Ben Chaix</td>
+<td>TBSC / NYC</td>
+<td>M</td>
+<td>9</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Alex Hoban</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1538</td>
+<td>Aisling Morrin</td>
+<td>GBSC</td>
+<td>F</td>
+<td>11</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1669</td>
+<td>Iris Egar Keane</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1405</td>
+<td>Oliver Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1149</td>
+<td>Joe Kingston</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>SDC</td>
+<td>F</td>
+<td>13</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>693</td>
+<td>Sadie Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Harry Coole</td>
+<td>MBSC</td>
+<td>M</td>
+<td>13</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>11608</td>
+<td>Dan Brereton</td>
+<td>SDC</td>
+<td>M</td>
+<td>13</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>RStGYC / HYC</td>
+<td>M</td>
+<td>10</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>898</td>
+<td>Max Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1610</td>
+<td>Sofia Hayes</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>943</td>
+<td>Maximilian Mullane</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1567</td>
+<td>Charlie Noone</td>
+<td>MYC</td>
+<td>M</td>
+<td>10</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1493</td>
+<td>Zoe O Hare</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>646</td>
+<td>Ben Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1391</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1309</td>
+<td>David Judge</td>
+<td>SDC</td>
+<td>M</td>
+<td>11</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1487</td>
+<td>Wills Harnett</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1258</td>
+<td>Fionn MacNamara</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Aisling Kinsella</td>
+<td>GBSC</td>
+<td>M</td>
+<td>12</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>NED</td>
+<td>2964</td>
+<td>Leo Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>MYC</td>
+<td>F</td>
+<td>11</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1595</td>
+<td>Jamie McGee</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1175</td>
+<td>Oliver Cooke</td>
+<td>SLYC</td>
+<td>M</td>
+<td>10</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>44</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1336</td>
+<td>Jack Ryan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>44</td>
+<td>44.0</td>
+</tr>
+<tr class="odd racerow">
+<td>45</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1243</td>
+<td>Max O'Sullivan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>11</td>
+<td>45</td>
+<td>45.0</td>
+</tr>
+<tr class="even racerow">
+<td>46</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>6136</td>
+<td>Alanna Whelan</td>
+<td>NYC / BHYC</td>
+<td>F</td>
+<td>11</td>
+<td>46</td>
+<td>46.0</td>
+</tr>
+<tr class="odd racerow">
+<td>47</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1577</td>
+<td>Darragh Baynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>10</td>
+<td>47</td>
+<td>47.0</td>
+</tr>
+<tr class="even racerow">
+<td>48</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1040</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>48</td>
+<td>48.0</td>
+</tr>
+<tr class="odd racerow">
+<td>49</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1238</td>
+<td>Rory Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>12</td>
+<td>49</td>
+<td>49.0</td>
+</tr>
+<tr class="even racerow">
+<td>50</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1452</td>
+<td>Brody Hayes</td>
+<td>MBSC</td>
+<td>M</td>
+<td>8</td>
+<td>50</td>
+<td>50.0</td>
+</tr>
+<tr class="odd racerow">
+<td>51</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1553</td>
+<td>Mark Cunningham</td>
+<td>SSC</td>
+<td>M</td>
+<td>10</td>
+<td>51</td>
+<td>51.0</td>
+</tr>
+<tr class="even racerow">
+<td>52</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1390</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>F</td>
+<td>10</td>
+<td>52</td>
+<td>52.0</td>
+</tr>
+<tr class="odd racerow">
+<td>53</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>55</td>
+<td>53.0</td>
+</tr>
+<tr class="even racerow">
+<td>54</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1153</td>
+<td>NoahJohn</td>
+<td>MYC</td>
+<td>M</td>
+<td>9</td>
+<td>DNS</td>
+<td>59.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3racing">R3 - Racing Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1391</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1082</td>
+<td>Lucille Mullett</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>12</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>3423</td>
+<td>Michael Malone</td>
+<td>LRYC</td>
+<td>M</td>
+<td>12</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1610</td>
+<td>Sofia Hayes</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1269</td>
+<td>Conor Groarke</td>
+<td>LRYC</td>
+<td>M</td>
+<td>11</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>693</td>
+<td>Sadie Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1300</td>
+<td>Milo Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>10</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1608</td>
+<td>Robbie Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1669</td>
+<td>Iris Egar Keane</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Harry Coole</td>
+<td>MBSC</td>
+<td>M</td>
+<td>13</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1521</td>
+<td>Cian Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>898</td>
+<td>Max Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1175</td>
+<td>Oliver Cooke</td>
+<td>SLYC</td>
+<td>M</td>
+<td>10</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>13</td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>M</td>
+<td>9</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>600</td>
+<td>Jess Tottenham</td>
+<td>LDYC</td>
+<td>F</td>
+<td>11</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1149</td>
+<td>Joe Kingston</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1154</td>
+<td>Summer Harris</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1244</td>
+<td>George Creighton</td>
+<td>MBSC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>RStGYC / HYC</td>
+<td>M</td>
+<td>10</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>943</td>
+<td>Maximilian Mullane</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1506</td>
+<td>Jess Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1513</td>
+<td>Eabha Brennan-Hobbs</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1493</td>
+<td>Zoe O Hare</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1538</td>
+<td>Aisling Morrin</td>
+<td>GBSC</td>
+<td>F</td>
+<td>11</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1405</td>
+<td>Oliver Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1258</td>
+<td>Fionn MacNamara</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>11608</td>
+<td>Dan Brereton</td>
+<td>SDC</td>
+<td>M</td>
+<td>13</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1344</td>
+<td>Síofra Buckley</td>
+<td>KYC</td>
+<td>F</td>
+<td>12</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1309</td>
+<td>David Judge</td>
+<td>SDC</td>
+<td>M</td>
+<td>11</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>646</td>
+<td>Ben Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>SDC</td>
+<td>F</td>
+<td>13</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1576</td>
+<td>Ben Chaix</td>
+<td>TBSC / NYC</td>
+<td>M</td>
+<td>9</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Alex Hoban</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>NED</td>
+<td>2964</td>
+<td>Leo Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1336</td>
+<td>Jack Ryan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1238</td>
+<td>Rory Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>12</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1567</td>
+<td>Charlie Noone</td>
+<td>MYC</td>
+<td>M</td>
+<td>10</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1282</td>
+<td>Eli Dullea</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>6136</td>
+<td>Alanna Whelan</td>
+<td>NYC / BHYC</td>
+<td>F</td>
+<td>11</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1487</td>
+<td>Wills Harnett</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>44</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>MYC</td>
+<td>F</td>
+<td>11</td>
+<td>44</td>
+<td>44.0</td>
+</tr>
+<tr class="odd racerow">
+<td>45</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Aisling Kinsella</td>
+<td>GBSC</td>
+<td>M</td>
+<td>12</td>
+<td>45</td>
+<td>45.0</td>
+</tr>
+<tr class="even racerow">
+<td>46</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1577</td>
+<td>Darragh Baynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>10</td>
+<td>46</td>
+<td>46.0</td>
+</tr>
+<tr class="odd racerow">
+<td>47</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1452</td>
+<td>Brody Hayes</td>
+<td>MBSC</td>
+<td>M</td>
+<td>8</td>
+<td>47</td>
+<td>47.0</td>
+</tr>
+<tr class="even racerow">
+<td>48</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1595</td>
+<td>Jamie McGee</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>48</td>
+<td>48.0</td>
+</tr>
+<tr class="odd racerow">
+<td>49</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1243</td>
+<td>Max O'Sullivan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>11</td>
+<td>49</td>
+<td>49.0</td>
+</tr>
+<tr class="even racerow">
+<td>50</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1553</td>
+<td>Mark Cunningham</td>
+<td>SSC</td>
+<td>M</td>
+<td>10</td>
+<td>50</td>
+<td>50.0</td>
+</tr>
+<tr class="odd racerow">
+<td>51</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1390</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>F</td>
+<td>10</td>
+<td>51</td>
+<td>51.0</td>
+</tr>
+<tr class="even racerow">
+<td>52</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1040</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>52</td>
+<td>52.0</td>
+</tr>
+<tr class="odd racerow">
+<td>53</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>58</td>
+<td>53.0</td>
+</tr>
+<tr class="even racerow">
+<td>54</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1153</td>
+<td>NoahJohn</td>
+<td>MYC</td>
+<td>M</td>
+<td>9</td>
+<td>DNS</td>
+<td>59.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4racing">R4 - Racing Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>3423</td>
+<td>Michael Malone</td>
+<td>LRYC</td>
+<td>M</td>
+<td>12</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1082</td>
+<td>Lucille Mullett</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>12</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1610</td>
+<td>Sofia Hayes</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Harry Coole</td>
+<td>MBSC</td>
+<td>M</td>
+<td>13</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1269</td>
+<td>Conor Groarke</td>
+<td>LRYC</td>
+<td>M</td>
+<td>11</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1608</td>
+<td>Robbie Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>693</td>
+<td>Sadie Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1391</td>
+<td>Oscar Rowan</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1506</td>
+<td>Jess Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1513</td>
+<td>Eabha Brennan-Hobbs</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1149</td>
+<td>Joe Kingston</td>
+<td>KYC</td>
+<td>M</td>
+<td>11</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1344</td>
+<td>Síofra Buckley</td>
+<td>KYC</td>
+<td>F</td>
+<td>12</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1521</td>
+<td>Cian Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>600</td>
+<td>Jess Tottenham</td>
+<td>LDYC</td>
+<td>F</td>
+<td>11</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>11608</td>
+<td>Dan Brereton</td>
+<td>SDC</td>
+<td>M</td>
+<td>13</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1493</td>
+<td>Zoe O Hare</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1282</td>
+<td>Eli Dullea</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>943</td>
+<td>Maximilian Mullane</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>898</td>
+<td>Max Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1444</td>
+<td>Elena Hoffman</td>
+<td>MYC</td>
+<td>F</td>
+<td>11</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1578</td>
+<td>Cian Spain</td>
+<td>RStGYC / HYC</td>
+<td>M</td>
+<td>10</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1300</td>
+<td>Milo Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>10</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1464</td>
+<td>Skye O'Callaghan</td>
+<td>SDC</td>
+<td>F</td>
+<td>13</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1244</td>
+<td>George Creighton</td>
+<td>MBSC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1567</td>
+<td>Charlie Noone</td>
+<td>MYC</td>
+<td>M</td>
+<td>10</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1417</td>
+<td>Stephanie Rock</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>10</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1258</td>
+<td>Fionn MacNamara</td>
+<td>LRYC</td>
+<td>M</td>
+<td>10</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1669</td>
+<td>Iris Egar Keane</td>
+<td>NYC</td>
+<td>F</td>
+<td>11</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>646</td>
+<td>Ben Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>11</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1616</td>
+<td>Alex Hoban</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>10</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1538</td>
+<td>Aisling Morrin</td>
+<td>GBSC</td>
+<td>F</td>
+<td>11</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1243</td>
+<td>Max O'Sullivan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>11</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1420</td>
+<td>Denis Farrell</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1336</td>
+<td>Jack Ryan</td>
+<td>MBSC</td>
+<td>M</td>
+<td>9</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1576</td>
+<td>Ben Chaix</td>
+<td>TBSC / NYC</td>
+<td>M</td>
+<td>9</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1154</td>
+<td>Summer Harris</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>13</td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>M</td>
+<td>9</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1309</td>
+<td>David Judge</td>
+<td>SDC</td>
+<td>M</td>
+<td>11</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1487</td>
+<td>Wills Harnett</td>
+<td>SDC</td>
+<td>M</td>
+<td>12</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1405</td>
+<td>Oliver Kenneally</td>
+<td>MBSC</td>
+<td>M</td>
+<td>10</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>NED</td>
+<td>2964</td>
+<td>Leo Smyth</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1238</td>
+<td>Rory Buckley</td>
+<td>KYC</td>
+<td>M</td>
+<td>12</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1525</td>
+<td>Amy Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>11</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>44</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1175</td>
+<td>Oliver Cooke</td>
+<td>SLYC</td>
+<td>M</td>
+<td>10</td>
+<td>44</td>
+<td>44.0</td>
+</tr>
+<tr class="odd racerow">
+<td>45</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1595</td>
+<td>Jamie McGee</td>
+<td>WHSC</td>
+<td>M</td>
+<td>12</td>
+<td>45</td>
+<td>45.0</td>
+</tr>
+<tr class="even racerow">
+<td>46</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>6136</td>
+<td>Alanna Whelan</td>
+<td>NYC / BHYC</td>
+<td>F</td>
+<td>11</td>
+<td>46</td>
+<td>46.0</td>
+</tr>
+<tr class="odd racerow">
+<td>47</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>670</td>
+<td>Aisling Kinsella</td>
+<td>GBSC</td>
+<td>M</td>
+<td>12</td>
+<td>47</td>
+<td>47.0</td>
+</tr>
+<tr class="even racerow">
+<td>48</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1577</td>
+<td>Darragh Baynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>10</td>
+<td>48</td>
+<td>48.0</td>
+</tr>
+<tr class="odd racerow">
+<td>49</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1390</td>
+<td>Annika Flynn</td>
+<td>NYC / BSC</td>
+<td>F</td>
+<td>10</td>
+<td>49</td>
+<td>49.0</td>
+</tr>
+<tr class="even racerow">
+<td>50</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1452</td>
+<td>Brody Hayes</td>
+<td>MBSC</td>
+<td>M</td>
+<td>8</td>
+<td>50</td>
+<td>50.0</td>
+</tr>
+<tr class="odd racerow">
+<td>51</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1040</td>
+<td>Isaac Flynn</td>
+<td>NYC / BSC</td>
+<td>M</td>
+<td>10</td>
+<td>51</td>
+<td>51.0</td>
+</tr>
+<tr class="even racerow">
+<td>52</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1553</td>
+<td>Mark Cunningham</td>
+<td>SSC</td>
+<td>M</td>
+<td>10</td>
+<td>52</td>
+<td>52.0</td>
+</tr>
+<tr class="odd racerow">
+<td>53</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>71</td>
+<td>53.0</td>
+</tr>
+<tr class="even racerow">
+<td>54</td>
+<td>Regatta</td>
+<td>Racing</td>
+<td>IRL</td>
+<td>1153</td>
+<td>NoahJohn</td>
+<td>MYC</td>
+<td>M</td>
+<td>9</td>
+<td>DNS</td>
+<td>59.0</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.29.0<br /><a href="http://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

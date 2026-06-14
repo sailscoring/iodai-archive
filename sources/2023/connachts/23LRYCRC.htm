@@ -1,0 +1,2782 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for 2023 IODAI Connaught Championships at Lough Ree Yacht Club 2023</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2021/08/iodai-logo-2018-192x300-1.png" alt="event burgee" />
+<img class="hardleft"  src="https://iodai.com/wp-content/uploads/2014/06/Lough-Ree-e1694472313601.png" alt="venue burgee" />
+
+<h1>2023 IODAI Connaught Championships</h1>
+<h2>Lough Ree Yacht Club</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 11:41 on September 18, 2023</h3>
+<h3 class="summarytitle" id="summarycoaching">Coaching Division</h3>
+<div class="caption summarycaption">Sailed: 4, Discards: 1, To count: 3, Entries: 42, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="15">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th><a class="racelink" href="#r1coaching">R1</a></th>
+<th><a class="racelink" href="#r2coaching">R2</a></th>
+<th><a class="racelink" href="#r3coaching">R3</a></th>
+<th><a class="racelink" href="#r4coaching">R4</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>667</td>
+<td>Will McElligott</td>
+<td>LDYC / ISC</td>
+<td>M</td>
+<td>8</td>
+<td>(4.0)</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td>8.0</td>
+<td>4.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1455</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td class="rank1">1.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td>(7.0)</td>
+<td>11.0</td>
+<td>4.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1079</td>
+<td>Lilly Sheridan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td class="rank3">3.0</td>
+<td>(7.0)</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>19.0</td>
+<td>12.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>911</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>5.0</td>
+<td>(28.0)</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>44.0</td>
+<td>16.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>958</td>
+<td>Michelle Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>8.0</td>
+<td>5.0</td>
+<td>(14.0)</td>
+<td>8.0</td>
+<td>35.0</td>
+<td>21.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>10</td>
+<td>11.0</td>
+<td>8.0</td>
+<td class="rank3">3.0</td>
+<td>(13.0)</td>
+<td>35.0</td>
+<td>22.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1653</td>
+<td>Ksenia Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>11</td>
+<td>(14.0)</td>
+<td>14.0</td>
+<td>7.0</td>
+<td>4.0</td>
+<td>39.0</td>
+<td>25.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1041</td>
+<td>Kate Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>6.0</td>
+<td>12.0</td>
+<td>9.0</td>
+<td>(17.0)</td>
+<td>44.0</td>
+<td>27.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>(19.0)</td>
+<td class="rank3">3.0</td>
+<td>6.0</td>
+<td>19.0</td>
+<td>47.0</td>
+<td>28.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>162</td>
+<td>Zoe Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>9</td>
+<td class="rank2">2.0</td>
+<td>11.0</td>
+<td>(17.0)</td>
+<td>16.0</td>
+<td>46.0</td>
+<td>29.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1163</td>
+<td>Robert Tottenham</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>16.0</td>
+<td>(17.0)</td>
+<td>12.0</td>
+<td class="rank2">2.0</td>
+<td>47.0</td>
+<td>30.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1076</td>
+<td>Sophie Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>7.0</td>
+<td>4.0</td>
+<td>(22.0)</td>
+<td>20.0</td>
+<td>53.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>924</td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>9</td>
+<td>(17.0)</td>
+<td>16.0</td>
+<td>15.0</td>
+<td class="rank3">3.0</td>
+<td>51.0</td>
+<td>34.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1215</td>
+<td>Eanna Hynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>11</td>
+<td>10.0</td>
+<td>(15.0)</td>
+<td>11.0</td>
+<td>15.0</td>
+<td>51.0</td>
+<td>36.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>506</td>
+<td>Kate Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>8</td>
+<td>15.0</td>
+<td>(43.0 RET)</td>
+<td>10.0</td>
+<td>12.0</td>
+<td>80.0</td>
+<td>37.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1574</td>
+<td>Hugh Long</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>9.0</td>
+<td>(19.0)</td>
+<td>18.0</td>
+<td>11.0</td>
+<td>57.0</td>
+<td>38.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>&nbsp;</td>
+<td>1605</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>13.0</td>
+<td>(24.0)</td>
+<td>13.0</td>
+<td>14.0</td>
+<td>64.0</td>
+<td>40.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1090</td>
+<td>Elsie Mae Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>20.0</td>
+<td>13.0</td>
+<td>(21.0)</td>
+<td>10.0</td>
+<td>64.0</td>
+<td>43.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1380</td>
+<td>Rian Foy Joyce</td>
+<td>LRYC</td>
+<td>M</td>
+<td>9</td>
+<td>18.0</td>
+<td>6.0</td>
+<td>(25.0)</td>
+<td>21.0</td>
+<td>70.0</td>
+<td>45.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1260</td>
+<td>Ceala Joyce</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>(43.0 DNF)</td>
+<td>18.0</td>
+<td>20.0</td>
+<td>9.0</td>
+<td>90.0</td>
+<td>47.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>SDC</td>
+<td>F</td>
+<td>9</td>
+<td>21.0</td>
+<td>9.0</td>
+<td>19.0</td>
+<td>(24.0)</td>
+<td>73.0</td>
+<td>49.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>22nd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Rory Barron</td>
+<td>SDC</td>
+<td>M</td>
+<td>9</td>
+<td>(43.0 DNC)</td>
+<td>20.0</td>
+<td>8.0</td>
+<td>22.0</td>
+<td>93.0</td>
+<td>50.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>23rd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1687</td>
+<td>Sadhbh Smith</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>12.0</td>
+<td>10.0</td>
+<td>(31.0)</td>
+<td>28.0</td>
+<td>81.0</td>
+<td>50.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>24th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1423</td>
+<td>Reiltin</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>22.0</td>
+<td>23.0</td>
+<td>23.0</td>
+<td>(31.0)</td>
+<td>99.0</td>
+<td>68.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>25th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>(43.0 DNF)</td>
+<td>21.0</td>
+<td>16.0</td>
+<td>32.0</td>
+<td>112.0</td>
+<td>69.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>26th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1652</td>
+<td>Vivien Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>25.0</td>
+<td>26.0</td>
+<td>(30.0)</td>
+<td>18.0</td>
+<td>99.0</td>
+<td>69.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>27th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Theodore Crinion</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>24.0</td>
+<td>22.0</td>
+<td>24.0</td>
+<td>(33.5)</td>
+<td>103.5</td>
+<td>70.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>28th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1434</td>
+<td>Eimear Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>26.0</td>
+<td>(43.0 RET)</td>
+<td>28.0</td>
+<td>23.0</td>
+<td>120.0</td>
+<td>77.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>29th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1335</td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>23.0</td>
+<td>29.0</td>
+<td>29.0</td>
+<td>(33.5)</td>
+<td>114.5</td>
+<td>81.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>30th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>945</td>
+<td>Caoimhe Duane</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>(43.0 DNF)</td>
+<td>25.0</td>
+<td>27.0</td>
+<td>30.0</td>
+<td>125.0</td>
+<td>82.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>31st</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>829</td>
+<td>Cormac Whelan</td>
+<td>NYC / BHYC</td>
+<td>M</td>
+<td>7</td>
+<td>(43.0 DNC)</td>
+<td>30.0</td>
+<td>26.0</td>
+<td>27.0</td>
+<td>126.0</td>
+<td>83.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>32nd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>554</td>
+<td>Sophia Dorman</td>
+<td>EABC</td>
+<td>F</td>
+<td>8</td>
+<td>27.0</td>
+<td>(32.0)</td>
+<td>32.0</td>
+<td>26.0</td>
+<td>117.0</td>
+<td>85.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>33rd</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1210</td>
+<td>Isla McClory</td>
+<td>RIYC</td>
+<td>F</td>
+<td>9</td>
+<td>(43.0 DNF)</td>
+<td>27.0</td>
+<td>43.0 DNC</td>
+<td>25.0</td>
+<td>138.0</td>
+<td>95.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>34th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>282</td>
+<td>Ellie Dormer</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>(43.0 DNF)</td>
+<td>31.0</td>
+<td>43.0 DNS</td>
+<td>29.0</td>
+<td>146.0</td>
+<td>103.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>35th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1559</td>
+<td>Adam Scott</td>
+<td>HYC</td>
+<td>M</td>
+<td>8</td>
+<td>(43.0 DNC)</td>
+<td>33.0</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>162.0</td>
+<td>119.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1059</td>
+<td>Oisin Irwin</td>
+<td>LRYC / MYC</td>
+<td>M</td>
+<td>10</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>940</td>
+<td>Chloe Coole</td>
+<td>MBSC</td>
+<td>F</td>
+<td>11</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>826</td>
+<td>Alex Breen</td>
+<td>LRYC</td>
+<td>M</td>
+<td>8</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>419</td>
+<td>Grace Byrne</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1514</td>
+<td>Robin Mullett</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>8</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1303</td>
+<td>Sophie Davitt</td>
+<td>SDC</td>
+<td>F</td>
+<td>10</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>803</td>
+<td>Sarah Macnamara</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>172.0</td>
+<td>129.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1coaching">R1 - Coaching Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1455</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>55</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>162</td>
+<td>Zoe Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>9</td>
+<td>56</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1079</td>
+<td>Lilly Sheridan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>57</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>667</td>
+<td>Will McElligott</td>
+<td>LDYC / ISC</td>
+<td>M</td>
+<td>8</td>
+<td>58</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>911</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>59</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1041</td>
+<td>Kate Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>60</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1076</td>
+<td>Sophie Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>61</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>958</td>
+<td>Michelle Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>62</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1574</td>
+<td>Hugh Long</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>63</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1215</td>
+<td>Eanna Hynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>11</td>
+<td>64</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>10</td>
+<td>65</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1687</td>
+<td>Sadhbh Smith</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>66</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>&nbsp;</td>
+<td>1605</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>67</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1653</td>
+<td>Ksenia Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>11</td>
+<td>68</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>506</td>
+<td>Kate Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>8</td>
+<td>69</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1163</td>
+<td>Robert Tottenham</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>70</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>924</td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>9</td>
+<td>71</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1380</td>
+<td>Rian Foy Joyce</td>
+<td>LRYC</td>
+<td>M</td>
+<td>9</td>
+<td>72</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>73</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1090</td>
+<td>Elsie Mae Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>74</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>SDC</td>
+<td>F</td>
+<td>9</td>
+<td>75</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1423</td>
+<td>Reiltin</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>76</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1335</td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>78</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Theodore Crinion</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>79</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1652</td>
+<td>Vivien Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>80</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1434</td>
+<td>Eimear Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>81</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>554</td>
+<td>Sophia Dorman</td>
+<td>EABC</td>
+<td>F</td>
+<td>8</td>
+<td>82</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1260</td>
+<td>Ceala Joyce</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>DNF</td>
+<td>43.0</td>
+</tr>
+<tr class="odd racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>DNF</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>945</td>
+<td>Caoimhe Duane</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>DNF</td>
+<td>43.0</td>
+</tr>
+<tr class="odd racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1210</td>
+<td>Isla McClory</td>
+<td>RIYC</td>
+<td>F</td>
+<td>9</td>
+<td>DNF</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>282</td>
+<td>Ellie Dormer</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>DNF</td>
+<td>43.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2coaching">R2 - Coaching Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>667</td>
+<td>Will McElligott</td>
+<td>LDYC / ISC</td>
+<td>M</td>
+<td>8</td>
+<td>53</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1455</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>54</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>55</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1076</td>
+<td>Sophie Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>56</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>958</td>
+<td>Michelle Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>57</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1380</td>
+<td>Rian Foy Joyce</td>
+<td>LRYC</td>
+<td>M</td>
+<td>9</td>
+<td>58</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1079</td>
+<td>Lilly Sheridan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>59</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>10</td>
+<td>60</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>SDC</td>
+<td>F</td>
+<td>9</td>
+<td>61</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1687</td>
+<td>Sadhbh Smith</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>62</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>162</td>
+<td>Zoe Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>9</td>
+<td>63</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1041</td>
+<td>Kate Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>64</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1090</td>
+<td>Elsie Mae Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>65</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1653</td>
+<td>Ksenia Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>11</td>
+<td>66</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1215</td>
+<td>Eanna Hynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>11</td>
+<td>67</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>924</td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>9</td>
+<td>68</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1163</td>
+<td>Robert Tottenham</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>69</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1260</td>
+<td>Ceala Joyce</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>70</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1574</td>
+<td>Hugh Long</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>71</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Rory Barron</td>
+<td>SDC</td>
+<td>M</td>
+<td>9</td>
+<td>72</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>73</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Theodore Crinion</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>74</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1423</td>
+<td>Reiltin</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>75</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>&nbsp;</td>
+<td>1605</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>76</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>945</td>
+<td>Caoimhe Duane</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>77</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1652</td>
+<td>Vivien Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>78</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1210</td>
+<td>Isla McClory</td>
+<td>RIYC</td>
+<td>F</td>
+<td>9</td>
+<td>79</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>911</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>80</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1335</td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>81</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>829</td>
+<td>Cormac Whelan</td>
+<td>NYC / BHYC</td>
+<td>M</td>
+<td>7</td>
+<td>82</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>282</td>
+<td>Ellie Dormer</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>83</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>554</td>
+<td>Sophia Dorman</td>
+<td>EABC</td>
+<td>F</td>
+<td>8</td>
+<td>84</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1559</td>
+<td>Adam Scott</td>
+<td>HYC</td>
+<td>M</td>
+<td>8</td>
+<td>85</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>506</td>
+<td>Kate Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>8</td>
+<td>RET</td>
+<td>43.0</td>
+</tr>
+<tr class="odd racerow">
+<td>34</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1434</td>
+<td>Eimear Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>RET</td>
+<td>43.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3coaching">R3 - Coaching Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1455</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>53</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>667</td>
+<td>Will McElligott</td>
+<td>LDYC / ISC</td>
+<td>M</td>
+<td>8</td>
+<td>54</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>10</td>
+<td>55</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1079</td>
+<td>Lilly Sheridan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>56</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>911</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>57</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>58</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1653</td>
+<td>Ksenia Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>11</td>
+<td>59</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Rory Barron</td>
+<td>SDC</td>
+<td>M</td>
+<td>9</td>
+<td>60</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1041</td>
+<td>Kate Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>61</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>506</td>
+<td>Kate Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>8</td>
+<td>62</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1215</td>
+<td>Eanna Hynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>11</td>
+<td>63</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1163</td>
+<td>Robert Tottenham</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>64</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>&nbsp;</td>
+<td>1605</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>65</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>958</td>
+<td>Michelle Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>66</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>924</td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>9</td>
+<td>67</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>68</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>162</td>
+<td>Zoe Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>9</td>
+<td>69</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1574</td>
+<td>Hugh Long</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>70</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>SDC</td>
+<td>F</td>
+<td>9</td>
+<td>71</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1260</td>
+<td>Ceala Joyce</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>72</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1090</td>
+<td>Elsie Mae Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>73</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1076</td>
+<td>Sophie Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>74</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1423</td>
+<td>Reiltin</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>75</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Theodore Crinion</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>76</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1380</td>
+<td>Rian Foy Joyce</td>
+<td>LRYC</td>
+<td>M</td>
+<td>9</td>
+<td>77</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>829</td>
+<td>Cormac Whelan</td>
+<td>NYC / BHYC</td>
+<td>M</td>
+<td>7</td>
+<td>78</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>945</td>
+<td>Caoimhe Duane</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>79</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1434</td>
+<td>Eimear Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>80</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1335</td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>81</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1652</td>
+<td>Vivien Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>82</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1687</td>
+<td>Sadhbh Smith</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>83</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>554</td>
+<td>Sophia Dorman</td>
+<td>EABC</td>
+<td>F</td>
+<td>8</td>
+<td>84</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>282</td>
+<td>Ellie Dormer</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>DNS</td>
+<td>43.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4coaching">R4 - Coaching Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="nat" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="club" />
+<col class="helmsex" />
+<col class="crewagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Nat</th>
+<th>Sail</th>
+<th>Helm</th>
+<th>Club</th>
+<th>Gender</th>
+<th>Age</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>667</td>
+<td>Will McElligott</td>
+<td>LDYC / ISC</td>
+<td>M</td>
+<td>8</td>
+<td>53</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1163</td>
+<td>Robert Tottenham</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>54</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>924</td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>F</td>
+<td>9</td>
+<td>55</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1653</td>
+<td>Ksenia Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>11</td>
+<td>56</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1079</td>
+<td>Lilly Sheridan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>57</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>911</td>
+<td>Georgia Deegan</td>
+<td>WHSC</td>
+<td>F</td>
+<td>10</td>
+<td>58</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1455</td>
+<td>Hugo Jackson</td>
+<td>WHSC</td>
+<td>M</td>
+<td>10</td>
+<td>59</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>958</td>
+<td>Michelle Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>60</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1260</td>
+<td>Ceala Joyce</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>61</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1090</td>
+<td>Elsie Mae Earls</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>62</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1574</td>
+<td>Hugh Long</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>63</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>506</td>
+<td>Kate Walsh</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>8</td>
+<td>64</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1619</td>
+<td>Daniel Clarke</td>
+<td>SDC</td>
+<td>M</td>
+<td>10</td>
+<td>65</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>&nbsp;</td>
+<td>1605</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>66</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1215</td>
+<td>Eanna Hynes</td>
+<td>GBSC</td>
+<td>M</td>
+<td>11</td>
+<td>67</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>162</td>
+<td>Zoe Russell</td>
+<td>RStGYC</td>
+<td>F</td>
+<td>9</td>
+<td>68</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1041</td>
+<td>Kate Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>69</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1652</td>
+<td>Vivien Oleskow-Rock</td>
+<td>LRYC</td>
+<td>F</td>
+<td>10</td>
+<td>70</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1607</td>
+<td>Catherine Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>10</td>
+<td>71</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1076</td>
+<td>Sophie Hoyne</td>
+<td>WHSC</td>
+<td>F</td>
+<td>11</td>
+<td>72</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1380</td>
+<td>Rian Foy Joyce</td>
+<td>LRYC</td>
+<td>M</td>
+<td>9</td>
+<td>73</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Rory Barron</td>
+<td>SDC</td>
+<td>M</td>
+<td>9</td>
+<td>74</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1434</td>
+<td>Eimear Turner</td>
+<td>LRYC</td>
+<td>F</td>
+<td>9</td>
+<td>75</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1451</td>
+<td>Áine Cahill</td>
+<td>SDC</td>
+<td>F</td>
+<td>9</td>
+<td>76</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1210</td>
+<td>Isla McClory</td>
+<td>RIYC</td>
+<td>F</td>
+<td>9</td>
+<td>77</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>554</td>
+<td>Sophia Dorman</td>
+<td>EABC</td>
+<td>F</td>
+<td>8</td>
+<td>78</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>829</td>
+<td>Cormac Whelan</td>
+<td>NYC / BHYC</td>
+<td>M</td>
+<td>7</td>
+<td>79</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1687</td>
+<td>Sadhbh Smith</td>
+<td>GBSC</td>
+<td>F</td>
+<td>10</td>
+<td>80</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>282</td>
+<td>Ellie Dormer</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>81</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>945</td>
+<td>Caoimhe Duane</td>
+<td>LRYC</td>
+<td>F</td>
+<td>8</td>
+<td>82</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1423</td>
+<td>Reiltin</td>
+<td>LDYC</td>
+<td>F</td>
+<td>12</td>
+<td>83</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1308</td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>F</td>
+<td>8</td>
+<td>84</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1519</td>
+<td>Theodore Crinion</td>
+<td>RStGYC</td>
+<td>M</td>
+<td>9</td>
+<td>85</td>
+<td>33.5</td>
+</tr>
+<tr class="even racerow">
+<td>33</td>
+<td>Regatta</td>
+<td>Coaching</td>
+<td>IRL</td>
+<td>1335</td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>M</td>
+<td>8</td>
+<td>85</td>
+<td>33.5</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.29.0<br /><a href="http://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,5842 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for Irish Optimist National Championships 2023 at Ballyholme Yacht Club 2023</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2014/06/Nats-2023-e1692049517437.jpg" alt="event burgee" />
+<img class="hardleft"  src="https://iodai.com/wp-content/uploads/2021/08/iodai-logo-2018-192x300-1.png" alt="venue burgee" />
+
+<h1>Irish Optimist National Championships 2023</h1>
+<h2>Ballyholme Yacht Club</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 16:59 on August 20, 2023</h3>
+<h3 class="summarytitle" id="summarysenior">Senior Division</h3>
+<div class="caption summarycaption">Sailed: 9, Discards: 2, To count: 7, Entries: 42, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="21">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th><a class="racelink" href="#r1senior">R1</a></th>
+<th><a class="racelink" href="#r2senior">R2</a></th>
+<th><a class="racelink" href="#r3senior">R3</a></th>
+<th><a class="racelink" href="#r4senior">R4</a></th>
+<th><a class="racelink" href="#r5senior">R5</a></th>
+<th><a class="racelink" href="#r6senior">R6</a></th>
+<th><a class="racelink" href="#r7senior">R7</a></th>
+<th><a class="racelink" href="#r8senior">R8</a></th>
+<th><a class="racelink" href="#r9senior">R9</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td class="rank3">3.0</td>
+<td>(4.0)</td>
+<td class="rank2">2.0</td>
+<td>(16.0)</td>
+<td class="rank2">2.0</td>
+<td>33.0</td>
+<td>13.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td class="rank2">2.0</td>
+<td>(18.0)</td>
+<td>4.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td>(19.0)</td>
+<td>9.0</td>
+<td>59.0</td>
+<td>22.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>4.0</td>
+<td>(10.0)</td>
+<td class="rank3">3.0</td>
+<td>4.0</td>
+<td class="rank2">2.0</td>
+<td>6.0</td>
+<td>(18.0)</td>
+<td class="rank3">3.0</td>
+<td class="rank3">3.0</td>
+<td>53.0</td>
+<td>25.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>7.0</td>
+<td>(12.0)</td>
+<td>(16.0)</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td>7.0</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>55.0</td>
+<td>27.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td class="rank1">1.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>(35.0)</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>(7.0)</td>
+<td>71.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>(43.0 DSQ)</td>
+<td class="rank3">3.0</td>
+<td>6.0</td>
+<td>(17.0)</td>
+<td>16.0</td>
+<td>5.0</td>
+<td>11.0</td>
+<td class="rank2">2.0</td>
+<td class="rank1">1.0</td>
+<td>104.0</td>
+<td>44.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>5.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>8.0</td>
+<td>(19.0)</td>
+<td class="rank3">3.0</td>
+<td class="rank3">3.0</td>
+<td class="rank1">1.0</td>
+<td>(18.0)</td>
+<td>87.0</td>
+<td>50.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>4.0</td>
+<td class="rank2">2.0</td>
+<td>(14.0)</td>
+<td>10.0</td>
+<td>9.0</td>
+<td>(11.0)</td>
+<td>11.0</td>
+<td>76.0</td>
+<td>51.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>6.0</td>
+<td>(11.0)</td>
+<td>8.0</td>
+<td>(15.0)</td>
+<td>8.0</td>
+<td>10.0</td>
+<td>86.0</td>
+<td>60.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>12.0</td>
+<td>(18.0)</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>(14.0)</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>12.0</td>
+<td>95.0</td>
+<td>63.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>13.0</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>7.0</td>
+<td>6.0</td>
+<td>(27.0)</td>
+<td>10.0</td>
+<td>(20.0)</td>
+<td>15.0</td>
+<td>112.0</td>
+<td>65.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>6.0</td>
+<td>14.0</td>
+<td>(21.0)</td>
+<td>10.0</td>
+<td>8.0</td>
+<td>7.0</td>
+<td>13.0</td>
+<td>7.0</td>
+<td>(16.0)</td>
+<td>102.0</td>
+<td>65.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>14.0</td>
+<td>(21.0)</td>
+<td>(43.0 DNC)</td>
+<td>15.0</td>
+<td>9.0</td>
+<td>9.0</td>
+<td>6.0</td>
+<td>9.0</td>
+<td>5.0</td>
+<td>131.0</td>
+<td>67.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>16.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>13.0</td>
+<td>7.0</td>
+<td>(17.0)</td>
+<td>(26.0)</td>
+<td>15.0</td>
+<td>8.0</td>
+<td>116.0</td>
+<td>73.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>11.0</td>
+<td>8.0</td>
+<td>12.0</td>
+<td>26.0</td>
+<td>(31.0)</td>
+<td>12.0</td>
+<td>(31.0)</td>
+<td>22.0</td>
+<td>13.0</td>
+<td>166.0</td>
+<td>104.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>23.0</td>
+<td>(28.0)</td>
+<td>22.0</td>
+<td>(34.0)</td>
+<td>13.0</td>
+<td>25.0</td>
+<td>8.0</td>
+<td>10.0</td>
+<td>22.0</td>
+<td>185.0</td>
+<td>123.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>(30.0)</td>
+<td>13.0</td>
+<td>14.0</td>
+<td>24.0</td>
+<td>(28.0)</td>
+<td>20.0</td>
+<td>20.0</td>
+<td>13.0</td>
+<td>19.0</td>
+<td>181.0</td>
+<td>123.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>(43.0 DNC)</td>
+<td>20.0</td>
+<td>17.0</td>
+<td>11.0</td>
+<td>18.0</td>
+<td>16.0</td>
+<td>19.0</td>
+<td>24.0</td>
+<td>(28.0)</td>
+<td>196.0</td>
+<td>125.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>20.0</td>
+<td>(29.0)</td>
+<td>18.0</td>
+<td>14.0</td>
+<td>17.0</td>
+<td>(28.0)</td>
+<td>14.0</td>
+<td>18.0</td>
+<td>24.0</td>
+<td>182.0</td>
+<td>125.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>22.0</td>
+<td>(27.0)</td>
+<td>23.0</td>
+<td>19.0</td>
+<td>(26.0)</td>
+<td>15.0</td>
+<td>22.0</td>
+<td>12.0</td>
+<td>21.0</td>
+<td>187.0</td>
+<td>134.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>(26.0)</td>
+<td>(43.0 DNC)</td>
+<td>13.0</td>
+<td>16.0</td>
+<td>23.0</td>
+<td>23.0</td>
+<td>16.0</td>
+<td>26.0</td>
+<td>17.0</td>
+<td>203.0</td>
+<td>134.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>22nd</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>15.0</td>
+<td>25.0</td>
+<td>20.0</td>
+<td>(28.0)</td>
+<td>15.0</td>
+<td>21.0</td>
+<td>21.0</td>
+<td>(35.0)</td>
+<td>27.0</td>
+<td>207.0</td>
+<td>144.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>23rd</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>19.0</td>
+<td>17.0</td>
+<td>19.0</td>
+<td>21.0</td>
+<td>(29.0)</td>
+<td>24.0</td>
+<td>23.0</td>
+<td>27.0</td>
+<td>(34.0)</td>
+<td>213.0</td>
+<td>150.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>24th</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>25.0</td>
+<td>24.0</td>
+<td>24.0 RDGa</td>
+<td>12.0</td>
+<td>21.0</td>
+<td>18.0</td>
+<td>29.0</td>
+<td>(31.0)</td>
+<td>(32.0)</td>
+<td>216.0</td>
+<td>153.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>25th</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>21.0</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>17.0</td>
+<td>6.0</td>
+<td>241.0</td>
+<td>155.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>26th</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>29.0</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>25.0</td>
+<td>22.0</td>
+<td>26.0</td>
+<td>17.0</td>
+<td>25.0</td>
+<td>14.0</td>
+<td>244.0</td>
+<td>158.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>27th</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>18.0</td>
+<td>19.0</td>
+<td>(43.0 DNC)</td>
+<td>(30.0)</td>
+<td>24.0</td>
+<td>22.0</td>
+<td>25.0</td>
+<td>23.0</td>
+<td>29.0</td>
+<td>233.0</td>
+<td>160.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>28th</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>27.0</td>
+<td>16.0</td>
+<td>(43.0 DNC)</td>
+<td>22.0</td>
+<td>25.0</td>
+<td>29.0</td>
+<td>32.0</td>
+<td>(33.0)</td>
+<td>30.0</td>
+<td>257.0</td>
+<td>181.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>29th</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>24.0</td>
+<td>26.0</td>
+<td>27.6 RDGa</td>
+<td>20.0</td>
+<td>30.0</td>
+<td>(33.0)</td>
+<td>(33.0)</td>
+<td>30.0</td>
+<td>25.0</td>
+<td>248.6</td>
+<td>182.6</td>
+</tr>
+<tr class="even summaryrow">
+<td>30th</td>
+<td>1604</td>
+<td>Fionn Hayes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>12.0</td>
+<td>11.0</td>
+<td>43.0 DNC</td>
+<td>14.0</td>
+<td>20.0</td>
+<td>272.0</td>
+<td>186.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>31st</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>33.0</td>
+<td>20.0</td>
+<td>19.0</td>
+<td>24.0</td>
+<td>28.0</td>
+<td>26.0</td>
+<td>279.0</td>
+<td>193.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>32nd</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>28.0</td>
+<td>(43.0 DNC)</td>
+<td>30.1 RDGa</td>
+<td>23.0</td>
+<td>27.0</td>
+<td>30.0</td>
+<td>28.0</td>
+<td>29.0</td>
+<td>(33.0)</td>
+<td>271.1</td>
+<td>195.1</td>
+</tr>
+<tr class="odd summaryrow">
+<td>33rd</td>
+<td>1639</td>
+<td>Felix Dion</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>288.0</td>
+<td>202.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>34th</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>31.0</td>
+<td>(43.0 DNC)</td>
+<td>31.4 RDGa</td>
+<td>31.0</td>
+<td>(33.0)</td>
+<td>31.0</td>
+<td>27.0</td>
+<td>32.0</td>
+<td>23.0</td>
+<td>282.4</td>
+<td>206.4</td>
+</tr>
+<tr class="odd summaryrow">
+<td>35th</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>32.0</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>27.0</td>
+<td>35.0</td>
+<td>38.0</td>
+<td>30.0</td>
+<td>21.0</td>
+<td>31.0</td>
+<td>300.0</td>
+<td>214.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>33.0</td>
+<td>22.0</td>
+<td>32.3 RDGa</td>
+<td>29.0</td>
+<td>32.0</td>
+<td>(37.0)</td>
+<td>34.0</td>
+<td>(36.0)</td>
+<td>35.0</td>
+<td>290.3</td>
+<td>217.3</td>
+</tr>
+<tr class="odd summaryrow">
+<td>37th</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>(43.0 DNC)</td>
+<td>23.0</td>
+<td>34.3 RDGa</td>
+<td>32.0</td>
+<td>34.0</td>
+<td>34.0</td>
+<td>35.0</td>
+<td>(37.0)</td>
+<td>36.0</td>
+<td>308.3</td>
+<td>228.3</td>
+</tr>
+<tr class="even summaryrow">
+<td>38th</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>39.4 RDGa</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>36.0</td>
+<td>36.0</td>
+<td>34.0</td>
+<td>37.0</td>
+<td>354.4</td>
+<td>268.4</td>
+</tr>
+<tr class="odd summaryrow">
+<td>39th</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>17.0</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>361.0</td>
+<td>275.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>40th</td>
+<td>6615</td>
+<td>Meri Greenaway</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Royal Southern Yacht Club</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>32.0</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>376.0</td>
+<td>290.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>41st</td>
+<td>1455</td>
+<td>Nessa Brazil</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>387.0</td>
+<td>301.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>41st</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>GBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>(43.0 DNC)</td>
+<td>(43.0 DNC)</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>43.0 DNC</td>
+<td>387.0</td>
+<td>301.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1senior">R1 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>37</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>39</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>40</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>41</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>42</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>43</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>45</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1639</td>
+<td>Felix Dion</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>46</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>47</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>48</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>50</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>51</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>52</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>53</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>54</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>55</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>56</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>58</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>60</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>61</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>62</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>63</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>64</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>65</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>66</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>67</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>68</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>69</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>70</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>75</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>76</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>DSQ</td>
+<td>43.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2senior">R2 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>14</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>16</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>21</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>22</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>23</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>26</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>30</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>31</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>32</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>33</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1639</td>
+<td>Felix Dion</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>34</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>35</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>40</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>42</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>44</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>45</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>49</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>50</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>51</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>52</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>53</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>54</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>55</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>56</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>58</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>60</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>61</td>
+<td>29.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3senior">R3 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Senior Gold Silver, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1639</td>
+<td>Felix Dion</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>RDGa</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>RDGa</td>
+<td>27.6</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>RDGa</td>
+<td>30.1</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>RDGa</td>
+<td>31.4</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>RDGa</td>
+<td>32.3</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>RDGa</td>
+<td>34.3</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>RDGa</td>
+<td>39.4</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4senior">R4 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>30</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>32</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>34</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>35</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>36</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>39</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>40</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>41</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>45</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>46</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>47</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>48</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>51</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>52</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>53</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>54</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>55</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>56</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>58</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>59</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>60</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>61</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>62</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>63</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>64</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>65</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>66</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>67</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>70</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>71</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>72</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>74</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>77</td>
+<td>34.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r5senior">R5 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>41</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>42</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>43</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>45</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>46</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>47</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>48</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>50</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>51</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>52</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>53</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1604</td>
+<td>Fionn Hayes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>54</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>55</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>56</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>58</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>60</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>61</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>62</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>63</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>64</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>65</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>66</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>67</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>68</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>69</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>70</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>71</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>72</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>73</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>74</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>75</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>76</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>77</td>
+<td>35.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r6senior">R6 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>46</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>47</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>48</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>49</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>50</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>51</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>52</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>53</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>54</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>55</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1604</td>
+<td>Fionn Hayes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>56</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>57</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>58</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>60</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>61</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>62</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>63</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>64</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>65</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>66</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>67</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>68</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>69</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>70</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>71</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>72</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>73</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>74</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>75</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>76</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>6615</td>
+<td>Meri Greenaway</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Royal Southern Yacht Club</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>77</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>78</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>79</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>80</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>81</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>82</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>83</td>
+<td>38.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r7senior">R7 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>46</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>47</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>48</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>49</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>50</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>51</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>52</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>53</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>54</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>55</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>56</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>57</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>58</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>60</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>61</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>62</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>63</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>64</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>65</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>66</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>67</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>68</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>69</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>70</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>71</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>72</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>73</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>74</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>75</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>76</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>77</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>78</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>79</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>80</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>81</td>
+<td>36.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r8senior">R8 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>46</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>47</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>48</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>49</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>50</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>51</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>52</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>53</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>54</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>55</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>56</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>58</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1604</td>
+<td>Fionn Hayes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>59</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>60</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>61</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>62</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>63</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>64</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>65</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>66</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>67</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>68</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>69</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>70</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>71</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>72</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>73</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>74</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>75</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>76</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>77</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>78</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>79</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>80</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>81</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>82</td>
+<td>37.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r9senior">R9 - Senior Division</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="fleet" />
+<col class="division" />
+<col class="club" />
+<col class="rating" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Sail</th>
+<th>HelmName</th>
+<th>Fleet</th>
+<th>Division</th>
+<th>Club</th>
+<th>Rating</th>
+<th>Nat</th>
+<th>HelmAge</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>1668</td>
+<td>Rory Whyte</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>46</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>1666</td>
+<td>Harry Dunne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>47</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>3414</td>
+<td>Charlotte Crosbie</td>
+<td>Main</td>
+<td>Senior</td>
+<td>CN Javae</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>48</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>3275</td>
+<td>Liam Woods</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Baltimore SC / CN Javea</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>M</td>
+<td>49</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>1662</td>
+<td>Abigail Murphy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>50</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>51</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>1670</td>
+<td>Max O Hare</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>52</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>1645</td>
+<td>Nathan Harris</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>53</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>1665</td>
+<td>Gemma Brady</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>54</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>1582</td>
+<td>Rian O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>55</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>1467</td>
+<td>Andrew O Neill</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>56</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>57</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>1602</td>
+<td>George Doig</td>
+<td>Main</td>
+<td>Senior</td>
+<td>EABC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>58</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>Main</td>
+<td>Senior</td>
+<td>KYC / RCYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>59</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>1649</td>
+<td>Louise Hanley</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>60</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC / HYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>61</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>1</td>
+<td>Tatiana Luzhanska</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Ukraine</td>
+<td>Gold</td>
+<td>OPEN</td>
+<td>13</td>
+<td>F</td>
+<td>62</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>1663</td>
+<td>Lily Donagh</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / LDYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>63</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>64</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>1604</td>
+<td>Fionn Hayes</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>15</td>
+<td>M</td>
+<td>65</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC / MBSC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>66</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>1566</td>
+<td>Blake Vaughan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>67</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>1583</td>
+<td>Emily Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>68</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LRYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>69</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>70</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>1600</td>
+<td>Jamie White</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>71</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>72</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>1660</td>
+<td>Matthew Holden</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / BYC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>14</td>
+<td>M</td>
+<td>73</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>1659</td>
+<td>Aoife McElligott</td>
+<td>Main</td>
+<td>Senior</td>
+<td>LDYC / ISC</td>
+<td>Gold</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>74</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>WHSC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>75</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC / MYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>76</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>1503</td>
+<td>Conor Lynch</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>77</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>1636</td>
+<td>James Crawford</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>78</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Silver</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>79</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>1590</td>
+<td>Amy O Halloran</td>
+<td>Main</td>
+<td>Senior</td>
+<td>RStGYC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>14</td>
+<td>F</td>
+<td>80</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>1672</td>
+<td>Zara Whelan</td>
+<td>Main</td>
+<td>Senior</td>
+<td>NYC / Brading Haven YC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>F</td>
+<td>81</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>Main</td>
+<td>Senior</td>
+<td>Blessington SC</td>
+<td>Bronze</td>
+<td>IRL</td>
+<td>13</td>
+<td>M</td>
+<td>82</td>
+<td>37.0</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.29.0<br /><a href="http://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

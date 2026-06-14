@@ -1,0 +1,459 @@
+{
+  "formatVersion": 6,
+  "seriesId": "6feb406d-1f59-5346-89b9-7c1f19ee5c3e",
+  "snapshotId": "414b3e5b-d833-5965-8ab5-1a6a72dfbc38",
+  "snapshotHistory": [
+    "414b3e5b-d833-5965-8ab5-1a6a72dfbc38"
+  ],
+  "exportedAt": "2023-06-18T12:00:00+00:00",
+  "series": {
+    "id": "6feb406d-1f59-5346-89b9-7c1f19ee5c3e",
+    "name": "IODAI Ulsters 2023 — Regatta Coached",
+    "venue": "East Antrim Boat Club",
+    "startDate": "2023-06-17",
+    "endDate": "2023-06-18",
+    "venueLogoUrl": "",
+    "eventLogoUrl": "https://logos.sailscoring.ie/iodai.png",
+    "venueUrl": "",
+    "eventUrl": "https://iodai.com/",
+    "discardThresholds": [
+      {
+        "minRaces": 4,
+        "discardCount": 1
+      }
+    ],
+    "dnfScoring": "seriesEntries",
+    "ftpHost": "",
+    "ftpPath": "",
+    "includeJsonExport": true,
+    "enabledCompetitorFields": [
+      "club",
+      "nationality",
+      "gender",
+      "age"
+    ],
+    "primaryPersonLabel": "helm",
+    "subdivisionLabel": "Division",
+    "scoringMode": "scratch"
+  },
+  "fleets": [
+    {
+      "id": "87ec4ac7-86b5-51b4-acc0-3552b8bf541d",
+      "name": "Regatta Coached",
+      "displayOrder": 0,
+      "scoringSystem": "scratch"
+    }
+  ],
+  "competitors": [
+    {
+      "id": "65c05294-3207-5ca9-87f0-2336fff752a5",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "670",
+      "name": "Darragh Baynes",
+      "club": "Galway Bay Sailing Club",
+      "gender": "M",
+      "age": 10
+    },
+    {
+      "id": "5486aa8b-90e7-54ba-81d5-871455b94559",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "1574",
+      "name": "Hugh Long",
+      "club": "Royal St. George Yacht Club",
+      "gender": "M",
+      "age": 9
+    },
+    {
+      "id": "f5e06043-4324-5612-8a2a-8e1b4544819d",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "981",
+      "name": "Alanna Whelan",
+      "club": "National Yacht Club",
+      "gender": "F",
+      "age": 11
+    },
+    {
+      "id": "a2f2c448-7427-5791-97e0-148932468db8",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "454",
+      "name": "Caspar Wilkinson",
+      "club": "East Antrim Boat Club",
+      "gender": "M",
+      "age": 11
+    },
+    {
+      "id": "2f7dbcca-cc22-535a-88ad-0c6dd88a5e4a",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "1420",
+      "name": "Denis Farrell",
+      "club": "Royal St. George Yacht Club",
+      "gender": "M",
+      "age": 9
+    },
+    {
+      "id": "9b083a0e-4bf5-5d2f-9a0b-35b4d38c45d5",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "2625",
+      "name": "Tom Brownlees",
+      "club": "East Antrim Boat Club",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "88e0aba3-7c87-578e-a045-38c71a244b07",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "945",
+      "name": "Caoimhe Duane",
+      "club": "Lough Ree Yacht Club",
+      "gender": "F",
+      "age": 8
+    },
+    {
+      "id": "94372b73-1c2b-580c-960b-f006049f861e",
+      "fleetIds": [
+        "87ec4ac7-86b5-51b4-acc0-3552b8bf541d"
+      ],
+      "sailNumber": "554",
+      "name": "Sophia Dorman",
+      "club": "East Antrim Boat Club",
+      "gender": "F",
+      "age": 8
+    }
+  ],
+  "races": [
+    {
+      "id": "af15b517-8db7-5bdb-9af2-06a67e9c5e75",
+      "raceNumber": 1,
+      "date": "2023-06-17",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "355a3a19-317d-593d-aea1-5f50954607b5",
+          "competitorId": "94372b73-1c2b-580c-960b-f006049f861e",
+          "sortOrder": null,
+          "resultCode": "DNC",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ad95b261-f417-5935-bbec-ae374ac6ee57",
+          "competitorId": "65c05294-3207-5ca9-87f0-2336fff752a5",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5a05f478-f288-55ea-a4e4-7c1bcbcc743d",
+          "competitorId": "9b083a0e-4bf5-5d2f-9a0b-35b4d38c45d5",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "30769c77-3997-526c-8f54-4de0bf9f1eae",
+          "competitorId": "f5e06043-4324-5612-8a2a-8e1b4544819d",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6c25fb7a-43d0-50af-9bf8-5362d07782d4",
+          "competitorId": "5486aa8b-90e7-54ba-81d5-871455b94559",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4957a1c7-4ad3-5f46-b6b5-f09d535a964a",
+          "competitorId": "a2f2c448-7427-5791-97e0-148932468db8",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "528c8aec-8087-5b61-a6cf-814d3c767fa5",
+          "competitorId": "88e0aba3-7c87-578e-a045-38c71a244b07",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ff4cfe5d-a0d6-5479-9976-3cf533db206d",
+          "competitorId": "2f7dbcca-cc22-535a-88ad-0c6dd88a5e4a",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "6fc034a2-b79f-599a-9a50-cf628e50529a",
+      "raceNumber": 2,
+      "date": "2023-06-17",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "549de3fc-4c64-58dd-8fef-8daaf970684f",
+          "competitorId": "65c05294-3207-5ca9-87f0-2336fff752a5",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a848e882-48a9-514d-a5e6-fb5fe3d1d977",
+          "competitorId": "a2f2c448-7427-5791-97e0-148932468db8",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d8f23056-f19a-5e13-9c0d-9a7334c5e9d1",
+          "competitorId": "5486aa8b-90e7-54ba-81d5-871455b94559",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "02cb580d-afee-5569-a18f-40cb56318b6e",
+          "competitorId": "f5e06043-4324-5612-8a2a-8e1b4544819d",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "96b71afa-2a11-5b53-97da-bebc262d8173",
+          "competitorId": "9b083a0e-4bf5-5d2f-9a0b-35b4d38c45d5",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6112f771-bf8b-5dff-8553-b5cb3180131e",
+          "competitorId": "2f7dbcca-cc22-535a-88ad-0c6dd88a5e4a",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c2868fcb-1535-54d0-ae78-d2933765cab0",
+          "competitorId": "88e0aba3-7c87-578e-a045-38c71a244b07",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5b3bdc01-9736-508c-907e-42baec515516",
+          "competitorId": "94372b73-1c2b-580c-960b-f006049f861e",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "df303a19-5aae-500f-b5fe-e2b43fa48803",
+      "raceNumber": 3,
+      "date": "2023-06-18",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "40b72d2c-e06c-5835-ad30-bbbf59001c94",
+          "competitorId": "65c05294-3207-5ca9-87f0-2336fff752a5",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bf9461b9-eda6-57b4-8a1e-7d88d35aab49",
+          "competitorId": "f5e06043-4324-5612-8a2a-8e1b4544819d",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "34a7711b-8458-5a59-b48b-22f6092814eb",
+          "competitorId": "2f7dbcca-cc22-535a-88ad-0c6dd88a5e4a",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "67fcb323-068b-5672-a80b-d9d2419b923f",
+          "competitorId": "5486aa8b-90e7-54ba-81d5-871455b94559",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "325714d2-6c2d-590a-9952-e1ed72a58f74",
+          "competitorId": "a2f2c448-7427-5791-97e0-148932468db8",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ce163e37-03b7-5f0d-a525-0f862876033b",
+          "competitorId": "9b083a0e-4bf5-5d2f-9a0b-35b4d38c45d5",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7ba145cb-e1c7-5a9a-888e-d66a616e5399",
+          "competitorId": "94372b73-1c2b-580c-960b-f006049f861e",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d55bedf7-d544-586a-b524-97649323c165",
+          "competitorId": "88e0aba3-7c87-578e-a045-38c71a244b07",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "86d9c10e-6590-5d0e-8e14-7278863804b6",
+      "raceNumber": 4,
+      "date": "2023-06-18",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "7b5c83bf-094d-519f-8788-ac45b1d0e738",
+          "competitorId": "9b083a0e-4bf5-5d2f-9a0b-35b4d38c45d5",
+          "sortOrder": null,
+          "resultCode": "DNC",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "abd1db2c-ec21-501a-8de7-ec95107a772b",
+          "competitorId": "94372b73-1c2b-580c-960b-f006049f861e",
+          "sortOrder": null,
+          "resultCode": "DNC",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "eb6be698-6b74-59fb-b8f0-8ec4a96ef156",
+          "competitorId": "65c05294-3207-5ca9-87f0-2336fff752a5",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fdeb8ca4-fc13-51e6-a14d-f1496567b008",
+          "competitorId": "5486aa8b-90e7-54ba-81d5-871455b94559",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6381f1eb-0df8-598e-916c-735d014e7c45",
+          "competitorId": "2f7dbcca-cc22-535a-88ad-0c6dd88a5e4a",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d9b83eb5-991a-5f64-995c-c8cf7f6f32e1",
+          "competitorId": "f5e06043-4324-5612-8a2a-8e1b4544819d",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2dd4dfde-9338-5d26-97c5-f095587c1854",
+          "competitorId": "88e0aba3-7c87-578e-a045-38c71a244b07",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b4d77168-3aed-5600-ab84-207628f4cd3b",
+          "competitorId": "a2f2c448-7427-5791-97e0-148932468db8",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    }
+  ]
+}
