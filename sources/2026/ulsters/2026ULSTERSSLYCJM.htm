@@ -1,0 +1,3610 @@
+
+
+
+<!doctype html>
+<html lang="en-US">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<title>Sailwave results for IODAI ULSTERS 2026 at Strangford Lough Yacht Club 2026</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+table.headertable {border: 0px;}
+table.headertable td{border: 0px;}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightDiscards
+//  dependencies=jQuery
+//  description=Highlight discard scores in summary tables where discards are in ().
+//  author=Jon Eskdale
+//  date=2018-11-11
+//  version=1.1
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var discardSelector = '.summaryrace';
+var discardText     = /\b\)/;
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var discardColour   = '#f2f2f2';
+
+// create array of race column numbers for first table (summarytable)
+var ths = document.getElementsByTagName('col');
+var column =[];
+for (var i=0; i<ths.length; i++) {
+        if (ths[i].classList[0] === "race") {
+                column.push(i);
+        } else {
+                if (column.length !=0) {
+                        break;
+                }
+        }
+}
+//console.log(column);
+
+//  Set a class of summaryrace for all race cells in summary table body
+//
+for (var i=0; i<column.length; i++) {
+        $(".summarytable tbody tr td:nth-child(" + (column[i]+1) +")").addClass("summaryrace");
+}
+
+// Change the background color for cells with class of summaryrace and that match regular expression text
+$(function () {
+
+  $(discardSelector).filter(function() {
+    return discardText.test($(this).text());
+  }).css("background", discardColour);
+
+});
+});
+//
+//  name=HighlightWins3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2015-08-18
+//  version=1.6 2018-11-15
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var winsSelector = '.summaryrace';
+var winsText     = /\b1\.0/;
+var twoText              = /\b2\.0/;
+var threeText    = /\b3\.0/;
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+//var twoColour  = '#ffe768';
+//var threeColour  = '#fff0a1';
+
+// create array of race column numbers for first table (summarytable)
+var ths = document.getElementsByTagName('col');
+var column =[];
+for (var i=0; i<ths.length; i++) {
+        if (ths[i].classList[0] === "race") {
+                column.push(i);
+        } else {
+                if (column.length !=0) {
+                        break;
+                }
+        }
+}
+//console.log(column);
+
+//  Set a class of summaryrace for all race cells in summary table body
+//
+for (var i=0; i<column.length; i++) {
+        $(".summarytable tbody tr td:nth-child(" + (column[i]+1) +")").addClass("summaryrace");
+}
+
+// Change the background color for cells with class of summaryrace and that match regular expression text
+$(function () {
+
+  $(winsSelector).filter(function() {
+    return winsText.test($(this).text());
+  }).css("background", winsColour);
+  $(winsSelector).filter(function() {
+        return twoText.test($(this).text());
+  }).css("background", twoColour);
+  $(winsSelector).filter(function() {
+        return threeText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+<link rel="shortcut icon" type="image/ico" href="https://www.sailwave.com/favicon.ico"/>
+</head>
+
+<body>
+
+<header>
+</header>
+<table class="headertable" cellspacing="0" width="100%" cellpadding="0" border="0">
+<tbody>
+<div id="wrap">
+
+<tr>
+<td width="30%">
+<img id="venueburgee" style="display:block; height:100px;"  src="https://iodai.com/wp-content/uploads/2014/06/slyc-logo.png" alt="venue burgee" />
+</td>
+
+<td width="40%" align="center">
+<h1>IODAI ULSTERS 2026</h1>
+<h2>Strangford Lough Yacht Club</h2>
+</td>
+
+<td width="30%">
+<img id="eventburgee" style="display:block; height:100px;" src="https://www.sailwave.com/results/swlogo30.jpg" alt="event burgee" align="right" />
+</td>
+</tr>
+</tbody>
+</table>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are final as of 11:53 on May 19, 2026</h3>
+<h3 class="summarytitle" id="summaryjunior">Junior Fleet</h3>
+<div class="caption summarycaption">Sailed: 6, Discards: 1, To count: 5, Entries: 34, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="17">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th><a class="racelink" href="#r1junior">R1</a></th>
+<th><a class="racelink" href="#r2junior">R2</a></th>
+<th><a class="racelink" href="#r3junior">R3</a></th>
+<th><a class="racelink" href="#r4junior">R4</a></th>
+<th><a class="racelink" href="#r5junior">R5</a></th>
+<th><a class="racelink" href="#r6junior">R6</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td  class="rank1">1.0</td>
+<td  class="rank1">1.0</td>
+<td>5.0</td>
+<td>(6.0)</td>
+<td  class="rank2">2.0</td>
+<td  class="rank2">2.0</td>
+<td>17.0</td>
+<td>11.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td  class="rank2">2.0</td>
+<td>(35.0 DSQ)</td>
+<td  class="rank2">2.0</td>
+<td>4.0</td>
+<td  class="rank3">3.0</td>
+<td  class="rank1">1.0</td>
+<td>47.0</td>
+<td>12.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>(12.0)</td>
+<td  class="rank2">2.0</td>
+<td  class="rank1">1.0</td>
+<td  class="rank1">1.0</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>25.0</td>
+<td>13.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>4.0</td>
+<td>4.0</td>
+<td>7.0</td>
+<td  class="rank3">3.0</td>
+<td>(19.0)</td>
+<td>4.0</td>
+<td>41.0</td>
+<td>22.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>(21.0)</td>
+<td>5.0</td>
+<td>6.0</td>
+<td  class="rank2">2.0</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>47.0</td>
+<td>26.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td  class="rank3">3.0</td>
+<td>(10.0)</td>
+<td>10.0</td>
+<td>8.0</td>
+<td  class="rank1">1.0</td>
+<td>8.0</td>
+<td>40.0</td>
+<td>30.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>9.0</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>(21.0)</td>
+<td>59.0</td>
+<td>38.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>(14.0)</td>
+<td>9.0</td>
+<td>10.0</td>
+<td  class="rank3">3.0</td>
+<td>53.0</td>
+<td>39.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>9.0</td>
+<td  class="rank3">3.0</td>
+<td>11.0</td>
+<td>11.0</td>
+<td>(23.0)</td>
+<td>6.0</td>
+<td>63.0</td>
+<td>40.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11.0</td>
+<td>(18.0)</td>
+<td  class="rank3">3.0</td>
+<td>7.0</td>
+<td>8.0</td>
+<td>12.0</td>
+<td>59.0</td>
+<td>41.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>5.0</td>
+<td>9.0</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>11.0</td>
+<td>(35.0 DNC)</td>
+<td>85.0</td>
+<td>50.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>8.0</td>
+<td>12.0</td>
+<td>8.0</td>
+<td>13.0</td>
+<td>9.0</td>
+<td>(15.0)</td>
+<td>65.0</td>
+<td>50.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>14.0</td>
+<td>11.0</td>
+<td>15.0</td>
+<td>5.0</td>
+<td>(17.0)</td>
+<td>16.0</td>
+<td>78.0</td>
+<td>61.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>(30.0)</td>
+<td>16.0</td>
+<td>4.0</td>
+<td>27.0</td>
+<td>7.0</td>
+<td>11.0</td>
+<td>95.0</td>
+<td>65.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>(25.0)</td>
+<td>15.0</td>
+<td>12.0</td>
+<td>25.0</td>
+<td>13.0</td>
+<td>9.0</td>
+<td>99.0</td>
+<td>74.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>(35.0 UFD)</td>
+<td>19.0</td>
+<td>15.0</td>
+<td>18.0</td>
+<td>116.0</td>
+<td>81.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>13.0</td>
+<td>14.0</td>
+<td>23.0</td>
+<td>(26.0)</td>
+<td>22.0</td>
+<td>10.0</td>
+<td>108.0</td>
+<td>82.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>19.0</td>
+<td>17.0</td>
+<td>19.0</td>
+<td>(23.0)</td>
+<td>14.0</td>
+<td>14.0</td>
+<td>106.0</td>
+<td>83.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>20.0</td>
+<td>(35.0 OCS)</td>
+<td>16.0</td>
+<td>15.0</td>
+<td>18.0</td>
+<td>17.0</td>
+<td>121.0</td>
+<td>86.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>18.0</td>
+<td>21.0</td>
+<td>17.0</td>
+<td>21.0</td>
+<td>12.0</td>
+<td>(22.0)</td>
+<td>111.0</td>
+<td>89.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>(27.0)</td>
+<td>24.0</td>
+<td>20.0</td>
+<td>18.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>118.0</td>
+<td>91.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>22nd</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>22.0</td>
+<td>(23.0)</td>
+<td>21.0</td>
+<td>16.0</td>
+<td>20.0</td>
+<td>20.0</td>
+<td>122.0</td>
+<td>99.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>23rd</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>7.0</td>
+<td>22.0</td>
+<td>22.0</td>
+<td>20.0</td>
+<td>(35.0 RET)</td>
+<td>35.0 DNC</td>
+<td>141.0</td>
+<td>106.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>24th</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>23.0</td>
+<td>(26.0)</td>
+<td>25.0</td>
+<td>14.0</td>
+<td>25.0</td>
+<td>19.0</td>
+<td>132.0</td>
+<td>106.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>25th</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>15.0</td>
+<td>20.0</td>
+<td>27.0</td>
+<td>22.0</td>
+<td>30.0</td>
+<td>(35.0 DNC)</td>
+<td>149.0</td>
+<td>114.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>26th</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>17.0</td>
+<td>19.0</td>
+<td>24.0</td>
+<td>30.0</td>
+<td>24.0</td>
+<td>(35.0 DNC)</td>
+<td>149.0</td>
+<td>114.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>27th</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>26.0</td>
+<td>25.0</td>
+<td>29.0</td>
+<td>17.0</td>
+<td>21.0</td>
+<td>(35.0 DNC)</td>
+<td>153.0</td>
+<td>118.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>28th</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>29.0</td>
+<td>6.0</td>
+<td>18.0</td>
+<td>33.0</td>
+<td>(35.0 RET)</td>
+<td>35.0 DNC</td>
+<td>156.0</td>
+<td>121.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>29th</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>(32.0)</td>
+<td>29.0</td>
+<td>30.0</td>
+<td>24.0</td>
+<td>27.0</td>
+<td>24.0</td>
+<td>166.0</td>
+<td>134.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>30th</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>28.0</td>
+<td>27.0</td>
+<td>28.0</td>
+<td>(31.0)</td>
+<td>29.0</td>
+<td>23.0</td>
+<td>166.0</td>
+<td>135.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>31st</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>24.0</td>
+<td>28.0</td>
+<td>(35.0 UFD)</td>
+<td>29.0</td>
+<td>26.0</td>
+<td>35.0 DNC</td>
+<td>177.0</td>
+<td>142.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>32nd</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>31.0</td>
+<td>30.0</td>
+<td>26.0</td>
+<td>28.0</td>
+<td>(35.0 RET)</td>
+<td>35.0 DNC</td>
+<td>185.0</td>
+<td>150.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>33rd</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>33.0</td>
+<td>31.0</td>
+<td>(35.0 UFD)</td>
+<td>32.0</td>
+<td>28.0</td>
+<td>35.0 DNC</td>
+<td>194.0</td>
+<td>159.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>34th</td>
+<td>Junior</td>
+<td>1660</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Luke OConnell</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>(35.0 DNC)</td>
+<td>35.0 DNC</td>
+<td>35.0 DNC</td>
+<td>35.0 DNC</td>
+<td>35.0 DNC</td>
+<td>35.0 DNC</td>
+<td>210.0</td>
+<td>175.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1junior">R1 - Junior Fleet&nbsp;-&nbsp;16-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>29</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>30</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>33</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>35</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>40</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>58</td>
+<td>33.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2junior">R2 - Junior Fleet&nbsp;-&nbsp;16-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>4</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>8</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>9</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>10</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>12</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>13</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>14</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>15</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>16</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>17</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>18</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>19</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>20</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>21</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>22</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>23</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>24</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>25</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>26</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>27</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>28</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>29</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>30</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>31</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>32</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>33</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>DSQ</td>
+<td>35.0</td>
+</tr>
+<tr class="odd racerow">
+<td>32</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>OCS</td>
+<td>35.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3junior">R3 - Junior Fleet&nbsp;-&nbsp;16-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>20</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>21</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>22</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>23</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>24</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>28</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>30</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>31</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>33</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>50</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>59</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>74</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>UFD</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>UFD</td>
+<td>35.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>UFD</td>
+<td>35.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4junior">R4 - Junior Fleet&nbsp;-&nbsp;17-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r5junior">R5 - Junior Fleet&nbsp;-&nbsp;17-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1699</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Max Dinneen</td>
+<td>SSC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1662</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Denis Farrell</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1573</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Brian Coad</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Junior</td>
+<td>1621</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Hugh Slattery</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Junior</td>
+<td>693</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Pippa Orton</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Junior</td>
+<td>1045</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Murnane</td>
+<td>LDYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1462</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Will McElligott</td>
+<td>RCYC / ISC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>RET</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1647</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Freddy Hofler</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>RET</td>
+<td>35.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Junior</td>
+<td>1391</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Quinn Rowan</td>
+<td>WHSC / RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>RET</td>
+<td>35.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r6junior">R6 - Junior Fleet&nbsp;-&nbsp;17-05-26</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="11">
+<col class="rank" />
+<col class="fleet" />
+<col class="sailno" />
+<col class="nat" />
+<col class="helmname" />
+<col class="club" />
+<col class="division" />
+<col class="helmagegroup" />
+<col class="helmsex" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Sail</th>
+<th>Nat</th>
+<th>Name</th>
+<th>Club</th>
+<th>Division</th>
+<th>Age</th>
+<th>Gender</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Junior</td>
+<td>1700</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Jack Ryan</td>
+<td>MBSC / RCYC</td>
+<td>Gold</td>
+<td>12</td>
+<td>M</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Junior</td>
+<td>1557</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Oliver Gundersen</td>
+<td>SLYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Junior</td>
+<td>1705</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Indie Crosbie</td>
+<td>RNIYC / CN Javea</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Junior</td>
+<td>1702</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Leo Smyth</td>
+<td>RSGYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Junior</td>
+<td>1632</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rian Foy Joyce</td>
+<td>LRYC / RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Junior</td>
+<td>1622</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>James Weir</td>
+<td>WHSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Junior</td>
+<td>1</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Seamus Hurley</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Junior</td>
+<td>1617</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Andrew Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Silver</td>
+<td>12</td>
+<td>M</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Junior</td>
+<td>1608</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Willow Murray</td>
+<td>SDC / HYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Junior</td>
+<td>1663</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Donagh</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Junior</td>
+<td>1692</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Kate Walsh</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Junior</td>
+<td>1576</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Ben Chaix</td>
+<td>TBSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Junior</td>
+<td>1514</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Robin mullett</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Junior</td>
+<td>1696</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Lily Song</td>
+<td>HYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Junior</td>
+<td>1634</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Aine Cahill</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Junior</td>
+<td>1609</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Theo Crinion</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Junior</td>
+<td>1656</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Dan Algeo</td>
+<td>RSGYC / BSC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Junior</td>
+<td>1642</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Gabrielle Walsh</td>
+<td>NYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>F</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Junior</td>
+<td>1525</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Elena Foley</td>
+<td>RSGYC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Junior</td>
+<td>1638</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Siun Barry</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>F</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Junior</td>
+<td>1597</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Rory Barron</td>
+<td>HYC / SDC</td>
+<td>Bronze</td>
+<td>12</td>
+<td>M</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Junior</td>
+<td>1605</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Nicholas Nyhan</td>
+<td>RCYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Junior</td>
+<td>1703</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Thomas Mellett</td>
+<td>LRYC</td>
+<td>Bronze</td>
+<td>11</td>
+<td>M</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Junior</td>
+<td>1502</td>
+<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>William Arthurs</td>
+<td>RSGYC / LDYC</td>
+<td>Bronze</td>
+<td>10</td>
+<td>M</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="codestitle">Scoring codes used</h3>
+<table class="codestable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="3"><col class="code" /><col class="description" />
+<col class="points" />
+</colgroup>
+<tr class="titlerow"><th>Code</th><th>Description</th>
+<th>Points</th>
+</tr>
+<tr class="odd coderow"><td>DNC</td><td>Did not come to the starting area</td>
+<td>35</td>
+</tr>
+<tr class="even coderow"><td>DSQ</td><td>Disqualification</td>
+<td>35</td>
+</tr>
+<tr class="odd coderow"><td>OCS</td><td>On course side at start or broke rule 30.1</td>
+<td>35</td>
+</tr>
+<tr class="even coderow"><td>RET</td><td>Retired</td>
+<td>35</td>
+</tr>
+<tr class="odd coderow"><td>UFD</td><td>U flag disqualification under rule 30.3</td>
+<td>35</td>
+</tr>
+</table>
+
+<p class="hardleft"><a href="https://slyc.co.uk/optimist-ulsters-16th-17th-may/">slyc.co.uk/optimist-ulsters-16th-17th-may/</a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="https://iodai.com/2026-ulster-championships/">iodai.com/2026-ulster-championships/</a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.38.01<br /><a href="https://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+
