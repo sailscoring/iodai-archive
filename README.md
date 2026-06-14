@@ -66,10 +66,19 @@ adopted-series-ids.json   live seriesId per series, once imported (see "adopt")
 
 ## Per-event process (once per past event)
 
-1. **Find the Sailwave pages.** Browse <https://www.sailwave.com/results/IODAI/>
-   for the event's published result pages — one per *(fleet × view)*. You want
-   the final, whole-series page for each fleet (Senior, Junior, Regatta Racing,
-   Regatta Coached), not per-day or provisional views.
+1. **Find the event's iodai.com page first.** Each event has an official page on
+   <https://iodai.com/> that links to its canonical Sailwave result pages — e.g.
+   <https://iodai.com/2026-munster-championships/>,
+   <https://iodai.com/2026-ulster-championships/>,
+   <https://iodai.com/iodai-sprint-series-2026/>,
+   <https://iodai.com/2026-irish-sailing-youth-national-championships/>. This page
+   is the authoritative record of *which* Sailwave files are the official results,
+   as opposed to test artifacts or superseded provisional uploads also visible on
+   the Sailwave site. Start the detective work here, then follow its links to the
+   Sailwave pages — one per *(fleet × view)*. You want the final, whole-series page
+   for each fleet (Senior, Junior, Regatta Racing, Regatta Coached), not per-day or
+   provisional views. <https://www.sailwave.com/results/IODAI/> is the fallback
+   index if an event has no iodai.com page.
 2. **Download** each page into `sources/<year>/<event>/` verbatim (`curl -O`).
 3. **Add a config** entry per series to `events/y<year>.py` (create the file and
    wire it into `events/__init__.py` for a new year). Set `out` (the file slug —
