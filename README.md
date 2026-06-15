@@ -58,9 +58,13 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2020 | — | — | — | — | — | — | — |
 
-**2020** had no IODAI championship season — the events were cancelled by the
-COVID-19 pandemic, and iodai.com publishes no 2020 results (its Results index
-starts at 2021). Nothing to source.
+**2020**: no published results found. iodai.com publishes nothing for 2020 (its
+Results index starts at 2021), the Sailwave `/results/IODAI/` directory holds only
+2024+, guessed 2020 event-page slugs all 404, and web searches surface no 2020
+IODAI championship. The 2020 season was COVID-disrupted, so events were likely
+curtailed or cancelled — but that's an inference: "nothing found" is verified,
+"nothing happened" is not. The shared `sailwave.com/results/` root can't be
+enumerated, so a stray 2020 page can't be fully ruled out. Marked — (not found).
 
 Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
 — not IODAI-run, but IODAI republishes its Optimist results and the same sailors
