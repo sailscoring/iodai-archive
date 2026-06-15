@@ -9,6 +9,34 @@ Pre-2024 files live at the `sailwave.com/results/` root; 2024–2026 under
 `/results/IODAI/`; many 2021 files under `iodai.com/results-files/`. Sourcing each
 event starts from its iodai.com page — see README.md.
 
+## How these event pages were found
+
+There's no clean "browse by year/event" path on iodai.com, and the page slugs
+aren't uniform (recent years use `<year>-<region>-championships`; older years use
+descriptive slugs like `leinster-championships-national-yacht-club`, dated ones
+like `mbsc-results-2021`, and even WordPress post-IDs like `28401-2` for the 2023
+Munsters). So the method was:
+
+1. **Start at the master index, <https://iodai.com/Results>** — the site's top-nav
+   "Results" link. It's a flat, year-grouped list of links to every event's
+   results page (2021→present); it gave most slugs directly.
+2. **Skip the announcement pages.** For 2024–2025 the index often lists an
+   `upgrades-to-gold-and-silver-following-…` post — these announce division
+   promotions and carry **no** result links. The real results page is a separate
+   post. Rule of thumb: if a page has no `sailwave.com/results` /
+   `iodai.com/results-files` links, it's the wrong one.
+3. **Probe for the canonical page when the index didn't give it**, using the
+   `<year>-<region>-championships` convention (note: 2025 spells it *connacht*,
+   2024 *connaught*) and checking for HTTP 200.
+4. **Confirm by the links on the page, not its title** — a page is the right one
+   when it carries the expected per-fleet set (Senior / Junior / Regatta Racing /
+   Regatta Coached).
+5. **2021–2023 slugs came from the maintainer's notes** (`IODAI Results.md`), since
+   those descriptive / post-ID slugs aren't guessable.
+
+Each file below was then re-fetched from these pages and its results data
+confirmed against the copy we built from.
+
 ## 2026
 
 ### Ulsters
