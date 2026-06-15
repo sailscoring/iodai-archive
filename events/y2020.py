@@ -19,9 +19,9 @@ SERIES = [
                'Royal Cork Yacht Club',
                ['2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'], nslots=10,
                senior=N + 'nase20os.html', junior=N + 'naju20os.html',
-               discards=[(4, 1), (10, 2)], **RCYC),
+               discards=[(4, 1), (10, 2)], **RCYC, event_url='https://iodai.com/provisional-results-nationals-2020-royal-cork-yacht-club/'),
     solo('iodai-nationals-2020-regatta', 'IODAI Nationals 2020 — Regatta',
          'Royal Cork Yacht Club',
          ['2020-08-13', '2020-08-14', '2020-08-15', '2020-08-16'], nslots=6,
-         file=N + 'AIBOptimistNationals2020RegattaFleet.htm', fleet='Regatta', **RCYC),
+         file=N + 'AIBOptimistNationals2020RegattaFleet.htm', fleet='Regatta', **RCYC, event_url='https://iodai.com/provisional-results-nationals-2020-royal-cork-yacht-club/'),
 ]

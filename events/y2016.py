@@ -47,15 +47,15 @@ SERIES = [
     main_fleet('iodai-munsters-2016-main-fleet', 'IODAI Munsters 2016 — Main Fleet',
                'CRYC', ['2016-09-10', '2016-09-11'], nslots=3,
                senior=M + 'muse16os.html', junior=M + 'muju16os.html',
-               discards=[(4, 1)], tie_tolerant=True),
+               discards=[(4, 1)], tie_tolerant=True, event_url='https://iodai.com/munsters-2016-results-rcyc/'),
     solo('iodai-munsters-2016-regatta', 'IODAI Munsters 2016 — Regatta',
          'CRYC', ['2016-09-10', '2016-09-11'], nslots=3,
-         file=M + 'mure16os.html', fleet='Regatta', discards=[(4, 1)], tie_tolerant=True),
+         file=M + 'mure16os.html', fleet='Regatta', discards=[(4, 1)], tie_tolerant=True, event_url='https://iodai.com/munsters-2016-results-rcyc/'),
 
     # --- Nationals @ Lough Derg YC (15–19 Aug) — Regatta page has no results --
     main_fleet('iodai-nationals-2016-main-fleet', 'IODAI Nationals 2016 — Main Fleet',
                'Lough Derg Yacht Club',
                ['2016-08-15', '2016-08-16', '2016-08-17', '2016-08-18'], nslots=10,
                senior=N + 'nase16os.html', junior=N + 'naju16os.html',
-               discards=[(4, 1), (8, 2)], tie_tolerant=True, **LDYC),
+               discards=[(4, 1), (8, 2)], tie_tolerant=True, **LDYC, event_url='https://iodai.com/nationals-2016-results-ldyc/'),
 ]

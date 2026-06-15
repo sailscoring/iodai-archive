@@ -18,7 +18,7 @@ SERIES = [
     # Published combined-fleet (all boats scored together); we re-score Senior
     # and Junior as separate fleets, matching 2025's correct scoring.
     dict(
-        out='iodai-sprint-series-2026',
+        out='iodai-sprint-series-2026', event_url='https://iodai.com/iodai-sprint-series-2026/',
         name='IODAI Sprint Series 2026',
         venue='NYC / MYC / MBSC', start='2026-02-07', end='2026-03-28',
         **IODAI,
@@ -34,7 +34,7 @@ SERIES = [
 
     # --- Ulsters @ Strangford Lough YC (17–18 May) — 3 series -----------------
     dict(
-        out='iodai-ulsters-2026-main-fleet',
+        out='iodai-ulsters-2026-main-fleet', event_url='https://iodai.com/2026-ulster-championships/',
         name='IODAI Ulsters 2026 — Main Fleet',
         venue='Strangford Lough Yacht Club', start='2026-05-17', end='2026-05-18',
         **IODAI,
@@ -47,7 +47,7 @@ SERIES = [
         date=lambda i: two_per_day(i, ['2026-05-17', '2026-05-18', '2026-05-18']),
     ),
     dict(
-        out='iodai-ulsters-2026-regatta-racing',
+        out='iodai-ulsters-2026-regatta-racing', event_url='https://iodai.com/2026-ulster-championships/',
         name='IODAI Ulsters 2026 — Regatta Racing',
         venue='Strangford Lough Yacht Club', start='2026-05-17', end='2026-05-18',
         **IODAI,
@@ -59,7 +59,7 @@ SERIES = [
         date=lambda i: two_per_day(i, ['2026-05-17', '2026-05-18', '2026-05-18']),
     ),
     dict(
-        out='iodai-ulsters-2026-regatta-coached',
+        out='iodai-ulsters-2026-regatta-coached', event_url='https://iodai.com/2026-ulster-championships/',
         name='IODAI Ulsters 2026 — Regatta Coached',
         venue='Strangford Lough Yacht Club', start='2026-05-17', end='2026-05-18',
         **IODAI,
@@ -73,7 +73,7 @@ SERIES = [
 
     # --- Munsters @ Waterford Harbour SC (13–14 June) — 3 series --------------
     dict(
-        out='iodai-munsters-2026-main-fleet',
+        out='iodai-munsters-2026-main-fleet', event_url='https://iodai.com/2026-munster-championships/',
         name='IODAI Munsters 2026 — Main Fleet',
         venue='Waterford Harbour Sailing Club', start='2026-06-13', end='2026-06-14',
         **WHSC, **IODAI,
@@ -86,7 +86,7 @@ SERIES = [
         date=lambda i: two_per_day(i, ['2026-06-13', '2026-06-14']),
     ),
     dict(
-        out='iodai-munsters-2026-regatta-racing',
+        out='iodai-munsters-2026-regatta-racing', event_url='https://iodai.com/2026-munster-championships/',
         name='IODAI Munsters 2026 — Regatta Racing',
         venue='Waterford Harbour Sailing Club', start='2026-06-13', end='2026-06-14',
         **WHSC, **IODAI,
@@ -98,7 +98,7 @@ SERIES = [
         date=lambda i: two_per_day(i, ['2026-06-13', '2026-06-14']),
     ),
     dict(
-        out='iodai-munsters-2026-regatta-coached',
+        out='iodai-munsters-2026-regatta-coached', event_url='https://iodai.com/2026-munster-championships/',
         name='IODAI Munsters 2026 — Regatta Coached',
         venue='Waterford Harbour Sailing Club', start='2026-06-13', end='2026-06-14',
         **WHSC, **IODAI,
@@ -114,7 +114,7 @@ SERIES = [
     # Not IODAI-run; included because IODAI republishes its Optimist results and
     # the same sailors appear, which the cross-series identity work will want.
     dict(
-        out='irish-sailing-youth-nationals-2026-optimist',
+        out='irish-sailing-youth-nationals-2026-optimist', event_url='https://iodai.com/2026-irish-sailing-youth-national-championships/',
         name='Irish Sailing Youth Nationals 2026 (Optimist)',
         venue='Ballyholme Yacht Club', start='2026-04-11', end='2026-04-13',
         subdivision=False, boat_class=True, primary='helm',

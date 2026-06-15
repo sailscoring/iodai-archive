@@ -19,10 +19,10 @@ SERIES = [
     main_fleet('iodai-leinsters-2015-main-fleet', 'IODAI Leinsters 2015 — Main Fleet',
                'Howth Yacht Club', ['2015-09-05', '2015-09-06'], nslots=5,
                senior=L + 'lese15os.html', junior=L + 'leju15os.html',
-               discards=[(4, 1)], **HYC),
+               discards=[(4, 1)], **HYC, event_url='https://iodai.com/leinsters-2015-results-hyc/'),
     solo('iodai-leinsters-2015-regatta', 'IODAI Leinsters 2015 — Regatta',
          'Howth Yacht Club', ['2015-09-05', '2015-09-06'], nslots=4,
-         file=L + 'lere15os.html', fleet='Regatta', discards=[(4, 1)], **HYC),
+         file=L + 'lere15os.html', fleet='Regatta', discards=[(4, 1)], **HYC, event_url='https://iodai.com/leinsters-2015-results-hyc/'),
 
     # --- Ulsters @ Ballyholme YC (approx Jun) --------------------------------
     main_fleet('iodai-ulsters-2015-main-fleet', 'IODAI Ulsters 2015 — Main Fleet',

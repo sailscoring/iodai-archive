@@ -20,11 +20,11 @@ SERIES = [
     main_fleet('iodai-leinsters-2017-main-fleet', 'IODAI Leinsters 2017 — Main Fleet',
                'National Yacht Club', ['2017-09-09', '2017-09-10'], nslots=4,
                senior=L + 'lese17os.html', junior=L + 'leju17os.html',
-               discards=[], tie_tolerant=True, **NYC),
+               discards=[], tie_tolerant=True, **NYC, event_url='https://iodai.com/leinsters-2017-results-nyc/'),
     solo('iodai-leinsters-2017-regatta', 'IODAI Leinsters 2017 — Regatta',
          'National Yacht Club', ['2017-09-09', '2017-09-10'], nslots=5,
          file=L + 'lere17os.html', fleet='Regatta',
-         discards=[(5, 1)], tie_tolerant=True, **NYC),
+         discards=[(5, 1)], tie_tolerant=True, **NYC, event_url='https://iodai.com/leinsters-2017-results-nyc/'),
 
     # --- Ulsters @ Royal North of Ireland YC (10–11 May) — no logo -----------
     main_fleet('iodai-ulsters-2017-main-fleet', 'IODAI Ulsters 2017 — Main Fleet',
@@ -58,10 +58,10 @@ SERIES = [
                'Royal Irish Yacht Club',
                ['2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20'], nslots=10,
                senior=N + 'nase17os.html', junior=N + 'naju17os.html',
-               discards=[(5, 1), (9, 2)], tie_tolerant=True, **RIYC),
+               discards=[(5, 1), (9, 2)], tie_tolerant=True, **RIYC, event_url='https://iodai.com/nationals-2017-results-riyc/'),
     solo('iodai-nationals-2017-regatta', 'IODAI Nationals 2017 — Regatta',
          'Royal Irish Yacht Club',
          ['2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20'], nslots=8,
          file=N + 'nare17os.html', fleet='Regatta', discards=[(5, 1)],
-         tie_tolerant=True, **RIYC),
+         tie_tolerant=True, **RIYC, event_url='https://iodai.com/nationals-2017-results-riyc/'),
 ]

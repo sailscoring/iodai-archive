@@ -15,9 +15,11 @@ def two_per_day(i, days):
     return days[i // 2] if i // 2 < len(days) else days[-1]
 
 
-# Event (organiser) — IODAI runs every event here.
-IODAI = dict(event_logo='https://logos.sailscoring.ie/iodai.png',
-             event_url='https://iodai.com/')
+# Event (organiser) — IODAI runs every event here. `IODAI_URL` is the default
+# event_url (the IODAI homepage), used when a series has no specific event page;
+# per-event pages (from SOURCES.md) are passed via `event_url=` where known.
+IODAI = dict(event_logo='https://logos.sailscoring.ie/iodai.png')
+IODAI_URL = 'https://iodai.com/'
 
 
 def _logo(name, ext='png'):
@@ -60,7 +62,7 @@ def _date_fn(days):
 
 
 def main_fleet(out, name, venue, days, nslots, senior=None, junior=None,
-               discards=DISCARDS, **venuekw):
+               discards=DISCARDS, event_url=IODAI_URL, **venuekw):
     """A Main-Fleet series: Senior and/or Junior as separate scratch fleets
     sharing a finish line, scored independently, with Gold/Silver/Bronze as a
     subdivision. `days` is the list of event day ISO dates (start/end derived
@@ -74,14 +76,16 @@ def main_fleet(out, name, venue, days, nslots, senior=None, junior=None,
         out=out, name=name, venue=venue, start=days[0], end=days[-1],
         discards=discards, nslots=nslots, sources=src,
         fleet_order=[s['fleet'] for s in src], date=_date_fn(days),
-        subdivision=True, boat_class=False, primary='helm', **IODAI, **venuekw)
+        subdivision=True, boat_class=False, primary='helm', event_url=event_url,
+        **IODAI, **venuekw)
 
 
 def solo(out, name, venue, days, nslots, file, fleet, subdivision=False,
-         discards=DISCARDS, **venuekw):
+         discards=DISCARDS, event_url=IODAI_URL, **venuekw):
     """A single-fleet series (Regatta Racing, Regatta Coached, Crosbie Cup, …)."""
     return combined(out, name, venue, days, nslots, [file], fleet=fleet,
-                    subdivision=subdivision, discards=discards, **venuekw)
+                    subdivision=subdivision, discards=discards,
+                    event_url=event_url, **venuekw)
 
 
 def p2_main(out, name, days, nslots, senior=None, junior=None, discards=DISCARDS, suspect=()):
@@ -98,7 +102,7 @@ def p2_reg(out, name, days, nslots, file, discards=DISCARDS):
 
 
 def combined(out, name, venue, days, nslots, files, fleet='Main',
-             subdivision=True, discards=DISCARDS, **venuekw):
+             subdivision=True, discards=DISCARDS, event_url=IODAI_URL, **venuekw):
     """One scratch fleet assembled from one or more pages. Used when a Main fleet
     that was actually scored as a *single combined* start was published split
     across senior/junior view pages (e.g. 2024 Ulsters @ EABC): loading both
@@ -111,4 +115,4 @@ def combined(out, name, venue, days, nslots, files, fleet='Main',
         sources=[dict(file=f, fleet=fleet, slot0=0) for f in files],
         fleet_order=[fleet], date=_date_fn(days),
         subdivision=subdivision, boat_class=False, primary='helm',
-        **IODAI, **venuekw)
+        event_url=event_url, **IODAI, **venuekw)
