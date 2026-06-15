@@ -23,14 +23,21 @@ for the sailing instructions.
 
 ## Target events per year
 
+> **Focus (current):** the **4 regional championships** and the **National
+> championship**. The Sprint Series, National Training Week / Crosbie Cup, and the
+> (non-IODAI) Youth Nationals are lower priority — keep what's already built and
+> validated, but don't invest further effort there unless asked. New sourcing
+> should prioritise filling regional + Nationals gaps in the tracker.
+
 IODAI runs ~7 events a season. For each past year we want:
 
-| Event | Series produced |
-|-------|-----------------|
-| **4 regional championships** — Leinsters, Ulsters, Connachts, Munsters | 3 each: Main (Senior + Junior fleets), Regatta Racing, Regatta Coached |
-| **National championship** | 3: Main, Regatta Racing, Regatta Coached |
-| **National Training Week** — final-day racing (Crosbie Cup) | 1+ |
-| **Sprint Series** (runs from 2024) | 1: Main, Senior + Junior scored separately |
+| Event | Series produced | Priority |
+|-------|-----------------|----------|
+| **4 regional championships** — Leinsters, Ulsters, Connachts, Munsters | 3 each: Main (Senior + Junior fleets), Regatta Racing, Regatta Coached | **primary** |
+| **National championship** | 3: Main, Regatta Racing, Regatta Coached | **primary** |
+| **National Training Week** — final-day racing (Crosbie Cup) | 1+ | low |
+| **Sprint Series** (runs from 2024) | 1: Main, Senior + Junior scored separately | low |
+| **Irish Sailing Youth Nationals** (Optimist; not IODAI-run) | 1 | low |
 
 A "series" here is **one group sharing a finish line** (the app's rule): an event
 with Main + two regatta fleets is *three* independent series, not one. Main Fleet
