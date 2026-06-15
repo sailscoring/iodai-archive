@@ -185,3 +185,16 @@ reconstructed Nett matches the published page, every boat.
 
 All ids are deterministic (UUIDv5 of a stable key), so rebuilding is byte-stable
 — re-running after more races publish changes only the new race data, never ids.
+
+## Licensing
+
+This repository contains three kinds of material, licensed separately:
+
+- **Code** — `build.py`, `engine.py`, `events/`: [MIT](LICENSE).
+- **Reconstructed results & docs** — `series/*.sailscoring`, `README.md`,
+  `SOURCES.md`, `IODAI Results.md`: [CC0 1.0](LICENSE-DATA) (public-domain
+  dedication). These are reconstructions of published race results; results are
+  facts and not themselves copyrightable.
+- **Source pages** — `sources/**`: **not covered by either license.** These are
+  verbatim HTML result pages published by IODAI via Sailwave, included only for
+  reproducibility (`build.py validate`). All rights remain with their owners.
