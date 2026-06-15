@@ -37,6 +37,40 @@ Munsters). So the method was:
 Each file below was then re-fetched from these pages and its results data
 confirmed against the copy we built from.
 
+### Earlier years (pre-2021): the Wayback Machine
+
+`iodai.com/Results` only goes back to 2021, but the site's older event pages (and
+the result files they link) are preserved in the [Wayback Machine](https://web.archive.org).
+The process:
+
+1. **List the year's pages with the CDX API** (one request, no manual snapshot
+   walking):
+   `https://web.archive.org/cdx/search/cdx?url=iodai.com&matchType=domain&from=YYYY0101&to=YYYY1231&collapse=urlkey&fl=original,timestamp,statuscode`
+   That returns every archived iodai.com URL for the year — the "article list".
+2. **Filter** to event/result slugs; drop `gallery/`, `category/`, `tag/`, `feed`,
+   oembed and social-share URLs.
+3. **Fetch each archived page raw** with the `id_` suffix —
+   `https://web.archive.org/web/<timestamp>id_/<url>` — which omits the Wayback
+   toolbar/rewriting so link extraction is clean.
+4. **Extract result links**, catching both absolute `sailwave.com/results/…` and
+   **relative** `/results-files/…` (older pages link results relative to the host).
+5. **Use era-appropriate snapshots.** A later snapshot of `/results` shows only the
+   then-current season; the individual event pages preserve their own links, so
+   prefer a snapshot from the event's own year (or shortly after).
+6. **Fetch the result files** from the live host first (most `iodai.com/results-files/…`
+   and `sailwave.com/results/…` files still resolve); fall back to the archive
+   (`…id_/…`) for any that 404.
+
+Result files of this era follow a tidy convention:
+`<region><fleet><yy>os.html` — region `le`/`mu`/`na`/`co`(/`ul`), fleet `se`/`ju`/`re`
+(and `all` for a combined view), e.g. `lese18os` = Leinster Senior 2018.
+
+**Scoring-software caveat.** The reconstruction engine assumes **Sailwave** output
+(low-point summary tables). IODAI used Sailwave for recent years, but earlier
+pages (≈2009 onward, post the 2013/14 site revamp) were produced with **Sail100**,
+whose HTML differs. Years are flagged below where non-Sailwave software was used;
+those can't be reconstructed by this pipeline without separate parsing.
+
 ## 2026
 
 ### Ulsters
