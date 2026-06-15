@@ -340,6 +340,38 @@ Event page: <https://iodai.com/results-nationals-2019-howth-yacht-club/>
 - Main (Junior): <https://iodai.com/results-files/naju19os.html>
 - Regatta: <https://iodai.com/results-files/nare19os.html>
 
+## 2018
+
+Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>18os.html`;
+Nationals capitalised). All Sailwave. The Main-fleet pages used non-standard tie
+scoring (tied boats don't consume the next place), so a handful of boats re-score
+±0.5–1 under RRS A8.1 — tolerated (`tie_tolerant`), ranks unaffected.
+
+### Leinsters — Howth YC
+Event page: <https://iodai.com/leinsters-2018-hyc-results/>  
+- Main (Senior/Junior): <https://iodai.com/results-files/lese18os.html> · <https://iodai.com/results-files/leju18os.html>
+- Regatta: <https://iodai.com/results-files/lere18os.html>
+
+### Ulsters — Malahide YC
+Event page: <https://iodai.com/ulsters-2018-myc/>  (via Wayback)  
+- Main (Senior/Junior): <https://iodai.com/results-files/ulse18os.html> · <https://iodai.com/results-files/ulju18os.html>
+- Regatta: <https://iodai.com/results-files/ulre18os.html>
+
+### Connachts — Lough Derg YC
+Event page: <https://iodai.com/connaughts-2018-results-ldyc/>  
+- Main (Senior/Junior): <https://iodai.com/results-files/cose18os.html> · <https://iodai.com/results-files/coju18os.html>
+- Regatta: <https://iodai.com/results-files/core18os.html>
+
+### Munsters — Tralee Bay SC
+Event page: <https://iodai.com/munsters-2018-results-tbsc/>  
+- Main (Senior/Junior): <https://iodai.com/results-files/muse18os.html> · <https://iodai.com/results-files/muju18os.html>
+- Regatta: <https://iodai.com/results-files/mure18os.html>
+
+### Nationals — Kinsale YC
+Event page: <https://iodai.com/nationals-2018-kyc-results/>  
+- Main (Senior/Junior): <https://iodai.com/results-files/Nase18os.html> · <https://iodai.com/results-files/Naju18os.html>
+- Regatta: <https://iodai.com/results-files/Nare18os.html>
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

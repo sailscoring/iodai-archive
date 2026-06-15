@@ -32,11 +32,13 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # Non-race meta columns. Some pages title the sail column 'Sail Number' and the
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
-META = {'Rank', 'Place', 'Tally', 'Fleet', 'Class', 'Sail', 'Sail Number',
-        'SailNo', 'Sail no.', 'Sail No', 'Nat', 'Nationality', 'Country',
-        'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm', 'Name', 'Club',
-        'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex', 'Age', 'HelmAge',
-        'Helmage', 'Helmagegroup', 'HelmAgeGroup', 'Rating', 'Total', 'Nett', 'Net'}
+META = {'Rank', 'Place', 'Ranking', 'Tally', 'Fleet', 'Class', 'Sail',
+        'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Nat', 'Nationality',
+        'Country', 'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm',
+        'Name', 'Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
+        'M/F', 'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'HelmAgeGroup',
+        'Oppy Age', 'Oppie Age', 'Year', 'Senior/Junior', 'Rating', 'Silver/Gold',
+        'Total', 'Nett', 'Net'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -85,7 +87,7 @@ def cellize(tr):
 # use 'Place' + 'Net' and carry no gross 'Total' column (only the net). Both are
 # low-point tables (displayed score = finishing position), so the same engine
 # reconstructs them once the column names and the missing-Total case are handled.
-RANK_HEADERS = ('Rank', 'Place')
+RANK_HEADERS = ('Rank', 'Place', 'Ranking')
 NETT_HEADERS = ('Nett', 'Net')
 
 
@@ -193,14 +195,16 @@ def load_competitors(cfg):
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or row.get('Nationality') or row.get('Country') or '').strip(),
-                gender=norm_gender(row.get('Gender') or row.get('HelmSex') or row.get('Helm Sex')),
+                gender=norm_gender(row.get('Gender') or row.get('HelmSex')
+                                   or row.get('Helm Sex') or row.get('M/F')),
                 age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')
-                             or row.get('Helmagegroup') or row.get('HelmAgeGroup')),
+                             or row.get('Helmagegroup') or row.get('HelmAgeGroup')
+                             or row.get('Oppy Age') or row.get('Oppie Age')),
                 # The prize division (Gold/Silver/Bronze) is in 'Rating' on pages
                 # that also carry a Senior/Junior 'Division' column, else in
                 # 'Division'/'Divison' itself.
-                subdivision=((row.get('Rating') or row.get('Division') or row.get('Divison') or '').strip()
-                             if cfg['subdivision'] else ''),
+                subdivision=((row.get('Rating') or row.get('Silver/Gold') or row.get('Division')
+                              or row.get('Divison') or '').strip() if cfg['subdivision'] else ''),
                 boat_class=(row.get('Class') or '').strip() if cfg['boat_class'] else '',
                 cells=cells,
                 published_nett=row['Nett'],
@@ -456,17 +460,28 @@ def validate(series):
         # SUSPECT, not counted as failures. Keeps validation strict everywhere
         # else while acknowledging the bad source cell. See README rule 4.
         suspect = set(cfg.get('suspect', ()))
+        # Some early years' pages used non-standard tie scoring (tied boats share a
+        # place without consuming the next slot, e.g. 7,7,8) where the app applies
+        # RRS A8.1 averaging (7.5,7.5,9). That leaves boats at/below a tie off by a
+        # small multiple of 0.5. `tie_tolerant` accepts such ≤2.0, half-point diffs
+        # (reported as TIE) — the app is the RRS-correct one; ranks are unchanged.
+        tie_tol = cfg.get('tie_tolerant')
         for label, group in groups:
             scored = score_fleet(group, cfg['nslots'], cfg['discards'])
             mism = 0
             sus = 0
+            ties = 0
             for c in group:
                 nett_str = c['published_nett'].strip()
                 if not nett_str:
                     continue  # roster row (participation fleet, no score published)
                 want = float(nett_str)
                 got = scored[c['id']][1]
-                if abs(got - want) <= 0.01:
+                diff = got - want
+                if abs(diff) <= 0.01:
+                    continue
+                if tie_tol and abs(diff) <= 2.0 and abs(round(diff * 2) - diff * 2) < 1e-6:
+                    ties += 1
                     continue
                 if c['sail'] in suspect:
                     sus += 1
@@ -480,6 +495,8 @@ def validate(series):
             tag = 'OK' if mism == 0 else f'{mism}/{len(group)} MISMATCH'
             if sus:
                 tag += f' (+{sus} suspect)'
+            if ties:
+                tag += f' (+{ties} tie)'
             if mism:
                 ok = False
             print(f'   [{tag}] {label} ({len(group)} boats)')
