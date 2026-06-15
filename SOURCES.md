@@ -372,6 +372,23 @@ Event page: <https://iodai.com/nationals-2018-kyc-results/>
 - Main (Senior/Junior): <https://iodai.com/results-files/Nase18os.html> · <https://iodai.com/results-files/Naju18os.html>
 - Regatta: <https://iodai.com/results-files/Nare18os.html>
 
+## 2017
+
+Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>17os.html`).
+All Sailwave, all five events (separate Senior/Junior Main + Regatta). Discards
+read per fleet (2017 discarded later than recent years). Non-standard tie scoring
+→ `tie_tolerant`. Venues: Leinster/NYC, Ulster/Royal North of Ireland YC,
+Connacht/WHSC, Munster/Kinsale YC, Nationals/Royal Irish YC.
+
+- Leinster: `lese17os` · `leju17os` · `lere17os`
+- Ulster: `ulse17os` · `ulju17os` · `ulre17os`
+- Connacht: `cose17os` · `coju17os` · `core17os`
+- Munster: `muse17os` · `muju17os` · `mure17os`
+- Nationals: `nase17os` · `naju17os` · `nare17os`
+
+(all under <https://iodai.com/results-files/>; event pages e.g.
+<https://iodai.com/leinsters-2017-results-nyc/>, `nationals-2017-results-riyc`.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

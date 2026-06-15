@@ -33,9 +33,9 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
 META = {'Rank', 'Place', 'Ranking', 'Tally', 'Fleet', 'Class', 'Sail',
-        'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Nat', 'Nationality',
-        'Country', 'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm',
-        'Name', 'Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
+        'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Sail Num.', 'Nat', 'Nationality',
+        'Country', 'Sail Country', 'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm',
+        'Name', 'Surname', 'Club', 'Primary Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
         'M/F', 'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'HelmAgeGroup',
         'Oppy Age', 'Oppie Age', 'Year', 'Senior/Junior', 'Rating', 'Silver/Gold',
         'Total', 'Nett', 'Net'}
@@ -100,7 +100,11 @@ def parse_file(fname):
     hdr = None
     for tr in re.findall(r'<tr[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        if any(h in c for h in RANK_HEADERS) and any(h in c for h in NETT_HEADERS):
+        # The header is the row carrying the net-score column. A rank/place column
+        # is usual but optional (some pages omit it and pre-sort the rows), so also
+        # accept a row that has a net column plus a race column (e.g. 'R1').
+        if any(h in c for h in NETT_HEADERS) and (
+                any(h in c for h in RANK_HEADERS) or any(re.fullmatch(r'R\d+', x) for x in c)):
             hdr = c
             break
     # Race columns run up to the first scoring-total column. Sailwave has a 'Total'
@@ -143,6 +147,9 @@ def classify(raw):
         return dict(discarded=discarded, kind='finish', score=score, code=None, penalty=tok)
     if re.match(r'^[\d.]+$', t):
         return dict(discarded=discarded, kind='finish', score=float(t), code=None, penalty=None)
+    # A bare result code with no points shown (some 2017 pages: just 'DNC'/'DNF').
+    if t.upper() in RESULT_CODES:
+        return dict(discarded=discarded, kind='code', score=None, code=t.upper(), penalty=None)
     return dict(discarded=discarded, kind='blank', score=None, code=None, penalty=None)
 
 
@@ -155,11 +162,15 @@ def round_tenth(x):
 def _sail(row):
     """The sail number, however the page titled its column."""
     return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo')
-            or row.get('Sail no.') or row.get('Sail No') or '').strip()
+            or row.get('Sail no.') or row.get('Sail No') or row.get('Sail Num.') or '').strip()
 
 
 def norm_gender(g):
     g = (g or '').strip().upper()
+    if g in ('MALE', 'BOY', 'B'):
+        return 'M'
+    if g in ('FEMALE', 'GIRL', 'G'):
+        return 'F'
     return g if g in ('M', 'F') else ''
 
 
@@ -185,6 +196,8 @@ def load_competitors(cfg):
                      if src.get('fleet_from_col') else src['fleet'])
             name = (row.get('Helm Name') or row.get('HelmName') or row.get('Helmname')
                     or row.get('Helmname-1') or row.get('Helm') or row.get('Name') or '')
+            if row.get('Surname'):  # pages that split the name into Name + Surname
+                name = f"{name} {row['Surname']}".strip()
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
@@ -193,8 +206,9 @@ def load_competitors(cfg):
                 fleet=fleet,
                 sail=_sail(row),
                 name=name.strip(),
-                club=(row.get('Club') or '').strip(),
-                nat=(row.get('Nat') or row.get('Nationality') or row.get('Country') or '').strip(),
+                club=(row.get('Club') or row.get('Primary Club') or '').strip(),
+                nat=(row.get('Nat') or row.get('Nationality') or row.get('Country')
+                     or row.get('Sail Country') or '').strip(),
                 gender=norm_gender(row.get('Gender') or row.get('HelmSex')
                                    or row.get('Helm Sex') or row.get('M/F')),
                 age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')

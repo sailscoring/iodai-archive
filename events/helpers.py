@@ -42,6 +42,7 @@ SSC = _logo('skerries-sc')
 RSGYC = _logo('rsgyc')
 SLYC = _logo('strangford-lough-yc')
 BYC = _logo('ballyholme-yc')
+RIYC = _logo('riyc')
 
 
 # IODAI's usual discard scheme: a single discard once 4 races are sailed, which

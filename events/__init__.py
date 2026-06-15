@@ -12,6 +12,7 @@ from . import y2021
 from . import y2020
 from . import y2019
 from . import y2018
+from . import y2017
 
 ALL_SERIES = [
     *y2026.SERIES,
@@ -23,4 +24,5 @@ ALL_SERIES = [
     *y2020.SERIES,
     *y2019.SERIES,
     *y2018.SERIES,
+    *y2017.SERIES,
 ]
