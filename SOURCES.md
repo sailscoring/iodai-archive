@@ -256,6 +256,20 @@ Event page: <https://iodai.com/iodai-nationals-2021-results/>
 - Main (Junior): <https://iodai.com/results-files/Nats2021JF.html>
 - Regatta: <https://iodai.com/results-files/Nats2021R.html>
 
+## 2020
+
+Only the Nationals has been found (the 2020 season was COVID-disrupted). Its
+event page is not listed in the `/Results` index.
+
+### Nationals
+Event page: <https://iodai.com/provisional-results-nationals-2020-royal-cork-yacht-club/>  
+- Main (Senior): <https://iodai.com/results-files/nase20os.html>
+- Main (Junior): <https://iodai.com/results-files/naju20os.html>
+- Regatta: <https://sailwave.com/results/AIBOptimistNationals2020RegattaFleet.htm>
+
+  (A combined Senior+Junior view, `naall20os.html`, is also linked but not built —
+  the per-fleet pages are used.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

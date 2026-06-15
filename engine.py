@@ -33,9 +33,10 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
 META = {'Rank', 'Tally', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo',
-        'Sail no.', 'Nat', 'Nationality', 'Helm Name', 'HelmName', 'Helmname',
-        'Helmname-1', 'Helm', 'Name', 'Club', 'Division', 'Divison', 'Gender',
-        'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'Rating'}
+        'Sail no.', 'Sail No', 'Nat', 'Nationality', 'Helm Name', 'HelmName',
+        'Helmname', 'Helmname-1', 'Helm', 'Name', 'Club', 'Division', 'Divison',
+        'Gender', 'HelmSex', 'Helm Sex', 'Age', 'HelmAge', 'Helmage',
+        'Helmagegroup', 'HelmAgeGroup', 'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -140,7 +141,7 @@ def round_tenth(x):
 def _sail(row):
     """The sail number, however the page titled its column."""
     return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo')
-            or row.get('Sail no.') or '').strip()
+            or row.get('Sail no.') or row.get('Sail No') or '').strip()
 
 
 def norm_gender(g):
@@ -180,9 +181,9 @@ def load_competitors(cfg):
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
                 nat=(row.get('Nat') or row.get('Nationality') or '').strip(),
-                gender=norm_gender(row.get('Gender')),
+                gender=norm_gender(row.get('Gender') or row.get('HelmSex') or row.get('Helm Sex')),
                 age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')
-                             or row.get('Helmagegroup')),
+                             or row.get('Helmagegroup') or row.get('HelmAgeGroup')),
                 # The prize division (Gold/Silver/Bronze) is in 'Rating' on pages
                 # that also carry a Senior/Junior 'Division' column, else in
                 # 'Division'/'Divison' itself.

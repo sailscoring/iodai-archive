@@ -56,15 +56,13 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2020 | — | — | — | — | — | — | — |
+| 2020 | ◻️ | ◻️ | ◻️ | ◻️ | ✅ | — | — |
 
-**2020**: no published results found. iodai.com publishes nothing for 2020 (its
-Results index starts at 2021), the Sailwave `/results/IODAI/` directory holds only
-2024+, guessed 2020 event-page slugs all 404, and web searches surface no 2020
-IODAI championship. The 2020 season was COVID-disrupted, so events were likely
-curtailed or cancelled — but that's an inference: "nothing found" is verified,
-"nothing happened" is not. The shared `sailwave.com/results/` root can't be
-enumerated, so a stray 2020 page can't be fully ruled out. Marked — (not found).
+**2020**: COVID-disrupted, but the **National championship was held** (Royal Cork
+YC, 13–16 Aug) and is sourced. Its iodai.com page isn't in the `/Results` index —
+it's `provisional-results-nationals-2020-royal-cork-yacht-club`. No 2020 *regional*
+results have been found yet (◻️); they may not have run, or may be published under
+slugs not yet located — absence isn't proof, so they're left open rather than —.
 
 Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
 — not IODAI-run, but IODAI republishes its Optimist results and the same sailors
