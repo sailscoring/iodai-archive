@@ -423,6 +423,21 @@ Ulster and Connacht pages carry no date (approximate).
 (all under <https://iodai.com/results-files/>; event pages e.g.
 <https://iodai.com/leinsters-2015-results-hyc/>.)
 
+## 2014
+
+Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>14os.html`).
+All Sailwave, all five events (Main + Regatta). Venues: Leinster/Royal Irish,
+Ulster/Skerries, Connacht/Galway Bay, Munster/Tralee Bay, Nationals/Royal Cork.
+One page labels its net column 'Total Points' (handled in the engine).
+
+- Leinster: `lese14os` · `leju14os` · `lere14os`
+- Ulster: `ulse14os` · `ulju14os` · `ulre14os`
+- Connacht: `cose14os` · `coju14os` · `core14os`
+- Munster: `muse14os` · `muju14os` · `mure14os`
+- Nationals: `nase14os` · `naju14os` · `nare14os`
+
+(all under <https://iodai.com/results-files/>.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

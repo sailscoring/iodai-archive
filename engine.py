@@ -88,7 +88,7 @@ def cellize(tr):
 # low-point tables (displayed score = finishing position), so the same engine
 # reconstructs them once the column names and the missing-Total case are handled.
 RANK_HEADERS = ('Rank', 'Place', 'Ranking')
-NETT_HEADERS = ('Nett', 'Net')
+NETT_HEADERS = ('Nett', 'Net', 'Total Points')
 # Header matching is case-insensitive (some years use ALL-CAPS headers). Map each
 # lowercased header to its canonical META spelling so row fields read back the
 # same regardless of the page's casing.
