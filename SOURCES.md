@@ -65,11 +65,13 @@ Result files of this era follow a tidy convention:
 `<region><fleet><yy>os.html` — region `le`/`mu`/`na`/`co`(/`ul`), fleet `se`/`ju`/`re`
 (and `all` for a combined view), e.g. `lese18os` = Leinster Senior 2018.
 
-**Scoring-software caveat.** The reconstruction engine assumes **Sailwave** output
-(low-point summary tables). IODAI used Sailwave for recent years, but earlier
-pages (≈2009 onward, post the 2013/14 site revamp) were produced with **Sail100**,
-whose HTML differs. Years are flagged below where non-Sailwave software was used;
-those can't be reconstructed by this pipeline without separate parsing.
+**Scoring-software caveat / back-stop at 2014.** The engine reconstructs low-point
+tables — **Sailwave** (2014→) and the **newer Sail100** export (some 2019 events);
+both are handled. **2013 and earlier** use an **older Sail100** that prints final
+points (positions *and* penalties) as bare numbers with no result codes — a DNC
+shows as e.g. `46`, indistinguishable from 46th place. Those pages parse but can't
+be inverted to finishing positions, so 2013→~2009 are **not built**. Years using
+non-Sailwave software are flagged in their sections below.
 
 ## 2026
 

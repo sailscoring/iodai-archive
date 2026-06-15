@@ -63,6 +63,18 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2016 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| ≤2013 | — | — | — | — | — | — | — |
+
+**2014 is the back-stop.** The site was revamped for the 2014 season; from 2014
+on, results are **Sailwave** (or, for some 2019 events, the newer **Sail100**
+export) — both low-point tables the engine reconstructs. **2013 and earlier use
+an older Sail100** whose pages exist on iodai.com (`<region><fleet>13os.html` …
+back to ~2009) and *parse* fine, but print each boat's **final points — positions
+and penalties alike — as bare numbers with no result codes** (a DNC shows as e.g.
+`46`, indistinguishable from a real 46th place). The pipeline reconstructs
+finishing *positions* for the app to re-score, which can't be inverted from
+points-only data, so those years are **not built**. Sourcing them would need a
+different, points-preserving import path.
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and
