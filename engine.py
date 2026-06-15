@@ -210,6 +210,7 @@ def load_competitors(cfg):
     race cells keyed by slot index."""
     comps = []
     fleet_names = list(cfg['fleet_order'])
+    blank_seq = 0  # disambiguates otherwise-identical blank-row ids (see below)
     for src in cfg['sources']:
         _, rows = parse_file(src['file'])
         for row in rows:
@@ -222,14 +223,26 @@ def load_competitors(cfg):
                     or row.get('Helmname-1') or row.get('Helm') or row.get('Name') or '')
             if row.get('Surname'):  # pages that split the name into Name + Surname
                 name = f"{name} {row['Surname']}".strip()
+            nm = name.strip()
+            sail = _sail(row)
+            # A blank source row (no helm name, no sail) is still a real entry on
+            # some pages — an unnamed DNC boat that counts toward fleet size and
+            # DNC scoring, so keep it. But its deterministic id key is empty, so
+            # several blanks in one fleet would collapse to one id and fail import
+            # as a duplicate primary key. Disambiguate blanks with a running index
+            # (stable in row order); named rows keep their content-derived id.
+            comp_key = f"{cfg['out']}/competitor/{fleet}/{sail}/{nm}"
+            if not nm and not sail:
+                comp_key += f"/blank-{blank_seq}"
+                blank_seq += 1
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
             comps.append(dict(
-                id=det(f"{cfg['out']}/competitor/{fleet}/{_sail(row)}/{name.strip()}"),
+                id=det(comp_key),
                 fleet=fleet,
-                sail=_sail(row),
-                name=name.strip(),
+                sail=sail,
+                name=nm,
                 club=(row.get('Club') or row.get('Primary Club') or '').strip(),
                 nat=(row.get('Nat') or row.get('Nationality') or row.get('Country')
                      or row.get('Sail Country') or '').strip(),
