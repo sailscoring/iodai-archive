@@ -48,6 +48,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
 | 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 
 Earlier years to be worked back through. Also sourced: **Irish Sailing Youth
 Nationals 2026 (Optimist)** — not IODAI-run, but IODAI republishes its Optimist

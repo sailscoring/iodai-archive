@@ -32,9 +32,10 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # Non-race meta columns. Some pages title the sail column 'Sail Number' and the
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
-META = {'Rank', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo', 'Sail no.',
-        'Nat', 'Helm Name', 'HelmName', 'Helmname', 'Helm', 'Name', 'Club',
-        'Division', 'Divison', 'Gender', 'Age', 'HelmAge', 'Helmage', 'Rating'}
+META = {'Rank', 'Tally', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo',
+        'Sail no.', 'Nat', 'Nationality', 'Helm Name', 'HelmName', 'Helmname',
+        'Helmname-1', 'Helm', 'Name', 'Club', 'Division', 'Divison', 'Gender',
+        'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'Rating'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -167,8 +168,8 @@ def load_competitors(cfg):
             # 'Division' column — set fleet_col to point at it), else it's fixed.
             fleet = (row.get(src.get('fleet_col', 'Fleet'))
                      if src.get('fleet_from_col') else src['fleet'])
-            name = (row.get('Helm Name') or row.get('HelmName')
-                    or row.get('Helmname') or row.get('Helm') or row.get('Name') or '')
+            name = (row.get('Helm Name') or row.get('HelmName') or row.get('Helmname')
+                    or row.get('Helmname-1') or row.get('Helm') or row.get('Name') or '')
             cells = {}
             for j, raw in enumerate(row['races']):
                 cells[src['slot0'] + j] = classify(raw)
@@ -178,9 +179,10 @@ def load_competitors(cfg):
                 sail=_sail(row),
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
-                nat=(row.get('Nat') or '').strip(),
+                nat=(row.get('Nat') or row.get('Nationality') or '').strip(),
                 gender=norm_gender(row.get('Gender')),
-                age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')),
+                age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')
+                             or row.get('Helmagegroup')),
                 # The prize division (Gold/Silver/Bronze) is in 'Rating' on pages
                 # that also carry a Senior/Junior 'Division' column, else in
                 # 'Division'/'Divison' itself.
@@ -200,23 +202,42 @@ def race_finishers(group, slot):
     """Order one fleet's finishers in a race by their true crossing position.
 
     Normal finishers sit at their displayed score (= finishing position in a
-    scratch fleet). An additive-penalty finisher (e.g. ZFP) has an inflated
-    displayed score that floats it out of the sequence, leaving a gap; we place
-    it back at that gap — the integer position missing from 1..F. Returns a list
-    of (effective_position, competitor, cell) sorted by position."""
-    normal, penalty = [], []
+    scratch fleet). Two kinds of finisher float OUT of that sequence, leaving a
+    gap at their real position: an additive-penalty boat (e.g. ZFP) whose
+    displayed score is inflated, and a redress boat (RDG) whose score is replaced
+    by an average. Both still crossed the line, so they must keep occupying a
+    finishing slot — otherwise the boats behind renumber and shift up. We place
+    each back at a gap (an integer position missing from 1..F). Returns a list of
+    (effective_position, competitor, cell) sorted by position."""
+    normal, floating = [], []
     for c in group:
         cell = c['cells'].get(slot)
-        if not cell or cell['kind'] != 'finish':
+        if not cell:
             continue
-        (penalty if cell['penalty'] else normal).append((c, cell))
-    used = {cell['score'] for _, cell in normal}
-    n_fin = len(normal) + len(penalty)
+        if cell['kind'] == 'finish' and not cell['penalty']:
+            normal.append((c, cell))
+        elif (cell['kind'] == 'finish' and cell['penalty']) or cell['kind'] == 'redress':
+            floating.append((c, cell))
+    # Positions the normal finishers occupy. Tied boats share a displayed score
+    # but sit on consecutive places (e.g. two 14.0s occupy 14 and 15), so expand
+    # each tie group — otherwise the skipped number reads as a vacancy and a
+    # floating boat is wrongly slotted into it.
+    norm = sorted(cell['score'] for _, cell in normal)
+    used = set()
+    i = 0
+    while i < len(norm):
+        j = i
+        while j < len(norm) and norm[j] == norm[i]:
+            j += 1
+        base = int(round(norm[i]))
+        used.update(range(base, base + (j - i)))
+        i = j
+    n_fin = len(normal) + len(floating)
     missing = [p for p in range(1, n_fin + 1) if p not in used]
-    penalty.sort(key=lambda t: t[1]['score'])
-    pen_pos = {c['id']: p for (c, _), p in zip(penalty, missing)}
+    floating.sort(key=lambda t: t[1]['score'])
+    float_pos = {id(cell): p for (_, cell), p in zip(floating, missing)}
     items = [(cell['score'], c, cell) for c, cell in normal]
-    items += [(pen_pos.get(c['id'], cell['score']), c, cell) for c, cell in penalty]
+    items += [(float_pos.get(id(cell), cell['score']), c, cell) for c, cell in floating]
     items.sort(key=lambda t: (t[0], t[1]['sail']))
     return items
 
@@ -235,19 +256,21 @@ def build_finishes(comps, fleet_names, nslots):
                         id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'], sortOrder=None,
                         resultCode=cell['code'], startPresent=None,
                         penaltyCode=None, penaltyOverride=None))
-                elif cell and cell['kind'] == 'redress':
-                    by_slot[slot].append(dict(
-                        id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'], sortOrder=None,
-                        resultCode='RDG', startPresent=None, penaltyCode=None,
-                        penaltyOverride=None, redressMethod='stated',
-                        redressPoints=cell['score']))
             offset = fi * 10000
             prev_pos = None
+            # Finishers — including ZFP and redress boats, which race_finishers
+            # has placed back into the order at their vacated position so the
+            # boats behind keep their finishing place.
             for k, (pos, c, cell) in enumerate(race_finishers(group, slot)):
                 f = dict(
                     id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'],
                     sortOrder=offset + k + 1, resultCode=None, startPresent=None,
                     penaltyCode=cell['penalty'], penaltyOverride=None)
+                if cell['kind'] == 'redress':
+                    f['resultCode'] = 'RDG'
+                    f['penaltyCode'] = None
+                    f['redressMethod'] = 'stated'
+                    f['redressPoints'] = cell['score']
                 if prev_pos is not None and pos == prev_pos:
                     f['tiedWithPrevious'] = True
                 prev_pos = pos
