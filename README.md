@@ -183,6 +183,11 @@ dropped — the app's engine recomputes discards. `validate` re-scores with a
 low-point engine mirroring the app's `lib/scoring.ts` and confirms the
 reconstructed Nett matches the published page, every boat.
 
+A handful of boats carry published Nett values that genuinely can't be
+reproduced from the source (un-averaged ties, whole-number penalties, wrong
+DNC/DNF bases). These are flagged `suspect=[...]` in the config, tolerated by
+`validate`, and collected in [SUSPECTS.md](SUSPECTS.md) for manual audit.
+
 All ids are deterministic (UUIDv5 of a stable key), so rebuilding is byte-stable
 — re-running after more races publish changes only the new race data, never ids.
 
