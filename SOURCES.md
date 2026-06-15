@@ -118,7 +118,13 @@ Event page: <https://iodai.com/iodai-sprint-series-2024/>
 
 ### Irish Sailing Youth Nationals (Optimist)
 Event page: <https://iodai.com/2024-irish-sailing-youth-national-championships/>  
-- Optimist: `2024/youth-nationals/2024YNOptimist.htm` _(sourced from Sailwave /IODAI/ index; not linked from the iodai.com page)_
+Irish Sailing Live: <https://irishsailinglive.ie/event-results/847/2024-04-04/482>  
+- Optimist: <https://sailwave.com/results/IODAI/2024YNOptimist.htm>
+
+  Our copy was confirmed against the Irish Sailing Live record (event 847, Royal
+  Cork YC, 4 Apr 2024, `ResultsFrom: Sailwave`): identical 38 boats and Nett
+  scores. Irish Sailing Live links its own current-year pages from
+  <https://www.sailing.ie/Events/Irish-Sailing-Youth-National-Championships>.
 
 ## 2023
 
@@ -237,7 +243,7 @@ not turned into series (see README.md):
 - **Sprint per-venue / combined pages** (e.g. 2025 `2025SprintRCYC/MYC/WHSC`,
   `2025SprintOverall`) — superseded by the per-fleet Overall pages we build from.
 
-The 2024 **Irish Sailing Youth Nationals** Optimist file (`2024YNOptimist.htm`) was
-taken from the Sailwave `/results/IODAI/` index; its iodai.com page carries no
-direct Sailwave link. (It is an Irish Sailing event IODAI republishes, not an IODAI
-championship.)
+The **Irish Sailing Youth Nationals** is an Irish Sailing event IODAI republishes,
+not an IODAI championship; its results live on Irish Sailing Live (and the iodai.com
+event pages don't carry a direct Sailwave link). The 2024 Optimist file was
+confirmed against the Irish Sailing Live record — see the 2024 entry above.
