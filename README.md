@@ -39,7 +39,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 
 ## Status tracker
 
-✅ sourced & built · ◻️ not yet sourced · — didn't exist that year
+✅ sourced & built · ◻️ not yet sourced · — didn't exist / not held that year
 
 | Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Crosbie Cup | Sprint |
 |-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:-----------:|:------:|
@@ -49,10 +49,16 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2020 | — | — | — | — | — | — | — |
 
-Earlier years to be worked back through. Also sourced: **Irish Sailing Youth
-Nationals 2026 (Optimist)** — not IODAI-run, but IODAI republishes its Optimist
-results and the same sailors appear, so it's useful for the identity work.
+**2020** had no IODAI championship season — the events were cancelled by the
+COVID-19 pandemic, and iodai.com publishes no 2020 results (its Results index
+starts at 2021). Nothing to source.
+
+Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
+— not IODAI-run, but IODAI republishes its Optimist results and the same sailors
+appear, so it's useful for the identity work. Years before 2021 remain to be
+worked back through.
 
 The **Crosbie Cup** (National Training Week final day) is not reconstructable by
 this pipeline: its published page carries each boat's finishing position from the
