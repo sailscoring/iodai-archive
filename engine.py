@@ -89,6 +89,12 @@ def cellize(tr):
 # reconstructs them once the column names and the missing-Total case are handled.
 RANK_HEADERS = ('Rank', 'Place', 'Ranking')
 NETT_HEADERS = ('Nett', 'Net')
+# Header matching is case-insensitive (some years use ALL-CAPS headers). Map each
+# lowercased header to its canonical META spelling so row fields read back the
+# same regardless of the page's casing.
+RANK_LC = {h.lower() for h in RANK_HEADERS}
+NETT_LC = {h.lower() for h in NETT_HEADERS}
+META_CANON = {m.lower(): m for m in META}
 
 
 def parse_file(fname):
@@ -97,33 +103,36 @@ def parse_file(fname):
     by header name plus 'races': the raw race-cell strings in order."""
     with open(os.path.join(SOURCES_DIR, fname), encoding='cp1252', errors='replace') as fh:
         s = fh.read()
-    hdr = None
+    hdr = lc = None
     for tr in re.findall(r'<tr[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        # The header is the row carrying the net-score column. A rank/place column
-        # is usual but optional (some pages omit it and pre-sort the rows), so also
-        # accept a row that has a net column plus a race column (e.g. 'R1').
-        if any(h in c for h in NETT_HEADERS) and (
-                any(h in c for h in RANK_HEADERS) or any(re.fullmatch(r'R\d+', x) for x in c)):
-            hdr = c
+        cl = [x.lower() for x in c]
+        # The header is the row carrying a net-score column (Net/Nett, or just
+        # 'Total' when that's the only score column) plus a structural marker — a
+        # rank/place column or a race column ('R1'). A rank column is optional.
+        has_net = any(x in NETT_LC for x in cl) or 'total' in cl
+        has_struct = any(x in RANK_LC for x in cl) or any(re.fullmatch(r'r\d+', x) for x in cl)
+        if has_net and has_struct:
+            hdr, lc = c, cl
             break
-    # Net score column (the published Nett); 'Total' (gross) is optional. Both can
-    # sit before OR after the race columns (some years put Net/Total first), so
-    # locate them by name rather than position.
-    nett_i = next(i for i, h in enumerate(hdr) if h in NETT_HEADERS)
-    total_i = hdr.index('Total') if 'Total' in hdr else None
-    # Race columns: the 'R1'…'Rn' headers wherever they fall. If a page labels its
-    # races differently (e.g. the Sprint's per-venue columns), fall back to the
-    # non-meta columns ahead of the total/net block.
-    race_idx = [i for i, h in enumerate(hdr) if re.fullmatch(r'R\d+', h)]
+    # Net column (published Nett): a Net/Nett header if present, else the lone
+    # 'Total'. Gross 'Total' is optional. Either can sit before or after the races.
+    nett_i = next((i for i, x in enumerate(lc) if x in NETT_LC), None)
+    if nett_i is None:
+        nett_i = lc.index('total')
+    total_i = lc.index('total') if 'total' in lc else None
+    # Race columns: the 'R1'…'Rn' headers wherever they fall; else (differently
+    # labelled races, e.g. the Sprint's per-venue columns) the non-meta columns
+    # ahead of the total/net block.
+    race_idx = [i for i, x in enumerate(lc) if re.fullmatch(r'r\d+', x)]
     if not race_idx:
         end_i = total_i if total_i is not None else nett_i
-        race_idx = [i for i in range(end_i) if hdr[i] not in META]
+        race_idx = [i for i in range(end_i) if lc[i] not in META_CANON]
     race_cols = [hdr[i] for i in race_idx]
     rows = []
     for tr in re.findall(r'<tr[^>]*class="[^"]*summaryrow[^"]*"[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        row = {hdr[i]: c[i] for i in range(len(hdr)) if i < len(c) and hdr[i] in META}
+        row = {META_CANON[lc[i]]: c[i] for i in range(len(hdr)) if i < len(c) and lc[i] in META_CANON}
         row['races'] = [c[i] for i in race_idx if i < len(c)]
         row['Nett'] = c[nett_i] if nett_i < len(c) else ''
         row['Total'] = c[total_i] if (total_i is not None and total_i < len(c)) else row['Nett']

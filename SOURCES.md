@@ -406,6 +406,23 @@ The Nationals Regatta page (`nare16os`) has no results table — not built.
 (all under <https://iodai.com/results-files/>; event pages e.g.
 `nationals-2016-results-ldyc`, `munsters-2016-results-rcyc`.)
 
+## 2015
+
+Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>15os.html`).
+All Sailwave, all five events (Main + Regatta). Some pages use ALL-CAPS headers
+and a single 'Total' (net) column (handled in the engine). Venues: Leinster/Howth,
+Ulster/Ballyholme, Connacht/Lough Ree, Munster/Kinsale, Nationals/Skerries.
+Ulster and Connacht pages carry no date (approximate).
+
+- Leinster: `lese15os` · `leju15os` · `lere15os`
+- Ulster: `ulse15os` · `ulju15os` · `ulre15os`
+- Connacht: `cose15os` · `coju15os` · `core15os`
+- Munster: `muse15os` · `muju15os` · `mure15os`
+- Nationals: `nase15os` · `naju15os` · `nare15os`
+
+(all under <https://iodai.com/results-files/>; event pages e.g.
+<https://iodai.com/leinsters-2015-results-hyc/>.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately
