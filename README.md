@@ -64,7 +64,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2012 | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | — |
+| 2012 | — | ✅§ | — | — | — | — | — |
 | 2011‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2010‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2009‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
@@ -79,8 +79,11 @@ place out; venues aren't on the pages, so they're left blank/editable). 2014→2
 remain full-accuracy Phase 1. **2009–2011** are now built on this basis
 (spot-checked: every fleet's winner reconstructs correctly; a few big/short-series
 fleets are looser mid-pack — Munster 2009 Junior is the weakest). Some 2010/2011
-Junior pages weren't found (those Main fleets are Senior-only). **2012** uses a
-different file-naming and isn't done yet.
+Junior pages weren't found (those Main fleets are Senior-only). § **2012** is
+almost entirely missing — barely archived, and only one results file survives on
+the site (Ulster **Senior**, built; reconstructs exactly). No other 2012
+region/fleet or results index could be located on iodai.com or in the Wayback
+Machine.
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and

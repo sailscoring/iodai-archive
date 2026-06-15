@@ -455,6 +455,25 @@ rankings reliable. Discards [(5,1)] regionals, [(5,1),(10,2)] Nationals.
 - Munster (~May): `muse13os` · `muju13os` · `mure13os`
 - Nationals (15–18 Aug): `nase13os` · `naju13os` · `nare13os`
 
+## 2012 — Phase 2 (only one fleet survives)
+
+2012 was barely archived and only a single results file remains on the site —
+Ulster **Senior** (`ulse12os.html`). All other 2012 region/fleet filenames 404
+and aren't in the Wayback Machine, and no 2012 results index was archived, so the
+rest can't be sourced. The one fleet reconstructs exactly (27/27). Date isn't on
+the page (only a Jan-2013 re-publish stamp); approximate. Built Senior-only.
+
+- Ulster Senior: <https://iodai.com/results-files/ulse12os.html>
+
+## 2009–2011 — Phase 2 (older Sail100, best-effort)
+
+Files under iodai.com/results-files/ (`<region><fleet><yy>os.html`, yy = 09/10/11),
+reconstructed via `bare_dnc`; every fleet's winner is correct, most fleets
+near-exact, a few large/short-series fleets looser mid-pack. Venues blank; dates
+from publish timestamps (approximate). Some 2010/2011 Junior pages were not
+published (those Main fleets are Senior-only). Discards [(4,1)] regional,
+[(4,1),(8,2)] Nationals. (Per-file names follow the `os.html` convention above.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately
