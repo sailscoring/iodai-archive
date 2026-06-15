@@ -57,6 +57,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2020 | — | — | — | — | ✅ | — | — |
+| 2019 | ✅ | ✅* | ✅ | ✅† | ✅ | ◻️ | — |
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and
@@ -69,6 +70,11 @@ Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
 — not IODAI-run, but IODAI republishes its Optimist results and the same sailors
 appear, so it's useful for the identity work. Years before 2021 remain to be
 worked back through.
+
+\* **Sail100** (not Sailwave) was used for the 2019 Ulsters — the engine handles
+both (same low-point model). † 2019 Munster Regatta published only an entry list
+(no scored results), so only the Main fleet is built. Pre-2021 events were sourced
+via the Wayback Machine; see SOURCES.md.
 
 **`SOURCES.md`** records, per event, the iodai.com page and the exact Sailwave
 result file each fleet was built from — the provenance trail behind every series.

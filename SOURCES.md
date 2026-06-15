@@ -304,6 +304,42 @@ Event page: <https://iodai.com/provisional-results-nationals-2020-royal-cork-yac
   (A combined Senior+Junior view, `naall20os.html`, is also linked but not built —
   the per-fleet pages are used.)
 
+## 2019
+
+Sourced via Wayback (the `results-<region>-2019-<club>` pages); files live under
+iodai.com/results-files/. **Ulsters used Sail100** (flagged); the **Munster Regatta**
+published only an entry list (not built).
+
+### Leinsters — Sailwave
+Event page: <https://iodai.com/results-leinsters-2019-malahide-yacht-club/>  
+- Main (Senior): <https://iodai.com/results-files/lese19os.html>
+- Main (Junior): <https://iodai.com/results-files/leju19os.html>
+- Regatta: <https://iodai.com/results-files/lere19os.html>
+
+### Ulsters — **Sail100**
+Event page: <https://iodai.com/results-ulsters-2019-skerries-sailing-club/>  
+- Main (Senior): <https://iodai.com/results-files/ulse19os.html>
+- Main (Junior): <https://iodai.com/results-files/ulju19os.html>
+- Regatta: <https://iodai.com/results-files/ulre19os.html>
+
+### Connachts — Sailwave
+Event page: <https://iodai.com/results-connaughts-2019-lough-ree-yacht-club/>  
+- Main (Senior): <https://iodai.com/results-files/cose19os.html>
+- Main (Junior): <https://iodai.com/results-files/coju19os.html>
+- Regatta: <https://iodai.com/results-files/core19os.html>
+
+### Munsters — Sailwave
+Event page: <https://iodai.com/results-munsters-2019-wexford-harbour-sailing-club/>  
+- Main (Senior): <https://iodai.com/results-files/muse19os.html>
+- Main (Junior): <https://iodai.com/results-files/muju19os.html>
+- Regatta: entry list only (`mure19os.html`) — not built.
+
+### Nationals — Sailwave
+Event page: <https://iodai.com/results-nationals-2019-howth-yacht-club/>  
+- Main (Senior): <https://iodai.com/results-files/nase19os.html>
+- Main (Junior): <https://iodai.com/results-files/naju19os.html>
+- Regatta: <https://iodai.com/results-files/nare19os.html>
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

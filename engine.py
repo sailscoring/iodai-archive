@@ -32,11 +32,11 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # Non-race meta columns. Some pages title the sail column 'Sail Number' and the
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
-META = {'Rank', 'Tally', 'Fleet', 'Class', 'Sail', 'Sail Number', 'SailNo',
-        'Sail no.', 'Sail No', 'Nat', 'Nationality', 'Helm Name', 'HelmName',
-        'Helmname', 'Helmname-1', 'Helm', 'Name', 'Club', 'Division', 'Divison',
-        'Gender', 'HelmSex', 'Helm Sex', 'Age', 'HelmAge', 'Helmage',
-        'Helmagegroup', 'HelmAgeGroup', 'Rating'}
+META = {'Rank', 'Place', 'Tally', 'Fleet', 'Class', 'Sail', 'Sail Number',
+        'SailNo', 'Sail no.', 'Sail No', 'Nat', 'Nationality', 'Country',
+        'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm', 'Name', 'Club',
+        'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex', 'Age', 'HelmAge',
+        'Helmage', 'Helmagegroup', 'HelmAgeGroup', 'Rating', 'Total', 'Nett', 'Net'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -81,29 +81,41 @@ def cellize(tr):
             for c in cs]
 
 
+# Header markers. Sailwave pages use 'Rank' + 'Total'/'Nett'; older Sail100 pages
+# use 'Place' + 'Net' and carry no gross 'Total' column (only the net). Both are
+# low-point tables (displayed score = finishing position), so the same engine
+# reconstructs them once the column names and the missing-Total case are handled.
+RANK_HEADERS = ('Rank', 'Place')
+NETT_HEADERS = ('Nett', 'Net')
+
+
 def parse_file(fname):
-    """Return (race_col_names, list-of-row-dicts) for one Sailwave page. `fname`
-    is relative to sources/ (e.g. '2026/munsters/2026MUNSTERSWHSCSM.htm'). Each
-    row dict has the meta columns by header name plus 'races': the raw race-cell
-    strings in order."""
+    """Return (race_col_names, list-of-row-dicts) for one results page (Sailwave or
+    Sail100). `fname` is relative to sources/. Each row dict has the meta columns
+    by header name plus 'races': the raw race-cell strings in order."""
     with open(os.path.join(SOURCES_DIR, fname), encoding='cp1252', errors='replace') as fh:
         s = fh.read()
     hdr = None
     for tr in re.findall(r'<tr[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        if 'Rank' in c and 'Nett' in c:
+        if any(h in c for h in RANK_HEADERS) and any(h in c for h in NETT_HEADERS):
             hdr = c
             break
-    total_i = hdr.index('Total')
-    race_idx = [i for i in range(total_i) if hdr[i] not in META]
+    # Race columns run up to the first scoring-total column. Sailwave has a 'Total'
+    # then 'Nett'; Sail100 has only the net column at the end.
+    if 'Total' in hdr:
+        end_i, nett_i = hdr.index('Total'), hdr.index('Total') + 1
+    else:
+        end_i = nett_i = next(i for i, h in enumerate(hdr) if h in NETT_HEADERS)
+    race_idx = [i for i in range(end_i) if hdr[i] not in META]
     race_cols = [hdr[i] for i in race_idx]
     rows = []
     for tr in re.findall(r'<tr[^>]*class="[^"]*summaryrow[^"]*"[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        row = {hdr[i]: c[i] for i in range(total_i) if hdr[i] in META}
+        row = {hdr[i]: c[i] for i in range(end_i) if hdr[i] in META}
         row['races'] = [c[i] for i in race_idx]
-        row['Total'] = c[total_i]
-        row['Nett'] = c[total_i + 1]
+        row['Nett'] = c[nett_i]
+        row['Total'] = c[end_i] if 'Total' in hdr else c[nett_i]
         rows.append(row)
     return race_cols, rows
 
@@ -180,7 +192,7 @@ def load_competitors(cfg):
                 sail=_sail(row),
                 name=name.strip(),
                 club=(row.get('Club') or '').strip(),
-                nat=(row.get('Nat') or row.get('Nationality') or '').strip(),
+                nat=(row.get('Nat') or row.get('Nationality') or row.get('Country') or '').strip(),
                 gender=norm_gender(row.get('Gender') or row.get('HelmSex') or row.get('Helm Sex')),
                 age=norm_age(row.get('Age') or row.get('HelmAge') or row.get('Helmage')
                              or row.get('Helmagegroup') or row.get('HelmAgeGroup')),
@@ -272,6 +284,13 @@ def build_finishes(comps, fleet_names, nslots):
                     f['penaltyCode'] = None
                     f['redressMethod'] = 'stated'
                     f['redressPoints'] = cell['score']
+                elif cell['penalty'] and cell['penalty'] not in ('ZFP', 'SCP'):
+                    # Generic penalty (e.g. Sailwave 'PEN') — the displayed value is
+                    # the final race points, not a recomputable percentage. Map to
+                    # DPI (additive_stated) with an override that lands the boat on
+                    # exactly that score from its reconstructed position.
+                    f['penaltyCode'] = 'DPI'
+                    f['penaltyOverride'] = round_tenth(cell['score'] - pos)
                 if prev_pos is not None and pos == prev_pos:
                     f['tiedWithPrevious'] = True
                 prev_pos = pos
@@ -389,6 +408,10 @@ def score_fleet(comps, nslots, discards):
                 if cell['penalty'] in ('ZFP', 'SCP'):
                     pen = round(20 * penalty / 10) / 10
                     base = min(round_tenth(base + pen), penalty)
+                elif cell['penalty']:
+                    # Generic stated penalty (PEN/DPI): the displayed value is the
+                    # final points (mirrors the DPI override emitted in build).
+                    base = cell['score']
                 pts[c['id']][slot] = base
                 codes[c['id']][slot] = None
     sailed = sum(1 for e in excluded if not e)
