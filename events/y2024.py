@@ -1,21 +1,24 @@
 """2024 IODAI events.
 
-Sourced from the Sailwave IODAI directory, cross-referenced against the
-iodai.com Results index. Coverage: Leinsters (MYC), Ulsters (EABC),
-Connachts (GBSC), Munsters (RCYC), Nationals (HYC), Sprint Series, plus the
-Irish Sailing Youth Nationals (Optimist, at RCYC — not IODAI-run but republished).
+Sourced from the official iodai.com event pages (each links its canonical
+Sailwave files): Leinsters (MYC), Ulsters (EABC/Larne), Connachts (GBSC),
+Munsters (RCYC), Nationals (HYC), Sprint Series, plus the Irish Sailing Youth
+Nationals (Optimist, at RCYC — not IODAI-run but republished). See SOURCES.md
+for the page→file mapping.
 
-Notes on suspect/edge data (carried as-is, best effort):
-- Nationals (HYC) Main was published as ONE combined 74-boat fleet (Gold/Silver/
-  Bronze divisions), not split Senior/Junior — the MainS and MainJ pages are two
-  views of the identical boat set, and the Fleet column reads "Junior" for all.
-  Modelled as a single Main fleet from one page to match the published scoring.
+(An earlier pass mistakenly used same-year files from the Sailwave /IODAI/
+directory index that turned out to be superseded/test exports — the Ulster Main
+and Nationals Main were combined-fleet artifacts, and a Munster Junior copy was a
+race short. Re-sourced from the iodai.com pages, where Ulster and Nationals Main
+are normal separate Senior/Junior fleets.)
+
+Notes (best effort):
 - The Sprint Series published one combined-fleet page that splits Senior/Junior
   via the Division column (not a Fleet column); re-scored per fleet off Division.
-- Ulsters (EABC) and the Sprint carry no race dates on their pages; those dates
+- Ulster, Munster and the Sprint carry no race dates on their pages; those dates
   are approximate (rule 6).
 """
-from .helpers import main_fleet, solo, combined, IODAI, MYC, GBSC, RCYC, HYC
+from .helpers import main_fleet, solo, IODAI, MYC, GBSC, RCYC, HYC
 
 L = '2024/leinsters/'
 U = '2024/ulsters/'
@@ -35,18 +38,16 @@ SERIES = [
          'Malahide Yacht Club', ['2024-09-07', '2024-09-08'], nslots=6,
          file=L + '2024MYCRC.htm', fleet='Regatta Coached', **MYC),
 
-    # --- Ulsters @ East Antrim Boat Club, Larne (approx 15–16 Jun) ------------
-    # Main was scored as ONE combined senior+junior start (DNC = 69 over 68
-    # boats), published split across the two view pages — load both into one fleet.
-    combined('iodai-ulsters-2024-main-fleet', 'IODAI Ulsters 2024 — Main Fleet',
-             'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=6,
-             files=[U + '2024EABCMainS.htm', U + '2024EABCMainJ.htm']),
+    # --- Ulsters @ East Antrim Boat Club, Larne (approx 15–16 Jun) -----------
+    main_fleet('iodai-ulsters-2024-main-fleet', 'IODAI Ulsters 2024 — Main Fleet',
+               'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=6,
+               senior=U + '2024UlstersMainS.htm', junior=U + '2024UlstersMainJ.htm'),
     solo('iodai-ulsters-2024-regatta-racing', 'IODAI Ulsters 2024 — Regatta Racing',
-         'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=9,
-         file=U + '2024EABCRR.htm', fleet='Regatta Racing'),
+         'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=8,
+         file=U + '2024UlstersRR.htm', fleet='Regatta Racing'),
     solo('iodai-ulsters-2024-regatta-coached', 'IODAI Ulsters 2024 — Regatta Coached',
-         'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=9,
-         file=U + '2024EABCRC.htm', fleet='Regatta Coached'),
+         'East Antrim Boat Club', ['2024-06-15', '2024-06-16'], nslots=8,
+         file=U + '2024UlstersRC.htm', fleet='Regatta Coached'),
 
     # --- Connachts @ Galway Bay SC (20–21 Jul) -------------------------------
     main_fleet('iodai-connachts-2024-main-fleet', 'IODAI Connachts 2024 — Main Fleet',
@@ -60,25 +61,27 @@ SERIES = [
          file=C + '2024GBSCRC.htm', fleet='Regatta Coached', **GBSC),
 
     # --- Munsters @ Royal Cork YC (approx 15–16 Jun) -------------------------
-    # Junior boat 1391 (Oscar Rowan) carries a ZFP cell published as 21.0 that is
-    # inconsistent with his forced finishing position (10th — the only gap in
-    # R2), so no standard 20% penalty reproduces it. Tolerated as suspect.
+    # Junior 1391 (Oscar Rowan) has a ZFP cell (21.0) whose published whole-number
+    # penalty can't be reproduced from his reconstructed position. Suspect.
     main_fleet('iodai-munsters-2024-main-fleet', 'IODAI Munsters 2024 — Main Fleet',
                'Royal Cork Yacht Club', ['2024-06-15', '2024-06-16'], nslots=3,
-               senior=M + '2024RCYCMainS.htm', junior=M + '2024RCYCMainJ.htm',
+               senior=M + 'RCYC24MainS.htm', junior=M + 'RCYC24MainJ.htm',
                suspect=['1391'], **RCYC),
     solo('iodai-munsters-2024-regatta-racing', 'IODAI Munsters 2024 — Regatta Racing',
          'Royal Cork Yacht Club', ['2024-06-15', '2024-06-16'], nslots=5,
-         file=M + '2024RCYCRR.htm', fleet='Regatta Racing', **RCYC),
+         file=M + 'RCYC24RR.htm', fleet='Regatta Racing', **RCYC),
     solo('iodai-munsters-2024-regatta-coached', 'IODAI Munsters 2024 — Regatta Coached',
          'Royal Cork Yacht Club', ['2024-06-15', '2024-06-16'], nslots=5,
-         file=M + '2024RCYCRC.htm', fleet='Regatta Coached', **RCYC),
+         file=M + 'RCYC24RC.htm', fleet='Regatta Coached', **RCYC),
 
-    # --- Nationals @ Howth YC (15–18 Aug) — Main is one combined fleet --------
-    solo('iodai-nationals-2024-main-fleet', 'IODAI Nationals 2024 — Main Fleet',
-         'Howth Yacht Club', ['2024-08-15', '2024-08-16', '2024-08-17', '2024-08-18'],
-         nslots=11, file=N + '2024HYCMainS.htm', fleet='Main', subdivision=True,
-         discards=[(4, 1), (11, 2)], **HYC),
+    # --- Nationals @ Howth YC (15–18 Aug) — separate Senior/Junior fleets -----
+    # Senior 1673 has a ZFP cell (46.0) whose published whole-number penalty isn't
+    # reproducible from the reconstructed position (tenth-rounded). Suspect.
+    main_fleet('iodai-nationals-2024-main-fleet', 'IODAI Nationals 2024 — Main Fleet',
+               'Howth Yacht Club',
+               ['2024-08-15', '2024-08-16', '2024-08-17', '2024-08-18'], nslots=11,
+               senior=N + '2024HYCMainS.htm', junior=N + '2024HYCMainJ.htm',
+               discards=[(4, 1), (11, 2)], suspect=['1673'], **HYC),
     solo('iodai-nationals-2024-regatta-racing', 'IODAI Nationals 2024 — Regatta Racing',
          'Howth Yacht Club', ['2024-08-15', '2024-08-16', '2024-08-17', '2024-08-18'],
          nslots=10, file=N + '2024HYCRR.htm', fleet='Regatta Racing',

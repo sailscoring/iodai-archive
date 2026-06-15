@@ -60,6 +60,9 @@ Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
 appear, so it's useful for the identity work. Years before 2021 remain to be
 worked back through.
 
+**`SOURCES.md`** records, per event, the iodai.com page and the exact Sailwave
+result file each fleet was built from — the provenance trail behind every series.
+
 The **Crosbie Cup** (National Training Week final day) is not reconstructable by
 this pipeline: its published page carries each boat's finishing position from the
 *combined* Halloween-regatta start rather than a position within the Crosbie

@@ -1,134 +1,19 @@
 
 
-
-<!doctype html>
-
-<head>
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="description" content="sailwave results">
-<meta name="viewport" content="width=device-width">
-
-<title>Sailwave results for Optimist Munsters - 2024 at Royal Cork Yacht Club 2024</title>
-
-<style type="text/css">
-body {font: 72% arial, helvetica, sans-serif; text-align: center;}
-.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
-.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
-table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
-td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
-.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
-h1 {font-size: 1.6em;}
-h2 {font-size: 1.4em;}
-h3 {font-size: 1.2em;}
-p {text-align: center;}
-th {background-color: #aaf;}
-.contents {text-align: left; margin-left: 20%;}
-.even {background-color: #bbf;}
-.odd {background-color: #ddf;}
-.natflag {border: 1px #999 solid;}
-.nattext {font-size: 0.8em;}
-.place1 {font-weight: bold; background-color: #ffffaa;}
-.place2 {font-weight: bold; background-color: #aaaaff;}
-.place3 {font-weight: bold; background-color: #ffaaaa;}
-.placen {}
-</style>
-
-<script type="text/javascript">
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>
-
-function swGetURLArgs() {
-
-  var url = location.href;
-  var qs  = url.substring(url.indexOf('?') + 1).split('&');
-
-  for(var i = 0, result = {}; i < qs.length; i++) {
-    qs[i]            = qs[i].split('=');
-    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
-  }
-
-  return result;
-}
-
-//
-//  name=HighlightWins3v3
-//  dependencies=jQuery
-//  description=Highlight winning scores in summary tables.
-//  author=Jon Eskdale based on an idea by Colin Jenkins
-//  date=2016-07-04
-//  version=3.0  For use with Sailwave from V2.22.x
-//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
-//  string.set("summary.col.race.rank1.td",   "rank1")
-//  string.set("summary.col.race.rank2.td",   "rank2")
-//  string.set("summary.col.race.rank3.td",   "rank3")
-
-//  url=http://sailwave.com
-//  email=jon@sailwave.com
-//  twitter=eskdale
-//  comments=Edit colours to colours of your choice
-//
-
-$(document).ready(function() {
-var selectorRank1 = '.rank1';
-var selectorRank2 = '.rank2';
-var selectorRank3 = '.rank3';
-
-// Results with these codes will not get highlighted add or remove codes to your choice
-var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
-
-// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
-var winsColour   = '#ffd700';
-var twoColour    = '#6a91c5';
-var threeColour  = '#da6841';
-
-
-// Change the background color for cells with class of rank1-3 and don't have a code specified
-$(function () {
-
-  $(selectorRank1).filter(function() {
-    return ignoreText.test($(this).text());
-  }).css("background", winsColour);
-  $(selectorRank2).filter(function() {
-        return ignoreText.test($(this).text());
-  }).css("background", twoColour);
-  $(selectorRank3).filter(function() {
-        return ignoreText.test($(this).text());
-  }).css("background", threeColour);
-
-});
-});
-</script>
-
-</head>
-
-<body>
-
-<header>
-</header>
-
-<div id="wrap">
-
-
-<h1>Optimist Munsters - 2024</h1>
-<h2>Royal Cork Yacht Club</h2>
-
-<div style="clear:both;"></div>
-
 <style>
 div.applicant-break {page-break-after:always;}
 </style>
-<h3 class="seriestitle">Results are provisional as of 17:48 on September  8, 2024</h3>
-<h3 class="summarytitle" id="summaryregatta">Regatta Fleet</h3>
+<h3 class="seriestitle">Results are provisional as of 14:34 on June 16, 2024</h3>
+<h3 class="summarytitle">Overall</h3>
 <div class="caption summarycaption">Sailed: 5, Discards: 1, To count: 4, Entries: 19, Scoring system: Appendix A</div>
 <table class="summarytable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="15">
+<colgroup span="16">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -147,14 +32,15 @@ div.applicant-break {page-break-after:always;}
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
-<th><a class="racelink" href="#r1regatta">R1</a></th>
-<th><a class="racelink" href="#r2regatta">R2</a></th>
-<th><a class="racelink" href="#r3regatta">R3</a></th>
-<th><a class="racelink" href="#r4regatta">R4</a></th>
-<th><a class="racelink" href="#r5regatta">R5</a></th>
+<th><a class="racelink" href="#r1">R1</a></th>
+<th><a class="racelink" href="#r2">R2</a></th>
+<th><a class="racelink" href="#r3">R3</a></th>
+<th><a class="racelink" href="#r4">R4</a></th>
+<th><a class="racelink" href="#r5">R5</a></th>
 <th>Total</th>
 <th>Nett</th>
 </tr>
@@ -166,14 +52,15 @@ div.applicant-break {page-break-after:always;}
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
-<td class="rank2">2.0</td>
-<td class="rank2">2.0</td>
+<td>2.0</td>
+<td>2.0</td>
 <td>(8.0)</td>
-<td class="rank2">2.0</td>
-<td class="rank2">2.0</td>
+<td>2.0</td>
+<td>2.0</td>
 <td>16.0</td>
 <td>8.0</td>
 </tr>
@@ -183,10 +70,11 @@ div.applicant-break {page-break-after:always;}
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
-<td class="rank3">3.0</td>
+<td>3.0</td>
 <td>5.0</td>
 <td>4.0</td>
 <td>(7.0)</td>
@@ -200,10 +88,11 @@ div.applicant-break {page-break-after:always;}
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
-<td class="rank1">1.0</td>
+<td>1.0</td>
 <td>(8.0)</td>
 <td>7.0</td>
 <td>5.0</td>
@@ -217,14 +106,15 @@ div.applicant-break {page-break-after:always;}
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>7.0</td>
 <td>4.0</td>
 <td>(9.0)</td>
 <td>6.0</td>
-<td class="rank3">3.0</td>
+<td>3.0</td>
 <td>29.0</td>
 <td>20.0</td>
 </tr>
@@ -234,11 +124,12 @@ div.applicant-break {page-break-after:always;}
 <td>1246</td>
 <td>Ellen Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>5.0</td>
-<td class="rank3">3.0</td>
+<td>3.0</td>
 <td>5.0</td>
 <td>(20.0 DNC)</td>
 <td>8.0</td>
@@ -251,12 +142,13 @@ div.applicant-break {page-break-after:always;}
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>(13.0)</td>
-<td class="rank1">1.0</td>
-<td class="rank2">2.0</td>
+<td>1.0</td>
+<td>2.0</td>
 <td>8.0</td>
 <td>12.0</td>
 <td>36.0</td>
@@ -266,9 +158,10 @@ div.applicant-break {page-break-after:always;}
 <td>7th</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>4.0</td>
@@ -285,13 +178,14 @@ div.applicant-break {page-break-after:always;}
 <td>1188</td>
 <td>Elena Foley</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>8.0</td>
 <td>6.0</td>
 <td>12.0</td>
-<td class="rank1">1.0</td>
+<td>1.0</td>
 <td>(20.0 DNC)</td>
 <td>47.0</td>
 <td>27.0</td>
@@ -302,14 +196,15 @@ div.applicant-break {page-break-after:always;}
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>(14.0)</td>
 <td>11.0</td>
 <td>13.0</td>
 <td>4.0</td>
-<td class="rank1">1.0</td>
+<td>1.0</td>
 <td>43.0</td>
 <td>29.0</td>
 </tr>
@@ -319,12 +214,13 @@ div.applicant-break {page-break-after:always;}
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>6.0</td>
 <td>(14.0)</td>
-<td class="rank1">1.0</td>
+<td>1.0</td>
 <td>11.0</td>
 <td>11.0</td>
 <td>43.0</td>
@@ -336,13 +232,14 @@ div.applicant-break {page-break-after:always;}
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>11.0</td>
 <td>(17.0)</td>
 <td>15.0</td>
-<td class="rank3">3.0</td>
+<td>3.0</td>
 <td>5.0</td>
 <td>51.0</td>
 <td>34.0</td>
@@ -353,12 +250,13 @@ div.applicant-break {page-break-after:always;}
 <td>868</td>
 <td>Aoife Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>10.0</td>
 <td>9.0</td>
-<td class="rank3">3.0</td>
+<td>3.0</td>
 <td>(20.0 DNC)</td>
 <td>20.0 DNC</td>
 <td>62.0</td>
@@ -370,7 +268,8 @@ div.applicant-break {page-break-after:always;}
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>(17.0)</td>
@@ -387,7 +286,8 @@ div.applicant-break {page-break-after:always;}
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>12.0</td>
@@ -404,7 +304,8 @@ div.applicant-break {page-break-after:always;}
 <td>601</td>
 <td>Hazel Barry</td>
 <td>MBSC & RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>9.0</td>
@@ -421,7 +322,8 @@ div.applicant-break {page-break-after:always;}
 <td>1060</td>
 <td>Timothee Richard</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>7</td>
 <td>16.0</td>
@@ -438,7 +340,8 @@ div.applicant-break {page-break-after:always;}
 <td>1079</td>
 <td>John Sheridan</td>
 <td>WHSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>10</td>
 <td>15.0</td>
@@ -455,7 +358,8 @@ div.applicant-break {page-break-after:always;}
 <td>11</td>
 <td>Robyn Barry</td>
 <td>MBSC & RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>(20.0 DNC)</td>
@@ -472,7 +376,8 @@ div.applicant-break {page-break-after:always;}
 <td>1199</td>
 <td>Ciaran Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>(20.0 DNC)</td>
@@ -485,17 +390,18 @@ div.applicant-break {page-break-after:always;}
 </tr>
 </tbody>
 </table>
-<h3 class="racetitle" id="r1regatta">R1 - Regatta Fleet&nbsp;-&nbsp;16/06/2024</h3>
+<h3 class="racetitle" id="r1">R1</h3>
 <div class="caption racecaption">
 Start: Start 1, Finishes: Place
 </div>
 <table class="racetable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="10">
+<colgroup span="11">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -509,6 +415,7 @@ Start: Start 1, Finishes: Place
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
@@ -523,7 +430,8 @@ Start: Start 1, Finishes: Place
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>1</td>
@@ -535,7 +443,8 @@ Start: Start 1, Finishes: Place
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
 <td>2</td>
@@ -547,7 +456,8 @@ Start: Start 1, Finishes: Place
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>3</td>
@@ -557,9 +467,10 @@ Start: Start 1, Finishes: Place
 <td>4</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>4</td>
@@ -571,7 +482,8 @@ Start: Start 1, Finishes: Place
 <td>1246</td>
 <td>Ellen Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>5</td>
@@ -583,7 +495,8 @@ Start: Start 1, Finishes: Place
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>6</td>
@@ -595,7 +508,8 @@ Start: Start 1, Finishes: Place
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>7</td>
@@ -607,7 +521,8 @@ Start: Start 1, Finishes: Place
 <td>1188</td>
 <td>Elena Foley</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>8</td>
@@ -619,7 +534,8 @@ Start: Start 1, Finishes: Place
 <td>601</td>
 <td>Hazel Barry</td>
 <td>MBSC & RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>9</td>
@@ -631,7 +547,8 @@ Start: Start 1, Finishes: Place
 <td>868</td>
 <td>Aoife Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>10</td>
@@ -643,7 +560,8 @@ Start: Start 1, Finishes: Place
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>11</td>
@@ -655,7 +573,8 @@ Start: Start 1, Finishes: Place
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>12</td>
@@ -667,7 +586,8 @@ Start: Start 1, Finishes: Place
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>13</td>
@@ -679,7 +599,8 @@ Start: Start 1, Finishes: Place
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>14</td>
@@ -691,7 +612,8 @@ Start: Start 1, Finishes: Place
 <td>1079</td>
 <td>John Sheridan</td>
 <td>WHSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>10</td>
 <td>15</td>
@@ -703,7 +625,8 @@ Start: Start 1, Finishes: Place
 <td>1060</td>
 <td>Timothee Richard</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>7</td>
 <td>16</td>
@@ -715,7 +638,8 @@ Start: Start 1, Finishes: Place
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>17</td>
@@ -723,17 +647,18 @@ Start: Start 1, Finishes: Place
 </tr>
 </tbody>
 </table>
-<h3 class="racetitle" id="r2regatta">R2 - Regatta Fleet&nbsp;-&nbsp;16/06/2024</h3>
+<h3 class="racetitle" id="r2">R2</h3>
 <div class="caption racecaption">
 Start: Start 1, Finishes: Place
 </div>
 <table class="racetable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="10">
+<colgroup span="11">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -747,6 +672,7 @@ Start: Start 1, Finishes: Place
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
@@ -761,7 +687,8 @@ Start: Start 1, Finishes: Place
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>1</td>
@@ -773,7 +700,8 @@ Start: Start 1, Finishes: Place
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
 <td>2</td>
@@ -785,7 +713,8 @@ Start: Start 1, Finishes: Place
 <td>1246</td>
 <td>Ellen Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>3</td>
@@ -797,7 +726,8 @@ Start: Start 1, Finishes: Place
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>4</td>
@@ -809,7 +739,8 @@ Start: Start 1, Finishes: Place
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>5</td>
@@ -821,7 +752,8 @@ Start: Start 1, Finishes: Place
 <td>1188</td>
 <td>Elena Foley</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>6</td>
@@ -833,7 +765,8 @@ Start: Start 1, Finishes: Place
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>7</td>
@@ -845,7 +778,8 @@ Start: Start 1, Finishes: Place
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>8</td>
@@ -857,7 +791,8 @@ Start: Start 1, Finishes: Place
 <td>868</td>
 <td>Aoife Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>9</td>
@@ -869,7 +804,8 @@ Start: Start 1, Finishes: Place
 <td>601</td>
 <td>Hazel Barry</td>
 <td>MBSC & RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>10</td>
@@ -881,7 +817,8 @@ Start: Start 1, Finishes: Place
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>11</td>
@@ -891,9 +828,10 @@ Start: Start 1, Finishes: Place
 <td>12</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>12</td>
@@ -905,7 +843,8 @@ Start: Start 1, Finishes: Place
 <td>1060</td>
 <td>Timothee Richard</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>7</td>
 <td>13</td>
@@ -917,7 +856,8 @@ Start: Start 1, Finishes: Place
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>14</td>
@@ -929,7 +869,8 @@ Start: Start 1, Finishes: Place
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>15</td>
@@ -941,7 +882,8 @@ Start: Start 1, Finishes: Place
 <td>1079</td>
 <td>John Sheridan</td>
 <td>WHSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>10</td>
 <td>16</td>
@@ -953,7 +895,8 @@ Start: Start 1, Finishes: Place
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>17</td>
@@ -961,17 +904,18 @@ Start: Start 1, Finishes: Place
 </tr>
 </tbody>
 </table>
-<h3 class="racetitle" id="r3regatta">R3 - Regatta Fleet&nbsp;-&nbsp;16/06/2024</h3>
+<h3 class="racetitle" id="r3">R3</h3>
 <div class="caption racecaption">
 Start: Start 1, Finishes: Place
 </div>
 <table class="racetable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="10">
+<colgroup span="11">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -985,6 +929,7 @@ Start: Start 1, Finishes: Place
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
@@ -999,7 +944,8 @@ Start: Start 1, Finishes: Place
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>1</td>
@@ -1011,7 +957,8 @@ Start: Start 1, Finishes: Place
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>2</td>
@@ -1023,7 +970,8 @@ Start: Start 1, Finishes: Place
 <td>868</td>
 <td>Aoife Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>3</td>
@@ -1035,7 +983,8 @@ Start: Start 1, Finishes: Place
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>4</td>
@@ -1047,7 +996,8 @@ Start: Start 1, Finishes: Place
 <td>1246</td>
 <td>Ellen Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>5</td>
@@ -1057,9 +1007,10 @@ Start: Start 1, Finishes: Place
 <td>6</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>6</td>
@@ -1071,7 +1022,8 @@ Start: Start 1, Finishes: Place
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>7</td>
@@ -1083,7 +1035,8 @@ Start: Start 1, Finishes: Place
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
 <td>8</td>
@@ -1095,7 +1048,8 @@ Start: Start 1, Finishes: Place
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>9</td>
@@ -1107,7 +1061,8 @@ Start: Start 1, Finishes: Place
 <td>1060</td>
 <td>Timothee Richard</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>7</td>
 <td>10</td>
@@ -1119,7 +1074,8 @@ Start: Start 1, Finishes: Place
 <td>601</td>
 <td>Hazel Barry</td>
 <td>MBSC & RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>11</td>
@@ -1131,7 +1087,8 @@ Start: Start 1, Finishes: Place
 <td>1188</td>
 <td>Elena Foley</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>12</td>
@@ -1143,7 +1100,8 @@ Start: Start 1, Finishes: Place
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>13</td>
@@ -1155,7 +1113,8 @@ Start: Start 1, Finishes: Place
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>14</td>
@@ -1167,7 +1126,8 @@ Start: Start 1, Finishes: Place
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>15</td>
@@ -1179,7 +1139,8 @@ Start: Start 1, Finishes: Place
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>16</td>
@@ -1191,7 +1152,8 @@ Start: Start 1, Finishes: Place
 <td>1079</td>
 <td>John Sheridan</td>
 <td>WHSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>10</td>
 <td>17</td>
@@ -1199,17 +1161,18 @@ Start: Start 1, Finishes: Place
 </tr>
 </tbody>
 </table>
-<h3 class="racetitle" id="r4regatta">R4 - Regatta Fleet&nbsp;-&nbsp;16/06/2024</h3>
+<h3 class="racetitle" id="r4">R4</h3>
 <div class="caption racecaption">
 Start: Start 1, Finishes: Place
 </div>
 <table class="racetable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="10">
+<colgroup span="11">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -1223,6 +1186,7 @@ Start: Start 1, Finishes: Place
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
@@ -1237,7 +1201,8 @@ Start: Start 1, Finishes: Place
 <td>1188</td>
 <td>Elena Foley</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>10</td>
 <td>1</td>
@@ -1249,7 +1214,8 @@ Start: Start 1, Finishes: Place
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
 <td>2</td>
@@ -1261,7 +1227,8 @@ Start: Start 1, Finishes: Place
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>3</td>
@@ -1273,7 +1240,8 @@ Start: Start 1, Finishes: Place
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>4</td>
@@ -1285,7 +1253,8 @@ Start: Start 1, Finishes: Place
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>5</td>
@@ -1297,7 +1266,8 @@ Start: Start 1, Finishes: Place
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>6</td>
@@ -1309,7 +1279,8 @@ Start: Start 1, Finishes: Place
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>7</td>
@@ -1321,7 +1292,8 @@ Start: Start 1, Finishes: Place
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>8</td>
@@ -1331,9 +1303,10 @@ Start: Start 1, Finishes: Place
 <td>9</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>9</td>
@@ -1345,7 +1318,8 @@ Start: Start 1, Finishes: Place
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>10</td>
@@ -1357,7 +1331,8 @@ Start: Start 1, Finishes: Place
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>11</td>
@@ -1369,7 +1344,8 @@ Start: Start 1, Finishes: Place
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>12</td>
@@ -1377,17 +1353,18 @@ Start: Start 1, Finishes: Place
 </tr>
 </tbody>
 </table>
-<h3 class="racetitle" id="r5regatta">R5 - Regatta Fleet&nbsp;-&nbsp;16/06/2024</h3>
+<h3 class="racetitle" id="r5">R5</h3>
 <div class="caption racecaption">
 Start: Start 1, Finishes: Place
 </div>
 <table class="racetable" cellspacing="0" cellpadding="0" border="0">
-<colgroup span="10">
+<colgroup span="11">
 <col class="rank" />
 <col class="fleet" />
 <col class="sailno" />
 <col class="helmname" />
 <col class="club" />
+<col class="rating" />
 <col class="nat" />
 <col class="helmsex" />
 <col class="crewagegroup" />
@@ -1401,6 +1378,7 @@ Start: Start 1, Finishes: Place
 <th>Sail</th>
 <th>HelmName</th>
 <th>Club</th>
+<th>Rating</th>
 <th>Nat</th>
 <th>Gender</th>
 <th>Age</th>
@@ -1415,7 +1393,8 @@ Start: Start 1, Finishes: Place
 <td>667</td>
 <td>Will McElligott</td>
 <td>RCYC & ISC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>1</td>
@@ -1427,7 +1406,8 @@ Start: Start 1, Finishes: Place
 <td>308</td>
 <td>Aisling Ni Shuilleabhain</td>
 <td>MBSC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>12</td>
 <td>2</td>
@@ -1439,7 +1419,8 @@ Start: Start 1, Finishes: Place
 <td>1549</td>
 <td>Tom Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>3</td>
@@ -1449,9 +1430,10 @@ Start: Start 1, Finishes: Place
 <td>4</td>
 <td>Regatta</td>
 <td>1514</td>
-<td>Robin Mullett</td>
+<td>Robin mullett</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>4</td>
@@ -1463,7 +1445,8 @@ Start: Start 1, Finishes: Place
 <td>1680</td>
 <td>Kate Walsh</td>
 <td>RStGYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>5</td>
@@ -1475,7 +1458,8 @@ Start: Start 1, Finishes: Place
 <td>1586</td>
 <td>Kate Donagh</td>
 <td>RStGYC & LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>6</td>
@@ -1487,7 +1471,8 @@ Start: Start 1, Finishes: Place
 <td>116</td>
 <td>Freddy Hofler</td>
 <td>NYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>7</td>
@@ -1499,7 +1484,8 @@ Start: Start 1, Finishes: Place
 <td>1246</td>
 <td>Ellen Kingston</td>
 <td>KYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>11</td>
 <td>8</td>
@@ -1511,7 +1497,8 @@ Start: Start 1, Finishes: Place
 <td>1206</td>
 <td>Hugh Slattery</td>
 <td>LDYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>9</td>
 <td>9</td>
@@ -1523,7 +1510,8 @@ Start: Start 1, Finishes: Place
 <td>945</td>
 <td>Caoimhe Duane</td>
 <td>LRYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>F</td>
 <td>9</td>
 <td>10</td>
@@ -1535,7 +1523,8 @@ Start: Start 1, Finishes: Place
 <td>1672</td>
 <td>Cormac Whelan</td>
 <td>NYC & BHYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>8</td>
 <td>11</td>
@@ -1547,7 +1536,8 @@ Start: Start 1, Finishes: Place
 <td>1275</td>
 <td>John Keating</td>
 <td>RCYC</td>
-<td><img class="natflag" title="IRL" src="http://www.sailwave.com/flags/small/IRL.jpg"><br><span class="nattext">IRL</span></td>
+<td>Bronze</td>
+<td>IRL</td>
 <td>M</td>
 <td>11</td>
 <td>12</td>
@@ -1555,19 +1545,4 @@ Start: Start 1, Finishes: Place
 </tr>
 </tbody>
 </table>
-
-<p class="hardleft"><a href="https://"></a><br /><a href="mailto:"></a></p>
-<p class="hardright"><a href="https://"></a><br /><a href="mailto:"></a></p>
-<p>Sailwave Scoring Software 2.33.02<br /><a href="https://www.sailwave.com">www.sailwave.com</a></p>
-
-</div>
-
-<footer>
-</footer>
-
-<div id="scrollbottom"></div>
-
-</body>
-</html>
-
 

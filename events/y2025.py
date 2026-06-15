@@ -28,7 +28,7 @@ SERIES = [
     # --- Leinsters @ National YC (17–18 May) ---------------------------------
     main_fleet('iodai-leinsters-2025-main-fleet', 'IODAI Leinsters 2025 — Main Fleet',
                'National Yacht Club', ['2025-05-17', '2025-05-18'], nslots=8,
-               senior=L + '2025LeinstersNYCS.htm', junior=L + '2025LeinstersNYCJ.htm', **NYC),
+               senior=L + '2025LeinstersNYCS.htm', junior=L + '2025LeinstersNYC.htm', **NYC),
     solo('iodai-leinsters-2025-regatta-racing', 'IODAI Leinsters 2025 — Regatta Racing',
          'National Yacht Club', ['2025-05-17', '2025-05-18'], nslots=10,
          file=L + '2025LeinstersRR.htm', fleet='Regatta Racing', **NYC),
