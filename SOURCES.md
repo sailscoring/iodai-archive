@@ -65,13 +65,15 @@ Result files of this era follow a tidy convention:
 `<region><fleet><yy>os.html` — region `le`/`mu`/`na`/`co`(/`ul`), fleet `se`/`ju`/`re`
 (and `all` for a combined view), e.g. `lese18os` = Leinster Senior 2018.
 
-**Scoring-software caveat / back-stop at 2014.** The engine reconstructs low-point
-tables — **Sailwave** (2014→) and the **newer Sail100** export (some 2019 events);
-both are handled. **2013 and earlier** use an **older Sail100** that prints final
-points (positions *and* penalties) as bare numbers with no result codes — a DNC
-shows as e.g. `46`, indistinguishable from 46th place. Those pages parse but can't
-be inverted to finishing positions, so 2013→~2009 are **not built**. Years using
-non-Sailwave software are flagged in their sections below.
+**Scoring software & phases.** The engine reconstructs low-point tables —
+**Sailwave** (2014→) and the **newer Sail100** export (some 2019 events). **2013
+and earlier** use an **older Sail100** that prints final points (positions *and*
+penalties) as bare numbers with no result codes — a DNC shows as e.g. `46`,
+indistinguishable from 46th place. These are **Phase 2 (best-effort)**: the
+`bare_dnc` rule treats any plain score above the fleet size as a DNC-equivalent,
+which reconstructs almost every boat exactly and the top-half ranking reliably
+(the agreed bar); venues aren't recorded on these pages (left blank). 2014→2026
+are full-accuracy Phase 1.
 
 ## 2026
 
@@ -439,6 +441,19 @@ One page labels its net column 'Total Points' (handled in the engine).
 - Nationals: `nase14os` · `naju14os` · `nare14os`
 
 (all under <https://iodai.com/results-files/>.)
+
+## 2013 — Phase 2 (older Sail100, best-effort)
+
+Files under iodai.com/results-files/ (`<region><fleet>13os.html`). All five events,
+Main + Regatta. Pages record entries/races/discards but no venue (blank) and only
+a publish timestamp (dates approximate). Reconstructed via `bare_dnc`; top-half
+rankings reliable. Discards [(5,1)] regionals, [(5,1),(10,2)] Nationals.
+
+- Leinster (8 Sep): `lese13os` · `leju13os` · `lere13os`
+- Ulster (26 May): `ulse13os` · `ulju13os` · `ulre13os`
+- Connacht (5–6 Oct): `cose13os` · `coju13os` · `core13os`
+- Munster (~May): `muse13os` · `muju13os` · `mure13os`
+- Nationals (15–18 Aug): `nase13os` · `naju13os` · `nare13os`
 
 ## Linked but not built
 

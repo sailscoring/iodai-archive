@@ -38,7 +38,7 @@ META = {'Rank', 'Place', 'Ranking', 'Tally', 'Fleet', 'Class', 'Sail',
         'Name', 'Surname', 'Club', 'Primary Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
         'M/F', 'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'HelmAgeGroup',
         'Oppy Age', 'Oppie Age', 'Year', 'Senior/Junior', 'Rating', 'Silver/Gold',
-        'Total', 'Nett', 'Net'}
+        'Series Place', 'Total', 'Nett', 'Net', 'Total Points', 'Series Points'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
 RESULT_CODES = {'DNC', 'DNS', 'OCS', 'NSC', 'DNF', 'RET', 'DSQ', 'DNE', 'UFD', 'BFD', 'RDG'}
@@ -87,8 +87,10 @@ def cellize(tr):
 # use 'Place' + 'Net' and carry no gross 'Total' column (only the net). Both are
 # low-point tables (displayed score = finishing position), so the same engine
 # reconstructs them once the column names and the missing-Total case are handled.
-RANK_HEADERS = ('Rank', 'Place', 'Ranking')
-NETT_HEADERS = ('Nett', 'Net', 'Total Points')
+RANK_HEADERS = ('Rank', 'Place', 'Ranking', 'Series Place')
+NETT_HEADERS = ('Nett', 'Net', 'Total Points', 'Series Points')
+# Race-column header: 'R1' (Sailwave / newer Sail100) or 'Race 1' (older Sail100).
+RACE_RE = re.compile(r'(?:r|race)\s*\d+')
 # Header matching is case-insensitive (some years use ALL-CAPS headers). Map each
 # lowercased header to its canonical META spelling so row fields read back the
 # same regardless of the page's casing.
@@ -111,7 +113,7 @@ def parse_file(fname):
         # 'Total' when that's the only score column) plus a structural marker — a
         # rank/place column or a race column ('R1'). A rank column is optional.
         has_net = any(x in NETT_LC for x in cl) or 'total' in cl
-        has_struct = any(x in RANK_LC for x in cl) or any(re.fullmatch(r'r\d+', x) for x in cl)
+        has_struct = any(x in RANK_LC for x in cl) or any(RACE_RE.fullmatch(x) for x in cl)
         if has_net and has_struct:
             hdr, lc = c, cl
             break
@@ -124,13 +126,20 @@ def parse_file(fname):
     # Race columns: the 'R1'…'Rn' headers wherever they fall; else (differently
     # labelled races, e.g. the Sprint's per-venue columns) the non-meta columns
     # ahead of the total/net block.
-    race_idx = [i for i, x in enumerate(lc) if re.fullmatch(r'r\d+', x)]
+    race_idx = [i for i, x in enumerate(lc) if RACE_RE.fullmatch(x)]
     if not race_idx:
         end_i = total_i if total_i is not None else nett_i
         race_idx = [i for i in range(end_i) if lc[i] not in META_CANON]
     race_cols = [hdr[i] for i in race_idx]
+    # Data rows: Sailwave/newer Sail100 tag them class="summaryrow"; older Sail100
+    # plain tables don't, so fall back to every row whose cell count matches the
+    # header (skipping the header row itself).
+    body = re.findall(r'<tr[^>]*class="[^"]*summaryrow[^"]*"[^>]*>.*?</tr>', s, flags=re.S | re.I)
+    if not body:
+        body = [tr for tr in re.findall(r'<tr[^>]*>.*?</tr>', s, flags=re.S | re.I)
+                if len(cellize(tr)) == len(hdr) and cellize(tr) != hdr]
     rows = []
-    for tr in re.findall(r'<tr[^>]*class="[^"]*summaryrow[^"]*"[^>]*>.*?</tr>', s, flags=re.S | re.I):
+    for tr in body:
         c = cellize(tr)
         row = {META_CANON[lc[i]]: c[i] for i in range(len(hdr)) if i < len(c) and lc[i] in META_CANON}
         row['races'] = [c[i] for i in race_idx if i < len(c)]
@@ -244,7 +253,7 @@ def load_competitors(cfg):
 
 # ---- Finish reconstruction ------------------------------------------------
 
-def race_finishers(group, slot):
+def race_finishers(group, slot, bare_dnc=False):
     """Order one fleet's finishers in a race by their true crossing position.
 
     Normal finishers sit at their displayed score (= finishing position in a
@@ -256,9 +265,17 @@ def race_finishers(group, slot):
     each back at a gap (an integer position missing from 1..F). Returns a list of
     (effective_position, competitor, cell) sorted by position."""
     normal, floating = [], []
+    n = len(group)
     for c in group:
         cell = c['cells'].get(slot)
         if not cell:
+            continue
+        # Older Sail100 prints DNC-type scores as a bare number (= entries + 1)
+        # with no code. A real finishing place can't exceed the fleet size, so a
+        # plain finish above n is treated as a non-finisher (handled like a code).
+        # Only when bare_dnc is set (the Phase-2 old-Sail100 years) — elsewhere a
+        # high score can be a real combined-fleet position (e.g. the Sprint).
+        if bare_dnc and cell['kind'] == 'finish' and not cell['penalty'] and cell['score'] and cell['score'] > n:
             continue
         if cell['kind'] == 'finish' and not cell['penalty']:
             normal.append((c, cell))
@@ -288,7 +305,7 @@ def race_finishers(group, slot):
     return items
 
 
-def build_finishes(comps, fleet_names, nslots):
+def build_finishes(comps, fleet_names, nslots, bare_dnc=False):
     """Return {slot: [finish-dicts]}. sortOrder is assigned per (slot, fleet);
     fleets are offset so sortOrder stays distinct within a race."""
     by_slot = collections.defaultdict(list)
@@ -297,17 +314,19 @@ def build_finishes(comps, fleet_names, nslots):
             group = [c for c in comps if c['fleet'] == fleet]
             for c in group:
                 cell = c['cells'].get(slot)
-                if cell and cell['kind'] == 'code':
+                is_bare = (bare_dnc and cell and cell['kind'] == 'finish' and not cell['penalty']
+                           and cell['score'] and cell['score'] > len(group))
+                if cell and (cell['kind'] == 'code' or is_bare):
                     by_slot[slot].append(dict(
                         id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'], sortOrder=None,
-                        resultCode=cell['code'], startPresent=None,
+                        resultCode=('DNC' if is_bare else cell['code']), startPresent=None,
                         penaltyCode=None, penaltyOverride=None))
             offset = fi * 10000
             prev_pos = None
             # Finishers — including ZFP and redress boats, which race_finishers
             # has placed back into the order at their vacated position so the
             # boats behind keep their finishing place.
-            for k, (pos, c, cell) in enumerate(race_finishers(group, slot)):
+            for k, (pos, c, cell) in enumerate(race_finishers(group, slot, bare_dnc)):
                 f = dict(
                     id=det(f"{c['id']}/finish/{slot}"), competitorId=c['id'],
                     sortOrder=offset + k + 1, resultCode=None, startPresent=None,
@@ -344,7 +363,7 @@ def enabled_fields(cfg):
 
 def build_series_file(cfg):
     comps, fleet_names = load_competitors(cfg)
-    finishes = build_finishes(comps, fleet_names, cfg['nslots'])
+    finishes = build_finishes(comps, fleet_names, cfg['nslots'], cfg.get('bare_dnc'))
     # `adopt` overrides the default (deterministic) seriesId with the id the app
     # gave a live series, so re-importing this file updates that series in place.
     series_id = load_adopted().get(cfg['out']) or det(f"{cfg['out']}/series")
@@ -400,7 +419,7 @@ def build_series_file(cfg):
 
 # ---- Validation: re-score and diff against published Nett ------------------
 
-def score_fleet(comps, nslots, discards):
+def score_fleet(comps, nslots, discards, bare_dnc=False):
     """Minimal scratch Appendix-A scoring mirroring lib/scoring.ts, over the
     given competitor set (one fleet). Returns {compid: (total, nett)}."""
     n = len(comps)
@@ -409,7 +428,7 @@ def score_fleet(comps, nslots, discards):
     codes = {c['id']: [None] * nslots for c in comps}
     excluded = [False] * nslots
     for slot in range(nslots):
-        placed = race_finishers(comps, slot)   # (effective_position, comp, cell)
+        placed = race_finishers(comps, slot, bare_dnc)   # (effective_position, comp, cell)
         excluded[slot] = len(placed) == 0
         # rank placed finishers with tie-averaging (RRS A8.1)
         rank_pts = {}
@@ -426,7 +445,11 @@ def score_fleet(comps, nslots, discards):
             cell = c['cells'].get(slot)
             if cell is None or cell['kind'] == 'blank':
                 continue
-            if cell['kind'] == 'code':
+            if bare_dnc and cell['kind'] == 'finish' and not cell['penalty'] and cell['score'] and cell['score'] > n:
+                # Bare-number DNC-equivalent (older Sail100) — score as DNF/DNC.
+                pts[c['id']][slot] = penalty
+                codes[c['id']][slot] = 'DNC'
+            elif cell['kind'] == 'code':
                 pts[c['id']][slot] = penalty
                 codes[c['id']][slot] = cell['code']
             elif cell['kind'] == 'redress':
@@ -496,7 +519,7 @@ def validate(series):
         # (reported as TIE) — the app is the RRS-correct one; ranks are unchanged.
         tie_tol = cfg.get('tie_tolerant')
         for label, group in groups:
-            scored = score_fleet(group, cfg['nslots'], cfg['discards'])
+            scored = score_fleet(group, cfg['nslots'], cfg['discards'], cfg.get('bare_dnc'))
             mism = 0
             sus = 0
             ties = 0

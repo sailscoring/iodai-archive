@@ -63,18 +63,19 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2016 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| ≤2013 | — | — | — | — | — | — | — |
+| 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| ≤2012 | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | — |
 
-**2014 is the back-stop.** The site was revamped for the 2014 season; from 2014
-on, results are **Sailwave** (or, for some 2019 events, the newer **Sail100**
-export) — both low-point tables the engine reconstructs. **2013 and earlier use
-an older Sail100** whose pages exist on iodai.com (`<region><fleet>13os.html` …
-back to ~2009) and *parse* fine, but print each boat's **final points — positions
-and penalties alike — as bare numbers with no result codes** (a DNC shows as e.g.
-`46`, indistinguishable from a real 46th place). The pipeline reconstructs
-finishing *positions* for the app to re-score, which can't be inverted from
-points-only data, so those years are **not built**. Sourcing them would need a
-different, points-preserving import path.
+‡ **Phase 2 (best-effort).** 2013 and earlier use an older **Sail100** that prints
+final points — positions *and* DNC-type penalties — as bare numbers with no result
+codes (a DNC shows as e.g. `46`, indistinguishable from 46th place). The engine's
+`bare_dnc` rule treats any plain score above the fleet size as a DNC-equivalent,
+which reconstructs almost every boat exactly and the **top-half ranking of each
+fleet reliably** — the agreed bar for this phase (a few deep-fleet boats may be a
+place out; venues aren't on the pages, so they're left blank/editable). 2014→2026
+remain full-accuracy Phase 1. **2009–2012** are sourceable the same way (the
+`os.html` files exist back to ~2009; 2012 uses a different file-naming) — still to
+do.
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and
