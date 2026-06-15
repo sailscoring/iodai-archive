@@ -84,6 +84,19 @@ def solo(out, name, venue, days, nslots, file, fleet, subdivision=False,
                     subdivision=subdivision, discards=discards, **venuekw)
 
 
+def p2_main(out, name, days, nslots, senior=None, junior=None, discards=DISCARDS, suspect=()):
+    """Phase-2 Main fleet (older Sail100): bare_dnc + tie_tolerant on, venue blank
+    (not recorded on those pages). Best-effort accuracy — see events/y2013.py."""
+    return main_fleet(out, name, '', days, nslots, senior=senior, junior=junior,
+                      discards=discards, tie_tolerant=True, bare_dnc=True, suspect=suspect)
+
+
+def p2_reg(out, name, days, nslots, file, discards=DISCARDS):
+    """Phase-2 single Regatta fleet (older Sail100)."""
+    return solo(out, name, '', days, nslots, file=file, fleet='Regatta',
+                discards=discards, tie_tolerant=True, bare_dnc=True)
+
+
 def combined(out, name, venue, days, nslots, files, fleet='Main',
              subdivision=True, discards=DISCARDS, **venuekw):
     """One scratch fleet assembled from one or more pages. Used when a Main fleet

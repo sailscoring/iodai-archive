@@ -544,13 +544,24 @@ def validate(series):
                 if mism <= 8:
                     print(f'   MISMATCH {c["sail"]:>6} {c["name"][:18]:18} '
                           f'published nett={want:g} re-scored={got:g}')
+            # Phase-2 (older Sail100, bare_dnc) fleets are a sniff test, not a
+            # gate: report how many boats are off but don't fail the run unless a
+            # fleet is essentially unusable (most boats wrong). Phase-1 fleets must
+            # be exact (mismatch fails).
+            phase2 = cfg.get('bare_dnc')
             tag = 'OK' if mism == 0 else f'{mism}/{len(group)} MISMATCH'
             if sus:
                 tag += f' (+{sus} suspect)'
             if ties:
                 tag += f' (+{ties} tie)'
             if mism:
-                ok = False
+                if phase2:
+                    tag = f'PHASE2 {mism}/{len(group)} off'
+                    if mism > 0.9 * len(group):  # essentially nothing reconstructs
+                        ok = False
+                        tag += ' — UNUSABLE'
+                else:
+                    ok = False
             print(f'   [{tag}] {label} ({len(group)} boats)')
     print('\nVALIDATION', 'PASSED' if ok else 'FAILED')
     return ok

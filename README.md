@@ -64,7 +64,10 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| ≤2012 | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | — |
+| 2012 | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | ◻️ | — |
+| 2011‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2010‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2009‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 
 ‡ **Phase 2 (best-effort).** 2013 and earlier use an older **Sail100** that prints
 final points — positions *and* DNC-type penalties — as bare numbers with no result
@@ -73,9 +76,11 @@ codes (a DNC shows as e.g. `46`, indistinguishable from 46th place). The engine'
 which reconstructs almost every boat exactly and the **top-half ranking of each
 fleet reliably** — the agreed bar for this phase (a few deep-fleet boats may be a
 place out; venues aren't on the pages, so they're left blank/editable). 2014→2026
-remain full-accuracy Phase 1. **2009–2012** are sourceable the same way (the
-`os.html` files exist back to ~2009; 2012 uses a different file-naming) — still to
-do.
+remain full-accuracy Phase 1. **2009–2011** are now built on this basis
+(spot-checked: every fleet's winner reconstructs correctly; a few big/short-series
+fleets are looser mid-pack — Munster 2009 Junior is the weakest). Some 2010/2011
+Junior pages weren't found (those Main fleets are Senior-only). **2012** uses a
+different file-naming and isn't done yet.
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and
