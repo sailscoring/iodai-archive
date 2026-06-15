@@ -33,7 +33,7 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 # helm 'Helm Name' rather than 'Sail'/'Name'; all spellings are listed so they're
 # excluded from the race columns (and read back via the fallbacks below).
 META = {'Rank', 'Place', 'Ranking', 'Tally', 'Fleet', 'Class', 'Sail',
-        'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Sail Num.', 'Nat', 'Nationality',
+        'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Sail Num.', 'Sail #', 'Nat', 'Nationality',
         'Country', 'Sail Country', 'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm',
         'Name', 'Surname', 'Club', 'Primary Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
         'M/F', 'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'HelmAgeGroup',
@@ -107,21 +107,26 @@ def parse_file(fname):
                 any(h in c for h in RANK_HEADERS) or any(re.fullmatch(r'R\d+', x) for x in c)):
             hdr = c
             break
-    # Race columns run up to the first scoring-total column. Sailwave has a 'Total'
-    # then 'Nett'; Sail100 has only the net column at the end.
-    if 'Total' in hdr:
-        end_i, nett_i = hdr.index('Total'), hdr.index('Total') + 1
-    else:
-        end_i = nett_i = next(i for i, h in enumerate(hdr) if h in NETT_HEADERS)
-    race_idx = [i for i in range(end_i) if hdr[i] not in META]
+    # Net score column (the published Nett); 'Total' (gross) is optional. Both can
+    # sit before OR after the race columns (some years put Net/Total first), so
+    # locate them by name rather than position.
+    nett_i = next(i for i, h in enumerate(hdr) if h in NETT_HEADERS)
+    total_i = hdr.index('Total') if 'Total' in hdr else None
+    # Race columns: the 'R1'…'Rn' headers wherever they fall. If a page labels its
+    # races differently (e.g. the Sprint's per-venue columns), fall back to the
+    # non-meta columns ahead of the total/net block.
+    race_idx = [i for i, h in enumerate(hdr) if re.fullmatch(r'R\d+', h)]
+    if not race_idx:
+        end_i = total_i if total_i is not None else nett_i
+        race_idx = [i for i in range(end_i) if hdr[i] not in META]
     race_cols = [hdr[i] for i in race_idx]
     rows = []
     for tr in re.findall(r'<tr[^>]*class="[^"]*summaryrow[^"]*"[^>]*>.*?</tr>', s, flags=re.S | re.I):
         c = cellize(tr)
-        row = {hdr[i]: c[i] for i in range(end_i) if hdr[i] in META}
-        row['races'] = [c[i] for i in race_idx]
-        row['Nett'] = c[nett_i]
-        row['Total'] = c[end_i] if 'Total' in hdr else c[nett_i]
+        row = {hdr[i]: c[i] for i in range(len(hdr)) if i < len(c) and hdr[i] in META}
+        row['races'] = [c[i] for i in race_idx if i < len(c)]
+        row['Nett'] = c[nett_i] if nett_i < len(c) else ''
+        row['Total'] = c[total_i] if (total_i is not None and total_i < len(c)) else row['Nett']
         rows.append(row)
     return race_cols, rows
 
@@ -162,7 +167,8 @@ def round_tenth(x):
 def _sail(row):
     """The sail number, however the page titled its column."""
     return (row.get('Sail') or row.get('Sail Number') or row.get('SailNo')
-            or row.get('Sail no.') or row.get('Sail No') or row.get('Sail Num.') or '').strip()
+            or row.get('Sail no.') or row.get('Sail No') or row.get('Sail Num.')
+            or row.get('Sail #') or '').strip()
 
 
 def norm_gender(g):

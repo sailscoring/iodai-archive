@@ -389,6 +389,23 @@ Connacht/WHSC, Munster/Kinsale YC, Nationals/Royal Irish YC.
 (all under <https://iodai.com/results-files/>; event pages e.g.
 <https://iodai.com/leinsters-2017-results-nyc/>, `nationals-2017-results-riyc`.)
 
+## 2016
+
+Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>16os.html`).
+All Sailwave. Pages put Net/Total *before* the race columns (handled in the
+engine). Non-standard tie scoring → `tie_tolerant`. Venues: Leinster/Royal St
+George, Ulster/Malahide SC, Connacht/Foynes, Munster/CRYC, Nationals/Lough Derg.
+The Nationals Regatta page (`nare16os`) has no results table — not built.
+
+- Leinster: `lese16os` · `leju16os` · `lere16os`
+- Ulster: `ulse16os` · `ulju16os` · `ulre16os`
+- Connacht: `cose16os` · `coju16os` · `core16os`
+- Munster: `muse16os` · `muju16os` · `mure16os`
+- Nationals: `nase16os` · `naju16os` (Regatta `nare16os` not built)
+
+(all under <https://iodai.com/results-files/>; event pages e.g.
+`nationals-2016-results-ldyc`, `munsters-2016-results-rcyc`.)
+
 ## Linked but not built
 
 These pages are linked from the iodai.com event pages above but deliberately

@@ -60,6 +60,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2019 | ✅ | ✅* | ✅ | ✅† | ✅ | ◻️ | — |
 | 2018 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2017 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2016 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and
