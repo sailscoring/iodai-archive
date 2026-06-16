@@ -232,10 +232,30 @@ def block_single_token(ids):
     return ids
 
 
+# ── Block: cross-hull name normalisation ──────────────────────────────────────
+# Same sailor split across hulls by a spelling/casing/mojibake variant.
+CROSS_HULL_MERGES = [
+    ('max-oa-tmhare-7bva', ['max-o-hare-2q67', 'max-o-hare-ayf8'], "Max O'Hare", 'spelling and mojibake variants folded'),
+]
+CROSS_HULL_RENAMES = {
+    'nicole-rose-quinn-6sdp': 'Nicole Quinn',     # recorded with and without middle name
+    'robin-mullett-93hk': 'Robin Mullett',        # capitalisation normalised
+}
+
+
+def block_cross_hull(ids):
+    for into, froms, name, note in CROSS_HULL_MERGES:
+        ids = merge(ids, into, froms, name=name, note=note)
+    for slug, name in CROSS_HULL_RENAMES.items():
+        ids = rename(ids, slug, name=name)
+    return ids
+
+
 BLOCKS = {
     'merges': block_merges,
     'mojibake': block_mojibake,
     'single-token': block_single_token,
+    'cross-hull': block_cross_hull,
 }
 
 
