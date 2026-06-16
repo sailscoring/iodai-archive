@@ -114,8 +114,80 @@ def block_merges(ids):
     return ids
 
 
+# ── Block: mojibake repair ────────────────────────────────────────────────────
+# Names mangled by an upstream cp1252/latin-1 decode. Three classes (per the
+# audit): clean-twin merges the mangling split apart; lost-byte cases (U+FFFD)
+# reconstructed by hand; and the mechanical rest, repaired programmatically.
+
+# Clean twin existed separately because the mangled form folds differently — the
+# repair re-unites them (the "Dion family" effect).
+MOJIBAKE_MERGES = [
+    ('aurele-dion-dds9', ['aurele-dion-fz7y'], 'Aurèle Dion', 'mojibake variant folded'),
+    ('josephine-dion-jmf9', ['josephine-dion-smx7'], 'Joséphine Dion', 'mojibake variant folded'),
+    ('paidi-a-coistealbha-wsrv', ['paidi-a-coistealbha-c35s'], 'Paidí A Coistealbha', 'mojibake variant folded'),
+    ('siun-ni-choistealbha-tvx7', ['siun-ni-choistealbha-hr8p', 'si-n-n-choistealbha-m3bj'], 'Siún Ní Choistealbha', 'mojibake and spelling variants folded'),
+    ('molly-oa-tmflaherty-eap6', ['molly-o-flaherty-fqxf'], "Molly O'Flaherty", 'mojibake apostrophe variants folded'),
+    ('connor-oa-tmsullivan-hysc', ['connor-o-sullivan-p5tf', 'connor-o-sullivan-nrr3'], "Connor O'Sullivan", 'mojibake apostrophe and placeholder-sail variants folded'),
+    ('amy-o-halloran-rcvx', ['amy-oa-tmhalloran-2b49'], "Amy O'Halloran", 'mojibake apostrophe variant folded'),
+    ('olivia-cure-u53f', ['olivia-cur-966u'], 'Olivia Cure', 'mojibake variant folded'),
+    ('joe-landers-eugt', ['joe-landers-ym7k'], 'Joe Landers', 'lost-byte variant folded'),
+    ('skye-o-callaghan-xhvf', ['skye-oa-tmcallaghan-4kym'], "Skye O'Callaghan", 'mojibake apostrophe variant folded'),
+    ('siofra-buckley-trbr', ['siofra-buckley-gquj'], 'Síofra Buckley', 'mojibake variant folded'),
+]
+
+# Lost-byte (U+FFFD) or wrong-accent-at-source cases: codec can't recover them,
+# reconstructed by hand from the obvious name; plus two fada restorations.
+MOJIBAKE_MANUAL = {
+    'caolan-pepper-v9ns': 'Caolán Pepper',                       # source carried grave; canonical fada
+    'a-a-igo-rama-rez-ferna-ndez-j837': 'Íñigo Ramírez Fernández',
+    'fion-n-dollard-76g7': 'Fionán Dollard',
+    'oscar-luain-8qa7': 'Oscar Ó Luain',
+    'caoimhe-nic-thr-infhir-w5v7': 'Caoimhe Nic Thréinfhir',
+    'aine-cahill-ujh3': 'Áine Cahill',                            # fada restored
+    'tomas-a-coistealbha-dfpz': 'Tomás A Coistealbha',            # fada restored
+}
+
+# Handled in the cross-hull block (merge + repair together).
+_DEFER = {'max-oa-tmhare-7bva'}
+_MARKERS = ('Ã', 'Â', 'â€')
+
+
+def demojibake(s):
+    """Reverse a cp1252/latin-1-then-utf-8 mis-decode; straighten the curly
+    apostrophe it yields."""
+    for codec in ('cp1252', 'latin-1'):
+        try:
+            fixed = s.encode(codec).decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            continue
+        if fixed != s:
+            s = fixed
+            break
+    return s.replace('’', "'")
+
+
+def block_mojibake(ids):
+    for into, froms, name, note in MOJIBAKE_MERGES:
+        ids = merge(ids, into, froms, name=name, note=note)
+    for slug, name in MOJIBAKE_MANUAL.items():
+        ids = rename(ids, slug, name=name)
+    # Mechanical repair of the remaining mangled names.
+    for c in ids:
+        if c.slug in _DEFER:
+            continue
+        if any(m in c.name for m in _MARKERS):
+            c.name = demojibake(c.name)
+    # Nothing but the deferred entry should carry a marker now.
+    leftover = [c.slug for c in ids
+                if c.slug not in _DEFER
+                and any(m in c.name for m in ('Ã', 'Â', 'â€', 'ï¿½', '�'))]
+    assert not leftover, f'unrepaired mojibake: {leftover}'
+    return ids
+
+
 BLOCKS = {
     'merges': block_merges,
+    'mojibake': block_mojibake,
 }
 
 
