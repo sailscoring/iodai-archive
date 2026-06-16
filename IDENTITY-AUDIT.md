@@ -8,7 +8,7 @@ re-import. Human-adjudicated — none of these are applied automatically.
 ## Summary
 
 - 10606 competitor rows across 178 series
-- **149** blank names
+- **43** blank names
 - **19** distinct mojibake spellings
 - **37** single-token names
 - **59** sail-loan candidates
@@ -25,112 +25,6 @@ source page or exclude.
 | 2015-06-06 | 1410 | IODAI Ulsters 2015 — Main Fleet |
 | 2017-08-17 | 32 4? | IODAI Nationals 2017 — Regatta |
 | 2018-06-16 |  | IODAI Leinsters 2018 — Regatta |
-| 2018-06-16 | 1000 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1072 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1098 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1161 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1202 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1204 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1212 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1255 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1257 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1280 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1282 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1305 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1332 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1340 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1352 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1356 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1357 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1370 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1402 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1403 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1421 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1422 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1423 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1430 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1437 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1438 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1441 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1444 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1446 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1451 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1453 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1469 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1473 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1474 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1475 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1481 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1488 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1490 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1494 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1500 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1501 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1502 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1504 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1507 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1509 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1514 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1517 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1518 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1528 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1530 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1532 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1533 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1534 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1536 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1542 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1545 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1547 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1549 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1550 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1552 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1553 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1558 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1559 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1561 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1565 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1568 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1570 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1575 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1576 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1577 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1579 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1580 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1582 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1583 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1584 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1585 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1586 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1587 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1588 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1590 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1591 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1592 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1593 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1594 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1595 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1596 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1597 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1598 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1599 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1601 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1602 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1603 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1604 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1605 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1606 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1607 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1608 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1609 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1611 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1612 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1613 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1614 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 1615 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 5188 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 943 | IODAI Leinsters 2018 — Main Fleet |
-| 2018-06-16 | 985 | IODAI Leinsters 2018 — Main Fleet |
 | 2018-09-08 |  | IODAI Munsters 2018 — Regatta |
 | 2019-05-25 |  | IODAI Ulsters 2019 — Regatta |
 | 2019-05-25 |  | IODAI Ulsters 2019 — Regatta |
@@ -271,20 +165,20 @@ matcher split; sometimes a genuine sibling hand-down. Review each.
 | 1381 | Hugo Cobbe (2024-09-07) | Arthur Gibney (×6, 2022–2025) |
 | 1384 | Penny Doig (2021-07-03) | George Doig (×10, 2020–2022) |
 | 1413 | Georgie McCarthy (2014-09-06) | Conor GORMAN (×10, 2013–2015) |
-| 1421 | Conall Mac Threinfhir (2018-07-07) | Conall Mac Thrï¿½infhir (×6, 2017–2018) |
+| 1421 | Conall Mac Threinfhir (2018-07-07) | Conall Mac Thrï¿½infhir (×7, 2017–2018) |
 | 1433 | Jodie Hall (2025-08-14) | Rudy Murphy (×5, 2024–2025) |
 | 1441 | Killian O Regan (2014-09-06) | Killian O'REGAN (×9, 2014–2016) |
 | 1452 | Hugo Crawford (2015-07-11) | Kate Horgan (×6, 2014–2016) |
 | 1464 | Skye Oâ€™Callaghan (2022-06-18) | Jacob Browne (×5, 2022–2022) |
 | 1467 | Megan Parker (2013-05-25) | Emma Parker (×3, 2013–2013) |
 | 1470 | Kirstin Quinn (2014-09-06) | Kirsten QUINN (×3, 2014–2015) |
-| 1488 | Lauren O'Callaghan (2017-09-09) | Lauren O' Callaghan (×4, 2017–2018) |
+| 1488 | Lauren O'Callaghan (2017-09-09) | Lauren O' Callaghan (×5, 2017–2018) |
 | 1493 | Zoe O Hare (2023-09-16) | Zoe OHare (×10, 2023–2025) |
 | 1503 | Cathal O Regan (2014-09-06) | Cathal O'REGAN (×9, 2014–2016) |
 | 1509 | Ã“ran Collins (2024-06-15) | Oran Collins (×10, 2022–2025) |
 | 1513 | Eabha Brennan Hobbs (2023-08-17) | Eabha Brennan-Hobbs (×16, 2023–2026) |
 | 1513 | Ã‰abha Brennan-Hobbs (2024-06-15) | Eabha Brennan-Hobbs (×16, 2023–2026) |
-| 1514 | Thomas Hogan (2017-08-17) | TP Hogan (×7, 2017–2018) |
+| 1514 | Thomas Hogan (2017-08-17) | TP Hogan (×8, 2017–2018) |
 | 1520 | Ollie Simington (2016-05-14) | Moss Simington (×6, 2015–2016) |
 | 1537 | Luke O Connell (2024-06-15) | Edward Fitzmaurice (×11, 2023–2025) |
 | 1549 | Tom Kingston (2024-06-15) | Joe Kingston (×3, 2024–2024) |

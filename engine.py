@@ -141,7 +141,16 @@ def parse_file(fname):
     rows = []
     for tr in body:
         c = cellize(tr)
-        row = {META_CANON[lc[i]]: c[i] for i in range(len(hdr)) if i < len(c) and lc[i] in META_CANON}
+        # Some pages carry a duplicate meta header (e.g. 2018 Leinsters has two
+        # 'Helm' columns, the second empty). Keep the first occurrence so a later
+        # empty cell can't clobber the real value; but let a non-empty later cell
+        # fill in if the first was blank.
+        row = {}
+        for i in range(len(hdr)):
+            if i < len(c) and lc[i] in META_CANON:
+                key = META_CANON[lc[i]]
+                if key not in row or (not row[key].strip() and c[i].strip()):
+                    row[key] = c[i]
         row['races'] = [c[i] for i in race_idx if i < len(c)]
         row['Nett'] = c[nett_i] if nett_i < len(c) else ''
         row['Total'] = c[total_i] if (total_i is not None and total_i < len(c)) else row['Nett']
