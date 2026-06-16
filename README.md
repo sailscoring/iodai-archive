@@ -124,6 +124,10 @@ events/
 sources/<year>/<event>/   raw Sailwave HTML, as downloaded
 series/                   generated .sailscoring files (import these)
 adopted-series-ids.json   live seriesId per series, once imported (see "adopt")
+audit.py                  identity data-quality audit -> IDENTITY-AUDIT.md
+bootstrap.py              generate a draft manifest.py from the app's matcher
+identity_manifest.py      the C(...) manifest record + slug minting + serialiser
+manifest.py               the curated competitor-identity golden record (#218)
 ```
 
 ## Per-event process (once per past event)
@@ -197,6 +201,40 @@ production, DB-side, cross-class version lives with `reconcile-identities` in th
 
 All ids are deterministic (UUIDv5 of a stable key), so rebuilding is byte-stable
 — re-running after more races publish changes only the new race data, never ids.
+
+## Competitor identity manifest (#218)
+
+The same sailor recurs across years under different sail numbers, name spellings,
+and clubs. `manifest.py` is the **golden record** that ties those rows together
+into one cross-series competitor — version-controlled, so re-importing the corpus
+and applying the manifest reproduces the same competitors (and the same public
+URLs) every time, instead of clicking through the app's reconcile UI.
+
+```
+python3 bootstrap.py            # draft manifest.py from the app's matcher
+python3 bootstrap.py --force    # regenerate the draft (discards hand-curation)
+```
+
+`bootstrap.py` clusters every *named* competitor through the app's **canonical
+matcher** — the sibling repo's `pnpm cluster-rows`, the very matcher
+`reconcile-identities` uses — and writes a draft `manifest.py`. It clusters the
+archive's own rows (not the live workspace) so every cluster is keyed by
+`(series-slug, sail)` directly; the app mints fresh competitor ids on import, so
+the live ids can't be mapped back to a slug after the fact. **Needs the sibling
+app repo at `../sailscoring`** (and `pnpm`) for the matcher.
+
+Then **curate by hand**: merge the nickname/typo splits the matcher leaves as
+review suggestions (commented at the top of the draft), split over-merged
+namesakes, fix names ([IDENTITY-AUDIT.md](IDENTITY-AUDIT.md) catalogues the source
+issues), assign slugs. Each `C(...)` is one competitor; its `rows` are the
+`(series-slug, sail)` pairs it appears under. The slug is the stable key and the
+public-URL handle — mint it once, never change it. The 149 blank-name rows are
+excluded from the draft (a sail-only entry can't anchor a person); recover or
+exclude them at source.
+
+The curated manifest is applied out-of-band in the app via
+`pnpm reconcile-identities <workspace> --manifest <file>` — the `.sailscoring`
+format stays identity-free and portable.
 
 ## Licensing
 

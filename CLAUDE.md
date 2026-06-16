@@ -35,10 +35,15 @@ Keep the **status tracker table in README.md** up to date as you go.
 python3 build.py validate    # re-score every fleet, diff against the published Nett
 python3 build.py             # write series/<out>.sailscoring
 python3 build.py adopt <live-export.sailscoring>   # pin a live seriesId, then rebuild
+python3 audit.py             # identity data-quality audit -> IDENTITY-AUDIT.md
+python3 bootstrap.py         # draft the competitor-identity manifest.py (#218)
 ```
 
-No dependencies — plain Python 3 standard library. No build step, no tests beyond
-`validate`.
+The build pipeline (`build.py`, `engine.py`, `audit.py`) is plain Python 3 stdlib
+— no dependencies, no build step, no tests beyond `validate`. **`bootstrap.py` is
+the one exception:** it shells out to the sibling app repo's matcher
+(`pnpm --silent --dir ../sailscoring cluster-rows`), so it needs `../sailscoring`
+and `pnpm`. That keeps one canonical matcher rather than a Python fork of it.
 
 ## Rules that are easy to get wrong
 
