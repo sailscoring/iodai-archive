@@ -126,6 +126,7 @@ series/                   generated .sailscoring files (import these)
 adopted-series-ids.json   live seriesId per series, once imported (see "adopt")
 audit.py                  identity data-quality audit -> IDENTITY-AUDIT.md
 bootstrap.py              generate a draft manifest.py from the app's matcher
+compile.py                compile curated manifest.py -> manifest.json (for the app)
 identity_manifest.py      the C(...) manifest record + slug minting + serialiser
 manifest.py               the curated competitor-identity golden record (#218)
 ```
@@ -232,9 +233,25 @@ public-URL handle — mint it once, never change it. The 149 blank-name rows are
 excluded from the draft (a sail-only entry can't anchor a person); recover or
 exclude them at source.
 
-The curated manifest is applied out-of-band in the app via
-`pnpm reconcile-identities <workspace> --manifest <file>` — the `.sailscoring`
-format stays identity-free and portable.
+**Compile, then apply.** `manifest.py` is readable (`(series-slug, sail)` rows),
+but the app needs each series' *live* seriesId — which it mints fresh on import,
+so the archive can't derive it. Dump them from the running app and compile:
+
+```
+sailscoring series list --json > series-dump.json   # against the IODAI workspace
+python3 compile.py series-dump.json                  # writes manifest.json
+```
+
+`compile.py` joins the dump's series *names* to out-slugs (the built files carry
+both) to fill the slug→id map, and emits the `manifest.json` the app consumes. It
+errors loudly if any referenced series has no live id rather than emit a partial
+map. Then apply it out-of-band — the `.sailscoring` format stays identity-free
+and portable:
+
+```
+pnpm reconcile-identities <workspace> --manifest manifest.json            # dry run: validate + preview
+pnpm reconcile-identities <workspace> --manifest manifest.json --apply    # write identities + links
+```
 
 ## Licensing
 

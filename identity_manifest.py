@@ -110,6 +110,43 @@ def _render_entry(c):
     return line
 
 
+MANIFEST_VERSION = 1
+
+
+def compile_manifest(identities, out_to_id):
+    """Compile curated ``C`` entries into the JSON the app's
+    ``reconcile-identities --manifest`` consumes.
+
+    ``out_to_id`` maps each series out-slug to its *live* seriesId in the target
+    workspace. The result embeds a ``series`` slug->id map (only the slugs the
+    manifest actually references) so member rows stay readable while the app
+    stays workspace-agnostic. Raises ValueError listing every out-slug that has
+    no live id — a partial map would silently drop those members.
+    """
+    referenced = sorted({slug for c in identities for slug, _ in c.rows})
+    missing = [slug for slug in referenced if slug not in out_to_id]
+    if missing:
+        raise ValueError(
+            'no live seriesId for ' + str(len(missing)) + ' referenced series:\n  '
+            + '\n  '.join(missing)
+        )
+
+    series_map = {slug: out_to_id[slug] for slug in referenced}
+    out_identities = []
+    for c in identities:
+        entry = {'slug': c.slug, 'name': c.name,
+                 'members': [[slug, sail] for slug, sail in c.rows]}
+        if c.club:
+            entry['club'] = c.club
+        if c.nat:
+            entry['nationality'] = c.nat
+        if c.note:
+            entry['note'] = c.note
+        out_identities.append(entry)
+
+    return {'version': MANIFEST_VERSION, 'series': series_map, 'identities': out_identities}
+
+
 def emit_manifest_py(identities, *, header_notes=None):
     """Render a list of ``C`` to ``manifest.py`` source. Entries are sorted by
     name then slug for a stable, reviewable diff."""
