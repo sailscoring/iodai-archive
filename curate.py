@@ -236,6 +236,7 @@ def block_single_token(ids):
 # Same sailor split across hulls by a spelling/casing/mojibake variant.
 CROSS_HULL_MERGES = [
     ('max-oa-tmhare-7bva', ['max-o-hare-2q67', 'max-o-hare-ayf8'], "Max O'Hare", 'spelling and mojibake variants folded'),
+    ('ben-o-hare-h4v9', ['ben-o-hare-bcyk'], "Ben O'Hare", 'boat change 1238 to 1473; apostrophe and casing folded'),
 ]
 CROSS_HULL_RENAMES = {
     'nicole-rose-quinn-6sdp': 'Nicole Quinn',     # recorded with and without middle name

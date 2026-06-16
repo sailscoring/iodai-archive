@@ -11,66 +11,6 @@ a sailor has been reconciled. Edit names freely; the slug stays put.
 """
 from identity_manifest import C
 
-# Review suggestions — candidate merges the matcher left for a human
-# to adjudicate (56). Merge into one C(...) if the same
-# sailor; leave split if genuinely different people:
-#   ? "Eoghan O Regan" (877, -) ~ "Eoghan O REGAN" (1441, RCYC)
-#   ? "Rory COLLINS" (960, GBSC) ~ "Rory Collins" (1333, Galway Bay Sailing Club)
-#   ? "George O'Keeffe" (1340, RCYC) ~ "George O'Keeffe" (150, MBSC & RCYC)
-#   ? "Darragh KELLY" (1342, SDC/HYC) ~ "Darragh Kelly" (1238X, Sutton Dinghy Club)
-#   ? "Saoirse Kelly" (1178X, Sutton Dinghy Club) ~ "Saoirse KELLY" (1173, SDC)
-#   ? "Robert Dickson" (1270, LRYC) ~ "Robert Dickson" (1355, HYC)
-#   ? "Jack Ryan" (1113, LRYC) ~ "Jack Ryan" (1700, MBSC / RCYC)
-#   ? "Maisie RYAN" (1346, HYC) ~ "Maisie RYAN" (600, Howth Yacht Club)
-#   ? "Iseult Kneafsey" (779, SSC) ~ "Iseult Kneafsey" (1081, National YC)
-#   ? "Neil Staunton" (638, SSC) ~ "Neil Staunton" (1275, Skerries SC)
-#   ? "Oskar Cahill" (1282, -) ~ "Oskar Cahill" (312, National YC)
-#   ? "Oskar Cahill" (1282, -) ~ "Oskar Cahill" (905, NYC)
-#   ? "Oskar Cahill" (312, National YC) ~ "Oskar Cahill" (905, NYC)
-#   ? "Elysia CAHILL" (1359, HYC) ~ "Elysia Cahill" (1474, Howth Yacht Club)
-#   ? "Amy CARROLL" (916, -) ~ "Amy CARROLL" (1484, KYC)
-#   ? "Michael CARROLL" (1190, -) ~ "Michael Carroll" (1531, Kinsale Yacht Club)
-#   ? "Cormac Furey" (876, GBSC) ~ "Cormac Furey" (4864, Galway Bay SC)
-#   ? "Rhona Furey" (4330, -) ~ "Rhona FUREY" (0, GBSC)
-#   ? "Cian BUCKLEY" (1392, MYC) ~ "Cian Buckley" (795, Malahide YC)
-#   ? "D.J. MCGOVERN" (1303, MYC) ~ "DJ McGovern" (72, Malahide YC)
-#   ? "Sally BELL" (1384, RNIYC) ~ "Sally Bell" (804, Royal North of Ireland YC)
-#   ? "Harry Bell" (1556, HYC) ~ "Harry Bell" (801, Royal North of Ireland YC)
-#   ? "Peter FAGAN" (1081, NYC) ~ "Peter Fagan" (1535, Skerries Sailing Club)
-#   ? "Isabella IRWIN" (833, GBSC) ~ "Isabella Irwin" (1289, Galway Bay Sailing Club)
-#   ? "Nicola Ferguson" (1456, National Yacht Club) ~ "Nicola FERGUSON" (1274, RIYC)
-#   ? "Kate Fahy" (1511, Royal St. George Yacht Club) ~ "Kate FAHY" (945, Nyc)
-#   ? "Moss Simington" (1569, RStGYC) ~ "Moss SIMINGTON" (761, Rsgyc)
-#   ? "Ben McMullin" (1194, Lough Ree Yacht Club) ~ "Ben MCMULLIN" (IRL 1407, LRYC)
-#   ? "Finn Cleary" (1453, RIYC) ~ "Finn CLEARY" (957, Riyc & Lryc)
-#   ? "Elodie Edwards" (6452, Other) ~ "Elodie EDWARDS" (5263, Port Dinorwic)
-#   ? "Caoilinn McDonnell" (1016, Other) ~ "Caoilinn Geraghty- McDonnell" (1646, Royal St. George Yacht Club)
-#   ? "Charlie Keating" (1617, HYC) ~ "Charlie Keating" (700, Howth Yacht Club)
-#   ? "Luke Bentley Curran" (1370, TBSC) ~ "Luke Bentley Curran" (337, Tralee Bay Sailing Club)
-#   ? "Ethan Hunt" (1598, Royal St. George Yacht Club) ~ "Ethan Hunt" (1235, Lough Ree Yacht Club)
-#   ? "Eoghan Keogh" (177, LDYC) ~ "Eoghan Keogh" (644, Lough Derg Yacht Club)
-#   ? "Conor Cronin" (1634, Royal St. George Yacht Club) ~ "Conor Cronin" (902, Royal Cork Yacht Club)
-#   ? "Maddie LEARY" (5792, Cbyc/mumbles) ~ "Maddie Leary" (6360, Other)
-#   ? "Bettine HARRIS" (5704, BCYC) ~ "Bettine HARRIS" (GBR 6231, -)
-#   ? "Conor Cunning" (1, Malahide YC) ~ "Conor CUNNING" (1325, MYC)
-#   ? "Robert CLERY" (1470, HYC) ~ "Robert CLERY" (1012, Howth)
-#   ? "Jamie MALCOLM" (6056, Hyc) ~ "Jamie Malcolm" (696, Howth Yacht Club)
-#   ? "Jamie Wynne" (1533, MYC) ~ "Jamie Wynne" (1020, Malahide Yacht Club)
-#   ? "Arran Holman" (5608, Hollowell SC) ~ "Arran HOLMAN" (GBR5999, Hollowell)
-#   ? "Daniel Whiteley" (5414, PDSC) ~ "Daniel Whiteley" (6075, Port Dinorwice YC)
-#   ? "Jenny Cropley" (5817, Warsash SC) ~ "Jenny CROPLEY" (6077, Rlym YC)
-#   ? "Tom Joesbury" (5642, Budworth/Gresford SC) ~ "Tom JOESBURY" (GBR5905, Budworth SC)
-#   ? "Max Clapp" (5579, Royal Southern YC) ~ "Max CLAPP" (6155, RSYC)
-#   ? "Robbie King" (5547, RStGYC) ~ "Robbie KING" (6149, Warsash/RLYC)
-#   ? "Charlotte BOYLE" (6139, Rlyc) ~ "Charlotte BOYLE" (GBR 6273, RIYC)
-#   ? "Vita HEATHCOTE" (6214, RLymYC) ~ "Vita HEATHCOTE" (GBR 6271, RIYMYC)
-#   ? "Henry HEATHCOTE" (5501, Lym) ~ "Henry Heathcote" (6519, RLymYC)
-#   ? "Alexandra SCHONROCK" (5909, Parktown YC) ~ "Alexandra SCHONROCK" (GBR 6230, -)
-#   ? "Keelin GREENE" (5062, PSC) ~ "Keelin Greene" (6259, Pwllheli SC)
-#   ? "Amelia GREENE" (5242, PSC) ~ "Amelia Greene" (6260, Other)
-#   ? "Freddie Howarth" (5964, Poole YC) ~ "Freddie Howarth" (6323, Other)
-#   ? "Anna Morris" (2669, Other) ~ "Anna Morris" (6154, PSC)
-
 IDENTITIES = [
     C(slug="aaron-hider-ujsc", name="Aaron Hider", club="CISC",
       rows=[("iodai-nationals-2018-main-fleet", "8703")]),
@@ -580,12 +520,11 @@ IDENTITIES = [
       rows=[("iodai-nationals-2014-regatta", "IRL 1407")]),
     C(slug="ben-mueller-umex", name="Ben Mueller", club="RLymYC",
       rows=[("iodai-nationals-2015-main-fleet", "6298"), ("iodai-nationals-2016-main-fleet", "6298")]),
-    C(slug="ben-o-hare-h4v9", name="Ben O HARE", club="RCYC",
-      rows=[("iodai-connachts-2013-main-fleet", "1238"), ("iodai-connachts-2014-main-fleet", "1238"), ("iodai-leinsters-2014-main-fleet", "IRL 1238"), ("iodai-munsters-2013-main-fleet", "1238"), ("iodai-munsters-2014-main-fleet", "1238"), ("iodai-nationals-2014-main-fleet", "IRL 1238"), ("iodai-ulsters-2013-regatta", "1238"), ("iodai-ulsters-2014-main-fleet", "1238")]),
     C(slug="ben-o-shaughnessy-rpj2", name="Ben O Shaughnessy", club="RCYC",
       rows=[("iodai-connachts-2017-main-fleet", "1463"), ("iodai-connachts-2018-main-fleet", "1614"), ("iodai-connachts-2019-main-fleet", "1614"), ("iodai-leinsters-2017-main-fleet", "1463"), ("iodai-leinsters-2018-main-fleet", "1614"), ("iodai-leinsters-2019-main-fleet", "1614"), ("iodai-munsters-2016-main-fleet", "1463"), ("iodai-munsters-2017-main-fleet", "1463"), ("iodai-munsters-2018-main-fleet", "1614"), ("iodai-nationals-2017-main-fleet", "1463"), ("iodai-nationals-2018-main-fleet", "1614"), ("iodai-nationals-2019-main-fleet", "1614"), ("iodai-nationals-2020-main-fleet", "1635"), ("iodai-ulsters-2018-main-fleet", "1463"), ("iodai-ulsters-2019-main-fleet", "1614")]),
-    C(slug="ben-o-hare-bcyk", name="Ben O'Hare", club="Royal Cork Yacht Club",
-      rows=[("iodai-connachts-2015-main-fleet", "1473"), ("iodai-leinsters-2015-main-fleet", "1473"), ("iodai-munsters-2015-main-fleet", "1473"), ("iodai-nationals-2015-main-fleet", "1473"), ("iodai-ulsters-2015-main-fleet", "1473")]),
+    C(slug="ben-o-hare-h4v9", name="Ben O'Hare", club="RCYC",
+      rows=[("iodai-connachts-2013-main-fleet", "1238"), ("iodai-connachts-2014-main-fleet", "1238"), ("iodai-connachts-2015-main-fleet", "1473"), ("iodai-leinsters-2014-main-fleet", "IRL 1238"), ("iodai-leinsters-2015-main-fleet", "1473"), ("iodai-munsters-2013-main-fleet", "1238"), ("iodai-munsters-2014-main-fleet", "1238"), ("iodai-munsters-2015-main-fleet", "1473"), ("iodai-nationals-2014-main-fleet", "IRL 1238"), ("iodai-nationals-2015-main-fleet", "1473"), ("iodai-ulsters-2013-regatta", "1238"), ("iodai-ulsters-2014-main-fleet", "1238"), ("iodai-ulsters-2015-main-fleet", "1473")],
+      note="boat change 1238 to 1473; apostrophe and casing folded"),
     C(slug="ben-smyth-cmqy", name="Ben Smyth", club="RSGYC",
       rows=[("iodai-connachts-2023-regatta-racing", "646"), ("iodai-leinsters-2024-main-fleet", "1648"), ("iodai-leinsters-2025-main-fleet", "1648"), ("iodai-munsters-2023-regatta-racing", "3383"), ("iodai-munsters-2024-main-fleet", "1648"), ("iodai-munsters-2025-main-fleet", "1648"), ("iodai-munsters-2026-main-fleet", "1701"), ("iodai-nationals-2023-regatta-racing", "2964"), ("iodai-nationals-2024-main-fleet", "1648"), ("iodai-nationals-2025-main-fleet", "1648"), ("iodai-sprint-series-2025", "1648"), ("iodai-sprint-series-2026", "1648"), ("iodai-ulsters-2022-regatta-coached", "1276"), ("iodai-ulsters-2023-regatta-racing", "3383"), ("iodai-ulsters-2024-main-fleet", "646"), ("iodai-ulsters-2025-main-fleet", "1648"), ("iodai-ulsters-2026-main-fleet", "1701"), ("irish-sailing-youth-nationals-2026-optimist", "1648")]),
     C(slug="ben-walsh-2eu8", name="Ben Walsh", club="SSC",
