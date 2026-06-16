@@ -113,29 +113,39 @@ def _render_entry(c):
 MANIFEST_VERSION = 1
 
 
-def compile_manifest(identities, out_to_id):
+def compile_manifest(identities, out_to_id, *, allow_missing=False):
     """Compile curated ``C`` entries into the JSON the app's
     ``reconcile-identities --manifest`` consumes.
 
     ``out_to_id`` maps each series out-slug to its *live* seriesId in the target
     workspace. The result embeds a ``series`` slug->id map (only the slugs the
     manifest actually references) so member rows stay readable while the app
-    stays workspace-agnostic. Raises ValueError listing every out-slug that has
-    no live id — a partial map would silently drop those members.
+    stays workspace-agnostic.
+
+    By default, raises ValueError listing every referenced out-slug with no live
+    id — a partial map would silently drop those members, and a missing id is
+    usually a name mismatch or a not-yet-imported series worth surfacing. With
+    ``allow_missing`` (the workspace holds only a subset of the corpus, e.g. the
+    latest events aren't imported yet), members in unresolved series are dropped
+    and identities left empty are omitted; the golden record in manifest.py stays
+    complete and a later re-compile picks them up.
     """
     referenced = sorted({slug for c in identities for slug, _ in c.rows})
     missing = [slug for slug in referenced if slug not in out_to_id]
-    if missing:
+    if missing and not allow_missing:
         raise ValueError(
             'no live seriesId for ' + str(len(missing)) + ' referenced series:\n  '
             + '\n  '.join(missing)
         )
 
-    series_map = {slug: out_to_id[slug] for slug in referenced}
+    series_map = {slug: out_to_id[slug] for slug in referenced if slug in out_to_id}
     out_identities = []
     for c in identities:
+        rows = [(slug, sail) for slug, sail in c.rows if slug in out_to_id]
+        if not rows:
+            continue  # every series this competitor appeared in is unresolved
         entry = {'slug': c.slug, 'name': c.name,
-                 'members': [[slug, sail] for slug, sail in c.rows]}
+                 'members': [[slug, sail] for slug, sail in rows]}
         if c.club:
             entry['club'] = c.club
         if c.nat:

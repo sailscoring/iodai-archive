@@ -7,17 +7,26 @@ them from the running app's CLI and feed the dump in here:
 
     sailscoring series list --json > series-dump.json     # against the IODAI workspace
     python3 compile.py series-dump.json                    # writes manifest.json
+    python3 compile.py series-dump.json --allow-missing    # tolerate not-yet-imported series
 
 The dump maps series *name* -> live id; this script knows out-slug -> name (the
 built series files carry both), so it resolves out-slug -> live id and emits the
 manifest.json the app consumes. Validate the result before applying with a dry
 run: `pnpm reconcile-identities <workspace> --manifest manifest.json`.
+
+By default it fails if any referenced series has no live id (usually a name
+mismatch or a series not yet imported), and points at the closest dump names so
+you can tell which. Pass --allow-missing to compile against the imported subset:
+members in unresolved series are dropped, the golden record in manifest.py stays
+complete, and a later re-compile picks them up once they're imported.
 """
+import difflib
 import glob
 import json
 import os
 import sys
 
+import engine
 from identity_manifest import compile_manifest
 
 OUT = 'manifest.json'
@@ -49,9 +58,23 @@ def name_to_id(dump_path):
     return mapping
 
 
+def diagnose_missing(unresolved_names, live_names):
+    """For each unresolved series, point at the closest name in the dump so a
+    name mismatch (close match exists) is distinguishable from a not-imported
+    series (no close match)."""
+    lines = []
+    for out, name in unresolved_names:
+        close = difflib.get_close_matches(name, live_names, n=1, cutoff=0.6)
+        hint = f'closest in dump: {close[0]!r}' if close else 'no close match — not imported?'
+        lines.append(f'  {out}\n      want: {name!r}\n      {hint}')
+    return '\n'.join(lines)
+
+
 def main(argv):
-    if len(argv) < 2:
-        sys.exit('usage: python3 compile.py <series-dump.json>  '
+    args = [a for a in argv[1:] if not a.startswith('--')]
+    allow_missing = '--allow-missing' in argv
+    if not args:
+        sys.exit('usage: python3 compile.py <series-dump.json> [--allow-missing]  '
                  '(from: sailscoring series list --json)')
     if not os.path.exists('manifest.py'):
         sys.exit('manifest.py not found — run bootstrap.py and curate it first.')
@@ -59,27 +82,38 @@ def main(argv):
     import manifest  # the curated golden record
 
     names = out_to_name()
-    live = name_to_id(argv[1])
+    live = name_to_id(args[0])
+    adopted = engine.load_adopted()  # out -> live id, explicit and rename-proof
 
-    # Resolve out-slug -> live id via the series name. Report names the dump
-    # didn't cover rather than silently producing an incomplete map.
+    # Resolve out-slug -> live id. adopted-series-ids.json wins (an explicit
+    # mapping survives in-app renames); otherwise join on the series name. Series
+    # renamed in the app and not adopted fall through to unresolved.
     out_to_id = {}
     unresolved_names = []
     for out, name in names.items():
-        if name in live:
+        if out in adopted:
+            out_to_id[out] = adopted[out]
+        elif name in live:
             out_to_id[out] = live[name]
         else:
             unresolved_names.append((out, name))
 
-    try:
-        compiled = compile_manifest(manifest.IDENTITIES, out_to_id)
-    except ValueError as e:
-        msg = str(e)
-        if unresolved_names:
-            msg += ('\n\n' + str(len(unresolved_names)) + ' series in the corpus had no '
-                    'match in the dump (name mismatch or not imported); e.g.:\n  '
-                    + '\n  '.join(f'{o}  ->  {n!r}' for o, n in unresolved_names[:10]))
-        sys.exit(msg)
+    # Which unresolved series are actually referenced by the manifest? (Corpus
+    # series no competitor in the manifest appears in don't matter.)
+    referenced = {slug for c in manifest.IDENTITIES for slug, _ in c.rows}
+    missing_referenced = [(o, n) for o, n in unresolved_names if o in referenced]
+
+    if missing_referenced and not allow_missing:
+        sys.exit(
+            f'no live seriesId for {len(missing_referenced)} referenced series '
+            '(renamed in the app, or not yet imported):\n'
+            + diagnose_missing(missing_referenced, list(live.keys()))
+            + '\n\nIf a series was renamed in the app, add its out-slug -> live id to '
+            'adopted-series-ids.json (rename-proof). Otherwise import it, or re-run '
+            'with --allow-missing to compile against the imported subset.'
+        )
+
+    compiled = compile_manifest(manifest.IDENTITIES, out_to_id, allow_missing=allow_missing)
 
     with open(OUT, 'w', encoding='utf-8') as fh:
         json.dump(compiled, fh, ensure_ascii=False, indent=2)
@@ -88,6 +122,12 @@ def main(argv):
     print(f'Wrote {OUT}')
     print(f'  identities:        {len(compiled["identities"])}')
     print(f'  series referenced: {len(compiled["series"])}')
+    if missing_referenced:
+        dropped = len(manifest.IDENTITIES) - len(compiled['identities'])
+        print(f'  series skipped:    {len(missing_referenced)}  (not in dump; --allow-missing)')
+        print(f'  identities dropped:{dropped:>4}  (all their series were skipped)')
+        for o, n in missing_referenced:
+            print(f'      - {o}  ({n})')
     print(f'\nValidate before applying:')
     print(f'  pnpm reconcile-identities <workspace> --manifest {OUT}')
     return 0
