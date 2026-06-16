@@ -185,9 +185,57 @@ def block_mojibake(ids):
     return ids
 
 
+# ── Block: single-token names ─────────────────────────────────────────────────
+# Run-together names that won't match (GeorgeROBINSON), first names recovered
+# from the hull, and one phantom all-DNC registration.
+SINGLE_MERGES = [
+    ('george-robinson-p46f', ['georgerobinson-8ger'], 'George Robinson', 'run-together name folded'),
+    ('jess-tottenham-zcrs', ['jesstottenham-acup'], 'Jess Tottenham', 'run-together home-hull row folded'),
+    ('noah-john-carty-ezta', ['noahjohn-v2ku', 'noahjohn-carty-2ym4'], 'Noah John Carty', 'run-together and compound-name variants folded'),
+    ('allden-carty-pfeu', ['allden-snqe'], 'Allden Carty', 'first-name-only row recovered from hull'),
+    ('amelia-chapman-rnvz', ['amelia-uwzy'], 'Amelia Chapman', 'first-name-only row recovered from hull'),
+    ('finn-cullen-fsvb', ['finn-jd7b'], 'Finn Cullen', 'first-name-only row recovered from hull'),
+    ('indie-crosbie-gvr9', ['indie-4b8d'], 'Indie Crosbie', 'first-name-only row recovered from hull'),
+    ('zita-tempany-wfgc', ['zita-madb'], 'Zita Tempany', 'first-name-only row recovered from hull'),
+    ('jonathan-dempsey-6vz3', ['dempsey-8cfx'], 'Jonathan Dempsey', 'phantom all-DNC registration folded into the competing entry'),
+]
+
+# Run-together names with no twin — just split the tokens.
+SINGLE_RENAMES = {
+    'jasongarland-g6ds': 'Jason Garland',
+    'thomasoleary-7u8u': "Thomas O'Leary",
+}
+
+# Audit false-positives: complete names joined by a non-breaking space (2013
+# Nationals visitors). Collapse to a clean display form.
+NBSP_RENAMES = {
+    'alexandra-schonrock-q5b2': 'Alexandra Schonrock',
+    'alex-king-pcwj': 'Alex King',
+    'arthur-fry-f7x6': 'Arthur Fry',
+    'ellen-main-tk7z': 'Ellen Main',
+    'freya-black-hah8': 'Freya Black',
+    'hannah-roberts-straw-5qv6': 'Hannah Roberts-Straw',
+    'hannah-tucker-k9vz': 'Hannah Tucker',
+    'haydn-sewell-84vu': 'Haydn Sewell',
+    'jamie-cook-k88k': 'Jamie Cook',
+    'rhys-lewis-kdg9': 'Rhys Lewis',
+    'ryan-bush-jgs5': 'Ryan Bush',
+    'vita-heathcote-qmsx': 'Vita Heathcote',
+}
+
+
+def block_single_token(ids):
+    for into, froms, name, note in SINGLE_MERGES:
+        ids = merge(ids, into, froms, name=name, note=note)
+    for slug, name in {**SINGLE_RENAMES, **NBSP_RENAMES}.items():
+        ids = rename(ids, slug, name=name)
+    return ids
+
+
 BLOCKS = {
     'merges': block_merges,
     'mojibake': block_mojibake,
+    'single-token': block_single_token,
 }
 
 
