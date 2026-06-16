@@ -188,6 +188,13 @@ reproduced from the source (un-averaged ties, whole-number penalties, wrong
 DNC/DNF bases). These are flagged `suspect=[...]` in the config, tolerated by
 `validate`, and collected in [SUSPECTS.md](SUSPECTS.md) for manual audit.
 
+Separately, `python3 audit.py` reports **name / cross-series-identity**
+data-quality issues in the built files — blank names, mojibake, single-token
+names, and sail-number "loan" candidates — into [IDENTITY-AUDIT.md](IDENTITY-AUDIT.md).
+These muddle a sailor's recurring identity once imported (sailscoring #218); fix
+them at source here and re-import. A stopgap capture of the ad-hoc audits — the
+production, DB-side, cross-class version lives with `reconcile-identities` in the app.
+
 All ids are deterministic (UUIDv5 of a stable key), so rebuilding is byte-stable
 — re-running after more races publish changes only the new race data, never ids.
 
