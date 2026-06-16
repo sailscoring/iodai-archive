@@ -1,0 +1,181 @@
+#!/usr/bin/env python3
+"""Generate a namesake-review artifact from the curated manifest (sailscoring #218).
+
+Lists every group of competitors that share (or nearly share) a name but are
+left as separate identities — the matcher's weak name-only "review suggestions",
+plus any exact-name pairs that curation surfaced. For each it dumps the evidence
+a human needs to decide MERGE vs KEEP: club, sails, years, fleets, every row.
+
+The suggestions are recomputed by re-running the app's matcher over the corpus
+(via `pnpm cluster-rows`, like bootstrap.py), then mapped onto the *current*
+manifest entries, so pairs already merged during curation drop out automatically.
+
+    python3 review.py            # write NAMESAKE-REVIEW.md
+
+Needs the sibling app repo at ../sailscoring. Read-only on the manifest.
+"""
+import re
+import sys
+from collections import defaultdict
+
+import bootstrap
+import manifest
+
+OUT = 'NAMESAKE-REVIEW.md'
+
+
+def fold(name):
+    return ' '.join(re.sub(r'[^a-z ]', '', name.lower()).split())
+
+
+def year_of(out):
+    m = re.search(r'(19|20)\d{2}', out)
+    return m.group(0) if m else '????'
+
+
+class UF:
+    def __init__(self): self.p = {}
+    def find(self, x):
+        self.p.setdefault(x, x)
+        while self.p[x] != x:
+            self.p[x] = self.p[self.p[x]]
+            x = self.p[x]
+        return x
+    def union(self, a, b):
+        self.p[self.find(a)] = self.find(b)
+
+
+def build_edges():
+    """(set of slug-pairs to review). Sources: the matcher's suggestions, and
+    exact-name collisions among current entries."""
+    ids = manifest.IDENTITIES
+    by_slug = {c.slug: c for c in ids}
+    row_to_slug = {}
+    for c in ids:
+        for o, s in c.rows:
+            row_to_slug[(o, s)] = c.slug
+
+    edges = set()
+
+    # 1. Matcher suggestions, mapped onto current entries.
+    rows, _ = bootstrap.load_rows()
+    result = bootstrap.cluster(rows)
+    clusters = result['clusters']
+
+    def cluster_slug(ci):
+        # any member row -> its current manifest entry
+        for cid in clusters[ci]['competitorIds']:
+            r = rows[int(cid)]
+            slug = row_to_slug.get((r['out'], r['sail']))
+            if slug:
+                return slug
+        return None
+
+    for sug in result.get('suggestions', []):
+        a, b = cluster_slug(sug['a']), cluster_slug(sug['b'])
+        if a and b and a != b:
+            edges.add(frozenset((a, b)))
+
+    # 2. Exact-name collisions among current entries (catches pairs the matcher
+    #    never saw as same-name, e.g. ones mojibake had split at matcher time).
+    by_name = defaultdict(list)
+    for c in ids:
+        by_name[fold(c.name)].append(c.slug)
+    for slugs in by_name.values():
+        for i in range(len(slugs)):
+            for j in range(i + 1, len(slugs)):
+                edges.add(frozenset((slugs[i], slugs[j])))
+
+    return edges, by_slug
+
+
+def classify(group):
+    """Heuristic bucket for a group of entries."""
+    clubs = {re.sub(r'[^a-z]', '', (c.club or '').lower()) for c in group if c.club}
+    sail_sets = [{re.sub(r'[^A-Z0-9]', '', s.upper()) for _, s in c.rows} for c in group]
+    shared_sail = any(sail_sets[i] & sail_sets[j]
+                      for i in range(len(group)) for j in range(i + 1, len(group)))
+    missing_club = any(not c.club for c in group)
+    if len(clubs) > 1:
+        return 'likely-namesake', 'different clubs'
+    if shared_sail:
+        return 'likely-same', 'same club and a shared sail number'
+    if missing_club:
+        return 'uncertain', 'one side has no club recorded'
+    return 'judgment', 'same club, different sail numbers'
+
+
+def entry_block(c):
+    years = sorted({year_of(o) for o, _ in c.rows})
+    span = years[0] if len(years) == 1 else f'{years[0]}–{years[-1]}'
+    sails = sorted({s for _, s in c.rows})
+    L = [f'- **`{c.slug}`** — {c.name!r}',
+         f'    - club: {c.club or "(none)"} · {len(c.rows)} rows · {span} · sails {sails}']
+    rows = sorted(c.rows)
+    L.append('    - rows: ' + ', '.join(f'{o} `{s}`' for o, s in rows))
+    return '\n'.join(L)
+
+
+BUCKETS = [
+    ('likely-same', 'Likely the same sailor — same club + a shared sail number'),
+    ('judgment', 'Judgment calls — same club, different sail numbers'),
+    ('uncertain', 'Uncertain — a club is missing on one side'),
+    ('likely-namesake', 'Likely genuine namesakes — different clubs'),
+]
+
+
+def main(argv):
+    edges, by_slug = build_edges()
+    uf = UF()
+    for e in edges:
+        a, b = tuple(e)
+        uf.union(a, b)
+    comps = defaultdict(set)
+    for e in edges:
+        for s in e:
+            comps[uf.find(s)].add(s)
+    groups = [[by_slug[s] for s in slugs] for slugs in comps.values()]
+
+    bucketed = defaultdict(list)
+    for g in groups:
+        g.sort(key=lambda c: -len(c.rows))
+        bucketed[classify(g)[0]].append(g)
+
+    L = ['# Namesake review — same/similar names left split in the manifest (#218)',
+         '',
+         'Generated by `python3 review.py`. Each group is competitors flagged as',
+         'possibly one sailor but kept separate for want of corroboration. Decide',
+         'each: **MERGE** (note the surviving slug) or **KEEP**. Pairs already',
+         'merged during curation are gone. Heuristic only — the data often can’t',
+         'separate a boat-change from a namesake.', '',
+         '## Summary', '',
+         f'- {len(groups)} groups, {sum(len(g) for g in groups)} entries']
+    for key, _ in BUCKETS:
+        L.append(f'- {key}: {len(bucketed[key])}')
+    L.append('')
+
+    n = 0
+    for key, title in BUCKETS:
+        gs = sorted(bucketed[key], key=lambda g: fold(g[0].name))
+        if not gs:
+            continue
+        L.append(f'## {title}')
+        L.append('')
+        for g in gs:
+            n += 1
+            _, why = classify(g)
+            L.append(f'### {n}. {g[0].name!r} — _{why}_')
+            for c in g:
+                L.append(entry_block(c))
+            L.append('')
+            L.append('- **Verdict:** ☐ MERGE into `____`  ☐ KEEP SEPARATE  ☐ unsure')
+            L.append('')
+    open(OUT, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
+    print(f'Wrote {OUT}: {len(groups)} groups')
+    for key, _ in BUCKETS:
+        print(f'  {key:16} {len(bucketed[key])}')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv))
