@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
-"""Generate a namesake-review artifact from the curated manifest (sailscoring #218).
+"""Interactive namesake review for the curated manifest (sailscoring #218).
 
-Lists every group of competitors that share (or nearly share) a name but are
-left as separate identities — the matcher's weak name-only "review suggestions",
-plus any exact-name pairs that curation surfaced. For each it dumps the evidence
-a human needs to decide MERGE vs KEEP: club, sails, years, fleets, every row.
+Walks you through every group of competitors that share (or nearly share) a name
+but are left as separate identities — the matcher's weak name-only suggestions
+plus exact-name collisions the curation surfaced — and records a 1/2/3 verdict
+for each. Resumable: progress is saved after every answer.
 
-The suggestions are recomputed by re-running the app's matcher over the corpus
-(via `pnpm cluster-rows`, like bootstrap.py), then mapped onto the *current*
-manifest entries, so pairs already merged during curation drop out automatically.
+    python3 review.py            # review (resumes where you left off)
+    python3 review.py --refresh  # rebuild the candidate groups from the manifest
+    python3 review.py --md       # also write NAMESAKE-REVIEW.md (static copy)
+    python3 review.py --apply     # fold the MERGE verdicts into manifest.py
 
-    python3 review.py            # write NAMESAKE-REVIEW.md
-
-Needs the sibling app repo at ../sailscoring. Read-only on the manifest.
+Building the groups needs the sibling app repo at ../sailscoring (the matcher).
+Reviewing and applying do not.
 """
+import json
+import os
 import re
 import sys
 from collections import defaultdict
 
-import bootstrap
 import manifest
 
-OUT = 'NAMESAKE-REVIEW.md'
+GROUPS = 'namesake-groups.json'      # cached candidate groups (display data)
+VERDICTS = 'namesake-verdicts.json'  # your decisions
+MD = 'NAMESAKE-REVIEW.md'
 
 
 def fold(name):
@@ -33,40 +36,28 @@ def year_of(out):
     return m.group(0) if m else '????'
 
 
-class UF:
-    def __init__(self): self.p = {}
-    def find(self, x):
-        self.p.setdefault(x, x)
-        while self.p[x] != x:
-            self.p[x] = self.p[self.p[x]]
-            x = self.p[x]
-        return x
-    def union(self, a, b):
-        self.p[self.find(a)] = self.find(b)
+def _span(rows):
+    years = sorted({year_of(o) for o, _ in rows})
+    return years[0] if len(years) == 1 else f'{years[0]}–{years[-1]}'
 
 
-def build_edges():
-    """(set of slug-pairs to review). Sources: the matcher's suggestions, and
-    exact-name collisions among current entries."""
+# ── build candidate groups (needs the matcher) ────────────────────────────────
+
+def build_groups():
+    import bootstrap
+
     ids = manifest.IDENTITIES
     by_slug = {c.slug: c for c in ids}
-    row_to_slug = {}
-    for c in ids:
-        for o, s in c.rows:
-            row_to_slug[(o, s)] = c.slug
+    row_to_slug = {(o, s): c.slug for c in ids for o, s in c.rows}
 
     edges = set()
-
-    # 1. Matcher suggestions, mapped onto current entries.
     rows, _ = bootstrap.load_rows()
     result = bootstrap.cluster(rows)
     clusters = result['clusters']
 
     def cluster_slug(ci):
-        # any member row -> its current manifest entry
         for cid in clusters[ci]['competitorIds']:
-            r = rows[int(cid)]
-            slug = row_to_slug.get((r['out'], r['sail']))
+            slug = row_to_slug.get((rows[int(cid)]['out'], rows[int(cid)]['sail']))
             if slug:
                 return slug
         return None
@@ -75,9 +66,6 @@ def build_edges():
         a, b = cluster_slug(sug['a']), cluster_slug(sug['b'])
         if a and b and a != b:
             edges.add(frozenset((a, b)))
-
-    # 2. Exact-name collisions among current entries (catches pairs the matcher
-    #    never saw as same-name, e.g. ones mojibake had split at matcher time).
     by_name = defaultdict(list)
     for c in ids:
         by_name[fold(c.name)].append(c.slug)
@@ -86,94 +74,196 @@ def build_edges():
             for j in range(i + 1, len(slugs)):
                 edges.add(frozenset((slugs[i], slugs[j])))
 
-    return edges, by_slug
+    parent = {}
 
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
 
-def classify(group):
-    """Heuristic bucket for a group of entries."""
-    clubs = {re.sub(r'[^a-z]', '', (c.club or '').lower()) for c in group if c.club}
-    sail_sets = [{re.sub(r'[^A-Z0-9]', '', s.upper()) for _, s in c.rows} for c in group]
-    shared_sail = any(sail_sets[i] & sail_sets[j]
-                      for i in range(len(group)) for j in range(i + 1, len(group)))
-    missing_club = any(not c.club for c in group)
-    if len(clubs) > 1:
-        return 'likely-namesake', 'different clubs'
-    if shared_sail:
-        return 'likely-same', 'same club and a shared sail number'
-    if missing_club:
-        return 'uncertain', 'one side has no club recorded'
-    return 'judgment', 'same club, different sail numbers'
-
-
-def entry_block(c):
-    years = sorted({year_of(o) for o, _ in c.rows})
-    span = years[0] if len(years) == 1 else f'{years[0]}–{years[-1]}'
-    sails = sorted({s for _, s in c.rows})
-    L = [f'- **`{c.slug}`** — {c.name!r}',
-         f'    - club: {c.club or "(none)"} · {len(c.rows)} rows · {span} · sails {sails}']
-    rows = sorted(c.rows)
-    L.append('    - rows: ' + ', '.join(f'{o} `{s}`' for o, s in rows))
-    return '\n'.join(L)
-
-
-BUCKETS = [
-    ('likely-same', 'Likely the same sailor — same club + a shared sail number'),
-    ('judgment', 'Judgment calls — same club, different sail numbers'),
-    ('uncertain', 'Uncertain — a club is missing on one side'),
-    ('likely-namesake', 'Likely genuine namesakes — different clubs'),
-]
-
-
-def main(argv):
-    edges, by_slug = build_edges()
-    uf = UF()
     for e in edges:
         a, b = tuple(e)
-        uf.union(a, b)
+        parent[find(a)] = find(b)
     comps = defaultdict(set)
     for e in edges:
         for s in e:
-            comps[uf.find(s)].add(s)
-    groups = [[by_slug[s] for s in slugs] for slugs in comps.values()]
+            comps[find(s)].add(s)
 
-    bucketed = defaultdict(list)
-    for g in groups:
-        g.sort(key=lambda c: -len(c.rows))
-        bucketed[classify(g)[0]].append(g)
+    groups = []
+    for slugs in comps.values():
+        members = sorted((by_slug[s] for s in slugs), key=lambda c: -len(c.rows))
+        clubs = {re.sub(r'[^a-z]', '', (c.club or '').lower()) for c in members if c.club}
+        sails_sets = [{re.sub(r'[^A-Z0-9]', '', s.upper()) for _, s in c.rows} for c in members]
+        shared = any(sails_sets[i] & sails_sets[j]
+                     for i in range(len(members)) for j in range(i + 1, len(members)))
+        if len(clubs) > 1:
+            bucket, why = 'likely-namesake', 'different clubs'
+        elif shared:
+            bucket, why = 'likely-same', 'same club and a shared sail number'
+        elif any(not c.club for c in members):
+            bucket, why = 'uncertain', 'one side has no club recorded'
+        else:
+            bucket, why = 'judgment', 'same club, different sail numbers'
+        groups.append({
+            'key': '|'.join(sorted(slugs)),
+            'name': members[0].name,
+            'bucket': bucket,
+            'why': why,
+            'entries': [{
+                'slug': c.slug, 'name': c.name, 'club': c.club or '',
+                'rows': sorted([o, s] for o, s in c.rows),
+                'sails': sorted({s for _, s in c.rows}),
+                'span': _span(c.rows),
+            } for c in members],
+        })
+    order = {'likely-same': 0, 'judgment': 1, 'uncertain': 2, 'likely-namesake': 3}
+    groups.sort(key=lambda g: (order[g['bucket']], fold(g['name'])))
+    json.dump({'groups': groups}, open(GROUPS, 'w', encoding='utf-8'),
+              ensure_ascii=False, indent=2)
+    return groups
 
-    L = ['# Namesake review — same/similar names left split in the manifest (#218)',
-         '',
-         'Generated by `python3 review.py`. Each group is competitors flagged as',
-         'possibly one sailor but kept separate for want of corroboration. Decide',
-         'each: **MERGE** (note the surviving slug) or **KEEP**. Pairs already',
-         'merged during curation are gone. Heuristic only — the data often can’t',
-         'separate a boat-change from a namesake.', '',
-         '## Summary', '',
-         f'- {len(groups)} groups, {sum(len(g) for g in groups)} entries']
-    for key, _ in BUCKETS:
-        L.append(f'- {key}: {len(bucketed[key])}')
-    L.append('')
 
-    n = 0
-    for key, title in BUCKETS:
-        gs = sorted(bucketed[key], key=lambda g: fold(g[0].name))
-        if not gs:
+def load_groups(refresh):
+    if refresh or not os.path.exists(GROUPS):
+        print('Building candidate groups via the matcher…')
+        return build_groups()
+    return json.load(open(GROUPS, encoding='utf-8'))['groups']
+
+
+def load_verdicts():
+    if os.path.exists(VERDICTS):
+        return json.load(open(VERDICTS, encoding='utf-8'))
+    return {}
+
+
+def save_verdicts(v):
+    json.dump(v, open(VERDICTS, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+
+
+# ── rendering ─────────────────────────────────────────────────────────────────
+
+BUCKET_LABEL = {
+    'likely-same': 'LIKELY SAME (same club + shared sail)',
+    'judgment': 'JUDGMENT (same club, different sail)',
+    'uncertain': 'UNCERTAIN (a club is missing)',
+    'likely-namesake': 'LIKELY NAMESAKE (different clubs)',
+}
+
+
+def show(g, i, total, verdict):
+    print('\n' + '=' * 74)
+    print(f' {i + 1}/{total}   [{BUCKET_LABEL[g["bucket"]]}]')
+    print(f' "{g["name"]}"')
+    print('-' * 74)
+    for n, e in enumerate(g['entries'], 1):
+        print(f' [{n}] {e["slug"]}')
+        print(f'     {e["club"] or "(no club)"} · {len(e["rows"])} rows · {e["span"]} · sails {e["sails"]}')
+        for o, s in e['rows']:
+            print(f'        {o}  {s}')
+    if verdict:
+        d = verdict['decision']
+        extra = f" -> {verdict.get('into')}" if d == 'merge' else ''
+        print(f' (current: {d}{extra})')
+    print('-' * 74)
+
+
+# ── interactive loop ──────────────────────────────────────────────────────────
+
+def review(groups):
+    v = load_verdicts()
+    total = len(groups)
+    decided = sum(1 for g in groups if g['key'] in v)
+    i = next((k for k, g in enumerate(groups) if g['key'] not in v), 0)
+    print(f'{total} groups, {decided} already decided. '
+          '1=merge  2=keep  3=unsure  b=back  q=save&quit')
+    while 0 <= i < total:
+        g = groups[i]
+        show(g, i, total, v.get(g['key']))
+        try:
+            ans = input(' 1=merge 2=keep 3=unsure (b/q) > ').strip().lower()
+        except (EOFError, KeyboardInterrupt):
+            print()
+            break
+        if ans == 'q':
+            break
+        if ans == 'b':
+            i = max(0, i - 1)
             continue
-        L.append(f'## {title}')
+        if ans == '2':
+            v[g['key']] = {'decision': 'keep', 'name': g['name'],
+                           'slugs': [e['slug'] for e in g['entries']]}
+        elif ans == '3':
+            v[g['key']] = {'decision': 'unsure', 'name': g['name'],
+                           'slugs': [e['slug'] for e in g['entries']]}
+        elif ans == '1':
+            into = g['entries'][0]['slug']
+            if len(g['entries']) > 1:
+                pick = input(f'   merge into which? 1-{len(g["entries"])} '
+                             '[1, most rows] > ').strip()
+                if pick.isdigit() and 1 <= int(pick) <= len(g['entries']):
+                    into = g['entries'][int(pick) - 1]['slug']
+            v[g['key']] = {'decision': 'merge', 'into': into, 'name': g['name'],
+                           'slugs': [e['slug'] for e in g['entries']]}
+        else:
+            continue  # unrecognised — re-show same item
+        save_verdicts(v)
+        i += 1
+    save_verdicts(v)
+    counts = defaultdict(int)
+    for g in groups:
+        counts[v.get(g['key'], {}).get('decision', 'undecided')] += 1
+    print('\nSaved.', dict(counts))
+    if i >= total:
+        print('All groups reviewed. Apply with: python3 review.py --apply')
+
+
+# ── apply MERGE verdicts ──────────────────────────────────────────────────────
+
+def apply():
+    import curate
+    from identity_manifest import emit_manifest_py
+
+    v = load_verdicts()
+    ids = list(manifest.IDENTITIES)
+    have = {c.slug for c in ids}
+    applied = 0
+    for rec in v.values():
+        if rec.get('decision') != 'merge':
+            continue
+        into = rec['into']
+        froms = [s for s in rec['slugs'] if s != into and s in have]
+        if into not in have or not froms:
+            continue
+        ids = curate.merge(ids, into, froms,
+                           note='namesake review: confirmed same sailor')
+        applied += 1
+    open('manifest.py', 'w', encoding='utf-8').write(
+        emit_manifest_py(ids, header_notes=curate.load_header()))
+    print(f'Applied {applied} merges -> {len(ids)} identities.')
+    print('Recompile with: python3 compile.py series-dump.json')
+
+
+def write_md(groups):
+    L = ['# Namesake review (static copy) — see `python3 review.py` for the interactive version', '']
+    for g in groups:
+        L.append(f'## "{g["name"]}" — _{g["why"]}_')
+        for e in g['entries']:
+            L.append(f'- `{e["slug"]}` — {e["club"] or "(no club)"} · {len(e["rows"])} rows · {e["span"]} · sails {e["sails"]}')
         L.append('')
-        for g in gs:
-            n += 1
-            _, why = classify(g)
-            L.append(f'### {n}. {g[0].name!r} — _{why}_')
-            for c in g:
-                L.append(entry_block(c))
-            L.append('')
-            L.append('- **Verdict:** ☐ MERGE into `____`  ☐ KEEP SEPARATE  ☐ unsure')
-            L.append('')
-    open(OUT, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
-    print(f'Wrote {OUT}: {len(groups)} groups')
-    for key, _ in BUCKETS:
-        print(f'  {key:16} {len(bucketed[key])}')
+    open(MD, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
+    print(f'Wrote {MD}')
+
+
+def main(argv):
+    if '--apply' in argv:
+        return apply()
+    groups = load_groups('--refresh' in argv)
+    if '--md' in argv:
+        write_md(groups)
+        return 0
+    review(groups)
     return 0
 
 
