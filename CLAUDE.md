@@ -91,6 +91,21 @@ and `pnpm`. That keeps one canonical matcher rather than a Python fork of it.
   re-score Senior and Junior separately (matching how IODAI intends it). The
   Sprint config validates against the combined published basis — see the note in
   `engine.validate`.
+- **Trials** (2015–2020) were IODAI's team-selection events — ranking top sailors
+  to pick the teams representing Ireland internationally. **No trials in 2021**; the
+  **2020 trials were the overall Senior+Junior ranking of the Nationals**, not a
+  separate regatta (so the source is an overall-standings page, not per-race
+  results). See #3.
+- **Trials and the Youth Nationals are one team-selection lineage.** From ~2021 the
+  trials' selection purpose was absorbed into the **Irish Sailing Youth Nationals**
+  (Optimist; not IODAI-run) — for IODAI those are still largely about team
+  selection. Treat the two as a continuous selection thread for the cross-series
+  identity & ranking goal, not as unrelated event types. See #3/#4.
+- **National Training Week (NTW)** is the umbrella event; the **Halloween Cup** (the
+  combined-start Halloween regatta) and the **Crosbie Cup** (NTW final-day racing)
+  are racing *within* it and are historically interlinked — the Crosbie Cup is
+  scored from the combined Halloween-regatta start, which is why the position-based
+  engine can't reconstruct it today. See #1 and the README "Crosbie Cup" note.
 
 Full domain context is in the app repo: `../sailscoring/docs/requirements/iodai-use-case.md`,
 and `../sailscoring/reference/2025-IODAI-Major-Event-SIs-v1.0.pdf` for the SIs.
