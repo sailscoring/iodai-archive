@@ -15,7 +15,7 @@ Structural notes (best effort):
 - The Gold/Silver/Bronze prize division sits in the 'Rating' column this year
   (the 'Divison' column holds Senior/Junior); the engine reads Rating for it.
 """
-from .helpers import main_fleet, solo, SSC, HYC, GBSC, RCYC, RSGYC
+from .helpers import main_fleet, solo, SSC, HYC, GBSC, RCYC, RSGYC, BYC
 
 L = '2022/leinsters/'
 U = '2022/ulsters/'
@@ -84,4 +84,14 @@ SERIES = [
          'Royal St George Yacht Club',
          ['2022-08-11', '2022-08-12', '2022-08-13', '2022-08-14'], nslots=6,
          file=N + 'ONATS2022RC2.html', fleet='Regatta Coached', **RSGYC, event_url='https://iodai.com/optimist-nationals-results/'),
+
+    # --- Irish Sailing Youth Nationals @ Ballyholme YC (Optimist, 21–24 Apr) --
+    # Not IODAI-run; included because the same sailors appear (see y2024/y2026).
+    # Page carries no per-race dates; final results 24 Apr, window approximate.
+    solo('irish-sailing-youth-nationals-2022-optimist',
+         'Irish Sailing Youth Nationals 2022 (Optimist)',
+         'Ballyholme Yacht Club',
+         ['2022-04-21', '2022-04-22', '2022-04-23', '2022-04-24'], nslots=11,
+         file='2022/youth-nationals/IY22OPTIMIST.htm', fleet='Optimist',
+         discards=[(4, 1), (11, 2)], **BYC),
 ]

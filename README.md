@@ -92,10 +92,11 @@ of iodai.com in 2020 shows no 2020 regional results pages. Only the **National
 championship went ahead** (Royal Cork YC, 13–16 Aug) and is sourced — its page
 isn't in the `/Results` index (`provisional-results-nationals-2020-royal-cork-yacht-club`).
 
-Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2024 and 2026
-— not IODAI-run, but IODAI republishes its Optimist results and the same sailors
-appear, so it's useful for the identity work. Years before 2021 remain to be
-worked back through.
+Also sourced: the **Irish Sailing Youth Nationals (Optimist)** for 2022–2026 —
+not IODAI-run, but IODAI republishes its Optimist results and the same sailors
+appear, so it's useful for the identity work. For IODAI it carries the
+team-selection purpose the pre-2021 **Trials** served (#3/#4); no Optimist
+Youth Nationals page earlier than 2022 has been located.
 
 \* **Sail100** (not Sailwave) was used for the 2019 Ulsters — the engine handles
 both (same low-point model). † 2019 Munster Regatta published only an entry list

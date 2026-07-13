@@ -12,7 +12,7 @@ weekend. Not built: the National Training Week Crosbie Cup (combined-start
 positions, see y2025.py note) and the Nationals Regatta Coached page (no results
 table published).
 """
-from .helpers import main_fleet, solo, NYC, LRYC, WHSC, BYC
+from .helpers import main_fleet, solo, NYC, LRYC, WHSC, BYC, HYC
 
 L = '2023/leinsters/'
 U = '2023/ulsters/'
@@ -76,4 +76,13 @@ SERIES = [
          ['2023-08-17', '2023-08-18', '2023-08-19', '2023-08-20'], nslots=10,
          file=N + 'BYC23RR.html', fleet='Regatta Racing',
          discards=[(4, 1), (10, 2)], **BYC, event_url='https://iodai.com/irish-optimist-national-championships-2023/'),
+
+    # --- Irish Sailing Youth Nationals @ Howth YC (Optimist, 13–16 Apr) -------
+    # Not IODAI-run; included because the same sailors appear (see y2024/y2026).
+    solo('irish-sailing-youth-nationals-2023-optimist',
+         'Irish Sailing Youth Nationals 2023 (Optimist)',
+         'Howth Yacht Club',
+         ['2023-04-13', '2023-04-14', '2023-04-15', '2023-04-16'], nslots=10,
+         file='2023/youth-nationals/YNHYC2023Main.html', fleet='Optimist',
+         discards=[(4, 1), (10, 2)], **HYC),
 ]

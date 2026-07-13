@@ -15,7 +15,7 @@ Notes on suspect/edge data (carried as-is, best effort):
 - The Sprint published per-fleet Overall pages (OverallS/OverallJ) in 2025, so
   each fleet validates against its own page (unlike 2026's combined page).
 """
-from .helpers import main_fleet, solo, NYC, LDYC, KYC, LRYC
+from .helpers import main_fleet, solo, NYC, LDYC, KYC, LRYC, RSGYC
 
 L = '2025/leinsters/'
 U = '2025/ulsters/'
@@ -91,6 +91,22 @@ SERIES = [
                'RCYC / MYC / WHSC', ['2025-03-01', '2025-03-22', '2025-04-13'], nslots=14,
                senior=S + '2025SprintOverallS.htm', junior=S + '2025SprintOverallJ.htm',
                discards=[(4, 1), (8, 2), (12, 3)], event_url='https://iodai.com/iodai-sprint-series-2025/'),
+
+    # --- Irish Sailing Youth Nationals @ Royal St. George YC (Optimist) -------
+    # Not IODAI-run; included because the same sailors appear (see y2024/y2026).
+    # Race titles carry exact dates: R1–3 on 24 Apr, R4–5 on 25, R6–8 on 26,
+    # R9–10 on 27 — encoded per-slot below rather than the two-per-day default.
+    dict(
+        solo('irish-sailing-youth-nationals-2025-optimist',
+             'Irish Sailing Youth Nationals 2025 (Optimist)',
+             'Royal St. George Yacht Club',
+             ['2025-04-24', '2025-04-25', '2025-04-26', '2025-04-27'], nslots=10,
+             file='2025/youth-nationals/YouthNationals.htm', fleet='Optimist',
+             discards=[(4, 1), (10, 2)], **RSGYC,
+             event_url='https://iodai.com/2025-irish-sailing-youth-national-championships/'),
+        date=lambda i: (['2025-04-24'] * 3 + ['2025-04-25'] * 2 +
+                        ['2025-04-26'] * 3 + ['2025-04-27'] * 2)[i],
+    ),
 
     # NOTE: National Training Week (Lough Derg) Crosbie Cup is deliberately NOT
     # built. Its published page carries each boat's finishing position from the

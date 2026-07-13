@@ -141,6 +141,14 @@ Event page: <https://iodai.com/iodai-sprint-series-2025/>
 - Sprint (Senior): <https://sailwave.com/results/IODAI/2025SprintOverallS.htm>
 - Sprint (Junior): <https://sailwave.com/results/IODAI/2025SprintOverallJ.htm>
 
+### Irish Sailing Youth Nationals (Optimist)
+Event page: <https://iodai.com/2025-irish-sailing-youth-national-championships/>  
+- Optimist: <https://www.sailwave.com/results/IODAI/YouthNationals.htm>
+
+  The generic `YouthNationals.htm` filename identifies itself in its title as
+  "Irish Sailing Youth Nationals 2025 at Royal St. George Yacht Club"; the race
+  titles carry per-race dates (24–27 Apr 2025).
+
 ## 2024
 
 ### Leinsters
@@ -228,6 +236,12 @@ Event page: <https://iodai.com/irish-optimist-national-championships-2023/>
 - Main (Junior): <https://sailwave.com/results/BYC23MainJ.html>
 - Regatta Racing: <https://sailwave.com/results/BYC23RR.html>
 
+### Irish Sailing Youth Nationals (Optimist)
+- Optimist: <https://www.sailwave.com/results/YNHYC2023Main.html>
+
+  "2023 Irish Sailing Investwise Youth Nationals at Howth Yacht Club
+  13-16 April 2023" per the page header.
+
 ## 2022
 
 ### Leinsters
@@ -261,6 +275,13 @@ Event page: <https://iodai.com/optimist-nationals-results/>
 - Main (Junior): <https://sailwave.com/results/ONATS2022J.html>
 - Regatta Racing: <https://sailwave.com/results/ONATS2022RR.html>
 - Regatta Coached: <https://sailwave.com/results/ONATS2022RC2.html>
+
+### Irish Sailing Youth Nationals (Optimist)
+- Optimist: <https://www.sailwave.com/results/ballyholmyc/I%20Y%2022%20OPTIMIST.htm>
+
+  "Irish Sailing Youth National Championship 2022 at Ballyholme Yacht Club" per
+  the page title; results final 24 Apr 2022. The page carries no per-race dates,
+  so the 21–24 Apr window is approximate (rule 6).
 
 ## 2021
 
