@@ -152,7 +152,9 @@ events/
   __init__.py             aggregates every year into ALL_SERIES
 sources/<year>/<event>/   raw Sailwave HTML, as downloaded
 series/                   generated .sailscoring files (import these)
-adopted-series-ids.json   live seriesId per series, once imported (see "adopt")
+adopted-series-ids.json   pinned live seriesId per series — recorded by "adopt"
+                          after a first in-app import, or minted up-front for
+                          new as-published series (compile.py --mint-missing)
 audit.py                  identity data-quality audit -> IDENTITY-AUDIT.md
 bootstrap.py              generate a draft manifest.py from the app's matcher
 compile.py                compile curated manifest.py -> manifest.json (for the app)

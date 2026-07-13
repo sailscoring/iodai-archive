@@ -8,6 +8,7 @@ them from the running app's CLI and feed the dump in here:
     sailscoring series list --json > series-dump.json     # against the IODAI workspace
     python3 compile.py series-dump.json                    # writes manifest.json
     python3 compile.py series-dump.json --allow-missing    # tolerate not-yet-imported series
+    python3 compile.py series-dump.json --mint-missing     # pin ids for brand-new archive series
 
 The dump maps series *name* -> live id; this script knows out-slug -> name (the
 built series files carry both), so it resolves out-slug -> live id and emits the
@@ -19,11 +20,22 @@ mismatch or a series not yet imported), and points at the closest dump names so
 you can tell which. Pass --allow-missing to compile against the imported subset:
 members in unresolved series are dropped, the golden record in manifest.py stays
 complete, and a later re-compile picks them up once they're imported.
+
+--mint-missing covers the other direction — a series that exists in the archive
+but was *never* in the workspace (ADR-010: the as-published ingest CREATES a
+series from the id we send, so brand-new archive series never appear in a dump
+first). It mints the deterministic id the built .sailscoring already carries
+(det("<out>/series")) and pins it in adopted-series-ids.json, making the id
+committed data; the ingest then creates the series under that id and every
+later dump returns it. Pre-2026 series only: a 2026+ full-fidelity series gets
+its id from the app on first import (then `build.py adopt`), and pre-minting
+one here would pin a lie.
 """
 import difflib
 import glob
 import json
 import os
+import re
 import sys
 
 import engine
@@ -70,11 +82,33 @@ def diagnose_missing(unresolved_names, live_names):
     return '\n'.join(lines)
 
 
+def mint_missing(unresolved):
+    """Pin deterministic ids for pre-2026 series never seen by the workspace
+    (see the module docstring). Returns the newly pinned {out: id} map."""
+    minted = {}
+    for out, _name in unresolved:
+        m = re.search(r'(19|20)\d{2}', out)
+        if not m or int(m.group(0)) >= 2026:
+            print(f'  ! {out}: not pre-2026 — not minting (import + adopt instead)')
+            continue
+        minted[out] = engine.det(f'{out}/series')
+    if minted:
+        pinned = engine.load_adopted()
+        pinned.update(dict(sorted(minted.items())))
+        with open(engine.ADOPT_FILE, 'w', encoding='utf-8') as fh:
+            json.dump(pinned, fh, ensure_ascii=False, indent=2)
+            fh.write('\n')
+        print(f'Minted + pinned {len(minted)} series ids in adopted-series-ids.json:')
+        for out, sid in sorted(minted.items()):
+            print(f'  + {out}  {sid}')
+    return minted
+
+
 def main(argv):
     args = [a for a in argv[1:] if not a.startswith('--')]
     allow_missing = '--allow-missing' in argv
     if not args:
-        sys.exit('usage: python3 compile.py <series-dump.json> [--allow-missing]  '
+        sys.exit('usage: python3 compile.py <series-dump.json> [--allow-missing | --mint-missing]  '
                  '(from: sailscoring series list --json)')
     if not os.path.exists('manifest.py'):
         sys.exit('manifest.py not found — run bootstrap.py and curate it first.')
@@ -97,6 +131,11 @@ def main(argv):
             out_to_id[out] = live[name]
         else:
             unresolved_names.append((out, name))
+
+    if '--mint-missing' in argv and unresolved_names:
+        minted = mint_missing(unresolved_names)
+        out_to_id.update(minted)
+        unresolved_names = [(o, n) for o, n in unresolved_names if o not in minted]
 
     # Which unresolved series are actually referenced by the manifest? (Corpus
     # series no competitor in the manifest appears in don't matter.)

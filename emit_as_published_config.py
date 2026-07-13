@@ -81,6 +81,10 @@ def fleets_for(s):
 def main() -> int:
     manifest = json.load(open('manifest.json'))
     slug_to_id = manifest['series']
+    try:
+        adopted = json.load(open('adopted-series-ids.json'))
+    except FileNotFoundError:
+        adopted = {}
 
     # Pinned public slugs + per-fleet sub-paths, dumped from the production
     # workspace's live publications (sailscoring ADR-010: URL stability is
@@ -103,8 +107,15 @@ def main() -> int:
                 skipped_current += 1
                 continue
             out = s['out']
-            if out not in slug_to_id:
-                print(f'  ! {out}: not in manifest.json series map — skipped', file=sys.stderr)
+            # manifest.json carries the ids of series referenced by the
+            # identity manifest; adopted-series-ids.json is the explicit pin
+            # file — including ids minted for brand-new archive series that
+            # the ingest will create (compile.py --mint-missing).
+            sid = slug_to_id.get(out) or adopted.get(out)
+            if not sid:
+                print(f'  ! {out}: no pinned id (manifest.json / '
+                      f'adopted-series-ids.json) — skipped; mint one with '
+                      f'compile.py --mint-missing', file=sys.stderr)
                 continue
             pin = pins.get(out)
             if not pin:
@@ -133,7 +144,7 @@ def main() -> int:
                               f"'{fleet['subPath']}'", file=sys.stderr)
             entry = {
                 'key': out,
-                'id': slug_to_id[out],
+                'id': sid,
                 'publishedSlug': pin['slug'] if pin else published_slug(out),
                 'name': s['name'],
                 'source': 'sailwave',

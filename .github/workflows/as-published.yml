@@ -23,6 +23,8 @@ on:
       - 'sources/**'
       - 'events/**'
       - 'manifest.json'
+      - 'adopted-series-ids.json'
+      - 'published-slugs.json'
       - 'as-published.config.json'
       - 'emit_as_published_config.py'
       - '.github/workflows/as-published.yml'
