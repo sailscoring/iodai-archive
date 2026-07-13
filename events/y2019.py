@@ -11,7 +11,7 @@ same low-point model, so the engine reconstructs it once the Place/Net/Country
 columns are handled (added to engine.parse_file). The **Munster Regatta** wasn't
 published as a scored table (only an entry list), so it isn't built.
 """
-from .helpers import main_fleet, solo, MYC, SSC, LRYC, HYC
+from .helpers import main_fleet, solo, MYC, SSC, LRYC, HYC, RCYC
 
 L = '2019/leinsters/'
 U = '2019/ulsters/'
@@ -62,4 +62,16 @@ SERIES = [
          'Howth Yacht Club',
          ['2019-08-15', '2019-08-16', '2019-08-17', '2019-08-18'], nslots=10,
          file=N + 'nare19os.html', fleet='Regatta', discards=[(4, 1), (10, 2)], **HYC, event_url='https://iodai.com/results-nationals-2019-howth-yacht-club/'),
+
+    # --- Optimist Trials @ Royal Cork YC (25–28 Apr) ---------------------------
+    # IODAI's team-selection event: one combined scratch fleet. See README
+    # "Trials". Last standalone Trials: no 2020 event (the 2020 trials ranking
+    # was the Nationals' combined Senior+Junior standings — see y2020.py), none
+    # in 2021, and from 2022 the selection role passed to the Irish Sailing
+    # Youth Nationals.
+    solo('iodai-trials-2019', 'IODAI Optimist Trials 2019',
+         'Royal Cork Yacht Club',
+         ['2019-04-25', '2019-04-26', '2019-04-27', '2019-04-28'], nslots=8,
+         file='2019/trials/trials2019.html', fleet='Trials',
+         discards=[(4, 1)], **RCYC),
 ]

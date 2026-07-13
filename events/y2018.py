@@ -6,7 +6,7 @@ Main fleets + a single Regatta fleet each. All Sailwave this year (with assorted
 header spellings the engine now handles). Nationals files are capitalised (Nase/
 Naju/Nare18os).
 """
-from .helpers import main_fleet, solo, HYC, MYC, LDYC, KYC
+from .helpers import main_fleet, solo, HYC, MYC, LDYC, KYC, RSGYC
 
 L = '2018/leinsters/'
 U = '2018/ulsters/'
@@ -57,4 +57,14 @@ SERIES = [
          'Kinsale Yacht Club',
          ['2018-08-16', '2018-08-17', '2018-08-18', '2018-08-19'], nslots=12,
          file=N + 'Nare18os.html', fleet='Regatta', discards=[(4, 1), (12, 2)], **KYC, event_url='https://iodai.com/nationals-2018-kyc-results/'),
+
+    # --- Optimist Trials @ Royal St. George YC (5–8 Apr) -----------------------
+    # IODAI's team-selection event: one combined scratch fleet (the 'Division'
+    # column holds Senior/Junior; the page carries a duplicate empty 'Ranking'
+    # header, handled by parse_file's first-non-empty rule). See README "Trials".
+    solo('iodai-trials-2018', 'IODAI Optimist Trials 2018',
+         'Royal St. George Yacht Club',
+         ['2018-04-05', '2018-04-06', '2018-04-07', '2018-04-08'], nslots=10,
+         file='2018/trials/trials2018.html', fleet='Trials',
+         discards=[(4, 1), (10, 2)], **RSGYC),
 ]

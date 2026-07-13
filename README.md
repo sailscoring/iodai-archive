@@ -37,6 +37,7 @@ IODAI runs ~7 events a season. For each past year we want:
 | **National championship** | 3: Main, Regatta Racing, Regatta Coached | **primary** |
 | **National Training Week** — final-day racing (Crosbie Cup) | 1+ | low |
 | **Sprint Series** (runs from 2024) | 1: Main, Senior + Junior scored separately | low |
+| **IODAI Trials** (2015–2020; team selection, superseded by the Youth Nationals) | 1: single combined fleet | low |
 | **Irish Sailing Youth Nationals** (Optimist; not IODAI-run) | 1 | low |
 
 A "series" here is **one group sharing a finish line** (the app's rule): an event
@@ -48,26 +49,26 @@ Gold/Silver/Bronze is a prize subdivision within each.
 
 ✅ sourced & built · ◻️ not yet sourced · — didn't exist / not held that year
 
-| Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Crosbie Cup | Sprint |
-|-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:-----------:|:------:|
-| 2026 | ◻️ | ✅ | ◻️ | ✅ | ◻️ | ◻️ | ✅ |
-| 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
-| 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | ✅ |
-| 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2020 | — | — | — | — | ✅ | — | — |
-| 2019 | ✅ | ✅* | ✅ | ✅† | ✅ | ◻️ | — |
-| 2018 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2017 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2016 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2012 | — | ✅§ | — | — | — | — | — |
-| 2011‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2010‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
-| 2009‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Trials | Crosbie Cup | Sprint |
+|-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:------:|:-----------:|:------:|
+| 2026 | ◻️ | ✅ | ◻️ | ✅ | ◻️ | — | ◻️ | ✅ |
+| 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | ✅ |
+| 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | ✅ |
+| 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2020 | — | — | — | — | ✅ | ✅¶ | — | — |
+| 2019 | ✅ | ✅* | ✅ | ✅† | ✅ | ✅ | ◻️ | — |
+| 2018 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2017 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2016 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
+| 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2012 | — | ✅§ | — | — | — | — | — | — |
+| 2011‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2010‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2009‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
 
 ‡ **Phase 2 (best-effort).** 2013 and earlier use an older **Sail100** that prints
 final points — positions *and* DNC-type penalties — as bare numbers with no result
@@ -97,6 +98,20 @@ not IODAI-run, but IODAI republishes its Optimist results and the same sailors
 appear, so it's useful for the identity work. For IODAI it carries the
 team-selection purpose the pre-2021 **Trials** served (#3/#4); no Optimist
 Youth Nationals page earlier than 2022 has been located.
+
+**Trials** (`iodai-trials-<year>`): IODAI's team-selection events, 2015–2019
+built as their own event type — one series, one combined scratch fleet ranking
+Senior + Junior together (the pages' Senior/Junior column is informational).
+Modeled separately from the Youth Nationals (different organiser, name and
+slug family) but the two form **one selection lineage** for the identity and
+ranking work: Trials (→2020) → no event in 2021 → Youth Nationals (2022→).
+¶ **2020**: no separate trials regatta was held — the trials ranking was the
+**combined Senior+Junior overall standings of the Nationals** (the
+`naall20os.html` overall page, kept in `sources/2020/nationals/`). Those races
+are already in the workspace as the built 2020 Nationals Main Fleet, and a
+series = one finish-line group, so building a second series from the same
+races would double-count every sailor's appearance in the identity timeline —
+deliberately **not** built as a separate `.sailscoring` file.
 
 \* **Sail100** (not Sailwave) was used for the 2019 Ulsters — the engine handles
 both (same low-point model). † 2019 Munster Regatta published only an entry list

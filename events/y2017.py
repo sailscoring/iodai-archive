@@ -7,7 +7,7 @@ fleet from the pages (2017 discarded later than recent years — nothing until ~
 races). As in 2018 the pages used non-standard tie scoring, so `tie_tolerant` is
 set throughout (RRS A8.1 re-scores a few boats by ±0.5–1; ranks unchanged).
 """
-from .helpers import main_fleet, solo, NYC, KYC, RIYC
+from .helpers import main_fleet, solo, NYC, KYC, RIYC, BYC
 
 L = '2017/leinsters/'
 U = '2017/ulsters/'
@@ -64,4 +64,14 @@ SERIES = [
          ['2017-08-17', '2017-08-18', '2017-08-19', '2017-08-20'], nslots=8,
          file=N + 'nare17os.html', fleet='Regatta', discards=[(5, 1)],
          tie_tolerant=True, **RIYC, event_url='https://iodai.com/nationals-2017-results-riyc/'),
+
+    # --- Optimist Trials @ Ballyholme YC (20–23 Apr) ---------------------------
+    # IODAI's team-selection event: one combined scratch fleet (the 'Division'
+    # column holds Senior/Junior; the page's club header is the typo 'Ckub',
+    # handled in engine.META). See README "Trials".
+    solo('iodai-trials-2017', 'IODAI Optimist Trials 2017',
+         'Ballyholme Yacht Club',
+         ['2017-04-20', '2017-04-21', '2017-04-22', '2017-04-23'], nslots=13,
+         file='2017/trials/trials2017.html', fleet='Trials',
+         discards=[(4, 1), (13, 2)], **BYC),
 ]

@@ -1,0 +1,5095 @@
+{
+  "formatVersion": 6,
+  "seriesId": "a743b40f-e452-5c6c-a2db-1a938ee81092",
+  "snapshotId": "7ef989d6-a8f4-5511-bd9f-6a6327ba57ea",
+  "snapshotHistory": [
+    "7ef989d6-a8f4-5511-bd9f-6a6327ba57ea"
+  ],
+  "exportedAt": "2019-04-28T12:00:00+00:00",
+  "series": {
+    "id": "a743b40f-e452-5c6c-a2db-1a938ee81092",
+    "name": "IODAI Optimist Trials 2019",
+    "venue": "Royal Cork Yacht Club",
+    "startDate": "2019-04-25",
+    "endDate": "2019-04-28",
+    "venueLogoUrl": "https://logos.sailscoring.ie/royal-cork-yc.svg",
+    "eventLogoUrl": "https://logos.sailscoring.ie/iodai.png",
+    "venueUrl": "",
+    "eventUrl": "https://iodai.com/",
+    "discardThresholds": [
+      {
+        "minRaces": 4,
+        "discardCount": 1
+      }
+    ],
+    "dnfScoring": "seriesEntries",
+    "ftpHost": "",
+    "ftpPath": "",
+    "includeJsonExport": true,
+    "enabledCompetitorFields": [
+      "club",
+      "nationality",
+      "gender",
+      "age"
+    ],
+    "primaryPersonLabel": "helm",
+    "subdivisionLabel": "Division",
+    "scoringMode": "scratch"
+  },
+  "fleets": [
+    {
+      "id": "45045064-177c-56e6-9619-db9dd6cfeef8",
+      "name": "Trials",
+      "displayOrder": 0,
+      "scoringSystem": "scratch"
+    }
+  ],
+  "competitors": [
+    {
+      "id": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1627",
+      "name": "James Dwyer Matthews",
+      "club": "RCYC & KYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1622",
+      "name": "Rocco Wright",
+      "club": "HYC & NYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "618ead7b-1e97-5503-a60b-edae333830b3",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1594",
+      "name": "Sam Ledoux",
+      "club": "NYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "a3191443-070b-502d-a651-64e0dd3325c1",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1614",
+      "name": "Ben O Shaughnessy",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1628",
+      "name": "Luke Turvey",
+      "club": "HYC & NYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1565",
+      "name": "Fiachra McDonnell",
+      "club": "NYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1596",
+      "name": "Justin Lucas",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "22a41210-87af-551e-862e-77a18262a9fb",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1593",
+      "name": "Archie Daly",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "b9775d25-5792-59c5-9e1b-394daec01302",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1623",
+      "name": "Johnny Flynn",
+      "club": "HYC & RStGYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1626",
+      "name": "Jessica Riordan",
+      "club": "RStGYC",
+      "gender": "F",
+      "age": 13
+    },
+    {
+      "id": "167959db-8c12-5984-8796-4f0044406cf6",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1621",
+      "name": "Peter Williams",
+      "club": "RStGYC & CHSC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1545",
+      "name": "Trevor Bolger",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1570",
+      "name": "Jamie Venner",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1636",
+      "name": "Eimer McMorrowMorriarty",
+      "club": "TBSC",
+      "gender": "F",
+      "age": 15
+    },
+    {
+      "id": "f84516d2-1f76-5050-9d2f-b23dace03251",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1598",
+      "name": "Clementine van Steenberge",
+      "club": "NYC",
+      "gender": "F",
+      "age": 13
+    },
+    {
+      "id": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1620",
+      "name": "Alana Twomey",
+      "club": "RCYC & CHSC",
+      "gender": "F",
+      "age": 13
+    },
+    {
+      "id": "9522096d-260d-5de2-a9db-e5302c66a562",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1600",
+      "name": "Lauren O' Callaghan",
+      "club": "NYC",
+      "gender": "F",
+      "age": 15
+    },
+    {
+      "id": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1581",
+      "name": "George Pritchard",
+      "club": "MBSC & RCYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "2c6863d4-efea-5783-9a4e-349e761fc310",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1502",
+      "name": "Russell Bolger",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "cce565a6-8e93-5a99-a2bb-076be207211b",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1568",
+      "name": "Sorcha Gannon O'Connor",
+      "club": "HYC",
+      "gender": "F",
+      "age": 13
+    },
+    {
+      "id": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1610",
+      "name": "Anna O'Connor",
+      "club": "RIYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "ae9c26af-4784-5b6b-9077-2073b760141b",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1536",
+      "name": "Killian Reidy",
+      "club": "TBSC & FYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1578",
+      "name": "Fiachra Farrelly",
+      "club": "HYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "40d8b520-1500-50ee-8271-d092740bdadc",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1609",
+      "name": "Grace Fahy",
+      "club": "RStGYC & LDYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1558",
+      "name": "William Walsh",
+      "club": "TBSC & MYC",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1613",
+      "name": "Evan Darby",
+      "club": "HYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "0405651e-9da1-542a-9879-a254d237084d",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1629",
+      "name": "Hugo Crawford",
+      "club": "HYC & NYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1580",
+      "name": "Lucia Cullen",
+      "club": "NYC/RStGYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1576",
+      "name": "Emmet Lucas",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "347e6508-a572-500b-a1d5-65af67a9890d",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1579",
+      "name": "Cillian Twomey",
+      "club": "HYC",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1481",
+      "name": "James Anglim",
+      "club": "MYC & HYC",
+      "gender": "M",
+      "age": 15
+    },
+    {
+      "id": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1504",
+      "name": "Billy Doyle",
+      "club": "TBSC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1585",
+      "name": "Emily Conan",
+      "club": "RStGYC",
+      "gender": "F",
+      "age": 12
+    },
+    {
+      "id": "13d8d361-1532-54de-8151-87909c006c6a",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1604",
+      "name": "Harry Moynan",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1402",
+      "name": "Seth Walker",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1591",
+      "name": "Rachel Flood",
+      "club": "NYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1473",
+      "name": "Matty Keane",
+      "club": "RIYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1542",
+      "name": "Joanna Berry",
+      "club": "MYC",
+      "gender": "F",
+      "age": 13
+    },
+    {
+      "id": "42815da8-e138-5aa2-ab52-391450db7158",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1575",
+      "name": "Christian Ennis",
+      "club": "RIYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1556",
+      "name": "Des Turvey",
+      "club": "HYC",
+      "gender": "M",
+      "age": 11
+    },
+    {
+      "id": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1584",
+      "name": "Andrew Conan",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1602",
+      "name": "Kate Campion",
+      "club": "MYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1617",
+      "name": "Charlie Keating",
+      "club": "HYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1532",
+      "name": "James maher",
+      "club": "RStGYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1423",
+      "name": "Edward Dempsey",
+      "club": "NYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1537",
+      "name": "Ciara O'Regan",
+      "club": "RIYC",
+      "gender": "F",
+      "age": 15
+    },
+    {
+      "id": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1605",
+      "name": "Ella Dempsey",
+      "club": "NYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1546",
+      "name": "Ciara Paul",
+      "club": "MYC",
+      "gender": "F",
+      "age": 14
+    },
+    {
+      "id": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1564",
+      "name": "Liam Duggan",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1509",
+      "name": "Rian Collins",
+      "club": "RCYC",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1588",
+      "name": "Caoilinn McDonnell",
+      "club": "NYC",
+      "gender": "F",
+      "age": 11
+    },
+    {
+      "id": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1530",
+      "name": "Ellen Bruen",
+      "club": "RCYC & MBSC",
+      "gender": "F",
+      "age": 12
+    },
+    {
+      "id": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1625",
+      "name": "Glenda Gallagher",
+      "club": "MYC",
+      "gender": "F",
+      "age": 12
+    },
+    {
+      "id": "837e2978-6f00-5925-be6e-419606b3c189",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1619",
+      "name": "Conor Staunton",
+      "club": "NYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1453",
+      "name": "Oisin Kelly",
+      "club": "SDC & HYC",
+      "gender": "M",
+      "age": 12
+    },
+    {
+      "id": "82215fab-3828-5e48-a98f-3d631eeb6033",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1601",
+      "name": "Ciara McMahon",
+      "club": "HYC",
+      "gender": "F",
+      "age": 12
+    },
+    {
+      "id": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1438",
+      "name": "Rory McMullan",
+      "club": "RIYC",
+      "gender": "M",
+      "age": 13
+    },
+    {
+      "id": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1490",
+      "name": "Ava Ennis",
+      "club": "NYC",
+      "gender": "F",
+      "age": 12
+    },
+    {
+      "id": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1533",
+      "name": "Joseph Hinsley",
+      "club": "SSC",
+      "gender": "M",
+      "age": 14
+    },
+    {
+      "id": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+      "fleetIds": [
+        "45045064-177c-56e6-9619-db9dd6cfeef8"
+      ],
+      "sailNumber": "1437",
+      "name": "Kate McMullan",
+      "club": "RIYC",
+      "gender": "F",
+      "age": 13
+    }
+  ],
+  "races": [
+    {
+      "id": "5a32a54b-996b-599d-97e5-26cb95cb07ad",
+      "raceNumber": 1,
+      "date": "2019-04-25",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "79e2209a-90d8-5e17-be70-a922a229c1e8",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": null,
+          "resultCode": "RET",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6cc5f978-c4d4-5606-8b6a-1cca82431d1b",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f508c5a8-e150-5a6e-b8a5-bbdb8d81dfbe",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9ea507ca-773f-5608-b9d7-8ce816b93fe4",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "58fe5671-aecb-572b-981e-fd4d9ead3458",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b6ade0a6-d99f-5ffe-a0cb-998989af7b49",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7688efc4-8db6-5d85-bfab-e82cb2e1db8f",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9d50d33e-c8fc-5ebb-945a-0337568daac4",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3ed23f29-0175-5256-abff-859e36d7e9bb",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3101b767-1df0-5839-b6de-d944bf1d33ce",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "865eca39-cdb6-5c40-abfc-c034b7bddbe7",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "730ee428-b32c-545f-9291-5b3eef137132",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ce65fbc6-c3fe-55a3-8141-8c7a3d02319a",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "facacbff-387a-5051-87e8-69b2dd5c9ad8",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e1856d0f-6dc8-5a79-a283-ce966a0731a2",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "50eff6f0-b9b8-5839-b201-001bff030cc5",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a4daf39d-84a7-56ec-8eb4-62a8aa0b5c41",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fb6c0258-72e7-5fb7-93af-3029e3936ba6",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d48d9cdf-739e-557f-aa59-80391b8c5261",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cb2c3fc4-e708-5541-a9db-970fb5de6773",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8bdffa19-5e7e-5a49-b7be-e5c6f42a609e",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3400dc98-8c98-55a5-a216-d84151558bc7",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "eac5bf36-7780-57b6-be97-1a723a468dd9",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5f315cca-c797-5e26-989e-03ab832cdff9",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e4f8cccc-1291-5c41-9ef9-642c9caf91c3",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6c766b12-c83c-5828-aba6-d03025861371",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "469f5359-c42c-5a14-8ce1-331c087f0452",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1326cb9e-9a6a-54d2-9b9b-39e7b3bc6fa8",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b8d4b5ac-e6a1-525a-83d4-70bd72c5abb8",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2af5a3be-f662-5572-a518-f53177c0d09d",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7bb5df2d-c60d-58d3-b5bf-af08fe39d69b",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a40e6eed-4038-561f-a3cd-ee5df0287e75",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4299357d-ec30-5655-9355-27c114148b63",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a9ab603b-df87-5509-a36f-1aab2c646ccc",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7860b910-1d50-59af-922e-28252058345c",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b8284fe8-0e26-55d1-9ebe-3be3a3c3595d",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "33f33e6b-2739-5568-9eac-c00d92d48104",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2d0cc7ce-f1ca-5813-b1b2-e9bd98afdc5a",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6e3dc1f9-f4fb-5a75-9576-93cfd2f91483",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "be072df6-2872-5e50-87d0-a37d9a0594c0",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c4e89dd3-57a2-5479-8a9d-11ed0105a1d1",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c49e2d9c-48b1-526c-a871-d18edeb12b20",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "be03190f-734d-51b4-b8ad-782d01614c2e",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4bbe702e-aeda-526d-a262-d9d5b97c0da0",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fcabf6c4-dac4-5d5f-86fc-e7a117ee0a1c",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c9c31053-f49a-5a64-a063-479f1f366d84",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0f4dd68c-70b8-5746-9c3e-e5a3cd0d420d",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0eb86ea2-8000-59e1-b7cf-6ecab917c155",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5c4ef3e5-5c95-576f-974a-4590173163f0",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6407efe3-4583-5a9e-a584-da59f43afab2",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "47010b4e-c351-5562-9207-f834f543b0ae",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1179f227-ff5f-5f48-9960-44e04d550c4d",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0cb6451c-4973-5175-8cc5-1185e18c30f0",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "24c2e7da-bfe3-54b5-9893-644bc95289b0",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2d3340a4-10ea-5547-b891-88d7bde9c4f2",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8af4b591-2c54-5e04-a03c-96c3ed951c3d",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f4a7fde2-7df8-5eb3-ab2e-6408ec9e6dbe",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "40929956-58a6-53af-85f9-3027afc5ee0b",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "83b14ad2-8488-5daf-aa1f-7a29094b55a5",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "180eb284-f8d6-5ee5-8068-c14324b2c027",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "ac1f0932-703f-5792-b338-5c3d2f5d1689",
+      "raceNumber": 2,
+      "date": "2019-04-25",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "32c5ff36-6f88-55e0-8537-7e1518ecbd1e",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a4f2788f-56b0-5132-96ee-a4510fed9814",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a2cbe45c-ce22-5cac-8be9-d9accc23325b",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": null,
+          "resultCode": "DSQ",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7ad08cb5-a3f6-54bd-a2de-4ce740f974cc",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2c5f0e28-8745-57a8-ae10-3af2073d6eb5",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f62ef416-dca9-5bcf-8bdc-b11d5ec75c8b",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6f33b280-007d-5f14-81f8-edf10ce442f5",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": null,
+          "resultCode": "BFD",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7d0824ec-a47a-5ab4-a819-091f9d109297",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "43cade2a-7eca-5044-928a-aff2eca6a4d5",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8533afe6-15b3-5ab5-969b-61540cce5b1b",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "790ae215-7b2f-5004-b1c4-4597ee0de2b5",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d2d57e08-886f-5a4c-bb3e-e2f840a39389",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ab1248d9-4ff3-5681-ac1e-7823bb7e70d2",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a2bc71e6-e255-58ce-889b-52ad93169e33",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "104aa1d1-8a9f-537a-909a-aeb1c56a8844",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f5c95f31-c13e-5402-aefb-9083360c87b6",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "609a7377-891b-51a5-8302-196e10e979dd",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0af43770-eedc-53ad-9a60-f37fa98a02b9",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d6ee3895-891b-5c91-b685-94c97f591144",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8ac19015-967b-5c42-8f55-112358e3b84c",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "28a0c61a-f9fc-56de-80de-dd873ed275ec",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c1fb65d1-a3eb-57e7-a7ad-98dd4abdd3b3",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e9779bbe-cef4-5f55-9d5d-d74af5ae4b20",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f495da90-a6a2-5467-ae44-41887068786f",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "22c8e70f-0b16-56bb-b97e-01ef96f9a4f0",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "30cb9f38-0e97-5ec6-b768-dda3388ad85e",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "aef27dbe-0218-5c4a-8277-2fb1d97e04b1",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e9a8daa4-0eaf-5e69-8d94-52b22db47995",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b7c36e9c-3a02-572b-b991-37015ed39397",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3c916458-c2fc-583b-bdb9-48d246f9177c",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a01c5c55-fa22-5a77-8715-57bf7d0e56ec",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "41c8239e-be81-50f8-be55-1bebb6aead24",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "60dfaa71-519f-5a33-b2bc-2504f4ab4e95",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c56b8ed6-b413-57c7-8b70-617d46756139",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e4daf90e-f143-5d52-a7fd-c21ec317b297",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "82d6326f-7dad-5385-801d-a4950c5415c4",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "77b07822-5040-5e75-8df9-bf9ec7910e63",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "96885a27-39d6-5a38-af26-4bd1ec15ce3c",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0317aacc-5445-547e-b4c3-2ed2c8266fbd",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d2bfd165-8eb2-5781-9c1a-5d3e3600961d",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cb799f7e-88e6-5d20-a6ac-0516fbf22eef",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "78dd6a3a-9b2d-5aed-abc1-00e7a8628abd",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "41bad5a0-4ab3-5d5b-b007-649984aacac3",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f3983fb9-1540-58f6-99c5-58eeffd31f0b",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c0aa22cf-78ce-537a-a869-dbd1c8aca428",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "06fa38a7-662e-55a4-8c45-d68aebac46fc",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "72ba4706-aaa8-552a-af39-090c0f5ca439",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c73098aa-50c8-5c9b-b501-2d0567de618d",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c5441464-0a9f-512d-881e-6920e8875f8a",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "832bddfc-948a-55ad-9370-b977b36b0d12",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6ceeba7d-5a0c-5717-bdba-4f2361bbb543",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "34eb2797-800c-5696-9f44-f1f79117f155",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "34766f73-ee3e-5519-8afb-1bf87f2da563",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ef1cc7b6-e341-5820-8eeb-dd752fe32331",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5a1d9180-c44e-5816-8740-b672cdfa689f",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2eb9239f-42c7-515f-b845-a242645c70c2",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7b35f5be-d3d0-5ee6-aeb7-3f8946539890",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "047d4af7-d9cd-5f2f-a0c7-6ba89f6c3226",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9c7ad4ef-b1bb-5d43-8df9-b68e6ca7bc39",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3a9e0f92-7a64-59db-b6f7-c23d1cb7f8d8",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "31f7d115-cdea-5781-92ea-c03bf5add704",
+      "raceNumber": 3,
+      "date": "2019-04-26",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "f87bfe9d-7de1-5526-b129-4e6513e4c0e5",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": null,
+          "resultCode": "RET",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "494120eb-6ad1-5c91-ac6c-94d1e7621d1e",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "efae1cca-3b78-57be-a8af-15ebc0aba051",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "20aede0c-0026-55d7-8031-50723f36b198",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5764f9b9-4a8d-593d-a873-acc636739c48",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7deaf804-1a40-500d-aedb-ad86714a84eb",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c867109e-b5a2-5a9e-945c-3a1c9199970c",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "552aca3f-d25e-5754-ae35-197a41dabc8d",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6cc52fb4-6dea-5973-981d-700b504bba5e",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f604e1a8-2074-5c90-9a8e-c165be015e52",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f33f68a7-ff79-595f-818c-0900a78a6470",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d823db73-9dd2-5c80-a36d-19be401996d4",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fc087d5b-6977-5396-b86a-4f6ebb098eb9",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "79329a60-f17a-51ab-b062-f6cd098a9b0c",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "89b1d5ee-0028-543a-a003-715560483163",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fc40a0ed-3699-5cd5-b4fb-a05fa046bbc9",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7260de0b-6dac-5228-9514-53910b148caa",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ccfcc003-6c7e-5768-a9ed-8fcb6751a561",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a1aa87ce-e01c-5773-89c4-3adac015d84b",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "58d766c9-5b40-564f-a358-ec23696eab14",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "96a15ef9-f491-57dd-9b65-4c7470042818",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e454a955-ff8c-53ec-b7b4-b21ff154568e",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "16ea7868-521f-58cc-9ba0-434b196f7008",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "221afb3f-aa83-56f3-adaa-40dc6a2fedac",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d9a18d7f-37a6-58ea-9e1f-4d7673a57de2",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "915fa413-1364-538e-bbd6-a3c9591bb740",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "88f7285b-f29b-535f-81fc-bb07e0c58fae",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "08c71b24-9bd9-5880-8045-af89278b7833",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5467023d-e054-5bda-bdbe-5a123163501f",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e4b5a5c5-b20f-541c-b742-d3d89de487ac",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e0fc3fdd-1435-5de5-8a9a-c56a72421380",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d0406832-4501-544d-9cd7-12094fb22c74",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "308149d5-da2d-5ef1-8831-a4510636ebac",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "13bbe677-7068-538c-9abe-92900da9ae5a",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "060f3f3f-bbe4-59f9-bcce-cbea78a5ee4c",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a858b095-4820-51c4-887c-821defb9bd58",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6cc78d43-a208-5be3-9e0a-dbdaa7bb856c",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2b37e5a0-06e1-54ea-8b4a-51511cbdb703",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e7afb4dc-e3b2-5dab-9377-01744ca8e3ac",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ebc33723-1287-5a29-9520-9c884e32eb88",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1987289c-6f3d-5a95-a251-a10ad45c8e3f",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "30d4f0c0-5ac7-5705-a6a5-9de1fcebfbe1",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "04aaf5f1-0a73-52ef-ba8e-5ec149639d32",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e7b80613-71c9-5387-bb69-dd1270995bc7",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "88a64326-e3eb-58b4-a377-af74629a48fe",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "545893f5-b87e-575b-bdbc-b9055a38ba8c",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ed457add-4c95-5dd6-97ee-eaf1434b717e",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fa34a5a5-c9d4-5443-836e-35043855bef7",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0fbdf806-a6dc-572a-add1-f02c2d39de7f",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cd56730d-b0dd-5c41-b0c5-1ff637d2c191",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "01276d97-558c-5048-87f9-dc3ff33497ac",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "02159967-9a08-5a84-8c87-d54805911b4f",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b3e7cdef-e356-569e-8fb9-90dcecb64568",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c984d35c-8a32-5a01-acea-9e48d455ea25",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f234e106-faab-57f7-8567-ad43aa8ca719",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fb765f46-b174-5ac9-a13a-f3ab977c4ea4",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7010b7ba-420c-5cfe-8313-863b3655fe0b",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7fa2acb7-a40b-5c86-88bb-4b2a35f79a76",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "055a5996-6c0d-5c43-81cf-5c9933678209",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fde1c356-8663-5958-a885-93c532202f9a",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "a2129f05-66f6-533e-bad8-dcc123ff169c",
+      "raceNumber": 4,
+      "date": "2019-04-26",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "5d9743b0-c897-5223-8a6c-db10537ace7a",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ed1f5da5-0860-5dad-bcb9-9a95cea7ab62",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d89f653b-212c-53b9-84a8-5a54f6034c13",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "41af6852-6fdb-57a2-8786-83c436b5bce3",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3adf81ef-15ec-5545-ae2e-e7f1cf4f85d1",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "69206ce7-456d-5d96-94fd-e6eb2925c56c",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c3a517e2-8dae-529a-a21b-ffd8a21ffc66",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3ce4f4d8-af57-5a33-bd22-ce1b334789be",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "df97cfeb-3399-549a-b9d2-bbefecb58c8a",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "680b4add-e2ec-5f3b-8340-96d8e5ce2a72",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "98646f3c-f0dc-5481-8228-2a2387c108e4",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5f60b75d-402a-5271-ac04-d4e888778437",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7f7b0d5e-43d3-5647-918d-866f2a6b5166",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "85a54f72-155f-5cd8-b16f-d5eb17b7dadd",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "22a03ba5-aa8d-52a5-85b2-7a8d1d5969f2",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "528ae117-3292-5bdf-8e88-affbb2b08cd0",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5b67c7f7-e0ec-5b9f-be2a-ce72eee5a5af",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e7c85d2c-05f4-5b92-bcbc-1736310cfcb1",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4c13c57a-d00e-5b79-b51c-b91ec44e63b6",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "55c5f5a2-bc34-5ea1-b7c2-ec3192d2368c",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "25908f4a-5997-5a66-a686-4ae9e741728e",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6dd1361d-fafc-5301-a357-59f2157a5cbe",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "608e1d58-9c22-5e44-8a47-ad0039caaadc",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "50ddf355-30db-5027-a310-f9c36951a745",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a120f132-2270-5e42-9243-24e2e3ef31c5",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "64bdcc60-6c1b-5ca9-8973-3d91589ade9d",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4bb49390-0e08-537f-9ca2-dcdab5afc904",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fb744e2f-379e-5f9b-be21-dcbfcbd2f8c8",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1559a4eb-4547-537f-a505-e21063ffb295",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "80804a90-714c-5d1c-b9c7-6f608cd4d8bd",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "75c5547e-8c6b-5dc8-addf-3421afd6be2d",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3f3115c9-f0d3-5eff-af72-f2e5e9149341",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "69c34362-b1d0-578b-875a-9ea1de1aad19",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e2788e56-b17c-583f-91a9-26716289f80a",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "69e42f7d-485d-5bc4-85f1-9f945e5e16c3",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cf8b133a-1d71-5961-af59-d041fac6bd5d",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "61dbb01f-7075-518c-a98d-3960a72cbef5",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "19d046b2-8a33-5bf5-ada3-fc09d447474d",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2a9a5512-245e-511d-abed-8a63724fab52",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b9106d17-f7f6-5ab1-a1bb-f136b1eaaa95",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6077e38d-bfe6-5d2c-b65a-7eab3ffa50d1",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9a7379ca-4807-5065-8ca3-5f8461475cac",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d0277338-c92b-5ab3-b6cf-756081936f1b",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d8eab1d5-5714-5d86-9343-2c73e4107526",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "10c3343d-e97c-55ab-bc52-a37738dda10d",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "88ded07a-b177-5c9e-a2fe-b145a02d4eed",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b82c1d4b-4876-5597-8359-38aaf60e7483",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1a1d8e21-da05-5742-9b2a-762f288b6fc2",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1de757cc-16b3-519c-bdbc-d421b565e045",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "760ce177-1d50-58ce-b7ea-3fddcf0f1496",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "88063290-5750-5304-9500-604896ddc7dd",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "28e6e9da-37d8-51b6-9940-bef85aa35e02",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "38385fbe-b3ca-5455-83ec-e19eb58c013e",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5541c6bf-cbff-52fa-8d32-da9da8b4739c",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a421847b-9212-5aa6-9072-70b0d5f5e389",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "96dced85-7cb2-5473-a07d-9a94b2501f46",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "837fce7f-0f63-5d8f-a4eb-6d8032a4057e",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b729395c-f65d-59b0-9b87-748ab606d563",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "675d2f57-d565-5204-82e0-2c41d3a01f44",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f97d5bfb-3ce1-5e93-9a0f-239749b3ad4d",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 60,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "3a5dc1cb-5618-5bbc-87f8-c5cc84d16dce",
+      "raceNumber": 5,
+      "date": "2019-04-27",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "12f6d7af-b936-5522-9a97-68379435d7b0",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "eac60724-5e6d-5455-a092-c8988672bcea",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7c08ff19-78a0-5523-9a44-b1401dff076b",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d18dd3c3-a29f-5136-a226-c0d82d146b1a",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "88bc2414-3d03-5791-9429-ea37dca630b5",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "78f9594b-4182-5073-98f5-48594892b66c",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "99923624-59f7-5562-b32b-44a1b32b41db",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "925ae8a8-7e8f-56ae-bb8a-a3e4b4f64170",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "915c4b47-795c-59c0-ad4b-71bac8b37485",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "98e5740b-d762-57fd-bc94-c5ff10c4e41c",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e57725b9-ef18-5f18-940e-155cf724d678",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "395e937a-1a00-50ab-b69d-ff4eb2f74dd3",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e642f6c4-6a9f-5369-b623-f30ab358327c",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e00874bf-9b5e-5433-8c09-074dfc642b2a",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "98c6a70a-45e4-59af-8ff7-4500b6086c31",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "77624796-708f-5b1a-8513-8255d25e8b35",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4d3c40ef-9fcb-586a-8e3d-2eca4e131a9b",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cc9ed67d-de1f-51a0-bd70-ed145c37d1e3",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "12b3f4d7-4189-5ac4-a679-4375422bd263",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e7e6d013-004c-53c7-88e7-ba2513ac75b1",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5ef67183-f87c-57ee-a63a-811c54da0f0e",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "01320256-40d2-5e5d-8f6f-d46ac68a1d1a",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4ce7ceb0-a692-5b16-9bcd-f2f847af65aa",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "73e5db8f-b42f-5c29-b5ce-77267550581e",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5f828795-f83f-5bcf-b59d-5387e8fb8ba0",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1c01293d-ba17-57e5-bfa0-6480aeade2f3",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "37af2370-9136-57fe-ab0d-139abfda8415",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f112ae2f-728c-5941-8e51-78c56bd3b17a",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a4e2672a-bf49-556d-a616-2ec86e9a721b",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b140edb1-b841-5dc8-9713-305a0bdbcba0",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c66afd0d-d45f-5289-947f-6c1d87e016a3",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6753d13b-db2c-5d44-a5be-957c9d948d5d",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b78c2851-c175-51cf-8dcf-237759c7a82b",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d9b7f70e-7d4f-5584-8fdd-fecf40d5af86",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "164e82a4-9974-5227-a49d-01659783775c",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4d65cedf-389d-5221-9d56-5731ae57033e",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "37dcea28-5825-5c5d-9c36-d0cacb9b4a6f",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "185f32b4-c40b-51f9-be9d-72c4bc5696e4",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "021fba5b-8709-5a92-9d49-a9f25e3bb317",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9b8a5824-8aa7-56ce-8012-5594e275f61c",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8811b8a4-3e52-58e5-b043-d1b1d9bd71af",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c822eb72-6c96-5e5e-84fe-0d2d97006aa9",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "116bf19c-a465-569c-b24d-fef45cb0510b",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "79d052fc-c501-58f0-961a-c7b5aceddc40",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a854df2a-2c24-52d8-a33b-32d7a629955b",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9a42832a-65e5-5515-beb6-4a9517583601",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "299d8859-0906-5477-8fd5-fa42d90d9f34",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0e5b9ad3-5975-561e-b099-9b306f30b65e",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5825e887-28f3-50e1-a721-080c73e29556",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fe891fed-7638-58e6-bd72-7afc88c45871",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a72ba694-7b7d-5fd2-b50a-ad1dd610fdeb",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "031d8a1b-1cbf-558b-be63-e6269f7e8404",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "16184d25-4093-5c2a-968a-f84b4c7de8f7",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "dea4989b-e389-528b-bf22-3b370893e1c2",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d5ca7aa6-98e5-55cf-8212-abbb4dfed05f",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "410fce5e-4e1c-5880-ba6b-c743b4fe55ea",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a8def258-931d-55cc-b604-e0f0763bab9a",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5eac3c4a-3f5b-5a46-b1c0-bcaf7485d6eb",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "078d066b-a6a2-5e44-92d9-421f30d4762c",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1dd4053a-d881-50bc-b22c-4988dcc14a6d",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 60,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "1e8cbf7d-040b-53ce-ad35-5bd664965a57",
+      "raceNumber": 6,
+      "date": "2019-04-27",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "a28c3ce6-8b6e-5bd6-afa5-2630d7a3c5f0",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": null,
+          "resultCode": "OCS",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f7eca635-67e3-55fb-bbac-5fffda4ebcf4",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": null,
+          "resultCode": "RET",
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d5537194-ec83-5030-a36c-6e5cab1e28e3",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f046b979-481a-50f0-8dfb-0728835319f3",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "045b9c35-d499-5eae-9ae3-2c948a0e954e",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6f145267-7197-564c-b4ea-713eb9c46a89",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ceddb1d3-ff10-5838-a6e9-97b39a2e5668",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8a3d2ef2-1584-57ab-a20e-b1d5d7bcf419",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d38e47eb-5ed9-5111-906d-ecf658194b76",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bb491005-3890-5a34-a239-625ec8c03c6a",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "952733b8-9207-5f27-8cac-a38c39964350",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "29c27729-717c-58d1-b5d1-59cea020c609",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e672b61d-2ab4-59b4-807a-bdc002872e29",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "409b3ee0-a14f-52b2-bb02-3eaed4f013dd",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ab95ed1c-d857-5acf-b3fa-3a1277b4c7e9",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b728a816-571f-52d6-a1f9-9d244ad3fb49",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a6e0b5cc-4f53-5d97-b536-60e41cd1c93e",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9d0289f4-f693-58cf-80ac-1746930d58d1",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5ddeae62-6e8a-5eba-a513-bf068d73b1ca",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bdfe918d-1520-55a8-8f74-be6c9edc8c15",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "57c04df9-4fcc-5260-ac34-8384d429e0ed",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3026168c-0d39-5332-989f-c0d4aca2b58a",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f9290a1a-f594-5c62-9d80-5361777d0c3c",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b7266420-ad3c-56aa-a29d-fe74dc48a30c",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "37ea1845-2507-590b-a845-73d0fa0a4581",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d167780f-e376-530d-a516-7d17d3746f11",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "34ab69f2-548d-5525-ac79-783a6e03841c",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6e752f83-1f8c-50f8-b324-66d24ecc9b6c",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "dc6b5ee6-066c-58c3-a182-90e812526775",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7ca303b8-d037-5182-9445-6e37a01a6a7d",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ac5ee0ce-1105-5b4b-9d41-a340ab9aa6a4",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "94a800e2-9a59-5129-988b-0b27d3fa3100",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0e069388-b12f-5c38-8e2e-b33977e0891b",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ba961708-eb98-56d9-b0ad-c9f450ed8f7b",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bf04be29-75f3-5a54-ae6f-577ee881be91",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "36aede3f-09ab-5347-9866-8150684bd36e",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8a4336eb-4870-52ba-8074-a9c29216e7ad",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9637a73f-b5ab-5286-af4f-ba9828667916",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "020763ee-7a69-57b1-b697-6c1631afeee2",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6811ccbd-34fa-524d-b456-790b203ca1e2",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3414f15f-0b94-5e32-964d-7c561b204b81",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "271a39b2-b573-5d13-b851-e0c6f4e2428d",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "01c7c9c1-37df-53dc-abb0-a437dafe2c32",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "dc08ddbb-fb43-5ee5-a817-bdad3e6f5107",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "db3af0cd-6594-5341-80d3-bd288d804186",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "84f08380-df72-53a4-b2d5-8ade36626e57",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "353f2fde-bf01-59ef-af34-a46c85612d55",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d8c6b1b3-d34f-5b96-8a64-62a5fde185e9",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4c28de71-5e0c-5c49-9b7e-164b28dcc7b7",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "65039a78-1a58-58ca-9b25-da6fe8607d57",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c222c934-3371-5736-999f-09ded016747b",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7235749f-4ccf-5b4e-af93-c85b833f0f2c",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ef94f916-22d6-5d40-8cc1-38e6e3a26ada",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "afb81dde-3b11-5a96-b618-b77927cc87c6",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f6b1731c-997f-52cb-9643-101391bf4e7a",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9331707d-9fd4-5b38-be31-7fd58f33a789",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b06b8927-ae13-532a-af6a-a1b0da237e54",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2d40d43c-3d3c-5da7-b647-da45d11711d9",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "070b7ee5-5a92-5233-8687-a47cde112b91",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "230fa5d6-44fc-5d39-9130-fae22419905f",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "2d4be312-a4f5-5cb3-99be-87e0b868ca56",
+      "raceNumber": 7,
+      "date": "2019-04-28",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "210b106c-ef3a-5aaa-816d-993efab9f3fa",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "560e9d0b-9233-51c0-bce0-cf61cc8525ca",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bbb26ec7-2232-5c4a-ab0e-5ae34e54b5f2",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b59259f9-0b06-59d3-ba16-f1ada03ce3a4",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "96b02e41-1889-5c9e-b3a5-953599be00a1",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e43696ae-b9a1-5498-9f78-a230e6520d05",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1e9a14a9-9bb2-5f78-ae74-5c2d9bf52b4e",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "92331670-1e15-59b3-94da-50d5476420fc",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ec3d665d-16a0-5795-8642-2b18a201e86c",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ff7a6986-91bc-5875-9b7b-7fa022553e89",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1b6c768f-825a-517d-af3e-fd1dc6540c88",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4f9ae56c-d94f-53ee-8894-b528b2df07fe",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5dc788de-07a7-52c1-8cfb-657efd622163",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7b9dcb03-a6b3-5465-95df-c4d87b36fdea",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fc2906ec-e350-50b3-a208-f407c3ceb4c6",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "231df8ec-626d-53b0-bab5-71a49a2b5e43",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d2e21dd4-d5cf-5912-9f73-0dc187e5c7f1",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b7ecc5d6-f532-57f5-b29a-adee9e92000b",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "da8f035f-9f93-5a14-aac5-5cf4b1aaa21e",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "dc9a8d53-d61d-5090-83ad-7a6fe6acb92f",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f30a58aa-7102-5260-86da-7a207d0170aa",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "31cb7f1f-6727-58e0-9fe4-40970608f7c4",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "25fcdae3-828b-55e8-bc48-7f777f54d262",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e239baaa-e388-5b02-9a00-241b3d93b44e",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5f6ec506-ef2f-5520-a6ca-86e310e9805f",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5401305b-41cf-56b9-8860-2d96b5fb4160",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "563d90dd-b231-5a2d-9c9b-e2b25279b0ab",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "979452fe-3524-5277-bcbc-216312f8fd7f",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c53ed278-0d5b-5080-8397-e17e2b5ad1df",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d69047ff-8150-58e0-92c2-61263d12214c",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c7b2e13e-85e0-5690-913b-9fa862425b6a",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3be6f746-c271-5611-8c94-05aaaff2c396",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "39f05d60-5183-5731-80d2-f77c0af2c2cf",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "18516abd-1eb8-5b27-b95b-87e42ec43f33",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6e8592af-f330-51f5-9554-4e8f497a9e10",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a6931932-7998-586c-9528-d39e0f34633a",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "12f2fed6-4c2b-575f-a9ff-ded8ed404b32",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7f77f7b6-00a5-5f98-a812-0c48aeb895ef",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "299e899d-3ff6-57d5-8540-fdc10d2e20f4",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8cb2132a-425c-5cbd-b8dd-e8dfb093d3c5",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "051b9bce-7df7-5d96-abf1-63165663f5f7",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "04e3b219-18a7-5805-a2ae-091ace657f08",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a6226ca6-3ac6-53d3-b6a1-2d4fdd7e6a13",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e50b73c1-ace2-5e7a-9be3-9d0b5e5f2f52",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "29f043e8-5597-59ba-805e-0275fdfbe143",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fa997f50-0aea-5a50-a560-0f9774c33c48",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "07b17522-4777-5f97-b20e-573c9b707cc9",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9911199f-64ff-53f0-ba4a-25d2be697435",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f4c6bc68-939d-5a8a-9a83-7bf0e00d8e61",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "20330f10-107a-55d0-a4ca-440bfceacb73",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "773497fb-699e-5411-8ff1-c6e58536df91",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bffc1781-5189-5f5b-b4a3-007991ca3383",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2d0bafbc-57cb-5d54-b4ce-84a2342565a3",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1dac9638-a37c-58ad-b46b-8a248c16ec9d",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "93b2e348-835a-5e0a-aef4-f565d9a781f2",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "5e2a0194-b594-53aa-80c6-1f6d7b3ee2a0",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d9e87dc5-8394-511c-b5ea-d8f209a44adc",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d86698da-a078-5bd1-8426-da597c79b723",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "38481954-fce6-5de6-9626-9e1a49c0e707",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3481be6b-cd8b-5ac8-bec5-8ad5813d5f2b",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 60,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    },
+    {
+      "id": "7d50a841-705e-5e1f-b37f-c3d2881f6e8a",
+      "raceNumber": 8,
+      "date": "2019-04-28",
+      "starts": [],
+      "finishes": [
+        {
+          "id": "6ba88047-c915-5303-a1ce-effe59e95fa5",
+          "competitorId": "0daae446-24bf-53f6-bd3c-6d5a4ae33755",
+          "sortOrder": 1,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8925c2b3-edd0-585b-9d7b-4a0e3cecfb5f",
+          "competitorId": "e6ba5617-e77b-534d-ab69-eafdfdd95abf",
+          "sortOrder": 2,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e880c9a8-8881-5c75-8901-a488458c6ca2",
+          "competitorId": "618ead7b-1e97-5503-a60b-edae333830b3",
+          "sortOrder": 3,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cc88a6f3-de3b-52c0-99f8-2a48184b9137",
+          "competitorId": "f978ac6c-9b8e-52b9-9c8e-ec7c956b6966",
+          "sortOrder": 4,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b42d410f-7dc8-5530-9c8e-3e6147483d7a",
+          "competitorId": "b9775d25-5792-59c5-9e1b-394daec01302",
+          "sortOrder": 5,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "37fbb665-eeb4-59bf-b6e9-f6d06abb842e",
+          "competitorId": "a3191443-070b-502d-a651-64e0dd3325c1",
+          "sortOrder": 6,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cb804f25-bcd8-59ed-bafc-bb2a2b1144c1",
+          "competitorId": "167959db-8c12-5984-8796-4f0044406cf6",
+          "sortOrder": 7,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "97909e6a-65d8-57bd-9300-d290acc01f54",
+          "competitorId": "d5cccb93-0c74-55fa-ab72-ad4df75e9818",
+          "sortOrder": 8,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "36e4e968-97b8-5b61-b93c-3d14fc2093eb",
+          "competitorId": "3a288797-91aa-52ff-8a40-e65d741a87e9",
+          "sortOrder": 9,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "6b677230-e560-51f6-b3ff-ea77ce45bb1c",
+          "competitorId": "22a41210-87af-551e-862e-77a18262a9fb",
+          "sortOrder": 10,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "de21845f-e94d-5f30-90db-2c6fbbc3fbb7",
+          "competitorId": "79f2d929-a79b-5daf-bf5e-c4b588a18c5c",
+          "sortOrder": 11,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d1b38ca7-a886-5c52-83e7-97672693c58d",
+          "competitorId": "6b1104fb-9d58-5c27-ae62-7150da1ab210",
+          "sortOrder": 12,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "9c721a30-d574-5def-841f-963f8be0c5ab",
+          "competitorId": "48f1b9ca-2fff-5ae5-bded-4525e8d728f1",
+          "sortOrder": 13,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f724b5a4-906b-55a1-8d93-796051ad87d7",
+          "competitorId": "b1ae74f0-f047-546e-bc54-6149b39cf6ce",
+          "sortOrder": 14,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3c2f05ea-67c7-5c33-8f4d-b3f6d362bd5d",
+          "competitorId": "9522096d-260d-5de2-a9db-e5302c66a562",
+          "sortOrder": 15,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "45f8d0e9-09db-55b5-b5fc-9c16d2fa9a17",
+          "competitorId": "ae9c26af-4784-5b6b-9077-2073b760141b",
+          "sortOrder": 16,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "aad0a447-0c2e-5904-a0b5-129f06d96c4a",
+          "competitorId": "f84516d2-1f76-5050-9d2f-b23dace03251",
+          "sortOrder": 17,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "007abaa9-7e60-56ce-9b80-881583859320",
+          "competitorId": "40d8b520-1500-50ee-8271-d092740bdadc",
+          "sortOrder": 18,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "90ca2cc2-2ca7-57a2-b294-c446137632aa",
+          "competitorId": "e4ac3611-d79a-5f67-845a-c3018844a4e8",
+          "sortOrder": 19,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "66405d39-553d-56dd-ad2d-ecdb2b412458",
+          "competitorId": "443e7ada-20af-5a18-9e3f-30f565fbc903",
+          "sortOrder": 20,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e8edeb4d-5c22-5b68-b389-12c4736a637c",
+          "competitorId": "a8a9e11f-5301-5a52-abdf-276ce317557e",
+          "sortOrder": 21,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "b339f647-1192-596b-99e0-19eeb5101bb1",
+          "competitorId": "cce565a6-8e93-5a99-a2bb-076be207211b",
+          "sortOrder": 22,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "110474fa-f25f-58bf-b69f-40b091d6e8a6",
+          "competitorId": "4a5265e6-1bf9-5a9a-b4ca-b124253463f3",
+          "sortOrder": 23,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "77564b36-3f8a-5fa9-8135-d3151ea783d7",
+          "competitorId": "13d8d361-1532-54de-8151-87909c006c6a",
+          "sortOrder": 24,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3b210fc0-27e4-525d-93a9-27af7d90e725",
+          "competitorId": "e8756930-b3e3-53ff-89b4-dacd9b1bdda4",
+          "sortOrder": 25,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "65bdaff1-7535-535a-816a-b8f37cb36482",
+          "competitorId": "e09543f8-e9fc-5593-990f-6cdf8108c276",
+          "sortOrder": 26,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "98852857-1392-54a9-9aa6-345ebe215169",
+          "competitorId": "2c6863d4-efea-5783-9a4e-349e761fc310",
+          "sortOrder": 27,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "4f214f88-25c4-535e-9eb9-8291b2ae67ee",
+          "competitorId": "fda788f4-a6db-5a74-b0ee-9f3cb925fe6c",
+          "sortOrder": 28,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "24926af1-f30f-556a-aae6-52db1faaa780",
+          "competitorId": "0405651e-9da1-542a-9879-a254d237084d",
+          "sortOrder": 29,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1b3ffc31-ae9e-569b-85a2-3d6f3a7a4070",
+          "competitorId": "6b4ac7af-b140-5408-9a48-7eb9bd229c87",
+          "sortOrder": 30,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7ae7311b-670c-5240-b627-147257a3b8c7",
+          "competitorId": "454c9724-db5e-5a57-92b5-5f6cbf675660",
+          "sortOrder": 31,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "ecec791a-8e9f-580f-be0b-0890db0007bf",
+          "competitorId": "e21d4242-9912-5e0a-804c-cf4f2025eefc",
+          "sortOrder": 32,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "cc1b8f8e-8196-58b6-8d36-92ce1f01f5d1",
+          "competitorId": "42815da8-e138-5aa2-ab52-391450db7158",
+          "sortOrder": 33,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "7b33ce3d-5d27-58a3-b639-e493c7742a74",
+          "competitorId": "294a867a-8924-54b3-8dee-5167dbeb63f8",
+          "sortOrder": 34,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bf0ffb6b-4eb6-59ed-882b-724eb6bff458",
+          "competitorId": "9e45f342-45c0-58fb-adb4-3ba10d399a9b",
+          "sortOrder": 35,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2362d5e4-8e3f-5b7c-9994-c82af941628f",
+          "competitorId": "cb61cdfd-b3f6-5fbc-a0f6-6acdaf074ac9",
+          "sortOrder": 36,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "c0d8d88b-990f-507a-8eb6-0c4c6bf15b97",
+          "competitorId": "0635fb2b-8796-580b-b8ff-8f9e72ed07d1",
+          "sortOrder": 37,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "fe179832-29d8-5300-ae06-2dcca0327e4c",
+          "competitorId": "ebfd71d4-9afb-5504-8ef8-bd4d85985d06",
+          "sortOrder": 38,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1277c570-ad78-5db7-aecf-4893c11b90f1",
+          "competitorId": "07b9cf03-f4b1-5c26-80cd-76f442aa2cac",
+          "sortOrder": 39,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "31e0a13d-0412-5450-87db-bf9e04d759fe",
+          "competitorId": "347e6508-a572-500b-a1d5-65af67a9890d",
+          "sortOrder": 40,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "bea3862c-8655-51d5-88d2-e5ee057322a2",
+          "competitorId": "15a80ddd-7109-5aae-9a47-043d0fa73169",
+          "sortOrder": 41,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0fd46ca5-2c48-55f0-bf8c-ecf0af62a17b",
+          "competitorId": "8f6aec37-8ca4-5c11-adbe-4387e1374d6f",
+          "sortOrder": 42,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "89413dec-f725-5d7a-ad3e-571f0df9743d",
+          "competitorId": "2c05c348-ce23-5b0a-9943-0d4b91bc8227",
+          "sortOrder": 43,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1055f362-0fae-5f80-a120-9122b5a5c94a",
+          "competitorId": "ef7f59c3-543d-5b11-857e-bf07bd96c628",
+          "sortOrder": 44,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "1f029653-1f52-52cb-b1d1-d5b06572cb9a",
+          "competitorId": "30c9ff24-b7f2-5f2c-89e2-2871b76792b6",
+          "sortOrder": 45,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "a34d29a2-9f00-5ca6-b562-82a5598786d4",
+          "competitorId": "5cd33862-c497-5866-a2c5-e9c3d50e548d",
+          "sortOrder": 46,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2ef991b9-1633-5ef3-9c4d-6259c821410a",
+          "competitorId": "8082c8dc-4e23-53fa-9d91-19f768bde7b6",
+          "sortOrder": 47,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "dab8abaa-1006-5911-87b5-411125eef005",
+          "competitorId": "5dc7f892-bbc3-52ee-b078-82b603f784af",
+          "sortOrder": 48,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f943266c-4add-5a75-aac9-4306fdabd0e0",
+          "competitorId": "8dbc8e84-baf2-56cb-a951-5aabfb358e11",
+          "sortOrder": 49,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8456e214-e1a5-5ddb-a886-f650fdfa4579",
+          "competitorId": "ca9215f0-0ae7-5f79-8d46-afe215024a75",
+          "sortOrder": 50,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "975ed72b-bd4b-588e-97da-ebcfd21076ab",
+          "competitorId": "2c8ec55e-7591-5d74-a9ec-51548bc091e2",
+          "sortOrder": 51,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "f9045d29-a293-56bc-92f8-7158bfc2941b",
+          "competitorId": "837e2978-6f00-5925-be6e-419606b3c189",
+          "sortOrder": 52,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "30df9bd9-4c91-5aa6-b80e-81f9c78e4442",
+          "competitorId": "663534ba-e314-59e7-a4cf-55be5fb427a4",
+          "sortOrder": 53,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "8a35ed26-c9d8-5623-95a7-91f575370ec6",
+          "competitorId": "82215fab-3828-5e48-a98f-3d631eeb6033",
+          "sortOrder": 54,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "d6c35a90-6b70-5339-9871-1fe3a5de1f9b",
+          "competitorId": "e9e1d178-97b6-5e5f-b452-ad2acaa4397c",
+          "sortOrder": 55,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "2b19fdc6-23de-5ae6-9490-039dd9600b4b",
+          "competitorId": "0d2a48f3-7499-5789-8df3-d5834b584ee9",
+          "sortOrder": 56,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "61f6af1e-e736-5572-8d42-9c4ecf86e6ff",
+          "competitorId": "a0bfc92f-d992-5438-ba2b-652632436a2d",
+          "sortOrder": 57,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "3725784a-019c-5bef-b85f-564370a25446",
+          "competitorId": "41a8c95e-4f46-5062-aefd-3d575d14b328",
+          "sortOrder": 58,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "0824f743-044b-5f14-ace8-4f09c2140eb1",
+          "competitorId": "1d72f8c1-a60e-5231-a07c-d0a32b669f7a",
+          "sortOrder": 59,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        },
+        {
+          "id": "e301c6aa-42b2-59a7-b776-50e667dd990f",
+          "competitorId": "7da251c5-ed4f-5f8c-a1cb-62b89e77a9e3",
+          "sortOrder": 60,
+          "resultCode": null,
+          "startPresent": null,
+          "penaltyCode": null,
+          "penaltyOverride": null
+        }
+      ]
+    }
+  ]
+}

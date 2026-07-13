@@ -365,6 +365,17 @@ Event page: <https://iodai.com/results-nationals-2019-howth-yacht-club/>
 - Main (Junior): <https://iodai.com/results-files/naju19os.html>
 - Regatta: <https://iodai.com/results-files/nare19os.html>
 
+### Optimist Trials
+- Trials: <https://iodai.com/results-files/trials2019.html>
+
+  "Irish Optimist Trials 2019 at Royal Cork Yacht Club — 25-28 April 2019";
+  one combined 60-boat fleet over 8 races. The last standalone Trials: the
+  2020 trials ranking was the Nationals overall standings
+  (<https://iodai.com/results-files/naall20os.html>, kept in
+  sources/2020/nationals/ — deliberately not built as a separate series, see
+  README), there was none in 2021, and from 2022 the selection role passed to
+  the Irish Sailing Youth Nationals.
+
 ## 2018
 
 Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>18os.html`;
@@ -397,6 +408,13 @@ Event page: <https://iodai.com/nationals-2018-kyc-results/>
 - Main (Senior/Junior): <https://iodai.com/results-files/Nase18os.html> · <https://iodai.com/results-files/Naju18os.html>
 - Regatta: <https://iodai.com/results-files/Nare18os.html>
 
+### Optimist Trials
+- Trials: <https://iodai.com/results-files/trials2018.html>
+
+  "Irish Optimist Trials 2018 at Royal St. George Yacht Club — 5-8 April
+  2018"; one combined 78-boat fleet over 10 races (duplicate empty 'Ranking'
+  header handled by parse_file's first-non-empty rule).
+
 ## 2017
 
 Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>17os.html`).
@@ -413,6 +431,14 @@ Connacht/WHSC, Munster/Kinsale YC, Nationals/Royal Irish YC.
 
 (all under <https://iodai.com/results-files/>; event pages e.g.
 <https://iodai.com/leinsters-2017-results-nyc/>, `nationals-2017-results-riyc`.)
+
+### Optimist Trials
+- Trials: <https://iodai.com/results-files/trials2017.html>
+
+  "2017 Optimist Trials — April 20th to April 23rd, 2017 at Ballyholme Yacht
+  Club"; one combined 62-boat fleet over 13 races. The page's club header is
+  the typo 'Ckub' and one cell carries a 'Z30' (Z-flag 30%) penalty — both
+  handled in engine.py.
 
 ## 2016
 
@@ -431,6 +457,13 @@ The Nationals Regatta page (`nare16os`) has no results table — not built.
 (all under <https://iodai.com/results-files/>; event pages e.g.
 `nationals-2016-results-ldyc`, `munsters-2016-results-rcyc`.)
 
+### Optimist Trials
+- Trials: <https://iodai.com/results-files/trials2016.html>
+
+  "2016 Optimist Trials — March 31st to April 3rd, 2016 at Howth Yacht Club";
+  one combined 57-boat fleet over 11 races (the lone 'Total' column is the
+  nett).
+
 ## 2015
 
 Sourced via Wayback; files under iodai.com/results-files/ (`<region><fleet>15os.html`).
@@ -447,6 +480,12 @@ Ulster and Connacht pages carry no date (approximate).
 
 (all under <https://iodai.com/results-files/>; event pages e.g.
 <https://iodai.com/leinsters-2015-results-hyc/>.)
+
+### Optimist Trials
+- Trials: <https://iodai.com/results-files/trials2015.html>
+
+  "Optimist Trials 2015 at Royal Cork Yacht Club — 9-12 April 2015"; one
+  combined 61-boat fleet over 13 races.
 
 ## 2014
 

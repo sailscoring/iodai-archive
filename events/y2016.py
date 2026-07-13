@@ -7,7 +7,7 @@ nare16os, has no results table, so it isn't built). These pages put the Net/Tota
 columns *before* the race columns (handled in engine.parse_file) and use
 non-standard tie scoring (`tie_tolerant`). Discards read per fleet.
 """
-from .helpers import main_fleet, solo, RSGYC, LDYC
+from .helpers import main_fleet, solo, RSGYC, LDYC, HYC
 
 L = '2016/leinsters/'
 U = '2016/ulsters/'
@@ -58,4 +58,13 @@ SERIES = [
                ['2016-08-15', '2016-08-16', '2016-08-17', '2016-08-18'], nslots=10,
                senior=N + 'nase16os.html', junior=N + 'naju16os.html',
                discards=[(4, 1), (8, 2)], tie_tolerant=True, **LDYC, event_url='https://iodai.com/nationals-2016-results-ldyc/'),
+
+    # --- Optimist Trials @ Howth YC (31 Mar – 3 Apr) ---------------------------
+    # IODAI's team-selection event: one combined scratch fleet (the 'Class'
+    # column holds Senior/Junior, informational only). See README "Trials".
+    solo('iodai-trials-2016', 'IODAI Optimist Trials 2016',
+         'Howth Yacht Club',
+         ['2016-03-31', '2016-04-01', '2016-04-02', '2016-04-03'], nslots=11,
+         file='2016/trials/trials2016.html', fleet='Trials',
+         discards=[(4, 1), (11, 2)], **HYC),
 ]

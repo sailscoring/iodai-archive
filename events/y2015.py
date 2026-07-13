@@ -6,7 +6,7 @@ Senior/Junior Main fleets + a Regatta fleet each. Some pages use ALL-CAPS header
 and a single 'Total' (net) column (handled in engine.parse_file). Ulster and
 Connacht pages carry no event date — those are approximate (rule 6).
 """
-from .helpers import main_fleet, solo, HYC, BYC, LRYC, KYC, SSC
+from .helpers import main_fleet, solo, HYC, BYC, LRYC, KYC, SSC, RCYC
 
 L = '2015/leinsters/'
 U = '2015/ulsters/'
@@ -61,4 +61,13 @@ SERIES = [
          'Skerries Sailing Club',
          ['2015-08-13', '2015-08-14', '2015-08-15', '2015-08-16'], nslots=12,
          file=N + 'nare15os.html', fleet='Regatta', discards=[(4, 1), (10, 2)], **SSC),
+
+    # --- Optimist Trials @ Royal Cork YC (9–12 Apr) ---------------------------
+    # IODAI's team-selection event: one combined scratch fleet ranking the top
+    # sailors (the Jun/Sen column is informational). See README "Trials".
+    solo('iodai-trials-2015', 'IODAI Optimist Trials 2015',
+         'Royal Cork Yacht Club',
+         ['2015-04-09', '2015-04-10', '2015-04-11', '2015-04-12'], nslots=13,
+         file='2015/trials/trials2015.html', fleet='Trials',
+         discards=[(4, 1), (13, 2)], **RCYC),
 ]

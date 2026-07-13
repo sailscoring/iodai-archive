@@ -35,9 +35,9 @@ ADOPT_FILE = os.path.join(HERE, 'adopted-series-ids.json')
 META = {'Rank', 'Place', 'Ranking', 'Tally', 'Fleet', 'Class', 'Sail',
         'Sail Number', 'SailNo', 'Sail no.', 'Sail No', 'Sail Num.', 'Sail #', 'Nat', 'Nationality',
         'Country', 'Sail Country', 'Helm Name', 'HelmName', 'Helmname', 'Helmname-1', 'Helm',
-        'Name', 'Surname', 'Club', 'Primary Club', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
+        'Name', 'Surname', 'Club', 'Primary Club', 'Ckub', 'Division', 'Divison', 'Gender', 'HelmSex', 'Helm Sex',
         'M/F', 'Age', 'HelmAge', 'Helmage', 'Helmagegroup', 'HelmAgeGroup',
-        'Oppy Age', 'Oppie Age', 'Year', 'Senior/Junior', 'Rating', 'Silver/Gold',
+        'Oppy Age', 'Oppie Age', 'Year', 'Senior/Junior', 'Jun/Sen', 'Rating', 'Silver/Gold',
         'Series Place', 'Total', 'Nett', 'Net', 'Total Points', 'Series Points'}
 # Position-replacing result codes that can appear in a race cell. ZFP is an
 # additive penalty (handled separately), not a position-replacing code.
@@ -164,7 +164,9 @@ def classify(raw):
         code: str|None, penalty: str|None}."""
     discarded = raw.startswith('(') and raw.endswith(')')
     t = raw[1:-1].strip() if discarded else raw.strip()
-    m = re.match(r'^([\d.]+)\s+([A-Za-z]{2,5})$', t)
+    # The code/penalty token starts with a letter and may carry digits — a
+    # percentage penalty prints its rate ('Z30' = Z-flag 30%, like 'ZFP').
+    m = re.match(r'^([\d.]+)\s+([A-Za-z][A-Za-z0-9]{1,4})$', t)
     if m:
         score = float(m.group(1))
         tok = m.group(2).upper()
@@ -252,7 +254,7 @@ def load_competitors(cfg):
                 fleet=fleet,
                 sail=sail,
                 name=nm,
-                club=(row.get('Club') or row.get('Primary Club') or '').strip(),
+                club=(row.get('Club') or row.get('Primary Club') or row.get('Ckub') or '').strip(),
                 nat=(row.get('Nat') or row.get('Nationality') or row.get('Country')
                      or row.get('Sail Country') or '').strip(),
                 gender=norm_gender(row.get('Gender') or row.get('HelmSex')
