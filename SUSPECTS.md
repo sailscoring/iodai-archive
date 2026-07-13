@@ -1,3 +1,13 @@
+> **Historical (ADR-010, July 2026).** Suspects were a *reconstruction*
+> concept: boats whose published Nett our re-scoring engine couldn't
+> reproduce. Under the as-published regime (sailscoring ADR-010, #283) the
+> archive displays the published pages verbatim and recomputes nothing, so
+> these discrepancies no longer manifest anywhere — the app now shows exactly
+> the (occasionally internally inconsistent) numbers the pages carried. This
+> file is kept as an audit of source-data quirks, not as a list of live
+> deviations; the `suspect=[...]` flags and `validate` remain part of the
+> retired reconstruction pipeline.
+
 # Suspect boats
 
 This file collects every **suspect** flagged across the back-fill, so they're
