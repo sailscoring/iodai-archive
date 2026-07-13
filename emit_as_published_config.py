@@ -79,6 +79,18 @@ def main() -> int:
     manifest = json.load(open('manifest.json'))
     slug_to_id = manifest['series']
 
+    # Pinned public slugs + per-fleet sub-paths, dumped from the production
+    # workspace's live publications (sailscoring ADR-010: URL stability is
+    # data, never derived). Series absent here were never published in prod
+    # and keep the derived defaults.
+    try:
+        pins = json.load(open('published-slugs.json'))
+    except FileNotFoundError:
+        pins = {}
+        print('! published-slugs.json missing — using derived slugs '
+              '(fine for a fresh workspace, NOT for the prod migration)',
+              file=sys.stderr)
+
     entries = []
     skipped_current = 0
     for path in sorted(glob.glob('events/y*.py')):
@@ -91,13 +103,38 @@ def main() -> int:
             if out not in slug_to_id:
                 print(f'  ! {out}: not in manifest.json series map — skipped', file=sys.stderr)
                 continue
+            pin = pins.get(out)
+            if not pin:
+                # Never published in prod (two coached regatta fleets). Join
+                # the event slug its sibling series are pinned to, so the new
+                # page lands beside them rather than on a derived slug.
+                event = published_slug(out)
+                sibling = next(
+                    (p for k, p in pins.items()
+                     if k != out and published_slug(k) == event),
+                    None,
+                )
+                if sibling:
+                    pin = {'slug': sibling['slug'], 'subPaths': {}}
+                    print(f"  · {out}: unpublished in prod — joining sibling "
+                          f"slug '{sibling['slug']}'", file=sys.stderr)
+            fleets = fleets_for(s)
+            if pin:
+                for fleet in fleets:
+                    pinned_sub = pin['subPaths'].get(fleet['name'])
+                    if pinned_sub:
+                        fleet['subPath'] = pinned_sub
+                    else:
+                        print(f"  ! {out}: fleet '{fleet['name']}' has no "
+                              f"pinned sub-path — keeping derived "
+                              f"'{fleet['subPath']}'", file=sys.stderr)
             entry = {
                 'key': out,
                 'id': slug_to_id[out],
-                'publishedSlug': published_slug(out),
+                'publishedSlug': pin['slug'] if pin else published_slug(out),
                 'name': s['name'],
                 'source': 'sailwave',
-                'fleets': fleets_for(s),
+                'fleets': fleets,
             }
             if s.get('venue'):
                 entry['venue'] = s['venue']
