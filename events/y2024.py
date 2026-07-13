@@ -18,7 +18,7 @@ Notes (best effort):
 - Ulster, Munster and the Sprint carry no race dates on their pages; those dates
   are approximate (rule 6).
 """
-from .helpers import main_fleet, solo, IODAI, MYC, GBSC, RCYC, HYC
+from .helpers import main_fleet, solo, combined, IODAI, MYC, GBSC, RCYC, HYC, RSGYC
 
 L = '2024/leinsters/'
 U = '2024/ulsters/'
@@ -109,4 +109,24 @@ SERIES = [
          'Royal Cork Yacht Club', ['2024-04-04'], nslots=4,
          file='2024/youth-nationals/2024YNOptimist.htm', fleet='Optimist',
          discards=[], **RCYC, event_url='https://iodai.com/2024-irish-sailing-youth-national-championships/'),
+
+    # --- National Training Week @ Royal St. George YC (2 Nov) ------------------
+    # One combined Halloween-regatta start (DNC = 75 = 74+1 on the Halloween
+    # page); the S/J and Crosbie pages are re-scores of subsets of the same
+    # start — skipped as duplicates (see README "National Training Week").
+    combined('iodai-ntw-2024-halloween-regatta',
+             'IODAI National Training Week 2024 — Halloween Regatta & Crosbie Cup',
+             'Royal St. George Yacht Club', ['2024-11-02'], nslots=4,
+             files=['2024/ntw/2024NTWHalloween.htm'], fleet='Combined',
+             **RSGYC, event_url='https://iodai.com/ntw-2024-halloween-regatta-amp-crosbie-cup/'),
+    solo('iodai-ntw-2024-regatta-racing',
+         'IODAI National Training Week 2024 — Regatta Racing',
+         'Royal St. George Yacht Club', ['2024-11-02'], nslots=3,
+         file='2024/ntw/2024NTWRR.htm', fleet='Regatta Racing', discards=[],
+         **RSGYC, event_url='https://iodai.com/ntw-2024-halloween-regatta-amp-crosbie-cup/'),
+    solo('iodai-ntw-2024-regatta-coached',
+         'IODAI National Training Week 2024 — Regatta Coached',
+         'Royal St. George Yacht Club', ['2024-11-02'], nslots=3,
+         file='2024/ntw/2024NTWRC.htm', fleet='Regatta Coached', discards=[],
+         **RSGYC, event_url='https://iodai.com/ntw-2024-halloween-regatta-amp-crosbie-cup/'),
 ]

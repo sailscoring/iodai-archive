@@ -10,7 +10,7 @@ Dates come from the page titles. Sprint did not run; NTW Crosbie deferred.
 (Separate smaller 2021 events — a Royal St George open and a Malahide regatta —
 are listed on the Results index but not built here; they aren't tracker events.)
 """
-from .helpers import main_fleet, solo, HYC, LRYC, LDYC
+from .helpers import main_fleet, solo, combined, HYC, LRYC, LDYC, MYC
 
 L = '2021/leinsters/'
 U = '2021/ulsters/'
@@ -68,4 +68,20 @@ SERIES = [
          ['2021-08-19', '2021-08-20', '2021-08-21', '2021-08-22'], nslots=7,
          file=N + 'Nats2021R.html', fleet='Regatta',
          suspect=['1464', '1214', '1351', '1270', '1234'], **LDYC, event_url='https://iodai.com/iodai-nationals-2021-results/'),
+
+    # --- National Training Week @ Malahide YC (30 Oct) -------------------------
+    # The Halloween Regatta is one combined start (Main + Crosbie groups, DNC =
+    # 75 = 74+1 on the Overall page); the Halloween Cup and Crosbie Cup are
+    # prizes decided within it. The published S/J/Crosbie pages are filtered
+    # views carrying the same combined scores — skipped as duplicates (see
+    # README "National Training Week").
+    combined('iodai-ntw-2021-halloween-regatta',
+             'IODAI National Training Week 2021 — Halloween Regatta & Crosbie Cup',
+             'Malahide Yacht Club', ['2021-10-30'], nslots=4,
+             files=['2021/ntw/NTW21.html'], fleet='Combined',
+             **MYC, event_url='https://iodai.com/ntw-results-2021/'),
+    solo('iodai-ntw-2021-regatta', 'IODAI National Training Week 2021 — Regatta',
+         'Malahide Yacht Club', ['2021-10-30'], nslots=4,
+         file='2021/ntw/NTWR21.html', fleet='Regatta',
+         **MYC, event_url='https://iodai.com/ntw-results-2021/'),
 ]

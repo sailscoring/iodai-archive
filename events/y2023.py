@@ -12,7 +12,7 @@ weekend. Not built: the National Training Week Crosbie Cup (combined-start
 positions, see y2025.py note) and the Nationals Regatta Coached page (no results
 table published).
 """
-from .helpers import main_fleet, solo, NYC, LRYC, WHSC, BYC, HYC
+from .helpers import main_fleet, solo, combined, NYC, LRYC, WHSC, BYC, HYC, RCYC
 
 L = '2023/leinsters/'
 U = '2023/ulsters/'
@@ -85,4 +85,26 @@ SERIES = [
          ['2023-04-13', '2023-04-14', '2023-04-15', '2023-04-16'], nslots=10,
          file='2023/youth-nationals/YNHYC2023Main.html', fleet='Optimist',
          discards=[(4, 1), (10, 2)], **HYC),
+
+    # --- National Training Week @ Royal Cork YC (4 Nov) ------------------------
+    # One combined Halloween-regatta start (DNC = 91 = 90+1 on RCYC23Main); the
+    # published S/J and Crosbie pages are re-scores of subsets of the same
+    # start — skipped as duplicates (see README "National Training Week").
+    # 3 races, no discard. The Regatta Coached page is a 0-race roster (like
+    # the 2025 Munsters RC).
+    combined('iodai-ntw-2023-halloween-regatta',
+             'IODAI National Training Week 2023 — Halloween Regatta & Crosbie Cup',
+             'Royal Cork Yacht Club', ['2023-11-04'], nslots=3,
+             files=['2023/ntw/RCYC23Main.htm'], fleet='Combined', discards=[],
+             **RCYC, event_url='https://iodai.com/national-training-week-2023/'),
+    solo('iodai-ntw-2023-regatta-racing',
+         'IODAI National Training Week 2023 — Regatta Racing',
+         'Royal Cork Yacht Club', ['2023-11-04'], nslots=3,
+         file='2023/ntw/RCYC23RR.htm', fleet='Regatta Racing', discards=[],
+         **RCYC, event_url='https://iodai.com/national-training-week-2023/'),
+    solo('iodai-ntw-2023-regatta-coached',
+         'IODAI National Training Week 2023 — Regatta Coached',
+         'Royal Cork Yacht Club', ['2023-11-04'], nslots=0,
+         file='2023/ntw/RCYC23RC.htm', fleet='Regatta Coached', discards=[],
+         **RCYC, event_url='https://iodai.com/national-training-week-2023/'),
 ]

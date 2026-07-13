@@ -15,7 +15,7 @@ Notes on suspect/edge data (carried as-is, best effort):
 - The Sprint published per-fleet Overall pages (OverallS/OverallJ) in 2025, so
   each fleet validates against its own page (unlike 2026's combined page).
 """
-from .helpers import main_fleet, solo, NYC, LDYC, KYC, LRYC, RSGYC
+from .helpers import main_fleet, solo, combined, NYC, LDYC, KYC, LRYC, RSGYC
 
 L = '2025/leinsters/'
 U = '2025/ulsters/'
@@ -108,10 +108,26 @@ SERIES = [
                         ['2025-04-26'] * 3 + ['2025-04-27'] * 2)[i],
     ),
 
-    # NOTE: National Training Week (Lough Derg) Crosbie Cup is deliberately NOT
-    # built. Its published page carries each boat's finishing position from the
-    # *combined* Halloween-regatta start (gold+silver+bronze together), not a
-    # position within the Crosbie group, so the race cells aren't a contiguous
-    # 1..N scratch result and can't be reconstructed by the position-based engine
-    # without re-scoring wrongly. Left unsourced (◻️) rather than committed wrong.
+    # --- National Training Week @ Lough Derg YC (1 Nov) ------------------------
+    # One combined Halloween-regatta start (DNC = 84 = 83+1 on the HalloweenCup
+    # page); the Halloween Cup and Crosbie Cup are prizes decided within it.
+    # The published SM/JM pages are re-scores of subsets, and the Crosbie page
+    # carries the combined-start positions (which is exactly why it can't be —
+    # and needn't be — rebuilt as its own series). See README "National
+    # Training Week".
+    combined('iodai-ntw-2025-halloween-regatta',
+             'IODAI National Training Week 2025 — Halloween Regatta & Crosbie Cup',
+             'Lough Derg Yacht Club', ['2025-11-01'], nslots=4,
+             files=['2025/ntw/2025NTWLDYCHalloweenCup.htm'], fleet='Combined',
+             **LDYC, event_url='https://iodai.com/ntw-2025-halloween-regatta-crosbie-cup/'),
+    solo('iodai-ntw-2025-regatta-racing',
+         'IODAI National Training Week 2025 — Regatta Racing',
+         'Lough Derg Yacht Club', ['2025-11-01'], nslots=4,
+         file='2025/ntw/2025HalloweenRegattaLDYCRR.htm', fleet='Regatta Racing',
+         **LDYC, event_url='https://iodai.com/ntw-2025-halloween-regatta-crosbie-cup/'),
+    solo('iodai-ntw-2025-regatta-coached',
+         'IODAI National Training Week 2025 — Regatta Coached',
+         'Lough Derg Yacht Club', ['2025-11-01'], nslots=0,
+         file='2025/ntw/2025HalloweenRegattaLDYCRC.htm', fleet='Regatta Coached',
+         **LDYC, event_url='https://iodai.com/ntw-2025-halloween-regatta-crosbie-cup/'),
 ]

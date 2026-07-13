@@ -101,11 +101,13 @@ and `pnpm`. That keeps one canonical matcher rather than a Python fork of it.
   (Optimist; not IODAI-run) — for IODAI those are still largely about team
   selection. Treat the two as a continuous selection thread for the cross-series
   identity & ranking goal, not as unrelated event types. See #3/#4.
-- **National Training Week (NTW)** is the umbrella event; the **Halloween Cup** (the
-  combined-start Halloween regatta) and the **Crosbie Cup** (NTW final-day racing)
-  are racing *within* it and are historically interlinked — the Crosbie Cup is
-  scored from the combined Halloween-regatta start, which is why the position-based
-  engine can't reconstruct it today. See #1 and the README "Crosbie Cup" note.
+- **National Training Week (NTW)** is the umbrella event; its **Halloween
+  Regatta** is one combined start in which the **Halloween Cup** and the
+  **Crosbie Cup** are prizes. Built (2021–2025) as one series with one combined
+  fleet from each year's combined/Overall page; the per-Division and per-group
+  (Crosbie) pages are filtered views or subset re-scores of the same races and
+  are deliberately skipped as duplicates. See the README "National Training
+  Week" note.
 
 Full domain context is in the app repo: `../sailscoring/docs/requirements/iodai-use-case.md`,
 and `../sailscoring/reference/2025-IODAI-Major-Event-SIs-v1.0.pdf` for the SIs.

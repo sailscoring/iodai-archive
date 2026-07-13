@@ -15,7 +15,7 @@ Structural notes (best effort):
 - The Gold/Silver/Bronze prize division sits in the 'Rating' column this year
   (the 'Divison' column holds Senior/Junior); the engine reads Rating for it.
 """
-from .helpers import main_fleet, solo, SSC, HYC, GBSC, RCYC, RSGYC, BYC
+from .helpers import main_fleet, solo, combined, SSC, HYC, GBSC, RCYC, RSGYC, BYC, LDYC
 
 L = '2022/leinsters/'
 U = '2022/ulsters/'
@@ -94,4 +94,15 @@ SERIES = [
          ['2022-04-21', '2022-04-22', '2022-04-23', '2022-04-24'], nslots=11,
          file='2022/youth-nationals/IY22OPTIMIST.htm', fleet='Optimist',
          discards=[(4, 1), (11, 2)], **BYC),
+
+    # --- National Training Week @ Lough Derg YC (5 Nov) ------------------------
+    # One combined Halloween-regatta start (DNC = 97 = 96+1 on the Overall
+    # page); the S/J pages are filtered views and NTWC122 a re-score of one
+    # group — skipped as duplicates (see README "National Training Week").
+    # No regatta-fleet pages were published for 2022.
+    combined('iodai-ntw-2022-halloween-regatta',
+             'IODAI National Training Week 2022 — Halloween Regatta & Crosbie Cup',
+             'Lough Derg Yacht Club', ['2022-11-05'], nslots=4,
+             files=['2022/ntw/NTW22.html'], fleet='Combined',
+             **LDYC, event_url='https://iodai.com/ntw-results-2022/'),
 ]

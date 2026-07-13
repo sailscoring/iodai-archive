@@ -35,7 +35,7 @@ IODAI runs ~7 events a season. For each past year we want:
 |-------|-----------------|----------|
 | **4 regional championships** — Leinsters, Ulsters, Connachts, Munsters | 3 each: Main (Senior + Junior fleets), Regatta Racing, Regatta Coached | **primary** |
 | **National championship** | 3: Main, Regatta Racing, Regatta Coached | **primary** |
-| **National Training Week** — final-day racing (Crosbie Cup) | 1+ | low |
+| **National Training Week** — Halloween Regatta (Halloween Cup + Crosbie Cup, one combined start) + regatta fleets | 1–3 | low |
 | **Sprint Series** (runs from 2024) | 1: Main, Senior + Junior scored separately | low |
 | **IODAI Trials** (2015–2020; team selection, superseded by the Youth Nationals) | 1: single combined fleet | low |
 | **Irish Sailing Youth Nationals** (Optimist; not IODAI-run) | 1 | low |
@@ -49,14 +49,14 @@ Gold/Silver/Bronze is a prize subdivision within each.
 
 ✅ sourced & built · ◻️ not yet sourced · — didn't exist / not held that year
 
-| Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Trials | Crosbie Cup | Sprint |
-|-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:------:|:-----------:|:------:|
+| Year | Leinsters | Ulsters | Connachts | Munsters | Nationals | Trials | NTW | Sprint |
+|-----:|:---------:|:-------:|:---------:|:--------:|:---------:|:------:|:---:|:------:|
 | 2026 | ◻️ | ✅ | ◻️ | ✅ | ◻️ | — | ◻️ | ✅ |
-| 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | ✅ |
-| 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | ✅ |
-| 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
-| 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
-| 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
+| 2025 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| 2024 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | ✅ |
+| 2023 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — |
+| 2022 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — |
+| 2021 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ | — |
 | 2020 | — | — | — | — | ✅ | ✅¶ | — | — |
 | 2019 | ✅ | ✅* | ✅ | ✅† | ✅ | ✅ | ◻️ | — |
 | 2018 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
@@ -124,11 +124,21 @@ via the Wayback Machine; see SOURCES.md.
 **`SOURCES.md`** records, per event, the iodai.com page and the exact Sailwave
 result file each fleet was built from — the provenance trail behind every series.
 
-The **Crosbie Cup** (National Training Week final day) is not reconstructable by
-this pipeline: its published page carries each boat's finishing position from the
-*combined* Halloween-regatta start rather than a position within the Crosbie
-group, so the race cells aren't a contiguous scratch result. Left unsourced until
-the engine can model carried scores. See the note in `events/y2025.py`.
+**National Training Week** (`iodai-ntw-<year>-…`, 2021–2025 built): the
+**Halloween Regatta** is one combined start — Main and Crosbie groups race
+together, and the **Halloween Cup** and **Crosbie Cup** are prizes decided
+within it. Each year's combined/Overall page scores that start contiguously
+(DNC = fleet+1), so it builds and validates as **one series with one combined
+fleet**; Regatta Racing / Regatta Coached are their own starts and series
+where published. The per-Division (Senior/Junior) and per-group (Crosbie)
+pages IODAI also publishes are *filtered views or re-scores of subsets of the
+same races* — building them as series would duplicate every boat's races, so
+they're deliberately skipped (same rule as the 2022 Ulsters Bronze re-score
+views and the 2020 trials standings). This resolves the old "Crosbie Cup isn't
+reconstructable" blocker: the carried positions on the Crosbie page *are* the
+combined series' scores, so nothing is lost by not rebuilding that view. No
+pre-2021 NTW results pages have been located (the iodai.com Results index
+starts at 2021).
 
 ## Layout
 

@@ -149,6 +149,18 @@ Event page: <https://iodai.com/2025-irish-sailing-youth-national-championships/>
   "Irish Sailing Youth Nationals 2025 at Royal St. George Yacht Club"; the race
   titles carry per-race dates (24–27 Apr 2025).
 
+### National Training Week (Halloween Regatta & Crosbie Cup)
+Event page: <https://iodai.com/ntw-2025-halloween-regatta-crosbie-cup/>  
+- Halloween Regatta (combined, built): <https://www.sailwave.com/results/IODAI/2025NTWLDYCHalloweenCup.htm>
+- Regatta Racing: <https://www.sailwave.com/results/IODAI/2025HalloweenRegattaLDYCRR.htm>
+- Regatta Coached (0-race roster): <https://www.sailwave.com/results/IODAI/2025HalloweenRegattaLDYCRC.htm>
+- Not built (views of the same start): Senior/Junior re-scores
+  (<https://www.sailwave.com/results/IODAI/2025NTWLDYCSM.htm>,
+  <https://www.sailwave.com/results/IODAI/2025NTWLDYCJM.htm>) and the Crosbie
+  page with carried combined-start positions
+  (<https://www.sailwave.com/results/IODAI/2025NTWLDYCCrosbie.htm>) — kept in
+  sources/ for reference. See README "National Training Week".
+
 ## 2024
 
 ### Leinsters
@@ -200,6 +212,17 @@ Irish Sailing Live: <https://irishsailinglive.ie/event-results/847/2024-04-04/48
   scores. Irish Sailing Live links its own current-year pages from
   <https://www.sailing.ie/Events/Irish-Sailing-Youth-National-Championships>.
 
+### National Training Week (Halloween Regatta & Crosbie Cup)
+Event page: <https://iodai.com/ntw-2024-halloween-regatta-amp-crosbie-cup/>  
+- Halloween Regatta (combined, built): <https://sailwave.com/results/IODAI/2024NTWHalloween.htm>
+- Regatta Racing: <https://www.sailwave.com/results/IODAI/2024NTWRR.htm>
+- Regatta Coached: <https://www.sailwave.com/results/IODAI/2024NTWRC.htm>
+- Not built (subset re-scores of the same start): MainS / MainJ / Crosbie
+  (<https://www.sailwave.com/results/IODAI/2024NTWMainS.htm>,
+  <https://www.sailwave.com/results/IODAI/2024NTWMainJ.htm>,
+  <https://www.sailwave.com/results/IODAI/2024NTWCrosbie.htm>) — kept in
+  sources/ for reference.
+
 ## 2023
 
 ### Leinsters
@@ -242,6 +265,17 @@ Event page: <https://iodai.com/irish-optimist-national-championships-2023/>
   "2023 Irish Sailing Investwise Youth Nationals at Howth Yacht Club
   13-16 April 2023" per the page header.
 
+### National Training Week (Halloween Regatta & Crosbie Cup)
+Event page: <https://iodai.com/national-training-week-2023/>  
+- Halloween Regatta (combined, built): <https://www.sailwave.com/results/RCYC23Main.htm>
+- Regatta Racing: <https://www.sailwave.com/results/RCYC23RR.htm>
+- Regatta Coached (0-race roster): <https://www.sailwave.com/results/RCYC23RC.htm>
+- Not built (subset re-scores of the same start): MainS / MainJ / MainC
+  ('Crobie' sic) (<https://www.sailwave.com/results/RCYC23MainS.htm>,
+  <https://www.sailwave.com/results/RCYC23MainJ.htm>,
+  <https://www.sailwave.com/results/RCYC23MainC.htm>) — kept in sources/ for
+  reference.
+
 ## 2022
 
 ### Leinsters
@@ -283,6 +317,15 @@ Event page: <https://iodai.com/optimist-nationals-results/>
   the page title; results final 24 Apr 2022. The page carries no per-race dates,
   so the 21–24 Apr window is approximate (rule 6).
 
+### National Training Week (Halloween Regatta & Crosbie Cup)
+Event page: <https://iodai.com/ntw-results-2022/>  
+- Halloween Regatta (combined, built): <https://www.sailwave.com/results/NTW22.html>
+- Not built (views of the same start): Senior/Junior filtered views carrying
+  the combined scores (<https://www.sailwave.com/results/NTWS22.html>,
+  <https://sailwave.com/results/NTWJ22.html>) and the NTWC122 group re-score
+  (<https://sailwave.com/results/NTWC122.html>) — kept in sources/ for
+  reference. No regatta-fleet pages were published for 2022.
+
 ## 2021
 
 ### Leinsters
@@ -314,6 +357,16 @@ Event page: <https://iodai.com/iodai-nationals-2021-results/>
 - Main (Senior): <https://iodai.com/results-files/Nats2021SF.html>
 - Main (Junior): <https://iodai.com/results-files/Nats2021JF.html>
 - Regatta: <https://iodai.com/results-files/Nats2021R.html>
+
+### National Training Week (Halloween Regatta & Crosbie Cup)
+Event page: <https://iodai.com/ntw-results-2021/>  
+- Halloween Regatta (combined, built): <https://www.sailwave.com/results/NTW21.html>
+- Regatta: <https://sailwave.com/results/NTWR21.html>
+- Not built (filtered views carrying the combined scores): S / J / Crosbie
+  (<https://www.sailwave.com/results/NTWS21.html>,
+  <https://sailwave.com/results/NTWJ21.html>,
+  <https://sailwave.com/results/NTWC21.html>) — kept in sources/ for
+  reference.
 
 ## 2020
 
