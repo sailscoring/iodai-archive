@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 from collections import defaultdict
 
 import manifest
@@ -28,7 +29,12 @@ MD = 'NAMESAKE-REVIEW.md'
 
 
 def fold(name):
-    return ' '.join(re.sub(r'[^a-z ]', '', name.lower()).split())
+    """Grouping key: NFKD-strip diacritics (like audit.fold), then drop
+    everything but letters — apostrophes, hyphens, digits *and spacing* — so
+    `Ó`/`O`, `O Neill`/`O'Neill` and `X- Y`/`X-Y` all collide (#5)."""
+    s = unicodedata.normalize('NFKD', name.lower())
+    s = ''.join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r'[^a-z]', '', s)
 
 
 def year_of(out):
