@@ -71,6 +71,9 @@ def fleets_for(s):
             'name': name,
             'subPath': sub,
             'file': 'sources/' + src['file'],
+            # Carry per-race detail tables wherever the capture published
+            # them (2018+ Sailwave exports mostly; older pages have none).
+            'includeRaces': True,
         })
     return fleets
 
