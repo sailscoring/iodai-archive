@@ -65,7 +65,7 @@ Gold/Silver/Bronze is a prize subdivision within each.
 | 2015 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ◻️ | — |
 | 2014 | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
 | 2013‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
-| 2012 | — | ✅§ | — | — | — | — | — | — |
+| 2012 | — | ✅§ | — | — | ✅§ | — | — | — |
 | 2011‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
 | 2010‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
 | 2009‡ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ◻️ | — |
@@ -81,10 +81,13 @@ remain full-accuracy Phase 1. **2009–2011** are now built on this basis
 (spot-checked: every fleet's winner reconstructs correctly; a few big/short-series
 fleets are looser mid-pack — Munster 2009 Junior is the weakest). Some 2010/2011
 Junior pages weren't found (those Main fleets are Senior-only). § **2012** is
-almost entirely missing — barely archived, and only one results file survives on
-the site (Ulster **Senior**, built; reconstructs exactly). No other 2012
-region/fleet or results index could be located on iodai.com or in the Wayback
-Machine.
+almost entirely missing — barely archived. Ulster **Senior** is the one results
+file surviving on the site (built; reconstructs exactly), and the **Nationals**
+survive only as PDF exports of the old Sail100 results, transcribed to the
+pipeline's HTML shape by `sources/2012/nationals/transcribe.py` (Senior 47/47
+exact; Junior 95/96 — one deep-fleet redress average isn't bit-reconstructable).
+No other 2012 region/fleet or results index could be located on iodai.com or in
+the Wayback Machine.
 
 **2020**: COVID-disrupted. The **regionals were cancelled** — IODAI's own page
 states "Due to Covid-19, we have cancelled the first two regionals in May and

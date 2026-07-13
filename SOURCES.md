@@ -515,15 +515,32 @@ rankings reliable. Discards [(5,1)] regionals, [(5,1),(10,2)] Nationals.
 - Munster (~May): `muse13os` · `muju13os` · `mure13os`
 - Nationals (15–18 Aug): `nase13os` · `naju13os` · `nare13os`
 
-## 2012 — Phase 2 (only one fleet survives)
+## 2012 — Phase 2 (two events survive)
 
-2012 was barely archived and only a single results file remains on the site —
-Ulster **Senior** (`ulse12os.html`). All other 2012 region/fleet filenames 404
-and aren't in the Wayback Machine, and no 2012 results index was archived, so the
-rest can't be sourced. The one fleet reconstructs exactly (27/27). Date isn't on
-the page (only a Jan-2013 re-publish stamp); approximate. Built Senior-only.
+2012 was barely archived. Ulster **Senior** (`ulse12os.html`) is the only HTML
+results file remaining on the site; the **Nationals** survive as PDF exports of
+the old Sail100 results (surfaced by Alex Walsh — #2). All other 2012
+region/fleet filenames 404 and aren't in the Wayback Machine, and no 2012
+results index was archived, so the rest can't be sourced. Dates approximate
+(Ulsters: only a Jan-2013 re-publish stamp; Nationals: a 'Sat 04 Aug 12' print
+timestamp anchors the final day). Venues not recorded.
 
+### Ulsters
 - Ulster Senior: <https://iodai.com/results-files/ulse12os.html>
+
+  Reconstructs exactly (27/27). Built Senior-only.
+
+### Nationals
+- Main (Senior): <https://iodai.com/results-files/nase2012os.pdf>
+- Main (Junior): <https://iodai.com/results-files/naju2012os.pdf>
+
+  PDFs, not HTML — transcribed to the pipeline's Sail100-HTML shape by
+  `sources/2012/nationals/transcribe.py` (every cell lifted verbatim from the
+  PDF text layer; a per-row nett checksum guards against column misalignment;
+  the PDFs are kept alongside the generated HTML). Senior reconstructs exactly
+  (47/47); Junior 95/96 — one deep-fleet boat (IRL1393, published nett 726.9)
+  carries a bare 90.9 redress/average score that the position-based engine
+  can't bit-reconstruct, within the Phase-2 bar.
 
 ## 2009–2011 — Phase 2 (older Sail100, best-effort)
 
