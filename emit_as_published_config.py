@@ -142,12 +142,28 @@ def main() -> int:
                         print(f"  ! {out}: fleet '{fleet['name']}' has no "
                               f"pinned sub-path — keeping derived "
                               f"'{fleet['subPath']}'", file=sys.stderr)
+            # Year-grouped publication scheme (July 2026 rework): one shared
+            # slug per year, each event's pages at {event}/{fleet} beneath it
+            # (/p/iodai/2019/leinsters/senior). The event segment is the old
+            # event slug minus its year prefix; the fleet leaf keeps the
+            # pinned sub-path, so pages keep their names, just re-rooted.
+            event_slug = pin['slug'] if pin else published_slug(out)
+            m = re.match(r'^(\d{4})-(.+)$', event_slug)
+            if not m:
+                print(f'  ! {out}: slug {event_slug!r} has no year prefix — skipped',
+                      file=sys.stderr)
+                continue
+            year_slug, event = m.group(1), m.group(2)
+            for fleet in fleets:
+                fleet['subPath'] = f"{event}/{fleet['subPath']}"
             entry = {
                 'key': out,
                 'id': sid,
-                'publishedSlug': pin['slug'] if pin else published_slug(out),
+                'publishedSlug': year_slug,
                 'name': s['name'],
                 'source': 'sailwave',
+                # Initial in-app filing: one category per year.
+                'category': year_slug,
                 'fleets': fleets,
             }
             if s.get('venue'):
@@ -165,6 +181,18 @@ def main() -> int:
             if s.get('event_logo'):
                 entry['eventLogoUrl'] = s['event_logo']
             entries.append(entry)
+
+    # Page paths are a per-year namespace shared by every event — a
+    # collision would make the ingest reject the corpus.
+    seen = set()
+    for entry in entries:
+        for fleet in entry['fleets']:
+            k = (entry['publishedSlug'], fleet['subPath'])
+            if k in seen:
+                print(f"  ! duplicate page path: /p/iodai/{k[0]}/{k[1]} ({entry['key']})",
+                      file=sys.stderr)
+                return 1
+            seen.add(k)
 
     config = {
         'version': 1,
