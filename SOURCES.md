@@ -161,6 +161,29 @@ Event page: <https://iodai.com/ntw-2025-halloween-regatta-crosbie-cup/>
   (<https://www.sailwave.com/results/IODAI/2025NTWLDYCCrosbie.htm>) — kept in
   sources/ for reference. See README "National Training Week".
 
+### Season rankings (#7)
+Published as a Sailwave series — one "race" column per event (Leinsters,
+Ulsters, Connaghts, Nationals, Munsters; 5 sailed, 2 discards, 3 to count).
+Revisions are separate files; the **final revision is authoritative**:
+
+- Senior, final (Dec 9, 44 sailors): <https://www.sailwave.com/results/IODAI/2025SNRNR.htm>
+- Junior, final (Oct 3, 49 sailors): <https://www.sailwave.com/results/IODAI/2025JNRNR.htm>
+- Senior, earlier revisions (Sept 22/23, 43 sailors):
+  <https://www.sailwave.com/results/IODAI/2025SNRRA.htm>,
+  <https://www.sailwave.com/results/IODAI/2025SNRRAalt.htm>
+- Junior, earlier revision (Sept 23, content-identical to final):
+  <https://www.sailwave.com/results/IODAI/2025JNRRA.htm>
+
+The Senior September→December delta (see `python3 ranking.py diff`) is
+domain-significant: a 44th sailor was added (every DNC moved 44→45), and the
+Donagh sisters' **Ulsters RDGa redress was revoked** — Maeve's counted `1.5
+RDGa` became a discarded DNC, swapping ranks 1 and 2, so **Emily Donagh is the
+final 2025 Senior champion** on a 4.0 nett tie-break. Six Senior + one Junior
+`RDGa` entries (all for the **Connaghts**) survive to the final sheets — the
+committee-average redress the app replicates as manual adjustments. Both
+sheets are all-IRL (the "excluding non-Irish sailors" compression happens when
+event places enter the ranking).
+
 ## 2024
 
 ### Leinsters

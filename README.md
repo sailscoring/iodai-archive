@@ -124,6 +124,25 @@ via the Wayback Machine; see SOURCES.md.
 **`SOURCES.md`** records, per event, the iodai.com page and the exact Sailwave
 result file each fleet was built from — the provenance trail behind every series.
 
+## Season rankings (#7)
+
+IODAI's yearly national rankings (Junior and Senior, separate since 2008) are
+sourced like events — captured under `sources/<year>/ranking/`, parsed with
+`ranking.py` (`parse` / `diff` / `adjustments`) — and replicated in the
+workspace as app-side rankings over the as-published event series (buckets +
+IRL place recomputation + a manual adjustment per surviving `RDGa` row).
+Rankings are republished through the season; **capture every revision found,
+treat the latest as authoritative** (the 2025 Senior final revision revoked a
+redress and changed the champion). See SOURCES.md per year.
+
+✅ sourced (final revision) · ◻️ not yet sourced
+
+| Year | Junior | Senior |
+|-----:|:------:|:------:|
+| 2025 | ✅ | ✅ |
+| 2024 | ◻️ (`2024-IODAI-RankingJ-7.htm` on iodai.com uploads) | ◻️ |
+| ≤2023 | ◻️ | ◻️ |
+
 **National Training Week** (`iodai-ntw-<year>-…`, 2021–2025 built): the
 **Halloween Regatta** is one combined start — Main and Crosbie groups race
 together, and the **Halloween Cup** and **Crosbie Cup** are prizes decided
