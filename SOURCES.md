@@ -174,6 +174,85 @@ Revisions are separate files; the **final revision is authoritative**:
 - Junior, earlier revision (Sept 23, content-identical to final):
   <https://www.sailwave.com/results/IODAI/2025JNRRA.htm>
 
+## Season rankings, all years (#7)
+
+Found via the iodai.com results category (pages 1–16 of
+<https://iodai.com/category/results/>, every article with "rank" in the
+title — WordPress era, 2014→) and, before that, the old site's rolling
+**Rankings hub page** `iodai.com/live/ranking/` in the Wayback Machine
+(37 snapshots, 2004–2014; the page title carries its own "as of" date, so
+each snapshot is filed under the **season it describes** — a January
+snapshot is the previous season's final state). See the README "Season
+rankings" tracker for per-year status.
+
+Article → file map (WordPress era; all fetched live, none needed Wayback):
+
+| Season | Article | Files |
+|-------:|---------|-------|
+| 2025 | `provisional-ranking-2025-2026-u12-team` | `2025SNRNR.htm`, `2025JNRNR.htm` (sailwave.com/results/IODAI/) |
+| 2024 | `provisional-ranking-2024` | `2024-IODAI-RankingS-6.htm`, `2024-IODAI-RankingJ-7.htm` (iodai.com/wp-content/uploads/2014/06/) |
+| 2023 | `provisional-ranking-2023` | `2023IodaiRankingSeniors.htm`, `2023IodaiRankingJuniors.htm` (sailwave.com/results/) |
+| 2022 | `provisional-ranking-2022` | `IODAISRank22.htm`, `IODAIJRank22.htm` (sailwave.com/results/) |
+| 2021 | `provisional-ranking-2021` | `Draft-Senior-Ranking.pdf`, `Draft-Junior-Ranking-1.pdf` (wp-content uploads) |
+| 2019 | `final-rankings-2019` (+ `pre-rankings-2019-…`, same files updated in place) | `Rankings2019Seniors.html`, `Rankings2019Juniors.html` (results-files/) |
+| 2018 | `final-rankings-2018` | `Rankings2018Seniors.htm`, `Rankings2018Juniors.htm` |
+| 2017 | `final-rankings-2017`, `rankings-after-4-events-2017` | `Seniors2017FinalRankings.pdf`, `Juniors2017FinalRankings.pdf`, `RankingAfter4Events{Seniors,Juniors}2017.pdf` |
+| 2016 | `final-rankings-for-2016`, `ranking-after-4-events-in-2016` | `SeniorRankings2016Final.pdf`, `JuniorRankings2016Final.pdf`, `RankingAfter4Events{Seniors,Juniors}2016.pdf` |
+| 2015 | `final-rankings-2015` | `Senior2015FinalRanking.pdf`, `Junior2015FinalRanking.pdf` |
+| 2014 | `final-rankings-2014`, `rankings-after-4-events-in-2014` | `final_ranking_{senior,junior}_2014.html`, `{Senior,Junior}Ranking2014after4events.html` |
+
+2020: no ranking — COVID cancelled the regionals (only the Nationals ran).
+
+Pre-2014 (`live/ranking/` hub-page snapshots, filed by season; fetched with
+the `id_` raw suffix):
+
+- **2013**: `live-ranking-20140428163949.html` — "Final Rankings 2013";
+  links `{jun,sen}rank2013Conos.html` (post-Connachts) — **not archived**.
+- **2012**: `live-ranking-20130130093824.html` — "Final Rankings 2012 &
+  Promotions Post Munsters"; links `{jun,sen}rank2012Munos.html` — **not
+  archived** (like almost everything else from 2012).
+- **2011**: `…20110921115425` — "2011 Senior and Junior Rankings Final";
+  `…20110723071609` — pre-Nationals. Linked `{jun,sen}rank2011{Mun,Nat}os.html`
+  — **not archived**.
+- **2010**: `…20101119065654` — "Final Rankings for 2010";
+  `…20110322072623` — "Final Rankings 2010 & Note on Rankings". Linked
+  `{jun,sen}rank2010natos.html` — **not archived**.
+- **2009**: `…20090908034124` — "Rankings September 2009 - Post Leinsters";
+  `…20100131120651` — the same state as the season closed. Linked
+  `{jun,sen}rank2009os.html` and `RankingsJuniorFleet2009.pdf` /
+  `RankingsSeniorFleet2009-ShowingAssumedRetireesStandardBasis.pdf` —
+  **not archived**.
+- **2008** (first separate-fleets year): `…20081002144126` — "08 Rankings
+  and Promotions Revised 16th September"; `…20090313122147` — "Rankings
+  February 2009" (the 2008 final state). Linked
+  `Rankings{Senior,junior}Sept…08.htm` — **not archived**.
+- **2007**: `rank1nh2.html` (Sail100 output, "Rankings 2007 / Provisional
+  Results / Thu 06 Sep 07", subtitle **"Best 2 Regionals, Nationals
+  non-discardable"** — the modern rule, already in force) via Wayback
+  20080724221708; hub snapshots `…20070828171425` (post-Nationals),
+  `…20071028161113` (11 Sept state), `…20080509142558` ("Rankings January
+  2008" = the 2007 final state). `rank1nh.html` and `Rankings310108.xls` —
+  **not archived**.
+- **2006**: `…20061215025137` — "Provisional Rankings - Year end 2006"
+  (a menu of the season's revisions); `…20070416145126` — "Rankings March
+  2007" (2006 final state); `Rankings0307.pdf` — "January 07 Ranking"
+  (Wayback 20080724082542). `Rank1106.xls` — **not archived**.
+- **2005**: `…20051214103946` — "Rankings 12th September 2005" with the
+  **full combined table embedded** (135 rows, per-event points, `DNC200`);
+  `…20050830132241` (Aug), `…20060211000651` ("Rankings February 2006" =
+  2005 final state, table embedded).
+- **2004**: `…20041204021327` — "Rankings as of 21 Aug 2004", table
+  embedded. The era's rules differ: `IODAI Ranking rules 2004.pdf`
+  (Wayback 20030716223254, kept in reference-docs) scores the ranking
+  over **individual races** (max 36 races, 12 discards) — the
+  event-place model with "Best 2 Regionals, Nationals non-discardable"
+  appears by 2007.
+
+The lost per-fleet files (2006–2013) were linked from crawled hub pages but
+never captured by the Wayback crawler, and iodai.com dropped `/media/` and
+`/media/i/` in the WordPress migration. Recovery would need IODAI's own
+records (the ranking maintainer's Sailwave/Sail100 files).
+
 The Senior September→December delta (see `python3 ranking.py diff`) is
 domain-significant: a 44th sailor was added (every DNC moved 44→45), and the
 Donagh sisters' **Ulsters RDGa redress was revoked** — Maeve's counted `1.5

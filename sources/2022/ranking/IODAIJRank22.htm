@@ -1,0 +1,4025 @@
+
+
+
+<!doctype html>
+
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="sailwave results">
+<meta name="viewport" content="width=device-width">
+
+<title>Sailwave results for Junior Ranking at IODAI 2022 2022</title>
+
+<style type="text/css">
+body {font: 72% arial, helvetica, sans-serif; text-align: center;}
+.hardleft  {text-align: left; float: left;  margin: 15px 0 15px 25px;}
+.hardright {text-align: right; float: right; margin: 15px 25px 15px 0;}
+table {text-align: left; margin: 0px auto 30px auto; font-size: 1em; border-collapse: collapse; border: 1px #fff solid;}
+td, th {padding: 4px; border: 2px #fff solid; vertical-align: top;}
+.caption {padding: 5px; text-align: center; border: 0; font-weight: bold;}
+h1 {font-size: 1.6em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.2em;}
+p {text-align: center;}
+th {background-color: #aaf;}
+.contents {text-align: left; margin-left: 20%;}
+.even {background-color: #bbf;}
+.odd {background-color: #ddf;}
+.natflag {border: 1px #999 solid;}
+.nattext {font-size: 0.8em;}
+.place1 {font-weight: bold; background-color: #ffffaa;}
+.place2 {font-weight: bold; background-color: #aaaaff;}
+.place3 {font-weight: bold; background-color: #ffaaaa;}
+.placen {}
+</style>
+
+<script type="text/javascript">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function swGetURLArgs() {
+
+  var url = location.href;
+  var qs  = url.substring(url.indexOf('?') + 1).split('&');
+
+  for(var i = 0, result = {}; i < qs.length; i++) {
+    qs[i]            = qs[i].split('=');
+    result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+  }
+
+  return result;
+}
+
+//
+//  name=HighlightWins3v3
+//  dependencies=jQuery
+//  description=Highlight winning scores in summary tables.
+//  author=Jon Eskdale based on an idea by Colin Jenkins
+//  date=2016-07-04
+//  version=3.0  For use with Sailwave from V2.22.x
+//  Requires the following lines in the Results.htm file (Results.htm is in the Templates directory)
+//  string.set("summary.col.race.rank1.td",   "rank1")
+//  string.set("summary.col.race.rank2.td",   "rank2")
+//  string.set("summary.col.race.rank3.td",   "rank3")
+
+//  url=http://sailwave.com
+//  email=jon@sailwave.com
+//  twitter=eskdale
+//  comments=Edit colours to colours of your choice
+//
+
+$(document).ready(function() {
+var selectorRank1 = '.rank1';
+var selectorRank2 = '.rank2';
+var selectorRank3 = '.rank3';
+
+// Results with these codes will not get highlighted add or remove codes to your choice
+var ignoreText   = /^(?!.*\b(DNC|DNF|DNS|OCS|BFD|UFD|RET|DSQ|DGM|DNE)\b).*/i
+
+// Edit these colours to change the highlight colours for 1st, 2nd and 3rd
+var winsColour   = '#ffd700';
+var twoColour    = '#6a91c5';
+var threeColour  = '#da6841';
+
+
+// Change the background color for cells with class of rank1-3 and don't have a code specified
+$(function () {
+
+  $(selectorRank1).filter(function() {
+    return ignoreText.test($(this).text());
+  }).css("background", winsColour);
+  $(selectorRank2).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", twoColour);
+  $(selectorRank3).filter(function() {
+        return ignoreText.test($(this).text());
+  }).css("background", threeColour);
+
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<header>
+</header>
+
+<div id="wrap">
+
+<img class="hardright" src="https://iodai.com/wp-content/uploads/2021/08/iodai-logo-2018-192x300-1.png" alt="event burgee" />
+
+<h1>Junior Ranking</h1>
+<h2>IODAI 2022</h2>
+
+<div style="clear:both;"></div>
+
+<style>
+div.applicant-break {page-break-after:always;}
+</style>
+<h3 class="seriestitle">Results are provisional as of 11:28 on October  8, 2022</h3>
+<h3 class="summarytitle">Overall</h3>
+<div class="caption summarycaption">Sailed: 5, Discards: 2, To count: 3, Entries: 58, Scoring system: Appendix A</div>
+<table class="summarytable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="17">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="race" />
+<col class="total" />
+<col class="nett" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th><a class="racelink" href="#r1">Munsters</a></th>
+<th><a class="racelink" href="#r2">Leinsters</a></th>
+<th><a class="racelink" href="#r3">Connaughts</a></th>
+<th><a class="racelink" href="#r4">Nationals</a></th>
+<th><a class="racelink" href="#r5">Ulsters</a></th>
+<th>Total</th>
+<th>Nett</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd summaryrow">
+<td>1st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>(14.0)</td>
+<td>(8.0)</td>
+<td class="rank2">2.0</td>
+<td>5.0</td>
+<td class="rank1">1.0</td>
+<td>30.0</td>
+<td>8.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>2nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>(7.0)</td>
+<td>5.0</td>
+<td>(18.0)</td>
+<td class="rank1">1.0</td>
+<td class="rank3">3.0</td>
+<td>34.0</td>
+<td>9.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>3rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1606</td>
+<td>Andrew Mannion</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td class="rank3">3.0</td>
+<td class="rank3">3.0</td>
+<td>7.0</td>
+<td>(3,000.0 DNC)</td>
+<td>6,013.0</td>
+<td>13.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>4th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td class="rank3">3.0</td>
+<td>(3,000.0 DNC)</td>
+<td>4.0</td>
+<td>9.0</td>
+<td>(8.0)</td>
+<td>3,024.0</td>
+<td>16.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>5th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1565</td>
+<td>Patrick Fegan</td>
+<td>M</td>
+<td>Malahide Yacht Club / Howth Yacht club</td>
+<td>IRL</td>
+<td>11</td>
+<td>(8.0)</td>
+<td class="rank2">2.0</td>
+<td>(3,000.0 DNC)</td>
+<td>8.0</td>
+<td>7.0</td>
+<td>3,025.0</td>
+<td>17.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>6th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>(9.0)</td>
+<td>(7.0)</td>
+<td>5.0</td>
+<td>11.0</td>
+<td class="rank2">2.0</td>
+<td>34.0</td>
+<td>18.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>7th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(10.0)</td>
+<td>6.0</td>
+<td>(12.0)</td>
+<td>6.0</td>
+<td>6.0</td>
+<td>40.0</td>
+<td>18.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>8th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1493</td>
+<td>Max O’Hare</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td class="rank2">2.0</td>
+<td>(3,000.0 DNC)</td>
+<td>14.0</td>
+<td class="rank3">3.0</td>
+<td>(15.0)</td>
+<td>3,034.0</td>
+<td>19.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>9th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(23.0)</td>
+<td>13.0</td>
+<td class="rank2">2.0</td>
+<td>4.0</td>
+<td>3,042.0</td>
+<td>19.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>10th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td class="rank1">(1.0)</td>
+<td class="rank1">1.0</td>
+<td class="rank1">1.0</td>
+<td>19.0</td>
+<td>(14.0)</td>
+<td>36.0</td>
+<td>21.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>11th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(8.0)</td>
+<td>12.0</td>
+<td>5.0</td>
+<td>3,029.0</td>
+<td>21.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>12th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>15.0</td>
+<td>7.0</td>
+<td>4.0</td>
+<td>(16.0)</td>
+<td>3,042.0</td>
+<td>26.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>13th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1384</td>
+<td>George Doig</td>
+<td>M</td>
+<td>Other / East Antrim Boat Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(11.0)</td>
+<td>10.0</td>
+<td>(3,000.0 DNC)</td>
+<td>10.0</td>
+<td>9.0</td>
+<td>3,040.0</td>
+<td>29.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>14th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1527</td>
+<td>Olin Bateman</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>6.0</td>
+<td>4.0</td>
+<td>(10.0)</td>
+<td>21.0</td>
+<td>(3,000.0 DNC)</td>
+<td>3,041.0</td>
+<td>31.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>15th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(18.0)</td>
+<td>13.0</td>
+<td>(3,000.0 DNC)</td>
+<td>14.0</td>
+<td>11.0</td>
+<td>3,056.0</td>
+<td>38.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>16th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>F</td>
+<td>Kinsale Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(25.0)</td>
+<td>(3,000.0 DNC)</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>3,064.0</td>
+<td>39.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>17th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>F</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(16.0)</td>
+<td>14.0</td>
+<td>6.0</td>
+<td>22.0</td>
+<td>(3,000.0 DNC)</td>
+<td>3,058.0</td>
+<td>42.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>18th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>906</td>
+<td>Aoife McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(22.0)</td>
+<td>15.0</td>
+<td>12.0</td>
+<td>3,064.0</td>
+<td>42.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>19th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1580</td>
+<td>Basile Dion</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>17.0</td>
+<td>11.0</td>
+<td>(3,000.0 DNC)</td>
+<td>17.0</td>
+<td>(21.0)</td>
+<td>3,066.0</td>
+<td>45.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>20th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1476</td>
+<td>Tomás A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>12.0</td>
+<td>17.0</td>
+<td>(3,000.0 DNC)</td>
+<td>16.0</td>
+<td>(18.0)</td>
+<td>3,063.0</td>
+<td>45.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>21st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1494</td>
+<td>Paidí A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>13.0</td>
+<td>12.0</td>
+<td>(3,000.0 DNC)</td>
+<td>23.0</td>
+<td>(39.0)</td>
+<td>3,087.0</td>
+<td>48.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>22nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>16.0</td>
+<td>(25.0)</td>
+<td>20.0</td>
+<td>13.0</td>
+<td>3,074.0</td>
+<td>49.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>23rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(21.0)</td>
+<td>18.0</td>
+<td>9.0</td>
+<td>25.0</td>
+<td>(19.0)</td>
+<td>92.0</td>
+<td>52.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>24th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>F</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(26.0)</td>
+<td>21.0</td>
+<td>18.0</td>
+<td>22.0</td>
+<td>3,087.0</td>
+<td>61.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>25th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1417</td>
+<td>Johnny Rock</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>20.0</td>
+<td>11.0</td>
+<td>33.0</td>
+<td>(3,000.0 DNC)</td>
+<td>6,064.0</td>
+<td>64.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>26th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1403</td>
+<td>Hugo Breen</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>19.0</td>
+<td>17.0</td>
+<td>29.0</td>
+<td>(32.0)</td>
+<td>3,097.0</td>
+<td>65.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>27th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(29.0)</td>
+<td>24.0</td>
+<td>(28.0)</td>
+<td>26.0</td>
+<td>17.0</td>
+<td>124.0</td>
+<td>67.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>28th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(22.0)</td>
+<td>22.0</td>
+<td>19.0</td>
+<td>30.0</td>
+<td>(26.0)</td>
+<td>119.0</td>
+<td>71.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>29th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>20.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(26.0)</td>
+<td>28.0</td>
+<td>24.0</td>
+<td>3,098.0</td>
+<td>72.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>30th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1591</td>
+<td>James Gorman</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>5.0</td>
+<td>9.0</td>
+<td>(15.0)</td>
+<td>59.0 RET</td>
+<td>(3,000.0 DNC)</td>
+<td>3,088.0</td>
+<td>73.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>31st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(27.0)</td>
+<td>21.0</td>
+<td>27.0</td>
+<td>27.0</td>
+<td>(34.0)</td>
+<td>136.0</td>
+<td>75.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>32nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>28.0</td>
+<td>(3,000.0 DNC)</td>
+<td>24.0</td>
+<td>24.0</td>
+<td>(29.0)</td>
+<td>3,105.0</td>
+<td>76.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>33rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>M</td>
+<td>Royal St. George Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>23.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>36.0</td>
+<td>23.0</td>
+<td>6,082.0</td>
+<td>82.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>34th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1210</td>
+<td>James Crawford</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>19.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>34.0</td>
+<td>30.0</td>
+<td>6,083.0</td>
+<td>83.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>35th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1523</td>
+<td>Rachel Murdock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>25.0</td>
+<td>(3,000.0 DNC)</td>
+<td>31.0</td>
+<td>31.0</td>
+<td>6,087.0</td>
+<td>87.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>36th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>667</td>
+<td>Clara McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>33.0</td>
+<td>35.0</td>
+<td>25.0</td>
+<td>6,093.0</td>
+<td>93.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>37th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1453</td>
+<td>Aoife Clarke</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>31.0</td>
+<td>30.0</td>
+<td>43.0</td>
+<td>(41.0)</td>
+<td>3,145.0</td>
+<td>104.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>38th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1398</td>
+<td>Lucy Scott</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>34.0</td>
+<td>41.0</td>
+<td>42.0</td>
+<td>6,117.0</td>
+<td>117.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>39th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1566</td>
+<td>Eoin Pierse</td>
+<td>M</td>
+<td>Royal Cork Yacht Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>24.0</td>
+<td>(3,000.0 DNC)</td>
+<td>20.0</td>
+<td>3,000.0 DNC</td>
+<td>(33.0)</td>
+<td>6,077.0</td>
+<td>3,044.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>40th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1625</td>
+<td>Tom Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>28.0</td>
+<td>23.0</td>
+<td>3,000.0 DNC</td>
+<td>(3,000.0 DNC)</td>
+<td>9,051.0</td>
+<td>3,051.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>41st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1657</td>
+<td>Max Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>27.0</td>
+<td>29.0</td>
+<td>3,000.0 DNC</td>
+<td>(3,000.0 DNC)</td>
+<td>9,056.0</td>
+<td>3,056.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>42nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1596</td>
+<td>Arthur Rogers</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>32.0</td>
+<td>27.0</td>
+<td>9,059.0</td>
+<td>3,059.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>43rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1161</td>
+<td>Mark Fitzgerald</td>
+<td>M</td>
+<td>National Yacht Club / SDC</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>32.0</td>
+<td>(3,000.0 DNC)</td>
+<td>40.0</td>
+<td>3,000.0 DNC</td>
+<td>9,072.0</td>
+<td>3,072.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>44th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1396</td>
+<td>Senan Rowan</td>
+<td>M</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>42.0</td>
+<td>35.0</td>
+<td>9,077.0</td>
+<td>3,077.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>45th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>M</td>
+<td>Blessington Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>39.0</td>
+<td>38.0</td>
+<td>9,077.0</td>
+<td>3,077.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>46th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1470</td>
+<td>Nicole Quinn</td>
+<td>F</td>
+<td>Howth Yacht Club / Sutton Dinghy Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>38.0</td>
+<td>43.0</td>
+<td>9,081.0</td>
+<td>3,081.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>47th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1638</td>
+<td>Alex Butcher</td>
+<td>M</td>
+<td>Malahide Yacht Club</td>
+<td>IRL</td>
+<td>10</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>20.0</td>
+<td>12,020.0</td>
+<td>6,020.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>48th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1447</td>
+<td>Declan Pierse</td>
+<td>M</td>
+<td>Tralee Bay Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>26.0</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>12,026.0</td>
+<td>6,026.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>49th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1644</td>
+<td>Charlie McKiibben</td>
+<td>M</td>
+<td>Monkstown Bay Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>28.0</td>
+<td>12,028.0</td>
+<td>6,028.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>50th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1451</td>
+<td>Teddy Rowe</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>29.0</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>12,029.0</td>
+<td>6,029.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>51st</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>937</td>
+<td>Cillian Fitzgerald</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>30.0</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>12,030.0</td>
+<td>6,030.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>52nd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1196</td>
+<td>Rossa Mitchell Ward</td>
+<td>M</td>
+<td>Galway Bay Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>31.0</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>12,031.0</td>
+<td>6,031.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>53rd</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1495</td>
+<td>Jenny Plant</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>32.0</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>12,032.0</td>
+<td>6,032.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>54th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1579</td>
+<td>Will Cullen</td>
+<td>M</td>
+<td>Howth Yacht Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>36.0</td>
+<td>12,036.0</td>
+<td>6,036.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>55th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>M</td>
+<td>Malahide Yacht Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>37.0</td>
+<td>12,037.0</td>
+<td>6,037.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>56th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1394</td>
+<td>Caolàn Pepper</td>
+<td>M</td>
+<td>Lough Derg Yacht Club / LDYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>37.0</td>
+<td>3,000.0 DNC</td>
+<td>12,037.0</td>
+<td>6,037.0</td>
+</tr>
+<tr class="odd summaryrow">
+<td>57th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>4864</td>
+<td>Rossa Mitchell Ward</td>
+<td>F</td>
+<td>Galway Bay Sailing Club</td>
+<td>GBR</td>
+<td>12</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>40.0</td>
+<td>12,040.0</td>
+<td>6,040.0</td>
+</tr>
+<tr class="even summaryrow">
+<td>58th</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1496</td>
+<td>Julian O Leary</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>(3,000.0 DNC)</td>
+<td>(3,000.0 DNC)</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>3,000.0 DNC</td>
+<td>15,000.0</td>
+<td>9,000.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r1">Munsters</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1493</td>
+<td>Max O’Hare</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1591</td>
+<td>James Gorman</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1527</td>
+<td>Olin Bateman</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1565</td>
+<td>Patrick Fegan</td>
+<td>M</td>
+<td>Malahide Yacht Club / Howth Yacht club</td>
+<td>IRL</td>
+<td>11</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1384</td>
+<td>George Doig</td>
+<td>M</td>
+<td>Other / East Antrim Boat Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1476</td>
+<td>Tomás A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1494</td>
+<td>Paidí A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>906</td>
+<td>Aoife McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>F</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1580</td>
+<td>Basile Dion</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1210</td>
+<td>James Crawford</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>M</td>
+<td>Royal St. George Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1566</td>
+<td>Eoin Pierse</td>
+<td>M</td>
+<td>Royal Cork Yacht Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>F</td>
+<td>Kinsale Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1447</td>
+<td>Declan Pierse</td>
+<td>M</td>
+<td>Tralee Bay Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r2">Leinsters</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1565</td>
+<td>Patrick Fegan</td>
+<td>M</td>
+<td>Malahide Yacht Club / Howth Yacht club</td>
+<td>IRL</td>
+<td>11</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1606</td>
+<td>Andrew Mannion</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1527</td>
+<td>Olin Bateman</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1591</td>
+<td>James Gorman</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1384</td>
+<td>George Doig</td>
+<td>M</td>
+<td>Other / East Antrim Boat Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1580</td>
+<td>Basile Dion</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1494</td>
+<td>Paidí A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>F</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>12</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1476</td>
+<td>Tomás A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1403</td>
+<td>Hugo Breen</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1417</td>
+<td>Johnny Rock</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1523</td>
+<td>Rachel Murdock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>F</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1657</td>
+<td>Max Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1625</td>
+<td>Tom Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1451</td>
+<td>Teddy Rowe</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>937</td>
+<td>Cillian Fitzgerald</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1453</td>
+<td>Aoife Clarke</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1161</td>
+<td>Mark Fitzgerald</td>
+<td>M</td>
+<td>National Yacht Club / SDC</td>
+<td>IRL</td>
+<td>12</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r3">Connaughts</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td>2</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1606</td>
+<td>Andrew Mannion</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>5</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>6</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>F</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>7</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>8</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>9</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>10</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1527</td>
+<td>Olin Bateman</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>11</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1417</td>
+<td>Johnny Rock</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>12</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>13</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>14</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1493</td>
+<td>Max O’Hare</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1591</td>
+<td>James Gorman</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>16</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>F</td>
+<td>Kinsale Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>17</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1403</td>
+<td>Hugo Breen</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>19</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>20</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>21</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1566</td>
+<td>Eoin Pierse</td>
+<td>M</td>
+<td>Royal Cork Yacht Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>22</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>F</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>23</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>906</td>
+<td>Aoife McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>24</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1625</td>
+<td>Tom Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>25</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>26</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>12</td>
+<td>27</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>28</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>29</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>30</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1657</td>
+<td>Max Denny</td>
+<td>M</td>
+<td>Skerries Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>31</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1453</td>
+<td>Aoife Clarke</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>32</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1196</td>
+<td>Rossa Mitchell Ward</td>
+<td>M</td>
+<td>Galway Bay Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>33</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1495</td>
+<td>Jenny Plant</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>34</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>667</td>
+<td>Clara McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>35</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1398</td>
+<td>Lucy Scott</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>36</td>
+<td>34.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r4">Nationals</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1493</td>
+<td>Max O’Hare</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1606</td>
+<td>Andrew Mannion</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1565</td>
+<td>Patrick Fegan</td>
+<td>M</td>
+<td>Malahide Yacht Club / Howth Yacht club</td>
+<td>IRL</td>
+<td>11</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1384</td>
+<td>George Doig</td>
+<td>M</td>
+<td>Other / East Antrim Boat Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>F</td>
+<td>Kinsale Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>906</td>
+<td>Aoife McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1476</td>
+<td>Tomás A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1580</td>
+<td>Basile Dion</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>F</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>12</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1527</td>
+<td>Olin Bateman</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1632</td>
+<td>Mae Byrne</td>
+<td>F</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1494</td>
+<td>Paidí A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1403</td>
+<td>Hugo Breen</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1523</td>
+<td>Rachel Murdock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1596</td>
+<td>Arthur Rogers</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1417</td>
+<td>Johnny Rock</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1210</td>
+<td>James Crawford</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>667</td>
+<td>Clara McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>M</td>
+<td>Royal St. George Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1394</td>
+<td>Caolàn Pepper</td>
+<td>M</td>
+<td>Lough Derg Yacht Club / LDYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1470</td>
+<td>Nicole Quinn</td>
+<td>F</td>
+<td>Howth Yacht Club / Sutton Dinghy Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>M</td>
+<td>Blessington Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1161</td>
+<td>Mark Fitzgerald</td>
+<td>M</td>
+<td>National Yacht Club / SDC</td>
+<td>IRL</td>
+<td>12</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1398</td>
+<td>Lucy Scott</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1396</td>
+<td>Senan Rowan</td>
+<td>M</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1453</td>
+<td>Aoife Clarke</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+<tr class="even racerow">
+<td>44</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1591</td>
+<td>James Gorman</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>RET</td>
+<td>59.0</td>
+</tr>
+</tbody>
+</table>
+<h3 class="racetitle" id="r5">Ulsters</h3>
+<div class="caption racecaption">
+Start: Start 1, Finishes: Place
+</div>
+<table class="racetable" cellspacing="0" cellpadding="0" border="0">
+<colgroup span="12">
+<col class="rank" />
+<col class="fleet" />
+<col class="division" />
+<col class="rating" />
+<col class="sailno" />
+<col class="helmname" />
+<col class="helmsex" />
+<col class="club" />
+<col class="nat" />
+<col class="helmagegroup" />
+<col class="place" />
+<col class="points" />
+</colgroup>
+<thead>
+<tr class="titlerow">
+<th>Rank</th>
+<th>Fleet</th>
+<th>Divison</th>
+<th>Rating</th>
+<th>Sail no.</th>
+<th>﻿Helmname</th>
+<th>Gender</th>
+<th>Club</th>
+<th>Nat</th>
+<th>Helmage</th>
+<th>Place</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd racerow">
+<td>1</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1555</td>
+<td>Lily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>1</td>
+<td>1.0</td>
+</tr>
+<tr class="even racerow">
+<td>2</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1586</td>
+<td>Maeve Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>2</td>
+<td>2.0</td>
+</tr>
+<tr class="odd racerow">
+<td>3</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1629</td>
+<td>Emily Donagh</td>
+<td>F</td>
+<td>Lough Derg Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>11</td>
+<td>3</td>
+<td>3.0</td>
+</tr>
+<tr class="even racerow">
+<td>4</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1597</td>
+<td>Kate Spain</td>
+<td>F</td>
+<td>Howth Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>4</td>
+<td>4.0</td>
+</tr>
+<tr class="odd racerow">
+<td>5</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1609</td>
+<td>Finn Foley</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>5</td>
+<td>5.0</td>
+</tr>
+<tr class="even racerow">
+<td>6</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1582</td>
+<td>Rían O’Neill</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>6</td>
+<td>6.0</td>
+</tr>
+<tr class="odd racerow">
+<td>7</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1565</td>
+<td>Patrick Fegan</td>
+<td>M</td>
+<td>Malahide Yacht Club / Howth Yacht club</td>
+<td>IRL</td>
+<td>11</td>
+<td>7</td>
+<td>7.0</td>
+</tr>
+<tr class="even racerow">
+<td>8</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1570</td>
+<td>Dougie Venner</td>
+<td>M</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>8</td>
+<td>8.0</td>
+</tr>
+<tr class="odd racerow">
+<td>9</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1384</td>
+<td>George Doig</td>
+<td>M</td>
+<td>Other / East Antrim Boat Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>9</td>
+<td>9.0</td>
+</tr>
+<tr class="even racerow">
+<td>10</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1535</td>
+<td>Annabelle Wilson</td>
+<td>F</td>
+<td>Kinsale Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>10</td>
+<td>10.0</td>
+</tr>
+<tr class="odd racerow">
+<td>11</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1605</td>
+<td>Jonathan Dempsey</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>11</td>
+<td>11.0</td>
+</tr>
+<tr class="even racerow">
+<td>12</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>906</td>
+<td>Aoife McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>12</td>
+<td>12.0</td>
+</tr>
+<tr class="odd racerow">
+<td>13</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1530</td>
+<td>Ayda Bruen</td>
+<td>F</td>
+<td>Royal Cork Yacht Club / Monkstown Bay Sa</td>
+<td>IRL</td>
+<td>12</td>
+<td>13</td>
+<td>13.0</td>
+</tr>
+<tr class="even racerow">
+<td>14</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1650</td>
+<td>Juliet Ryan</td>
+<td>F</td>
+<td>Malahide Yacht Club / Royal St George YC</td>
+<td>IRL</td>
+<td>12</td>
+<td>14</td>
+<td>14.0</td>
+</tr>
+<tr class="odd racerow">
+<td>15</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1493</td>
+<td>Max O’Hare</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>15</td>
+<td>15.0</td>
+</tr>
+<tr class="even racerow">
+<td>16</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1575</td>
+<td>Ella Rock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>16</td>
+<td>16.0</td>
+</tr>
+<tr class="odd racerow">
+<td>17</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>985</td>
+<td>Holly Cantwell</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>17</td>
+<td>17.0</td>
+</tr>
+<tr class="even racerow">
+<td>18</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1476</td>
+<td>Tomás A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>18</td>
+<td>18.0</td>
+</tr>
+<tr class="odd racerow">
+<td>19</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1626</td>
+<td>Abigail O'Sullivan</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>19</td>
+<td>19.0</td>
+</tr>
+<tr class="even racerow">
+<td>20</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1638</td>
+<td>Alex Butcher</td>
+<td>M</td>
+<td>Malahide Yacht Club</td>
+<td>IRL</td>
+<td>10</td>
+<td>20</td>
+<td>20.0</td>
+</tr>
+<tr class="odd racerow">
+<td>21</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1580</td>
+<td>Basile Dion</td>
+<td>M</td>
+<td>National Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>21</td>
+<td>21.0</td>
+</tr>
+<tr class="even racerow">
+<td>22</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1577</td>
+<td>Niamh Baynes</td>
+<td>F</td>
+<td>Galway Bay Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>22</td>
+<td>22.0</td>
+</tr>
+<tr class="odd racerow">
+<td>23</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1528</td>
+<td>Tom Darcy</td>
+<td>M</td>
+<td>Royal St. George Yacht Club / RSGYC</td>
+<td>IRL</td>
+<td>12</td>
+<td>23</td>
+<td>23.0</td>
+</tr>
+<tr class="even racerow">
+<td>24</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1480</td>
+<td>Jack Doolan</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>24</td>
+<td>24.0</td>
+</tr>
+<tr class="odd racerow">
+<td>25</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>667</td>
+<td>Clara McElligott</td>
+<td>F</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>10</td>
+<td>25</td>
+<td>25.0</td>
+</tr>
+<tr class="even racerow">
+<td>26</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1446</td>
+<td>Donnchadh Duane</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>26</td>
+<td>26.0</td>
+</tr>
+<tr class="odd racerow">
+<td>27</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1596</td>
+<td>Arthur Rogers</td>
+<td>M</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>27</td>
+<td>27.0</td>
+</tr>
+<tr class="even racerow">
+<td>28</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1644</td>
+<td>Charlie McKiibben</td>
+<td>M</td>
+<td>Monkstown Bay Sailing Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>28</td>
+<td>28.0</td>
+</tr>
+<tr class="odd racerow">
+<td>29</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1006</td>
+<td>Kate Doolan</td>
+<td>F</td>
+<td>Waterford Harbour Sailing Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>29</td>
+<td>29.0</td>
+</tr>
+<tr class="even racerow">
+<td>30</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1210</td>
+<td>James Crawford</td>
+<td>M</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>30</td>
+<td>30.0</td>
+</tr>
+<tr class="odd racerow">
+<td>31</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1523</td>
+<td>Rachel Murdock</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>31</td>
+<td>31.0</td>
+</tr>
+<tr class="even racerow">
+<td>32</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1403</td>
+<td>Hugo Breen</td>
+<td>M</td>
+<td>Lough Ree Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>32</td>
+<td>32.0</td>
+</tr>
+<tr class="odd racerow">
+<td>33</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Silver</td>
+<td>1566</td>
+<td>Eoin Pierse</td>
+<td>M</td>
+<td>Royal Cork Yacht Club</td>
+<td>IRL</td>
+<td>11</td>
+<td>33</td>
+<td>33.0</td>
+</tr>
+<tr class="even racerow">
+<td>34</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1452</td>
+<td>Tara Hayes</td>
+<td>F</td>
+<td>Royal Cork Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>34</td>
+<td>34.0</td>
+</tr>
+<tr class="odd racerow">
+<td>35</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1396</td>
+<td>Senan Rowan</td>
+<td>M</td>
+<td>Lough Derg Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>35</td>
+<td>35.0</td>
+</tr>
+<tr class="even racerow">
+<td>36</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1579</td>
+<td>Will Cullen</td>
+<td>M</td>
+<td>Howth Yacht Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>36</td>
+<td>36.0</td>
+</tr>
+<tr class="odd racerow">
+<td>37</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1635</td>
+<td>Nathan Rothl</td>
+<td>M</td>
+<td>Malahide Yacht Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>37</td>
+<td>37.0</td>
+</tr>
+<tr class="even racerow">
+<td>38</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1661</td>
+<td>Patrick McNaughton</td>
+<td>M</td>
+<td>Blessington Sailing Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>38</td>
+<td>38.0</td>
+</tr>
+<tr class="odd racerow">
+<td>39</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Gold</td>
+<td>1494</td>
+<td>Paidí A Coistealbha</td>
+<td>M</td>
+<td>Malahide Yacht Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>39</td>
+<td>39.0</td>
+</tr>
+<tr class="even racerow">
+<td>40</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>4864</td>
+<td>Rossa Mitchell Ward</td>
+<td>F</td>
+<td>Galway Bay Sailing Club</td>
+<td>GBR</td>
+<td>12</td>
+<td>40</td>
+<td>40.0</td>
+</tr>
+<tr class="odd racerow">
+<td>41</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1453</td>
+<td>Aoife Clarke</td>
+<td>F</td>
+<td>Sutton Dinghy Club /</td>
+<td>IRL</td>
+<td>12</td>
+<td>41</td>
+<td>41.0</td>
+</tr>
+<tr class="even racerow">
+<td>42</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1398</td>
+<td>Lucy Scott</td>
+<td>F</td>
+<td>Royal St. George Yacht Club /</td>
+<td>IRL</td>
+<td>11</td>
+<td>42</td>
+<td>42.0</td>
+</tr>
+<tr class="odd racerow">
+<td>43</td>
+<td>Main</td>
+<td>Junior</td>
+<td>Bronze</td>
+<td>1470</td>
+<td>Nicole Quinn</td>
+<td>F</td>
+<td>Howth Yacht Club / Sutton Dinghy Club</td>
+<td>IRL</td>
+<td>12</td>
+<td>43</td>
+<td>43.0</td>
+</tr>
+</tbody>
+</table>
+
+<p class="hardleft"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p class="hardright"><a href="http://"></a><br /><a href="mailto:"></a></p>
+<p>Sailwave Scoring Software 2.29.0<br /><a href="http://www.sailwave.com">www.sailwave.com</a></p>
+
+</div>
+
+<footer>
+</footer>
+
+<div id="scrollbottom"></div>
+
+</body>
+</html>
+
+

@@ -135,13 +135,42 @@ Rankings are republished through the season; **capture every revision found,
 treat the latest as authoritative** (the 2025 Senior final revision revoked a
 redress and changed the champion). See SOURCES.md per year.
 
-✅ sourced (final revision) · ◻️ not yet sourced
+✅ final sourced · ◐ season-final state survives only as the site's Rankings
+hub page (the linked per-fleet files were never archived) · — no ranking held
 
-| Year | Junior | Senior |
-|-----:|:------:|:------:|
-| 2025 | ✅ | ✅ |
-| 2024 | ◻️ (`2024-IODAI-RankingJ-7.htm` on iodai.com uploads) | ◻️ |
-| ≤2023 | ◻️ | ◻️ |
+| Year | Junior | Senior | What we hold |
+|-----:|:------:|:------:|--------------|
+| 2025 | ✅ | ✅ | Sailwave finals + earlier revisions |
+| 2024 | ✅ | ✅ | Sailwave finals (`-J-7`/`-S-6` revisions) |
+| 2023 | ✅ | ✅ | Sailwave finals |
+| 2022 | ✅ | ✅ | Sailwave finals |
+| 2021 | ✅ | ✅ | "Draft" PDFs — the only published state |
+| 2020 | — | — | COVID: regionals cancelled, no ranking published |
+| 2019 | ✅ | ✅ | results-files HTML finals |
+| 2018 | ✅ | ✅ | results-files HTML finals |
+| 2017 | ✅ | ✅ | PDF finals + after-4-events snapshots |
+| 2016 | ✅ | ✅ | PDF finals + after-4-events snapshots |
+| 2015 | ✅ | ✅ | PDF finals |
+| 2014 | ✅ | ✅ | HTML finals + after-4-events snapshots |
+| 2013 | ◐ | ◐ | hub page (`Final Rankings 2013`); `{jun,sen}rank2013Conos.html` lost |
+| 2012 | ◐ | ◐ | hub page (`Final Rankings 2012`); `{jun,sen}rank2012Munos.html` lost |
+| 2011 | ◐ | ◐ | hub pages (final + pre-Nationals); per-fleet files lost |
+| 2010 | ◐ | ◐ | hub pages (`Final Rankings for 2010` + note); per-fleet files lost |
+| 2009 | ◐ | ◐ | hub pages (Sept + final state); per-fleet files + PDFs lost |
+| 2008 | ◐ | ◐ | hub pages (Sept revision + Feb-2009 final state); `Rankings{Senior,junior}Sept…08.htm` lost — first separate-fleets year |
+| 2007 | ✅* | ✅* | `rank1nh2.html` (Sail100, Sept provisional — states "Best 2 Regionals, Nationals non-discardable") + hub pages incl. the Jan-2008 final state |
+| 2006 | ◐ | ◐ | year-end + Mar-2007 hub pages + `Rankings0307.pdf` (Jan-07 view); `Rank1106.xls` lost |
+| 2005 | ✅* | ✅* | full embedded table in the Sept hub snapshot (+ Aug + Feb-2006 final state) |
+| 2004 | ✅* | ✅* | embedded table (Aug 2004 state); the era's ranking rules PDF is in reference-docs |
+
+\* pre-2008 rankings are a single combined list (fleets ranked separately only
+from 2008); 2007's is marked provisional — no later state was archived.
+
+The per-fleet Sail100 files for 2008–2013 (`/media/{jun,sen}rank…os.html`,
+plus the 2008 `.htm` pair, 2009 PDFs, and two `.xls` snapshots) were linked
+from the hub pages but never crawled by the Wayback Machine, and iodai.com
+dropped `/media/` in its WordPress migration — recovery would need IODAI's own
+records. SOURCES.md lists every URL per year.
 
 **National Training Week** (`iodai-ntw-<year>-…`, 2021–2025 built): the
 **Halloween Regatta** is one combined start — Main and Crosbie groups race
