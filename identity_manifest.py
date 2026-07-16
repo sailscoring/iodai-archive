@@ -9,7 +9,7 @@ A manifest entry is one cross-series competitor. Its ``rows`` are
 ``(series-slug, sail)`` pairs — the file slug (``out``) of each series the
 sailor appears in, and the sail number they carried there. That key is readable
 and stable (the archive owns both halves), and the app's
-``reconcile-identities --manifest`` resolves it to a competitor at apply time.
+``as-published identities`` apply resolves it to a competitor at apply time.
 
 The slug is the manifest *key* and the public-URL handle. It's minted once from
 the name plus a short suffix derived deterministically from the entry's rows, so
@@ -115,7 +115,7 @@ MANIFEST_VERSION = 1
 
 def compile_manifest(identities, out_to_id, *, allow_missing=False):
     """Compile curated ``C`` entries into the JSON the app's
-    ``reconcile-identities --manifest`` consumes.
+    ``as-published identities`` apply consumes.
 
     ``out_to_id`` maps each series out-slug to its *live* seriesId in the target
     workspace. The result embeds a ``series`` slug->id map (only the slugs the

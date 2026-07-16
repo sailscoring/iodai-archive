@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Compile the curated manifest.py into the app's manifest.json (sailscoring #218).
 
-The app's `reconcile-identities --manifest` needs each series' *live* seriesId,
+The app's identity apply (`sailscoring as-published identities`) needs each
+series' *live* seriesId,
 but the app mints those fresh on import, so the archive can't derive them. Get
 them from the running app's CLI and feed the dump in here:
 
@@ -13,7 +14,8 @@ them from the running app's CLI and feed the dump in here:
 The dump maps series *name* -> live id; this script knows out-slug -> name (the
 built series files carry both), so it resolves out-slug -> live id and emits the
 manifest.json the app consumes. Validate the result before applying with a dry
-run: `pnpm reconcile-identities <workspace> --manifest manifest.json`.
+run: `sailscoring as-published identities manifest.json --workspace <slug>`
+(CI applies it automatically on push — see .github/workflows/as-published.yml).
 
 By default it fails if any referenced series has no live id (usually a name
 mismatch or a series not yet imported), and points at the closest dump names so
@@ -168,7 +170,7 @@ def main(argv):
         for o, n in missing_referenced:
             print(f'      - {o}  ({n})')
     print(f'\nValidate before applying:')
-    print(f'  pnpm reconcile-identities <workspace> --manifest {OUT}')
+    print(f'  sailscoring as-published identities {OUT} --workspace <slug>')
     return 0
 
 
