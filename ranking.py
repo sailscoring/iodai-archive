@@ -19,10 +19,19 @@ Commands:
         # <id> --json`) against the sheet: ranked set, order, and nett;
         # aliases.json maps sheet helm-names to identity labels
 
+    python3 ranking.py emit-ingest
+        # normalize each season's authoritative captures (per
+        # sources/<year>/ranking/ingest.json) into as-published/rankings/
+        # ingest documents, resolving identities via the manifest(s)
+    python3 ranking.py draft-identities
+        # C(...) drafts for names no identity resolves - the ranking-only
+        # sailors - to curate into ranking_identities.py
+
 Stdlib only, like the rest of the pipeline.
 """
 
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -365,8 +374,264 @@ def cmd_compare(sheet_path, ladder_path, aliases_path=None):
     print("\nPASS — ranked set, order, and nett all match the sheet.")
 
 
+# ─── As-published ranking ingest (#7 / app #309) ────────────────────────────
+
+EVENT_NAMES = {
+    'connaughts', 'connachts', 'connaghts', 'leinsters', 'ulsters',
+    'munsters', 'nationals',
+}
+NAME_HEADERS = {'name', 'helm', 'helmname'}
+
+
+def slug_key(label):
+    k = re.sub(r'[^a-z0-9]+', '-', label.casefold()).strip('-')
+    return k or 'col'
+
+
+def parse_table_general(path):
+    """Normalise any of the HTML-era ranking tables (2014, 2018-2019,
+    2022-2025): a header row starting 'Rank', a name column, event columns
+    named after the five championships, everything else lead/summary."""
+    with open(path, encoding='utf-8', errors='replace') as f:
+        p = _TableParser()
+        p.feed(f.read())
+    header_i = next(
+        i for i, row in enumerate(p.rows) if row and row[0][0].strip() == 'Rank'
+    )
+    header = [c[0].strip().lstrip('﻿') for c in p.rows[header_i]]
+    event_idx = [i for i, h in enumerate(header) if h.casefold() in EVENT_NAMES]
+    name_idx = next(
+        i for i, h in enumerate(header) if h.casefold() in NAME_HEADERS
+    )
+    first_event = min(event_idx)
+    lead_idx = [
+        i for i in range(1, first_event) if i != name_idx and i not in event_idx
+    ]
+    summary_idx = [
+        i for i in range(max(event_idx) + 1, len(header)) if i != name_idx
+    ]
+
+    rows = []
+    for raw in p.rows[header_i + 1:]:
+        cells = [c[0].strip() for c in raw]
+        if len(cells) != len(header) or not cells[0]:
+            continue
+        digits = re.sub(r'\D', '', cells[0])
+        if not digits:
+            continue
+        rows.append({
+            'rankLabel': cells[0],
+            'rank': int(digits),
+            'name': re.sub(r'\s+', ' ', cells[name_idx]).strip(),
+            'leadCells': [cells[i] for i in lead_idx],
+            'eventCells': [
+                {'text': cells[i], 'discard': cells[i].startswith('(')}
+                for i in event_idx
+            ],
+            'summaryCells': [cells[i] for i in summary_idx],
+        })
+    return {
+        'leadColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in lead_idx
+        ],
+        'leadLabels': [header[i] for i in lead_idx],
+        'eventHeaders': [{'label': header[i]} for i in event_idx],
+        'summaryColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in summary_idx
+        ],
+        'rows': rows,
+    }
+
+
+def load_all_identities():
+    """The curated golden records: manifest.py plus (when present) the
+    ranking-only entries in ranking_identities.py."""
+    import manifest as manifest_mod
+    entries = list(manifest_mod.IDENTITIES)
+    try:
+        import ranking_identities
+        entries += list(ranking_identities.IDENTITIES)
+    except ImportError:
+        pass
+    return entries
+
+
+def build_resolver(season, aliases):
+    """name/sail -> identity slug for one season. Resolution order: alias
+    (exact printed name -> curated label), sail number within the season's
+    series rows (guarded by a shared name token), then normalized-name
+    match (unique matches only)."""
+    entries = load_all_identities()
+    by_sail = {}
+    for e in entries:
+        for series_slug, sail in getattr(e, 'rows', []):
+            if f'-{season}-' in series_slug or series_slug.endswith(str(season)):
+                by_sail.setdefault(str(sail), set()).add(e.slug)
+    by_name = {}
+    for e in entries:
+        by_name.setdefault(norm_name(e.name), set()).add(e.slug)
+    alias_map = {
+        norm_name(k): v for k, v in aliases.items() if not k.startswith('_')
+    }
+
+    def resolve(name, sail):
+        n = norm_name(name)
+        if n in alias_map:
+            slugs = by_name.get(norm_name(alias_map[n]), set())
+            if len(slugs) == 1:
+                return next(iter(slugs))
+        if sail:
+            slugs = by_sail.get(str(sail), set())
+            if len(slugs) == 1:
+                slug = next(iter(slugs))
+                owner = next(e for e in entries if e.slug == slug)
+                if set(norm_name(owner.name).split()) & set(n.split()):
+                    return slug
+        slugs = by_name.get(n, set())
+        if len(slugs) == 1:
+            return next(iter(slugs))
+        return None
+
+    return resolve
+
+
+def season_configs():
+    import glob as _glob
+    out = []
+    for path in sorted(_glob.glob('sources/*/ranking/ingest.json')):
+        cfg = json.load(open(path))
+        cfg['_dir'] = os.path.dirname(path)
+        out.append(cfg)
+    return out
+
+
+def emit_doc(cfg, fleet_cfg, resolve):
+    import engine
+    season = cfg['season']
+    fleet = fleet_cfg.get('fleet')
+    key = f"iodai-ranking-{season}" + (f"-{fleet.casefold()}" if fleet else '')
+    table = parse_table_general(os.path.join(cfg['_dir'], fleet_cfg['capture']))
+    sail_i = next(
+        (i for i, lbl in enumerate(table['leadLabels'])
+         if lbl.casefold().startswith('sail')),
+        None,
+    )
+    unresolved = []
+    rows = []
+    for r in table['rows']:
+        sail = r['leadCells'][sail_i] if sail_i is not None else None
+        slug = resolve(r['name'], sail)
+        if slug is None:
+            unresolved.append((r['name'], sail))
+        rows.append({
+            'identity': slug,
+            'rank': r['rank'],
+            'rankLabel': r['rankLabel'],
+            'name': r['name'],
+            'leadCells': r['leadCells'],
+            'eventCells': r['eventCells'],
+            'summaryCells': r['summaryCells'],
+        })
+    doc = {
+        'formatVersion': 1,
+        'ranking': {
+            'id': engine.det(f'{key}/ranking'),
+            'name': (
+                f"IODAI National Ranking {season}"
+                + (f" — {fleet}" if fleet else '')
+            ),
+            'slug': (
+                f"national-ranking-{season}"
+                + (f"-{fleet.casefold()}" if fleet else '')
+            ),
+            'season': season,
+            **({'fleetLabel': fleet} if fleet else {}),
+            **({'ruleNote': cfg['ruleNote']} if cfg.get('ruleNote') else {}),
+            'source': fleet_cfg.get('source', {}),
+        },
+        'table': {
+            **(
+                {'caption': fleet_cfg['caption']}
+                if fleet_cfg.get('caption')
+                else {}
+            ),
+            'leadColumns': table['leadColumns'],
+            'eventHeaders': table['eventHeaders'],
+            'summaryColumns': table['summaryColumns'],
+            'rows': rows,
+        },
+    }
+    return key, doc, unresolved
+
+
+def cmd_emit_ingest(out_dir='as-published/rankings'):
+    os.makedirs(out_dir, exist_ok=True)
+    total_unresolved = []
+    for cfg in season_configs():
+        aliases_path = os.path.join(cfg['_dir'], 'aliases.json')
+        aliases = (
+            json.load(open(aliases_path)) if os.path.exists(aliases_path) else {}
+        )
+        resolve = build_resolver(cfg['season'], aliases)
+        for fleet_cfg in cfg['fleets']:
+            key, doc, unresolved = emit_doc(cfg, fleet_cfg, resolve)
+            path = os.path.join(out_dir, f'{key}.json')
+            json.dump(doc, open(path, 'w'), indent=1, ensure_ascii=False)
+            linked = sum(1 for r in doc['table']['rows'] if r['identity'])
+            print(
+                f"{key}: {len(doc['table']['rows'])} rows, {linked} linked -> {path}"
+            )
+            for name, sail in unresolved:
+                total_unresolved.append(
+                    (cfg['season'], fleet_cfg.get('fleet'), name, sail)
+                )
+    if total_unresolved:
+        print(
+            f'\n{len(total_unresolved)} unresolved rows (curate via draft-identities):'
+        )
+        for season, fleet, name, sail in total_unresolved:
+            print(
+                f'  {season} {fleet or "-":<7} {name}'
+                + (f' ({sail})' if sail else '')
+            )
+    return 0
+
+
+def cmd_draft_identities():
+    """Print C(...) drafts for every unresolved row — the ranking-only
+    sailors — grouping the same normalized name across seasons."""
+    from identity_manifest import mint_slug
+    taken = {e.slug for e in load_all_identities()}
+    groups = {}
+    for cfg in season_configs():
+        aliases_path = os.path.join(cfg['_dir'], 'aliases.json')
+        aliases = (
+            json.load(open(aliases_path)) if os.path.exists(aliases_path) else {}
+        )
+        resolve = build_resolver(cfg['season'], aliases)
+        for fleet_cfg in cfg['fleets']:
+            key, doc, unresolved = emit_doc(cfg, fleet_cfg, resolve)
+            for name, sail in unresolved:
+                g = groups.setdefault(
+                    norm_name(name), {'name': name, 'rankings': []}
+                )
+                g['rankings'].append(key)
+    for n, g in sorted(groups.items()):
+        stable = '|'.join(sorted(set(g['rankings'])))
+        slug = mint_slug(g['name'], stable, taken)
+        rr = ', '.join(f'"{k}"' for k in sorted(set(g['rankings'])))
+        print(f'    C(slug="{slug}", name="{g["name"]}",')
+        print(f'      ranking_rows=[{rr}], rows=[]),')
+    print(f'# {len(groups)} ranking-only sailors', file=sys.stderr)
+
+
+
 def main():
-    if len(sys.argv) >= 3 and sys.argv[1] == "parse":
+    if len(sys.argv) >= 2 and sys.argv[1] == "emit-ingest":
+        sys.exit(cmd_emit_ingest(*sys.argv[2:3]))
+    elif len(sys.argv) >= 2 and sys.argv[1] == "draft-identities":
+        cmd_draft_identities()
+    elif len(sys.argv) >= 3 and sys.argv[1] == "parse":
         cmd_parse(sys.argv[2])
     elif len(sys.argv) >= 3 and sys.argv[1] == "adjustments":
         cmd_adjustments(sys.argv[2])

@@ -32,6 +32,10 @@ class C:
     club: str = ""
     nat: str = ""
     note: str = ""
+    # Season-ranking memberships (app #309): the ranking document keys this
+    # sailor appears in. A ranking-only sailor has ranking_rows and no series
+    # rows - the identity exists to anchor those rows and their career arc.
+    ranking_rows: list = field(default_factory=list)
 
 
 def repair_mojibake(name):
