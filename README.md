@@ -135,6 +135,11 @@ Rankings are republished through the season; **capture every revision found,
 treat the latest as authoritative** (the 2025 Senior final revision revoked a
 redress and changed the champion). See SOURCES.md per year.
 
+Sourced years with HTML captures (2014, 2018–2019, 2022–2025) are **live in
+the workspace** as as-published rankings (pushed by CI via
+`ranking.py emit-ingest`; app #309). PDF years (2015–2017, 2021) and the
+hub-page/Sail100 eras (≤2013) are sourced but not yet normalized.
+
 ✅ final sourced · ◐ season-final state survives only as the site's Rankings
 hub page (the linked per-fleet files were never archived) · — no ranking held
 
