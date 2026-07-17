@@ -68,7 +68,9 @@ jobs:
         run: pnpm archive-generate ${{ github.workspace }}/as-published.config.json
 
       - name: Emit season-ranking ingest documents
-        run: python3 ranking.py emit-ingest
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y poppler-utils
+          python3 ranking.py emit-ingest
 
       # The `secrets` context isn't available in `if:` expressions, so the
       # arming gate tests the secret through the job env instead: unset

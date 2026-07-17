@@ -135,9 +135,10 @@ Rankings are republished through the season; **capture every revision found,
 treat the latest as authoritative** (the 2025 Senior final revision revoked a
 redress and changed the champion). See SOURCES.md per year.
 
-Sourced years with HTML captures (2014, 2018–2019, 2022–2025) are **live in
-the workspace** as as-published rankings (pushed by CI via
-`ranking.py emit-ingest`; app #309). PDF years (2015–2017, 2021) and the
+Sourced years with HTML or text-PDF captures (2014–2019, 2022–2025) are
+**live in the workspace** as as-published rankings (pushed by CI via
+`ranking.py emit-ingest`; app #309). The 2021 drafts are image-only PDFs
+(no text layer — recovery needs OCR or IODAI's own file), and the
 hub-page/Sail100 eras (≤2013) are sourced but not yet normalized.
 
 ✅ final sourced · ◐ season-final state survives only as the site's Rankings
@@ -149,13 +150,13 @@ hub page (the linked per-fleet files were never archived) · — no ranking held
 | 2024 | ✅ | ✅ | Sailwave finals (`-J-7`/`-S-6` revisions) |
 | 2023 | ✅ | ✅ | Sailwave finals |
 | 2022 | ✅ | ✅ | Sailwave finals |
-| 2021 | ✅ | ✅ | "Draft" PDFs — the only published state |
+| 2021 | ✅ | ✅ | "Draft" PDFs — the only published state; image-only, needs OCR |
 | 2020 | — | — | COVID: regionals cancelled, no ranking published |
 | 2019 | ✅ | ✅ | results-files HTML finals |
 | 2018 | ✅ | ✅ | results-files HTML finals |
-| 2017 | ✅ | ✅ | PDF finals + after-4-events snapshots |
-| 2016 | ✅ | ✅ | PDF finals + after-4-events snapshots |
-| 2015 | ✅ | ✅ | PDF finals |
+| 2017 | ✅ | ✅ | PDF finals (live) + after-4-events snapshots |
+| 2016 | ✅ | ✅ | PDF finals (live) + after-4-events snapshots |
+| 2015 | ✅ | ✅ | PDF finals (live) |
 | 2014 | ✅ | ✅ | HTML finals + after-4-events snapshots |
 | 2013 | ◐ | ◐ | hub page (`Final Rankings 2013`); `{jun,sen}rank2013Conos.html` lost |
 | 2012 | ◐ | ◐ | hub page (`Final Rankings 2012`); `{jun,sen}rank2012Munos.html` lost |

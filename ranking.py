@@ -206,11 +206,16 @@ def cmd_diff(old_path, new_path):
 
 
 def norm_name(name):
-    """Casefold, strip accents, collapse whitespace — the same tolerance the
-    identity work needs for e.g. 'Fergus macnamara'."""
+    """Casefold, strip accents, then keep letters and digits only — the
+    published record spells the same sailor 'Jack McDowell', 'JACK
+    MCDOWELL', and 'Jack MC DOWELL', splits O'Shea into 'O Shea', appends
+    footnote asterisks, and hides soft hyphens in names, so comparison
+    ignores spacing and punctuation entirely. Uniqueness is still enforced
+    at resolution, so a (vanishing) letters-only collision degrades to
+    unresolved, never to a wrong link."""
     s = unicodedata.normalize("NFKD", name)
     s = "".join(c for c in s if not unicodedata.combining(c))
-    return " ".join(s.casefold().split())
+    return "".join(c for c in s.casefold() if c.isalnum())
 
 
 def qualified(sailor, events):
@@ -377,8 +382,9 @@ def cmd_compare(sheet_path, ladder_path, aliases_path=None):
 # ─── As-published ranking ingest (#7 / app #309) ────────────────────────────
 
 EVENT_NAMES = {
-    'connaughts', 'connachts', 'connaghts', 'leinsters', 'ulsters',
-    'munsters', 'nationals',
+    # IODAI have spelled Connacht at least four ways across the record.
+    'connaughts', 'connachts', 'connaghts', 'connauchts',
+    'leinsters', 'ulsters', 'munsters', 'nationals',
 }
 NAME_HEADERS = {'name', 'helm', 'helmname'}
 
@@ -443,6 +449,184 @@ def parse_table_general(path):
     }
 
 
+def parse_pdf_ranking(path):
+    """Normalise the PDF-era finals (2015-2017): `pdftotext -layout` text
+    with a 'Rank Helm/Hem Club Age M/F <events> Points' header. The 2015
+    files carry font artifacts - '%' or tab+CR+NBSP runs printed between
+    words - so they parse token-wise after normalisation; the clean years
+    slice names/clubs on header column positions, recomputed per page
+    (later pages shift). Values like '3000' (DNC-equivalent) and averaged
+    fractions are kept verbatim."""
+    import subprocess
+    raw = subprocess.run(
+        ['pdftotext', '-layout', path, '-'], capture_output=True, text=True,
+    ).stdout
+    tokens_mode = '\t' in raw or '%' in raw
+    txt = (
+        raw.replace('\r', ' ')
+        .replace('\u00a0', ' ')
+        .replace('\t', ' ')
+        .replace('%', ' ')
+    )
+    lines = txt.split('\n')
+
+    def is_header(l):
+        return (
+            l.strip().startswith('Rank')
+            and sum(1 for t in l.split() if t.casefold() in EVENT_NAMES) >= 3
+        )
+
+    first_header = next(l for l in lines if is_header(l))
+    events = [t for t in first_header.split() if t.casefold() in EVENT_NAMES]
+    tail_len = len(events) + 1  # events + Points
+
+    rows = []
+    for line in lines:
+        if is_header(line):
+            continue
+        toks = line.split()
+        if not toks or not re.fullmatch(r'\d{1,3}', toks[0]):
+            continue
+        if len(toks) < tail_len + 2:
+            continue
+        tail = toks[-tail_len:]
+        rest = toks[1:-tail_len]
+        mf = rest.pop() if rest and rest[-1] in ('M', 'F') else ''
+        age = rest.pop() if rest and re.fullmatch(r'\d{1,2}', rest[-1]) else ''
+        if tokens_mode:
+            club = rest.pop() if rest else ''
+            name = ' '.join(rest)
+        else:
+            # Columns are >=2-space separated whatever a page's offsets
+            # (later pages carry no header and shift), so split the row on
+            # runs of spaces: name, then club; the numeric tail came from
+            # tokens above.
+            body = re.match(r'\s*\d{1,3}\s+(\S.*)$', line).group(1)
+            fields = re.split(r'\s{2,}', body.strip())
+            name = fields[0]
+            club = fields[1] if len(fields) > 1 else ''
+            # A blank club cell collapses the split onto the age/sex chunk.
+            if club == f'{age} {mf}'.strip() or club == age:
+                club = ''
+            # A long name (or long club) can squeeze the name-club gap to a
+            # single space; peel the age/sex suffix if it rode along, then
+            # peel club-ish tokens off the name's tail.
+            def clubish(tok):
+                return tok in ('&', 'Other') or (
+                    re.fullmatch(r"[A-Z][A-Za-z&/]{1,7}", tok) is not None
+                    and sum(c.isupper() for c in tok) >= len(tok) - 2
+                )
+
+            suffix = f'{age} {mf}'.strip()
+            if suffix and name.endswith(' ' + suffix):
+                name = name[: -len(suffix)].strip()
+                club = ''
+            if not club:
+                toks2 = name.split()
+                clubtoks = []
+                while len(toks2) > 1 and clubish(toks2[-1]):
+                    clubtoks.insert(0, toks2.pop())
+                name = ' '.join(toks2)
+                club = ' '.join(clubtoks)
+        name = re.sub(r'\s+', ' ', name).strip()
+        if not name:
+            continue
+        rows.append({
+            'rankLabel': toks[0],
+            'rank': int(toks[0]),
+            'name': name,
+            'leadCells': [club, age, mf],
+            'eventCells': [{'text': t, 'discard': False} for t in tail[:-1]],
+            'summaryCells': [tail[-1]],
+        })
+    # Some files fragment each visual row across physical lines (text
+    # objects at jittered y-coordinates). When line-wise parsing doesn't
+    # produce a clean 1..n rank sequence, reassemble from the token stream:
+    # a row closes when it already carries its numeric tail and the next
+    # token is the next expected rank.
+    if not rows or not all(rows[i]['rank'] == i + 1 for i in range(len(rows))):
+        rows = _rows_from_token_stream(lines, is_header, tail_len)
+
+    return {
+        'leadColumns': [
+            {'key': 'club', 'label': 'Club'},
+            {'key': 'age', 'label': 'Age'},
+            {'key': 'mf', 'label': 'M/F'},
+        ],
+        'leadLabels': ['Club', 'Age', 'M/F'],
+        'eventHeaders': [{'label': e} for e in events],
+        'summaryColumns': [{'key': 'points', 'label': 'Points'}],
+        'rows': rows,
+    }
+
+
+def _parse_pdf_row_tokens(toks, tail_len):
+    tail = toks[-tail_len:]
+    rest = toks[1:-tail_len]
+    mf = rest.pop() if rest and rest[-1] in ('M', 'F') else ''
+    age = rest.pop() if rest and re.fullmatch(r'\d{1,2}', rest[-1]) else ''
+    club = rest.pop() if rest else ''
+    name = re.sub(r'\s+', ' ', ' '.join(rest)).strip()
+    if not name:
+        return None
+    return {
+        'rankLabel': toks[0],
+        'rank': int(toks[0]),
+        'name': name,
+        'leadCells': [club, age, mf],
+        'eventCells': [{'text': t, 'discard': False} for t in tail[:-1]],
+        'summaryCells': [tail[-1]],
+    }
+
+
+def _rows_from_token_stream(lines, is_header, tail_len):
+    NUM = re.compile(r'\d+(?:\.\d+)?')
+    toks = []
+    seen_header = False
+    for line in lines:
+        if is_header(line):
+            seen_header = True
+            continue
+        if not seen_header:
+            continue
+        # Page-break furniture: repeated titles and print footers
+        # ("9/6/15 9:24 AM", "1 of 2", "2015 Junior Final").
+        stripped = line.strip().strip('\f')
+        if re.search(r'Fleet|Ranking|Provisional|Final|\b[AP]M\b|\bof \d+\b|\d+/\d+/\d+', stripped):
+            continue
+        toks.extend(stripped.split())
+
+    def complete(cur):
+        return len(cur) > tail_len and all(
+            NUM.fullmatch(t) for t in cur[-tail_len:]
+        )
+
+    rows = []
+    current = []
+    expected = 1
+    for tok in toks:
+        if current and complete(current):
+            # Between rows: discard print furniture the line filter missed
+            # (ultra-fragmented footers) until the next rank arrives.
+            if tok == str(expected + 1):
+                row = _parse_pdf_row_tokens(current, tail_len)
+                if row:
+                    rows.append(row)
+                expected += 1
+                current = [tok]
+            continue
+        if not current:
+            if tok == str(expected):
+                current = [tok]
+        else:
+            current.append(tok)
+    if current and complete(current):
+        row = _parse_pdf_row_tokens(current, tail_len)
+        if row:
+            rows.append(row)
+    return rows
+
+
 def load_all_identities():
     """The curated golden records: manifest.py plus (when present) the
     ranking-only entries in ranking_identities.py."""
@@ -454,6 +638,12 @@ def load_all_identities():
     except ImportError:
         pass
     return entries
+
+
+def _name_words(name):
+    s2 = unicodedata.normalize("NFKD", name)
+    s2 = "".join(c for c in s2 if not unicodedata.combining(c))
+    return set(re.findall(r"[a-z]+", s2.casefold()))
 
 
 def build_resolver(season, aliases):
@@ -485,7 +675,7 @@ def build_resolver(season, aliases):
             if len(slugs) == 1:
                 slug = next(iter(slugs))
                 owner = next(e for e in entries if e.slug == slug)
-                if set(norm_name(owner.name).split()) & set(n.split()):
+                if _name_words(owner.name) & _name_words(name):
                     return slug
         slugs = by_name.get(n, set())
         if len(slugs) == 1:
@@ -510,7 +700,11 @@ def emit_doc(cfg, fleet_cfg, resolve):
     season = cfg['season']
     fleet = fleet_cfg.get('fleet')
     key = f"iodai-ranking-{season}" + (f"-{fleet.casefold()}" if fleet else '')
-    table = parse_table_general(os.path.join(cfg['_dir'], fleet_cfg['capture']))
+    capture_path = os.path.join(cfg['_dir'], fleet_cfg['capture'])
+    if fleet_cfg.get('format') == 'pdf':
+        table = parse_pdf_ranking(capture_path)
+    else:
+        table = parse_table_general(capture_path)
     sail_i = next(
         (i for i, lbl in enumerate(table['leadLabels'])
          if lbl.casefold().startswith('sail')),
