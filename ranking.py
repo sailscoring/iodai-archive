@@ -793,6 +793,98 @@ def parse_hub_table(path, colcfg):
     })
 
 
+CSV_LEAD_LABELS = {
+    'Rank', 'Fleet', 'Division', 'Rating', 'Sail No.', 'Helm Name',
+    'Gender', 'Club', 'Nat', 'Helm Age',
+}
+
+
+def parse_csv_ranking(path):
+    """A hand-transcribed ranking CSV (the 2021 drafts: OCR + manual review
+    of the scorer's print-to-PDF). Header row starts 'Rank'; event columns
+    are whatever sits between the known lead columns and Total/Nett (2021
+    labels them by host club). Every row is verified arithmetically by the
+    caller before ingest."""
+    import csv
+    with open(path, encoding='utf-8-sig') as f:
+        rows_raw = list(csv.reader(f))
+    caption = next(
+        (r[0] for r in rows_raw if r and r[0].startswith('Sailed:')), None
+    )
+    header_i, header = next(
+        (i, r) for i, r in enumerate(rows_raw) if r and r[0].strip() == 'Rank'
+    )
+    header = [h.strip() for h in header]
+    name_idx = header.index('Helm Name')
+    summary_idx = [i for i, h in enumerate(header) if h in ('Total', 'Nett')]
+    event_idx = [
+        i for i, h in enumerate(header)
+        if h and h not in CSV_LEAD_LABELS and i not in summary_idx
+    ]
+    lead_idx = [
+        i for i in range(1, len(header))
+        if header[i] and i != name_idx
+        and i not in event_idx and i not in summary_idx
+    ]
+    rows = []
+    for r in rows_raw[header_i + 1:]:
+        if len(r) < len(header) or not re.match(r'\d', r[0].strip()):
+            continue
+        cells = [c.strip() for c in r]
+        rows.append({
+            'rankLabel': cells[0],
+            'rank': int(re.sub(r'\D', '', cells[0])),
+            # A blank name is a row the transcriber couldn't read - keep the
+            # row (its rank holds a place) with an explicit marker.
+            'name': re.sub(r'\s+', ' ', cells[name_idx]) or '(illegible)',
+            'leadCells': [cells[i] for i in lead_idx],
+            'eventCells': [
+                {'text': cells[i], 'discard': cells[i].startswith('(')}
+                for i in event_idx
+            ],
+            'summaryCells': [cells[i] for i in summary_idx],
+        })
+    return {
+        'caption': caption,
+        'leadColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in lead_idx
+        ],
+        'leadLabels': [header[i] for i in lead_idx],
+        'eventHeaders': [{'label': header[i]} for i in event_idx],
+        'summaryColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in summary_idx
+        ],
+        'rows': rows,
+    }
+
+
+def verify_ranking_table(table, to_count):
+    """Arithmetic check for transcribed sheets: nett must equal the sum of
+    the unparenthesised event cells (the counted scores). Returns failing
+    row descriptions - empty means every row checks out."""
+    def num(t):
+        t = t.replace(',', '').replace('(', '').replace(')', '')
+        t = re.sub(r'[A-Za-z]+', '', t).strip()
+        try:
+            return float(t)
+        except ValueError:
+            return None
+    problems = []
+    for r in table['rows']:
+        counted = [
+            num(c['text']) for c in r['eventCells'] if not c['discard']
+        ]
+        nett = num(r['summaryCells'][-1]) if r['summaryCells'] else None
+        if nett is None or any(c is None for c in counted) or len(counted) > to_count:
+            problems.append(f"rank {r['rank']} {r['name']}: unparseable cells")
+            continue
+        if abs(sum(counted) - nett) > 0.01:
+            problems.append(
+                f"rank {r['rank']} {r['name']}: counted {counted} != nett {nett}"
+            )
+    return problems
+
+
 def load_all_identities():
     """The curated golden records: manifest.py plus (when present) the
     ranking-only entries in ranking_identities.py."""
@@ -874,6 +966,14 @@ def emit_doc(cfg, fleet_cfg, resolve):
         table = parse_sail100_ranking(capture_path)
     elif fmt == 'points-pdf':
         table = parse_points_pdf_ranking(capture_path)
+    elif fmt == 'csv':
+        table = parse_csv_ranking(capture_path)
+        bad = verify_ranking_table(table, fleet_cfg.get('toCount', 3))
+        if bad:
+            raise SystemExit(
+                f'{key}: transcription fails arithmetic checks:\n  '
+                + '\n  '.join(bad)
+            )
     elif fmt == 'hub-table':
         table = parse_hub_table(capture_path, fleet_cfg['columns'])
     elif fmt == 'transcription':

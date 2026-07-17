@@ -12,6 +12,16 @@ sheets print sails); curation decisions belong here, like manifest.py.
 from identity_manifest import C
 
 IDENTITIES = [
+    C(slug="alanna-crawford-qeh9", name="Alanna Crawford",
+      ranking_rows=["iodai-ranking-2021-senior"], rows=[]),
+    C(slug="ana-strappe-qeh9", name="Ana Strappe",
+      ranking_rows=["iodai-ranking-2021-senior"], rows=[]),
+    C(slug="lisa-whyte-qeh9", name="Lisa Whyte",
+      ranking_rows=["iodai-ranking-2021-senior"], rows=[]),
+    C(slug="lui-ivory-qeh9", name="Lui Ivory",
+      ranking_rows=["iodai-ranking-2021-senior"], rows=[]),
+    C(slug="ronan-quinlan-7bcm", name="Ronan Quinlan",
+      ranking_rows=["iodai-ranking-2021-junior"], rows=[]),
     C(slug="adam-hill-63jc", name="Adam Hill",
       ranking_rows=["iodai-ranking-2006", "iodai-ranking-2007"], rows=[]),
     C(slug="adam-lawless-rn49", name="Adam Lawless",

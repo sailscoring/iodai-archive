@@ -141,10 +141,9 @@ text-PDF years (2014–2019, 2022–2025) and the pre-split record — 2007
 (Sail100), 2006 (points-only), 2005 (final order), 2004 (per-race era) —
 whose sailors are largely **ranking-only identities**
 (`ranking_identities.py`, 254 entries; their events aren't sourced). Still
-missing: **2021** (image-only print-to-PDF of a local Sailwave preview —
-OCR reconstruction in `sources/2021/ranking/transcribe.py` fails arithmetic
-checks on half the rows, so it needs a row-by-row visual review or IODAI's
-own file) and **2008–2013** (the per-fleet files were never archived).
+missing: **2008–2013** (the per-fleet files were never archived — recovery
+needs IODAI's own records). 2021 is transcribed: reviewed CSVs beside the
+original print-PDFs, every row verified arithmetically at emit.
 
 ✅ final sourced · ◐ season-final state survives only as the site's Rankings
 hub page (the linked per-fleet files were never archived) · — no ranking held
@@ -155,7 +154,7 @@ hub page (the linked per-fleet files were never archived) · — no ranking held
 | 2024 | ✅ | ✅ | Sailwave finals (`-J-7`/`-S-6` revisions) |
 | 2023 | ✅ | ✅ | Sailwave finals |
 | 2022 | ✅ | ✅ | Sailwave finals |
-| 2021 | ✅ | ✅ | "Draft" PDFs — the only published state; image-only, needs OCR |
+| 2021 | ✅ | ✅ | transcribed CSVs (OCR + manual review of the draft print-PDFs; live); 6 events, host-club columns |
 | 2020 | — | — | COVID: regionals cancelled, no ranking published |
 | 2019 | ✅ | ✅ | results-files HTML finals |
 | 2018 | ✅ | ✅ | results-files HTML finals |
