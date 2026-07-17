@@ -146,8 +146,10 @@ def compile_manifest(identities, out_to_id, *, allow_missing=False):
     out_identities = []
     for c in identities:
         rows = [(slug, sail) for slug, sail in c.rows if slug in out_to_id]
-        if not rows:
+        if not rows and not c.ranking_rows:
             continue  # every series this competitor appeared in is unresolved
+        # A ranking-only sailor compiles with zero members: the identity
+        # exists to anchor as-published ranking rows and their career arc.
         entry = {'slug': c.slug, 'name': c.name,
                  'members': [[slug, sail] for slug, sail in rows]}
         if c.club:

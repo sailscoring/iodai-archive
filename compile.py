@@ -106,6 +106,17 @@ def mint_missing(unresolved):
     return minted
 
 
+def _all_identities():
+    """manifest.py plus the ranking-only entries (ranking_identities.py):
+    one golden record, two curation files."""
+    import manifest
+    try:
+        import ranking_identities
+        return list(manifest.IDENTITIES) + list(ranking_identities.IDENTITIES)
+    except ImportError:
+        return list(manifest.IDENTITIES)
+
+
 def main(argv):
     args = [a for a in argv[1:] if not a.startswith('--')]
     allow_missing = '--allow-missing' in argv
@@ -115,7 +126,7 @@ def main(argv):
     if not os.path.exists('manifest.py'):
         sys.exit('manifest.py not found — run bootstrap.py and curate it first.')
 
-    import manifest  # the curated golden record
+    identities = _all_identities()  # the curated golden record(s)
 
     names = out_to_name()
     live = name_to_id(args[0])
@@ -141,7 +152,7 @@ def main(argv):
 
     # Which unresolved series are actually referenced by the manifest? (Corpus
     # series no competitor in the manifest appears in don't matter.)
-    referenced = {slug for c in manifest.IDENTITIES for slug, _ in c.rows}
+    referenced = {slug for c in identities for slug, _ in c.rows}
     missing_referenced = [(o, n) for o, n in unresolved_names if o in referenced]
 
     if missing_referenced and not allow_missing:
@@ -154,7 +165,7 @@ def main(argv):
             'with --allow-missing to compile against the imported subset.'
         )
 
-    compiled = compile_manifest(manifest.IDENTITIES, out_to_id, allow_missing=allow_missing)
+    compiled = compile_manifest(identities, out_to_id, allow_missing=allow_missing)
 
     with open(OUT, 'w', encoding='utf-8') as fh:
         json.dump(compiled, fh, ensure_ascii=False, indent=2)
@@ -164,7 +175,7 @@ def main(argv):
     print(f'  identities:        {len(compiled["identities"])}')
     print(f'  series referenced: {len(compiled["series"])}')
     if missing_referenced:
-        dropped = len(manifest.IDENTITIES) - len(compiled['identities'])
+        dropped = len(identities) - len(compiled['identities'])
         print(f'  series skipped:    {len(missing_referenced)}  (not in dump; --allow-missing)')
         print(f'  identities dropped:{dropped:>4}  (all their series were skipped)')
         for o, n in missing_referenced:

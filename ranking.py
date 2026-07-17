@@ -627,6 +627,172 @@ def _rows_from_token_stream(lines, is_header, tail_len):
     return rows
 
 
+DOB_RE = re.compile(r'birth', re.I)
+
+
+def _strip_dob_columns(table):
+    """Drop birth-date lead columns before anything is emitted: the public
+    surfaces never publish ages or birth dates (these are children), so the
+    ingest is data-minimised even though the source printed them."""
+    drop = [
+        i for i, c in enumerate(table['leadColumns']) if DOB_RE.search(c['label'])
+    ]
+    if not drop:
+        return table
+    keep = [i for i in range(len(table['leadColumns'])) if i not in drop]
+    table['leadColumns'] = [table['leadColumns'][i] for i in keep]
+    table['leadLabels'] = [table['leadLabels'][i] for i in keep]
+    for r in table['rows']:
+        r['leadCells'] = [r['leadCells'][i] for i in keep]
+    return table
+
+
+def parse_sail100_ranking(path):
+    """The 2007 Sail100 ranking page: one combined fleet (Junior/Senior split
+    arrives in 2008), 'Series Place / Sail No / Helm / M/F / Date of Birth /
+    Prize Age / Fleet / Club / Series Points / <events>'. The summary column
+    precedes the events in the source; the doc's lead/events/summary shape
+    reorders it after them."""
+    with open(path, encoding='utf-8', errors='replace') as f:
+        p2 = _TableParser()
+        p2.feed(f.read())
+    header_i, header = next(
+        (i, [c[0].strip() for c in row])
+        for i, row in enumerate(p2.rows)
+        if row and 'Helm' in [c[0].strip() for c in row]
+    )
+    event_idx = [i for i, h in enumerate(header) if h.casefold() in EVENT_NAMES]
+    name_idx = header.index('Helm')
+    rank_idx = 0
+    summary_idx = [
+        i for i, h in enumerate(header) if 'points' in h.casefold()
+    ]
+    lead_idx = [
+        i for i in range(len(header))
+        if i not in event_idx and i not in summary_idx
+        and i != name_idx and i != rank_idx
+    ]
+    rows = []
+    for raw in p2.rows[header_i + 1:]:
+        cells = [c[0].strip() for c in raw]
+        if len(cells) != len(header) or not re.fullmatch(r'\d{1,3}', cells[0]):
+            continue
+        rows.append({
+            'rankLabel': cells[0],
+            'rank': int(cells[0]),
+            'name': re.sub(r'\s+', ' ', cells[name_idx]),
+            'leadCells': [cells[i] for i in lead_idx],
+            'eventCells': [
+                {'text': cells[i], 'discard': cells[i].startswith('(')}
+                for i in event_idx
+            ],
+            'summaryCells': [cells[i] for i in summary_idx],
+        })
+    return _strip_dob_columns({
+        'leadColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in lead_idx
+        ],
+        'leadLabels': [header[i] for i in lead_idx],
+        'eventHeaders': [{'label': header[i]} for i in event_idx],
+        'summaryColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in summary_idx
+        ],
+        'rows': rows,
+    })
+
+
+def parse_points_pdf_ranking(path):
+    """The 2006 state (published January 2007): a points-only table -
+    'Ranking / Sail No / Fleet / Helm / Date of Birth / Club / Series
+    Points', no per-event columns. Columns are >=2-space separated."""
+    import subprocess
+    txt = subprocess.run(
+        ['pdftotext', '-layout', path, '-'], capture_output=True, text=True,
+    ).stdout
+    rows = []
+    for line in txt.split('\n'):
+        m = re.match(r'\s*(\d{1,3})\s+(\d{1,5}[A-Za-z]?)\s+(\S.*)$', line)
+        if not m:
+            continue
+        fields = re.split(r'\s{2,}', m.group(3).strip())
+        # Fleet, Helm, DoB, Club, Points - tolerate a missing fleet cell.
+        if len(fields) == 5:
+            fleet, name, _dob, club, points = fields
+        elif len(fields) == 4:
+            fleet, name, club, points = fields[0], fields[1], fields[2], fields[3]
+        else:
+            continue
+        rows.append({
+            'rankLabel': m.group(1),
+            'rank': int(m.group(1)),
+            'name': re.sub(r'\s+', ' ', name),
+            'leadCells': [m.group(2), fleet, club],
+            'eventCells': [],
+            'summaryCells': [points],
+        })
+    return {
+        'leadColumns': [
+            {'key': 'sail-no', 'label': 'Sail No'},
+            {'key': 'fleet', 'label': 'Fleet'},
+            {'key': 'club', 'label': 'Club'},
+        ],
+        'leadLabels': ['Sail No', 'Fleet', 'Club'],
+        'eventHeaders': [],
+        'summaryColumns': [{'key': 'series-points', 'label': 'Series Points'}],
+        'rows': rows,
+    }
+
+
+def parse_hub_table(path, colcfg):
+    """A legacy hub-page ranking table (2004, the 2005 final), driven by an
+    explicit column config from ingest.json - these one-off shapes are
+    curated, not guessed: {"rank": "Pl.", "name": "Name",
+    "events": ["5", "6"], "summary": ["Tot"], "drop": ["Sub"]}."""
+    p2 = _TableParser()
+    p2.feed(open(path, 'rb').read().decode('utf-8', errors='replace'))
+    header_i, header = next(
+        (i, [c[0].strip() for c in row])
+        for i, row in enumerate(p2.rows)
+        if row and row[0][0].strip() == colcfg['rank']
+    )
+    name_idx = header.index(colcfg['name'])
+    event_idx = [header.index(e) for e in colcfg.get('events', [])]
+    summary_idx = [header.index(e) for e in colcfg.get('summary', [])]
+    drop_idx = [header.index(e) for e in colcfg.get('drop', [])]
+    lead_idx = [
+        i for i in range(1, len(header))
+        if i != name_idx and i not in event_idx
+        and i not in summary_idx and i not in drop_idx
+    ]
+    rows = []
+    for raw in p2.rows[header_i + 1:]:
+        cells = [c[0].strip() for c in raw]
+        if len(cells) != len(header) or not re.fullmatch(r'\d{1,3}', cells[0]):
+            continue
+        rows.append({
+            'rankLabel': cells[0],
+            'rank': int(cells[0]),
+            'name': re.sub(r'\s+', ' ', cells[name_idx]),
+            'leadCells': [cells[i] for i in lead_idx],
+            'eventCells': [
+                {'text': cells[i], 'discard': cells[i].startswith('(')}
+                for i in event_idx
+            ],
+            'summaryCells': [cells[i] for i in summary_idx],
+        })
+    return _strip_dob_columns({
+        'leadColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in lead_idx
+        ],
+        'leadLabels': [header[i] for i in lead_idx],
+        'eventHeaders': [{'label': header[i]} for i in event_idx],
+        'summaryColumns': [
+            {'key': slug_key(header[i]), 'label': header[i]} for i in summary_idx
+        ],
+        'rows': rows,
+    })
+
+
 def load_all_identities():
     """The curated golden records: manifest.py plus (when present) the
     ranking-only entries in ranking_identities.py."""
@@ -701,10 +867,20 @@ def emit_doc(cfg, fleet_cfg, resolve):
     fleet = fleet_cfg.get('fleet')
     key = f"iodai-ranking-{season}" + (f"-{fleet.casefold()}" if fleet else '')
     capture_path = os.path.join(cfg['_dir'], fleet_cfg['capture'])
-    if fleet_cfg.get('format') == 'pdf':
+    fmt = fleet_cfg.get('format', 'html')
+    if fmt == 'pdf':
         table = parse_pdf_ranking(capture_path)
+    elif fmt == 'sail100':
+        table = parse_sail100_ranking(capture_path)
+    elif fmt == 'points-pdf':
+        table = parse_points_pdf_ranking(capture_path)
+    elif fmt == 'hub-table':
+        table = parse_hub_table(capture_path, fleet_cfg['columns'])
+    elif fmt == 'transcription':
+        table = json.load(open(capture_path))
     else:
         table = parse_table_general(capture_path)
+    table = _strip_dob_columns(table)
     sail_i = next(
         (i for i, lbl in enumerate(table['leadLabels'])
          if lbl.casefold().startswith('sail')),

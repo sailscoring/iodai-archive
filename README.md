@@ -135,11 +135,16 @@ Rankings are republished through the season; **capture every revision found,
 treat the latest as authoritative** (the 2025 Senior final revision revoked a
 redress and changed the champion). See SOURCES.md per year.
 
-Sourced years with HTML or text-PDF captures (2014–2019, 2022–2025) are
-**live in the workspace** as as-published rankings (pushed by CI via
-`ranking.py emit-ingest`; app #309). The 2021 drafts are image-only PDFs
-(no text layer — recovery needs OCR or IODAI's own file), and the
-hub-page/Sail100 eras (≤2013) are sourced but not yet normalized.
+Every parseable season is **live in the workspace** as an as-published
+ranking (pushed by CI via `ranking.py emit-ingest`; app #309): the HTML and
+text-PDF years (2014–2019, 2022–2025) and the pre-split record — 2007
+(Sail100), 2006 (points-only), 2005 (final order), 2004 (per-race era) —
+whose sailors are largely **ranking-only identities**
+(`ranking_identities.py`, 254 entries; their events aren't sourced). Still
+missing: **2021** (image-only print-to-PDF of a local Sailwave preview —
+OCR reconstruction in `sources/2021/ranking/transcribe.py` fails arithmetic
+checks on half the rows, so it needs a row-by-row visual review or IODAI's
+own file) and **2008–2013** (the per-fleet files were never archived).
 
 ✅ final sourced · ◐ season-final state survives only as the site's Rankings
 hub page (the linked per-fleet files were never archived) · — no ranking held
@@ -164,10 +169,10 @@ hub page (the linked per-fleet files were never archived) · — no ranking held
 | 2010 | ◐ | ◐ | hub pages (`Final Rankings for 2010` + note); per-fleet files lost |
 | 2009 | ◐ | ◐ | hub pages (Sept + final state); per-fleet files + PDFs lost |
 | 2008 | ◐ | ◐ | hub pages (Sept revision + Feb-2009 final state); `Rankings{Senior,junior}Sept…08.htm` lost — first separate-fleets year |
-| 2007 | ✅* | ✅* | `rank1nh2.html` (Sail100, Sept provisional — states "Best 2 Regionals, Nationals non-discardable") + hub pages incl. the Jan-2008 final state |
-| 2006 | ◐ | ◐ | year-end + Mar-2007 hub pages + `Rankings0307.pdf` (Jan-07 view); `Rank1106.xls` lost |
-| 2005 | ✅* | ✅* | full embedded table in the Sept hub snapshot (+ Aug + Feb-2006 final state) |
-| 2004 | ✅* | ✅* | embedded table (Aug 2004 state); the era's ranking rules PDF is in reference-docs |
+| 2007 | ✅* | ✅* | `rank1nh2.html` (Sail100, Sept provisional — the season's last surviving state; live) |
+| 2006 | ✅* | ✅* | `Rankings0307.pdf` (Jan-07 points-only final; live); `Rank1106.xls` lost |
+| 2005 | ✅* | ✅* | Feb-2006 final order (live); the Sept per-event table survives in sources |
+| 2004 | ✅* | ✅* | Aug-2004 state (live; per-race era — see the rules PDF in reference-docs) |
 
 \* pre-2008 rankings are a single combined list (fleets ranked separately only
 from 2008); 2007's is marked provisional — no later state was archived.
